@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>مجمع الأسرة لطب الأسنان والجلدية | فروع الأحساء</title>
+  <title>Family Dental Clinic - Al Ahsa</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,7 +41,6 @@
       margin: 0 auto;
       padding: 0 16px;
     }
-    /* Top Bar */
     .topbar {
       background: linear-gradient(90deg, var(--brand-teal-dark), var(--brand-teal), var(--brand-lime-dark));
       color: #fff;
@@ -60,7 +59,6 @@
       border-radius: 20px;
       font-size: 11px;
     }
-    /* Header */
     header {
       background: #ffffff;
       border-bottom: 1px solid #e2e8f0;
@@ -118,7 +116,6 @@
     .nav-btn:hover {
       background: var(--brand-teal-dark);
     }
-    /* Hero Section */
     .hero {
       background: linear-gradient(180deg, var(--brand-teal-light) 0%, #ffffff 100%);
       padding: 40px 0 60px 0;
@@ -186,7 +183,6 @@
       font-size: 11px;
       color: #64748b;
     }
-    /* Booking Card */
     .booking-box {
       background: #ffffff;
       border-radius: 24px;
@@ -251,7 +247,6 @@
       opacity: 0.95;
       transform: translateY(-1px);
     }
-    /* Branches Section */
     .section-title {
       text-align: center;
       margin: 50px 0 30px;
@@ -318,7 +313,6 @@
     .btn-call { background: #0f172a; }
     .btn-wa { background: #10b981; }
     .btn-map { background: #ffffff; color: #334155; border: 1px solid #cbd5e1; }
-    /* Services */
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -341,7 +335,6 @@
       font-size: 13px;
       color: #64748b;
     }
-    /* Floating WhatsApp */
     .float-wa {
       position: fixed;
       bottom: 24px;
@@ -363,7 +356,6 @@
 
 <body>
 
-  <!-- شريط الميزات العلوي -->
   <div class="topbar">
     <div>
       <i class="fa-solid fa-award"></i> خبرة أكثر من 30 سنة بالأحساء • نستقبل كافة شركات التأمين
@@ -374,7 +366,6 @@
     </div>
   </div>
 
-  <!-- الترويسة الرئيسية Navigation -->
   <header>
     <div class="container nav-wrap">
       <div class="logo">
@@ -388,7 +379,6 @@
     </div>
   </header>
 
-  <!-- القسم الافتتاحي Hero مع نموذج الحجز المباشر بالواجهة -->
   <section id="booking" class="hero">
     <div class="container">
       <div class="hero-grid">
@@ -458,7 +448,6 @@
     </div>
   </section>
 
-  <!-- قسم الفروع التفاعلي (8 فروع) -->
   <section class="container" style="padding: 40px 16px;">
     <div class="section-title">
       <h2>فروع مجمع الأسرة (8 فروع بالأحساء)</h2>
@@ -479,7 +468,6 @@
     <div id="branchInfo" class="active-branch-card"></div>
   </section>
 
-  <!-- قسم العيادات والخدمات -->
   <section class="container" style="padding-bottom: 50px;">
     <div class="section-title">
       <h2>العيادات والأقسام الطبية</h2>
@@ -525,7 +513,6 @@
     </div>
   </section>
 
-  <!-- التذييل -->
   <footer style="background: #0f172a; color: #94a3b8; padding: 40px 16px 20px; font-size: 13px;">
     <div class="container" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px;">
       <div>
@@ -544,12 +531,10 @@
     </div>
   </footer>
 
-  <!-- زر واتساب عائم -->
   <a href="https://wa.me/966537403090" target="_blank" class="float-wa">
     <i class="fa-brands fa-whatsapp"></i>
   </a>
 
-  <!-- منطق الفروع والحجز -->
   <script>
     const branchData = [
       { name: "فرع السلمانية", phone: "0553254700", intl: "966553254700", time: "من 9 صباحاً - 9 مساءً", map: "https://maps.google.com/?q=25.3340626,49.5662766" },
