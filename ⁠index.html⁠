@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مجمع الأسرة لطب الأسنان والجلدية | الأحساء</title>
+<meta name="description" content="مجمع الأسرة لطب الأسنان بالأحساء - خبرة أكثر من 30 عاماً. 8 فروع تغطي كافة مدن وقرى الأحساء، دعم تابي وتمارا وكافة شركات التأمين.">
+<!-- Google Fonts: Cairo -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+<!-- Font Awesome Icons CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+brand: {
+teal: '#0097A7',
+'teal-dark': '#007982',
+'teal-light': '#E0F7FA',
+lime: '#8BC34A',
+'lime-dark': '#689F38',
+'lime-light': '#F1F8E9',
+dark: '#0F172A',
+surface: '#F8FAFC'
+}
+},
+fontFamily: {
+sans: ['Cairo', 'sans-serif'],
+}
+}
+}
+}
+</script>
+<style>
+body {
+font-family: 'Cairo', sans-serif;
+background-color: #F8FAFC;
+}
+.pattern-dots {
+background-color: #ffffff;
+background-image: radial-gradient(#0097A7 0.75px, transparent 0.75px), radial-gradient(#8BC34A 0.75px, #ffffff 0.75px);
+background-size: 28px 28px;
+background-position: 0 0, 14px 14px;
+}
+.tab-active {
+background-color: #0097A7 !important;
+color: #ffffff !important;
+border-color: #0097A7 !important;
+box-shadow: 0 10px 15px -3px rgba(0, 151, 167, 0.35);
+}
+</style>
+</head>
+<body class="text-slate-800 antialiased overflow-x-hidden selection:bg-brand-teal selection:text-white">
+<!-- Top Announcement Bar -->
+<div class="bg-gradient-to-r from-brand-teal to-brand-teal-dark text-white text-xs sm:text-sm py-2.5 px-4 text-center font-bold shadow-sm flex flex-wrap justify-center items-center gap-x-4 gap-y-1">
+<span>✨ خبرة تتجاوز 30 عاماً في رعاية الابتسامة بالأحساء</span>
+<span class="hidden md:inline">•</span>
+<span>💳 تقسيط مرن عبر تابي وتمارا</span>
+<span class="hidden md:inline">•</span>
+<span>🛡️ معتمدون لدى كبرى شركات التأمين</span>
+</div>
+<!-- Main Navigation Bar -->
+<header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-sm transition-all">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+<!-- Brand Logo -->
+<a href="#home" class="flex items-center gap-3.5 group">
+<div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-brand-teal via-teal-500 to-brand-lime flex items-center justify-center text-white shadow-md shadow-brand-teal/20 group-hover:scale-105 transition duration-300">
+<i class="fa-solid fa-tooth text-2xl"></i>
+</div>
+<div>
+<span class="text-xl sm:text-2xl font-black text-slate-900 block tracking-tight">الأسرة <span class="text-brand-teal">لطب الأسنان</span></span>
+<span class="text-[11px] text-brand-lime-dark font-black block -mt-1">وجراحة الفم والجلدية والتجميل</span>
+</div>
+</a>
+<!-- Desktop Links -->
+<nav class="hidden lg:flex items-center gap-8 font-bold text-sm text-slate-600">
+<a href="#home" class="hover:text-brand-teal transition">الرئيسية</a>
+<a href="#branches" class="hover:text-brand-teal transition">فروعنا (8)</a>
+<a href="#services" class="hover:text-brand-teal transition">الأقسام والعيادات</a>
+<a href="#prices" class="hover:text-brand-teal transition">الأسعار والعروض</a>
+<a href="#about" class="hover:text-brand-teal transition">لماذا الأسرة؟</a>
+</nav>
+<!-- CTA Buttons -->
+<div class="flex items-center gap-3">
+<a href="tel:0537403090" class="hidden sm:inline-flex items-center gap-2 text-brand-teal font-bold text-sm bg-brand-teal-light px-4 py-2.5 rounded-xl hover:bg-brand-teal hover:text-white transition">
+<i class="fa-solid fa-phone"></i>
+<span dir="ltr">053 740 3090</span>
+</a>
+<a href="#booking" class="bg-gradient-to-r from-brand-teal to-brand-teal-dark text-white font-extrabold text-sm px-5 py-2.5 rounded-xl shadow-lg shadow-brand-teal/25 hover:shadow-brand-teal/40 hover:-translate-y-0.5 transition">
+احجز الآن
+</a>
+</div>
+</div>
+</header>
+<!-- Hero Section with Direct Booking Form -->
+<section id="home" class="relative pt-8 pb-16 md:pt-14 md:pb-24 overflow-hidden pattern-dots">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+<!-- Hero Information & Trust Badges -->
+<div class="lg:col-span-7 space-y-6 text-center lg:text-right">
+<div class="inline-flex items-center gap-2 bg-brand-lime-light border border-brand-lime/40 text-brand-lime-dark text-xs sm:text-sm font-black px-4 py-1.5 rounded-full shadow-sm">
+<i class="fa-solid fa-certificate"></i>
+<span>ثقة تمتد لأكثر من 30 سنة في قلوب أهالي الأحساء</span>
+</div>
+<h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-900 leading-tight">
+ابتسامة أجمل.. 
+
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-teal via-teal-600 to-brand-lime">وعناية متكاملة</span> لك ولعائلتك
+</h1>
+<p class="text-slate-600 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0 font-medium">
+نعتني بصحة وجمال أسنانك وبشرتك بأحدث المعايير الطبية العالمية، وبأيدي نخبة من الأطباء والاستشاريين في 8 فروع متطورة وموزعة بعناية لتكون قريبة منك.
+</p>
+<!-- Trust Highlights Cards -->
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2 max-w-xl mx-auto lg:mx-0">
+<div class="bg-white p-3.5 rounded-2xl border border-slate-200 shadow-sm flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center font-black text-lg">
+<i class="fa-solid fa-credit-card"></i>
+</div>
+<div class="text-right">
+<div class="font-extrabold text-xs text-slate-800">تابي وتمارا</div>
+<div class="text-[11px] text-slate-500 font-bold">قسطها على 4 دفعات</div>
+</div>
+</div>
+<div class="bg-white p-3.5 rounded-2xl border border-slate-200 shadow-sm flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center font-black text-lg">
+<i class="fa-solid fa-shield-heart"></i>
+</div>
+<div class="text-right">
+<div class="font-extrabold text-xs text-slate-800">شركات التأمين</div>
+<div class="text-[11px] text-slate-500 font-bold">نقبل كافة الشركات</div>
+</div>
+</div>
+<div class="col-span-2 sm:col-span-1 bg-white p-3.5 rounded-2xl border border-slate-200 shadow-sm flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center font-black text-lg">
+<i class="fa-solid fa-map-location-dot"></i>
+</div>
+<div class="text-right">
+<div class="font-extrabold text-xs text-slate-800">8 فروع نشطة</div>
+<div class="text-[11px] text-slate-500 font-bold">بمحافظة الأحساء</div>
+</div>
+</div>
+</div>
+<!-- Direct Central WhatsApp Callout -->
+<div class="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-4">
+<a href="https://wa.me/966537403090" target="_blank" class="inline-flex items-center gap-2.5 text-emerald-700 bg-emerald-50 border border-emerald-200/80 px-5 py-3 rounded-2xl font-black text-sm hover:bg-emerald-100 transition shadow-sm">
+<i class="fa-brands fa-whatsapp text-xl text-emerald-600"></i>
+<span>واتساب الإدارة والمواعيد: 0537403090</span>
+</a>
+</div>
+</div>
+<!-- Instant Front Booking Card -->
+<div class="lg:col-span-5" id="booking">
+<div class="bg-white rounded-3xl p-6 sm:p-8 shadow-2xl shadow-brand-teal/15 border-2 border-brand-teal/20 relative">
+<div class="absolute -top-3.5 right-6 bg-brand-lime text-slate-900 font-black text-xs px-3.5 py-1 rounded-full uppercase tracking-wider shadow">
+حجز موعد مباشر
+</div>
+<h3 class="text-2xl font-black text-slate-900 mb-2">احجز موعدك واستشارتك</h3>
+<p class="text-xs sm:text-sm text-slate-500 mb-6 font-medium leading-relaxed">
+أدخل بياناتك البسيطة وسيتم فتح محادثة واتساب فورية مع فرعك المفضل لتنسيق وحجز الموعد:
+</p>
+<form id="heroBookingForm" class="space-y-4">
+<div>
+<label class="block text-xs font-black text-slate-700 mb-1.5">الاسم الكامل</label>
+<div class="relative">
+<span class="absolute inset-y-0 right-0 flex items-center pr-3.5 text-slate-400">
+<i class="fa-regular fa-user"></i>
+</span>
+<input type="text" id="patientName" required placeholder="مثال: أحمد السعيد" class="w-full bg-slate-50 border border-slate-200 rounded-xl pr-10 pl-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-teal focus:bg-white transition font-semibold">
+</div>
+</div>
+<div>
+<label class="block text-xs font-black text-slate-700 mb-1.5">رقم الجوال</label>
+<div class="relative">
+<span class="absolute inset-y-0 right-0 flex items-center pr-3.5 text-slate-400">
+<i class="fa-solid fa-mobile-screen"></i>
+</span>
+<input type="tel" id="patientPhone" required placeholder="05xxxxxxxx" dir="ltr" class="w-full bg-slate-50 border border-slate-200 rounded-xl pr-10 pl-4 py-3 text-sm text-right focus:outline-none focus:ring-2 focus:ring-brand-teal focus:bg-white transition font-semibold">
+</div>
+</div>
+<div>
+<label class="block text-xs font-black text-slate-700 mb-1.5">اختر الفرع الأقرب لك</label>
+<div class="relative">
+<span class="absolute inset-y-0 right-0 flex items-center pr-3.5 text-slate-400">
+<i class="fa-solid fa-location-dot"></i>
+</span>
+<select id="selectedBranch" required class="w-full bg-slate-50 border border-slate-200 rounded-xl pr-10 pl-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-teal focus:bg-white transition text-slate-700 font-bold appearance-none">
+<option value="" disabled selected>-- حدد الفرع المناسب --</option>
+<option value="966553254700">فرع السلمانية</option>
+<option value="966537403090">فرع محاسن</option>
+<option value="966550932600">فرع الخالدية</option>
+<option value="966534634447">فرع المزروع</option>
+<option value="966553962300">فرع العيون</option>
+<option value="966536902220">فرع العيون الصناعية</option>
+<option value="966556854440">فرع الشقيق</option>
+<option value="966550892700">فرع الجفر</option>
+</select>
+<span class="absolute inset-y-0 left-0 flex items-center pl-3.5 text-slate-400 pointer-events-none">
+<i class="fa-solid fa-chevron-down text-xs"></i>
+</span>
+</div>
+</div>
+<button type="submit" class="w-full bg-gradient-to-r from-emerald-600 via-emerald-500 to-teal-600 text-white font-black py-3.5 rounded-xl shadow-lg shadow-emerald-600/25 hover:shadow-emerald-600/40 hover:scale-[1.01] transition flex items-center justify-center gap-2 text-base">
+<i class="fa-brands fa-whatsapp text-xl"></i>
+<span>تواصل واحجز موعدك الآن</span>
+</button>
+</form>
+<div class="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500 font-bold">
+<span><i class="fa-solid fa-bolt text-brand-teal"></i> رد سريع وتأكيد للموعد</span>
+<span>🔒 سرية تامة لمعلوماتك</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive 8 Branches Section -->
+<section id="branches" class="py-16 sm:py-24 bg-white border-y border-slate-200">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center max-w-3xl mx-auto mb-12">
+<span class="text-brand-teal font-black text-xs uppercase tracking-wider bg-brand-teal-light px-4 py-1.5 rounded-full">تغطية شاملة</span>
+<h2 class="text-3xl sm:text-4xl font-black text-slate-900 mt-3 mb-4">فروعنا الـ 8 في محافظة الأحساء</h2>
+<p class="text-slate-600 text-sm sm:text-base font-medium">اختر الفرع لمعاينة أوقات العمل الرسمية، الاتصال الفوري، التواصل عبر الواتساب، أو الوصول المباشر بالخريطة.</p>
+</div>
+<!-- Branch Tabs -->
+<div class="flex flex-wrap gap-2 justify-center mb-10" id="branchTabs">
+<button onclick="renderBranch(0)" class="branch-btn tab-active px-4 py-2.5 rounded-xl font-black text-xs sm:text-sm border border-slate-200 bg-slate-50 text-slate-700 transition">فرع السلمانية</button>
+<button onclick="renderBranch(1)" class="branch-btn px-4 py-2.5 rounded-xl font-black text-xs sm:text-sm border border-slate-200 bg-slate-50 text-slate-700 transition">فرع محاسن</button>
+<button onclick="renderBranch(2)" class="branch-btn px-4 py-2.5 rounded-xl font-black text-xs sm:text-sm border border-slate-200 bg-slate-50 text-slate-700 transition">فرع الخالدية</button>
+<button onclick="renderBranch(3)" class="branch-btn px-4 py-2.5 rounded-xl font-black text-xs sm:text-sm border border-slate-200 bg-slate-50 text-slate-700 transition">فرع المزروع</button>
+<button onclick="renderBranch(4)" class="branch-btn px-4 py-2.5 rounded-xl font-black text-xs sm:text-sm border border-slate-200 bg-slate-50 text-slate-700 transition">فرع العيون</button>
+<button onclick="renderBranch(5)" class="branch-btn px-4 py-2.5 rounded-xl font-black text-xs sm:text-sm border border-slate-200 bg-slate-50 text-slate-700 transition">فرع العيون الصناعية</button>
+<button onclick="renderBranch(6)" class="branch-btn px-4 py-2.5 rounded-xl font-black text-xs sm:text-sm border border-slate-200 bg-slate-50 text-slate-700 transition">فرع الشقيق</button>
+<button onclick="renderBranch(7)" class="branch-btn px-4 py-2.5 rounded-xl font-black text-xs sm:text-sm border border-slate-200 bg-slate-50 text-slate-700 transition">فرع الجفر</button>
+</div>
+<!-- Branch Details Display Container -->
+<div id="branchDisplay" class="max-w-4xl mx-auto bg-gradient-to-br from-slate-50 via-white to-teal-50/20 rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-xl shadow-slate-200/50 transition-all">
+<!-- Dynamically populated via JS -->
+</div>
+<!-- Quick Directory of All Branches -->
+<div class="mt-14 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
+<div class="p-4 bg-slate-50 rounded-2xl border border-slate-200 text-center hover:border-brand-teal transition">
+<div class="text-brand-teal text-xl mb-1"><i class="fa-solid fa-location-dot"></i></div>
+<div class="font-extrabold text-sm text-slate-800">فرع السلمانية</div>
+<div class="text-xs text-slate-500 font-bold mt-1" dir="ltr">055 325 4700</div>
+</div>
+<div class="p-4 bg-slate-50 rounded-2xl border border-slate-200 text-center hover:border-brand-teal transition">
+<div class="text-brand-teal text-xl mb-1"><i class="fa-solid fa-location-dot"></i></div>
+<div class="font-extrabold text-sm text-slate-800">فرع محاسن</div>
+<div class="text-xs text-slate-500 font-bold mt-1" dir="ltr">053 740 3090</div>
+</div>
+<div class="p-4 bg-slate-50 rounded-2xl border border-slate-200 text-center hover:border-brand-teal transition">
+<div class="text-brand-teal text-xl mb-1"><i class="fa-solid fa-location-dot"></i></div>
+<div class="font-extrabold text-sm text-slate-800">فرع الخالدية</div>
+<div class="text-xs text-slate-500 font-bold mt-1" dir="ltr">055 093 2600</div>
+</div>
+<div class="p-4 bg-slate-50 rounded-2xl border border-slate-200 text-center hover:border-brand-teal transition">
+<div class="text-brand-teal text-xl mb-1"><i class="fa-solid fa-location-dot"></i></div>
+<div class="font-extrabold text-sm text-slate-800">فرع المزروع</div>
+<div class="text-xs text-slate-500 font-bold mt-1" dir="ltr">053 463 4447</div>
+</div>
+<div class="p-4 bg-slate-50 rounded-2xl border border-slate-200 text-center hover:border-brand-teal transition">
+<div class="text-brand-teal text-xl mb-1"><i class="fa-solid fa-location-dot"></i></div>
+<div class="font-extrabold text-sm text-slate-800">فرع العيون</div>
+<div class="text-xs text-slate-500 font-bold mt-1" dir="ltr">055 396 2300</div>
+</div>
+<div class="p-4 bg-slate-50 rounded-2xl border border-slate-200 text-center hover:border-brand-teal transition">
+<div class="text-brand-teal text-xl mb-1"><i class="fa-solid fa-location-dot"></i></div>
+<div class="font-extrabold text-sm text-slate-800">فرع العيون الصناعية</div>
+<div class="text-xs text-slate-500 font-bold mt-1" dir="ltr">053 690 2220</div>
+</div>
+<div class="p-4 bg-slate-50 rounded-2xl border border-slate-200 text-center hover:border-brand-teal transition">
+<div class="text-brand-teal text-xl mb-1"><i class="fa-solid fa-location-dot"></i></div>
+<div class="font-extrabold text-sm text-slate-800">فرع الشقيق</div>
+<div class="text-xs text-slate-500 font-bold mt-1" dir="ltr">055 685 4440</div>
+</div>
+<div class="p-4 bg-slate-50 rounded-2xl border border-slate-200 text-center hover:border-brand-teal transition">
+<div class="text-brand-teal text-xl mb-1"><i class="fa-solid fa-location-dot"></i></div>
+<div class="font-extrabold text-sm text-slate-800">فرع الجفر</div>
+<div class="text-xs text-slate-500 font-bold mt-1" dir="ltr">055 089 2700</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Medical Clinics & Departments Section -->
+<section id="services" class="py-16 sm:py-24 bg-slate-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center max-w-3xl mx-auto mb-16">
+<span class="text-brand-teal font-black text-xs uppercase tracking-wider bg-brand-teal-light px-4 py-1.5 rounded-full">رعاية متخصصة</span>
+<h2 class="text-3xl sm:text-4xl font-black text-slate-900 mt-3 mb-4">عياداتنا وأقسامنا الطبية</h2>
+<p class="text-slate-600 text-sm sm:text-base font-medium">نقدم منظومة طبية شاملة بأحدث الأجهزة والتقنيات مع تطبيق أعلى بروتوكولات التعقيم والسلامة.</p>
+</div>
+<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+<!-- 1: Cosmetic Dentistry -->
+<div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300">
+<div class="w-14 h-14 rounded-2xl bg-brand-teal-light text-brand-teal flex items-center justify-center text-2xl mb-6">
+<i class="fa-solid fa-wand-magic-sparkles"></i>
+</div>
+<h3 class="text-xl font-black text-slate-900 mb-3">طب وتجميل الأسنان</h3>
+<p class="text-slate-600 text-sm leading-relaxed mb-4">ابتسامة هوليود المشرقة، الفينير واللومينير فائق الدقة، تبييض الأسنان بالليزر، وتوريد اللثة بأحدث الأجهزة.</p>
+<span class="text-xs font-black text-brand-teal flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-brand-lime"></i> نتائج تجميلية طبيعية وفورية</span>
+</div>
+<!-- 2: Orthodontics -->
+<div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300">
+<div class="w-14 h-14 rounded-2xl bg-brand-lime-light text-brand-lime-dark flex items-center justify-center text-2xl mb-6">
+<i class="fa-solid fa-teeth-open"></i>
+</div>
+<h3 class="text-xl font-black text-slate-900 mb-3">تقويم الأسنان والفكين</h3>
+<p class="text-slate-600 text-sm leading-relaxed mb-4">تقويم الأسنان الشفاف المتحرك، والتقويم المعدني والسيراميكي لمعالجة تزاحم الأسنان واعتلال الإطباق لكافة الأعمار.</p>
+<span class="text-xs font-black text-brand-teal flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-brand-lime"></i> خطط علاجية مرنة ومتابعة مستمرة</span>
+</div>
+<!-- 3: Dental Implants -->
+<div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300">
+<div class="w-14 h-14 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center text-2xl mb-6">
+<i class="fa-solid fa-tooth"></i>
+</div>
+<h3 class="text-xl font-black text-slate-900 mb-3">زراعة وجراحة الأسنان</h3>
+<p class="text-slate-600 text-sm leading-relaxed mb-4">تعويض الأسنان المفقودة بزرعات عالمية معتمدة تدوم طويلاً، وخلع ضروس العقل المطمورة بدون ألم وبأمان تام.</p>
+<span class="text-xs font-black text-brand-teal flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-brand-lime"></i> ضمان معتمد ونسب نجاح قياسية</span>
+</div>
+<!-- 4: Root Canal -->
+<div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300">
+<div class="w-14 h-14 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center text-2xl mb-6">
+<i class="fa-solid fa-syringe"></i>
+</div>
+<h3 class="text-xl font-black text-slate-900 mb-3">علاج العصب وجذور الأسنان</h3>
+<p class="text-slate-600 text-sm leading-relaxed mb-4">تنظيف وسحب العصب بدقة متناهية بجلسة واحدة باستخدام التقنيات الدورانية الرقمية مع الحشوات التجميلية المتينة.</p>
+<span class="text-xs font-black text-brand-teal flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-brand-lime"></i> إنهاء الألم بأعلى درجات الراحة</span>
+</div>
+<!-- 5: Pediatric Dentistry -->
+<div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300">
+<div class="w-14 h-14 rounded-2xl bg-rose-50 text-rose-600 flex items-center justify-center text-2xl mb-6">
+<i class="fa-solid fa-child"></i>
+</div>
+<h3 class="text-xl font-black text-slate-900 mb-3">طب أسنان الأطفال</h3>
+<p class="text-slate-600 text-sm leading-relaxed mb-4">عيادة مجهزة بأسلوب ودود لكسر خوف الطفل، مع تطبيق جلسات الفلورايد الوقائية وسد الشقوق لحماية الأسنان من التسوس.</p>
+<span class="text-xs font-black text-brand-teal flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-brand-lime"></i> تجربة مريحة وممتعة لطفلك</span>
+</div>
+<!-- 6: Dermatology & Laser -->
+<div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300">
+<div class="w-14 h-14 rounded-2xl bg-purple-50 text-purple-600 flex items-center justify-center text-2xl mb-6">
+<i class="fa-solid fa-spa"></i>
+</div>
+<h3 class="text-xl font-black text-slate-900 mb-3">قسم الجلدية والتجميل والليزر</h3>
+<p class="text-slate-600 text-sm leading-relaxed mb-4">إزالة الشعر بالليزر المتطور، جلسات النضارة، حقن الفيلر والبوتوكس، وتنظيف البشرة العميق والهيدرافيشل بأيدي أخصائيات معتمدات.</p>
+<span class="text-xs font-black text-brand-teal flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-brand-lime"></i> إشراقة ونضارة تدوم</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Pricing & Offers Section -->
+<section id="prices" class="py-16 sm:py-24 bg-white">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center max-w-3xl mx-auto mb-16">
+<span class="text-brand-lime-dark font-black text-xs uppercase tracking-wider bg-brand-lime-light px-4 py-1.5 rounded-full">أسعار واضحة ومنافسة</span>
+<h2 class="text-3xl sm:text-4xl font-black text-slate-900 mt-3 mb-4">عروض وباقات مجمع الأسرة</h2>
+<p class="text-slate-600 text-sm sm:text-base font-medium">احصل على أفضل الخدمات بأعلى جودة مع تسهيلات الدفع والتقسيط عبر تابي وتمارا بدون أي فوائد.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8 items-stretch">
+<!-- Card 1: Checkup -->
+<div class="bg-slate-50 rounded-3xl p-8 border border-slate-200 flex flex-col justify-between hover:border-brand-teal transition">
+<div>
+<div class="text-xs font-black text-slate-400 mb-2">الفحص الشامل</div>
+<h3 class="text-2xl font-black text-slate-900 mb-4">الكشف والاستشارة</h3>
+<div class="flex items-baseline gap-2 mb-6">
+<span class="text-4xl font-black text-brand-teal">50</span>
+<span class="text-sm font-bold text-slate-600">ريال فقط</span>
+</div>
+<ul class="space-y-3 text-sm text-slate-600 font-bold mb-8">
+<li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-lime"></i> فحص سريري دقيق للأسنان واللثة</li>
+<li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-lime"></i> إعداد خطة علاجية متكاملة</li>
+<li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-lime"></i> استشارة طبيب أخصائي</li>
+</ul>
+</div>
+<a href="#booking" class="w-full text-center py-3 bg-white border-2 border-brand-teal text-brand-teal font-black rounded-xl hover:bg-brand-teal hover:text-white transition">حجز موعد كشف</a>
+</div>
+<!-- Card 2: Hollywood Smile & Whitening (Featured) -->
+<div class="bg-gradient-to-b from-brand-teal to-brand-teal-dark text-white rounded-3xl p-8 relative shadow-2xl shadow-brand-teal/30 flex flex-col justify-between transform md:-translate-y-2">
+<div class="absolute -top-3.5 right-1/2 translate-x-1/2 bg-brand-lime text-slate-900 font-black text-xs px-4 py-1 rounded-full uppercase shadow">
+العرض المميز
+</div>
+<div>
+<div class="text-xs font-black text-teal-100 mb-2">التجميل والابتسامة</div>
+<h3 class="text-2xl font-black mb-4">ابتسامة هوليود وتبييض الليزر</h3>
+<div class="flex items-baseline gap-2 mb-6">
+<span class="text-4xl font-black text-brand-lime">1,500</span>
+<span class="text-sm font-bold text-teal-100">ريال / تبدأ من</span>
+</div>
+<ul class="space-y-3 text-sm text-teal-50 font-bold mb-8">
+<li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-lime"></i> تبييض ليزر فعال وسريع</li>
+<li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-lime"></i> تنظيف عميق للجير والتصبغات</li>
+<li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-lime"></i> تقسيط 4 دفعات مريحة عبر تابي وتمارا</li>
+<li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-lime"></i> متوفر في كافة الفروع الـ 8 بالأحساء</li>
+</ul>
+</div>
+<a href="#booking" class="w-full text-center py-3.5 bg-brand-lime text-slate-900 font-black rounded-xl hover:bg-white transition shadow-lg">احصل على العرض الآن</a>
+</div>
+<!-- Card 3: Implants & Prosthetics -->
+<div class="bg-slate-50 rounded-3xl p-8 border border-slate-200 flex flex-col justify-between hover:border-brand-teal transition">
+<div>
+<div class="text-xs font-black text-slate-400 mb-2">الزراعة والتركيبات</div>
+<h3 class="text-2xl font-black text-slate-900 mb-4">زراعة الأسنان والتركيبات</h3>
+<div class="flex items-baseline gap-2 mb-6">
+<span class="text-3xl font-black text-brand-teal">استشارة مجانية</span>
+</div>
+<ul class="space-y-3 text-sm text-slate-600 font-bold mb-8">
+<li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-lime"></i> زرعات ألمانية وسويسرية معتمدة</li>
+<li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-lime"></i> تيجان وجسور الزيركون الطبيعية</li>
+<li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-lime"></i> خطط سداد وتقسيط مرنة</li>
+</ul>
+</div>
+<a href="#booking" class="w-full text-center py-3 bg-white border-2 border-brand-teal text-brand-teal font-black rounded-xl hover:bg-brand-teal hover:text-white transition">طلب استشارة زراعة</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Us Trust Section -->
+<section id="about" class="py-16 bg-slate-900 text-white">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+<div class="p-6">
+<div class="text-4xl text-brand-lime mb-3"><i class="fa-solid fa-award"></i></div>
+<div class="text-3xl font-black mb-1">+30 سنة</div>
+<div class="text-slate-400 text-sm font-bold">خبرة وتاريخ مشرف بالأحساء</div>
+</div>
+<div class="p-6">
+<div class="text-4xl text-brand-teal mb-3"><i class="fa-solid fa-hospital"></i></div>
+<div class="text-3xl font-black mb-1">8 فروع</div>
+<div class="text-slate-400 text-sm font-bold">تغطية لكافة مدن وقرى الأحساء</div>
+</div>
+<div class="p-6">
+<div class="text-4xl text-brand-lime mb-3"><i class="fa-solid fa-wallet"></i></div>
+<div class="text-3xl font-black mb-1">تابي وتمارا</div>
+<div class="text-slate-400 text-sm font-bold">تقسيط مريح وسداد ميسر</div>
+</div>
+<div class="p-6">
+<div class="text-4xl text-brand-teal mb-3"><i class="fa-solid fa-shield-halved"></i></div>
+<div class="text-3xl font-black mb-1">كل التأمينات</div>
+<div class="text-slate-400 text-sm font-bold">استقبال لكبرى شركات التأمين</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-slate-950 text-white pt-16 pb-8 border-t border-slate-800">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid md:grid-cols-12 gap-10 pb-12 border-b border-slate-800">
+<!-- Brand Info & Socials -->
+<div class="md:col-span-5 space-y-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-teal to-brand-lime flex items-center justify-center text-white font-bold">
+<i class="fa-solid fa-tooth text-xl"></i>
+</div>
+<span class="text-xl font-black">الأسرة لطب الأسنان والجلدية</span>
+</div>
+<p class="text-slate-400 text-sm leading-relaxed max-w-sm">
+صرح طبي متكامل يخدم أهالي الأحساء منذ أكثر من 30 عاماً، بأحدث تقنيات طب الأسنان وجراحة الفم وقسم التجميل والجلدية والليزر.
+</p>
+<div class="flex items-center gap-3 pt-2">
+<a href="https://instagram.com/familydenclinic" target="_blank" class="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-300 hover:text-white hover:bg-pink-600 transition" title="Instagram">
+<i class="fa-brands fa-instagram text-lg"></i>
+</a>
+<a href="https://tiktok.com/@familyadental" target="_blank" class="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-300 hover:text-white hover:bg-black transition" title="TikTok">
+<i class="fa-brands fa-tiktok text-lg"></i>
+</a>
+<a href="https://wa.me/966537403090" target="_blank" class="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-300 hover:text-white hover:bg-emerald-600 transition" title="WhatsApp">
+<i class="fa-brands fa-whatsapp text-lg"></i>
+</a>
+</div>
+</div>
+<!-- Central Contact Points -->
+<div class="md:col-span-4 space-y-3">
+<h4 class="text-base font-black text-white mb-4">قنوات التواصل المركزية</h4>
+<div class="space-y-3 text-sm text-slate-400 font-semibold">
+<div class="flex items-center gap-2.5">
+<i class="fa-solid fa-phone text-brand-teal"></i>
+<span class="text-slate-300">رقم الحجز والاستفسار:</span>
+<a href="tel:0537403090" dir="ltr" class="hover:text-brand-lime transition font-bold">053 740 3090</a>
+</div>
+<div class="flex items-center gap-2.5">
+<i class="fa-solid fa-envelope text-brand-teal"></i>
+<span class="text-slate-300">البريد الإلكتروني:</span>
+<a href="mailto:Family.denclinic2@gmail.com" class="hover:text-brand-lime transition">Family.denclinic2@gmail.com</a>
+</div>
+<div class="flex items-center gap-2.5">
+<i class="fa-solid fa-location-dot text-brand-teal"></i>
+<span>المملكة العربية السعودية - المنطقة الشرقية - الأحساء</span>
+</div>
+</div>
+</div>
+<!-- Navigation Quick Links -->
+<div class="md:col-span-3 space-y-3">
+<h4 class="text-base font-black text-white mb-4">روابط سريعة</h4>
+<ul class="space-y-2 text-sm text-slate-400 font-semibold">
+<li><a href="#home" class="hover:text-white transition">الرئيسية</a></li>
+<li><a href="#branches" class="hover:text-white transition">فروع الأحساء (8)</a></li>
+<li><a href="#services" class="hover:text-white transition">عياداتنا وأقسامنا</a></li>
+<li><a href="#prices" class="hover:text-white transition">الأسعار والعروض</a></li>
+<li><a href="#booking" class="hover:text-white transition">حجز موعد مباشر</a></li>
+</ul>
+</div>
+</div>
+<div class="pt-8 text-center text-xs text-slate-500 font-medium">
+جميع الحقوق محفوظة © 2026 مجمع الأسرة لطب الأسنان.
+</div>
+</div>
+</footer>
+<!-- WhatsApp Floating Quick Button -->
+<a href="https://wa.me/966537403090" target="_blank" class="fixed bottom-6 left-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition duration-300" title="تواصل واتساب">
+<i class="fa-brands fa-whatsapp text-3xl"></i>
+</a>
+<!-- Interactive Logic Scripts -->
+<script>
+// Official branches database
+const branches = [
+{
+name: "فرع السلمانية",
+phone: "0553254700",
+phoneDisplay: "055 325 4700",
+hours: "من 9 صباحاً إلى 9 مساءً",
+mapUrl: "https://maps.app.goo.gl/oDPXirDjBGDYZ1u5A",
+badge: "الفرع المعتمد"
+},
+{
+name: "فرع محاسن",
+phone: "0537403090",
+phoneDisplay: "053 740 3090",
+hours: "من 8 صباحاً إلى 10 مساءً",
+mapUrl: "https://maps.app.goo.gl/32cqZWaN3CawL19CA",
+badge: "ساعات عمل ممتدة"
+},
+{
+name: "فرع الخالدية",
+phone: "0550932600",
+phoneDisplay: "055 093 2600",
+hours: "من 9 صباحاً إلى 9 مساءً",
+mapUrl: "https://maps.app.goo.gl/8qCWfKhKqvT2BgJ57",
+badge: "موقع استراتيجي"
+},
+{
+name: "فرع المزروع",
+phone: "0534634447",
+phoneDisplay: "053 463 4447",
+hours: "من 1 مساءً إلى 9 مساءً",
+mapUrl: "https://maps.app.goo.gl/atdF1Dh3jvJYZdm4A",
+badge: "الفترة المسائية"
+},
+{
+name: "فرع العيون 1",
+phone: "0553962300",
+phoneDisplay: "055 396 2300",
+hours: "من 1 مساءً إلى 9 مساءً",
+mapUrl: "https://maps.app.goo.gl/dddMu8UtgznJ6H288",
+badge: "خدمة أهالي العيون"
+},
+{
+name: "فرع العيون الصناعية",
+phone: "0536902220",
+phoneDisplay: "053 690 2220",
+hours: "من 9 صباحاً إلى 9 مساءً",
+mapUrl: "https://maps.app.goo.gl/xccWCVxsALyNUJjq9",
+badge: "المنطقة الصناعية"
+},
+{
+name: "فرع الشقيق",
+phone: "0556854440",
+phoneDisplay: "055 685 4440",
+hours: "من 9 صباحاً إلى 9 مساءً",
+mapUrl: "https://maps.app.goo.gl/GSjZfgh7WZGarKZ67",
+badge: "فرع الشقيق"
+},
+{
+name: "فرع الجفر",
+phone: "0550892700",
+phoneDisplay: "055 089 2700",
+hours: "من 9 صباحاً إلى 9 مساءً",
+mapUrl: "https://maps.app.goo.gl/ArGiApru7Uv6yhTo7",
+badge: "فرع الجفر"
+}
+];
+// Dynamic Branch Switcher
+function renderBranch(index) {
+const b = branches[index];
+const display = document.getElementById('branchDisplay');
+const intlPhone = '966' + b.phone.substring(1);
+display.innerHTML = `
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-slate-200">
+<div>
+<span class="inline-block text-xs font-black px-3.5 py-1 bg-brand-teal-light text-brand-teal rounded-full mb-2">￼
+<h3 class="text-3xl font-black text-slate-900">{b.name}</h3>
+<p class="text-slate-500 text-sm font-semibold mt-1">خدمات طب الأسنان والجلدية والتجميل</p>
+</div>
+<div class="flex flex-wrap items-center gap-3">
+<a href="tel:${b.phone}" class="inline-flex items-center gap-2 bg-slate-900 text-white px-5 py-3 rounded-xl font-bold text-sm hover:bg-slate-800 transition shadow">
+<i class="fa-solid fa-phone"></i>
+<span>اتصال هاتفي</span>
+</a>
+<a href="https://wa.me/${intlPhone}" target="_blank" class="inline-flex items-center gap-2 bg-emerald-600 text-white px-5 py-3 rounded-xl font-bold text-sm hover:bg-emerald-700 transition shadow">
+<i class="fa-brands fa-whatsapp text-lg"></i>
+<span>واتساب الفرع</span>
+</a>
+<a href="${b.mapUrl}" target="_blank" class="inline-flex items-center gap-2 bg-brand-teal text-white px-5 py-3 rounded-xl font-bold text-sm hover:bg-brand-teal-dark transition shadow">
+<i class="fa-solid fa-location-arrow"></i>
+<span>موقع الفرع في الخريطة</span>
+</a>
+</div>
+</div>
+<div class="grid sm:grid-cols-2 gap-6 pt-6">
+<div class="flex items-start gap-4 p-4 rounded-2xl bg-white border border-slate-200 shadow-sm">
+<div class="w-12 h-12 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center text-xl flex-shrink-0">
+<i class="fa-regular fa-clock"></i>
+</div>
+<div>
+<div class="text-xs font-bold text-slate-400">أوقات العمل الرسمية</div>
+<div class="text-base font-black text-slate-800 mt-0.5">${b.hours}</div>
+<div class="text-xs text-slate-500 font-semibold mt-1">يومياً عدا الإجازات الأسبوعية الرسمية</div>
+</div>
+</div>
+<div class="flex items-start gap-4 p-4 rounded-2xl bg-white border border-slate-200 shadow-sm">
+<div class="w-12 h-12 rounded-xl bg-brand-teal-light text-brand-teal flex items-center justify-center text-xl flex-shrink-0">
+<i class="fa-solid fa-headset"></i>
+</div>
+<div>
+<div class="text-xs font-bold text-slate-400">رقم التواصل المباشر</div>
+<div class="text-base font-black text-slate-800 mt-0.5" dir="ltr">${b.phoneDisplay}</div>
+<div class="text-xs text-slate-500 font-semibold mt-1">استقبال وحجوزات واستفسارات</div>
+</div>
+</div>
+</div>
+`;
+// Active Tab Style Refresh
+const buttons = document.querySelectorAll('.branch-btn');
+buttons.forEach((btn, idx) => {
+if (idx === index) {
+btn.classList.add('tab-active');
+} else {
+btn.classList.remove('tab-active');
+}
+});
+}
+// Initialize default view
+renderBranch(0);
+// Instant Form Submission to Selected Branch WhatsApp
+document.getElementById('heroBookingForm').addEventListener('submit', function(e) {
+e.preventDefault();
+const name = document.getElementById('patientName').value.trim();
+const phone = document.getElementById('patientPhone').value.trim();
+const branchSelect = document.getElementById('selectedBranch');
+const branchPhone = branchSelect.value;
+const branchName = branchSelect.options[branchSelect.selectedIndex].text;
+if(!branchPhone) {
+alert('الرجاء اختيار الفرع الأقرب لك.');
+return;
+}
+const message = ⁠السلام عليكم ورحمة الله وبركاته،\nأود حجز موعد واستشارة في *${branchName}*:\n👤 *الاسم:* ${name}\n📱 *رقم الجوال:* ${phone}⁠;
+const encoded = encodeURIComponent(message);
+const whatsappUrl = ⁠https://wa.me/${branchPhone}?text=${encoded}⁠;
+window.open(whatsappUrl, '_blank');
+});
+</script>
+</body>
+</html>
