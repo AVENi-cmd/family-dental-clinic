@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Family Dental Clinic - Al Ahsa</title>
+  <title>مجمع الأسرة لطب الأسنان والجلدية - الأحساء</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,12 +14,13 @@
     :root {
       --brand-teal: #00A5B5;
       --brand-teal-dark: #007E8C;
-      --brand-teal-light: #E0F7FA;
+      --brand-teal-light: #E6F8F9;
       --brand-lime: #8CC63F;
       --brand-lime-dark: #6C9F2A;
-      --brand-lime-light: #F4F9EC;
+      --brand-lime-light: #F2F9E8;
       --brand-dark: #0F172A;
-      --brand-surface: #F8FAFC;
+      --bg-mint: #F4FBF9; /* لون النعناع الطبي الهادئ والمريح للعين */
+      --card-bg: #FFFFFF;
     }
     * {
       box-sizing: border-box;
@@ -28,7 +29,7 @@
       font-family: 'Cairo', sans-serif;
     }
     body {
-      background-color: var(--brand-surface);
+      background-color: var(--bg-mint);
       color: #334155;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
@@ -42,6 +43,7 @@
       margin: 0 auto;
       padding: 0 16px;
     }
+    
     /* Top Bar */
     .topbar {
       background: linear-gradient(90deg, var(--brand-teal-dark), var(--brand-teal), var(--brand-lime-dark));
@@ -61,14 +63,15 @@
       border-radius: 20px;
       font-size: 11px;
     }
+    
     /* Header */
     header {
       background: #ffffff;
-      border-bottom: 1px solid #e2e8f0;
+      border-bottom: 1px solid #e2f1ed;
       position: sticky;
       top: 0;
       z-index: 50;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      box-shadow: 0 2px 10px rgba(0, 165, 181, 0.05);
     }
     .nav-wrap {
       height: 80px;
@@ -87,7 +90,7 @@
       border-radius: 50%;
       object-fit: cover;
       border: 2px solid var(--brand-lime);
-      box-shadow: 0 3px 8px rgba(0, 165, 181, 0.2);
+      box-shadow: 0 3px 8px rgba(0, 165, 181, 0.15);
     }
     .logo-text h1 {
       font-size: 20px;
@@ -115,9 +118,10 @@
     .nav-btn:hover {
       background: var(--brand-teal-dark);
     }
+
     /* Hero */
     .hero {
-      background: linear-gradient(180deg, var(--brand-teal-light) 0%, #ffffff 100%);
+      background: linear-gradient(180deg, #E6F8F9 0%, var(--bg-mint) 100%);
       padding: 40px 0 60px 0;
     }
     .hero-grid {
@@ -154,7 +158,7 @@
     }
     .hero-desc {
       font-size: 16px;
-      color: #64748b;
+      color: #556980;
       margin-bottom: 24px;
     }
     .features-row {
@@ -164,10 +168,11 @@
     }
     .feat-card {
       background: #ffffff;
-      border: 1px solid #e2e8f0;
+      border: 1px solid #d5ece5;
       border-radius: 16px;
       padding: 14px;
       text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
     }
     .feat-card i {
       font-size: 22px;
@@ -183,13 +188,14 @@
       font-size: 11px;
       color: #64748b;
     }
+
     /* Booking Card */
     .booking-box {
       background: #ffffff;
       border-radius: 24px;
       padding: 28px;
       border: 2px solid var(--brand-teal);
-      box-shadow: 0 15px 35px rgba(0, 165, 181, 0.15);
+      box-shadow: 0 15px 35px rgba(0, 165, 181, 0.12);
     }
     .booking-box h3 {
       font-size: 22px;
@@ -249,6 +255,7 @@
       opacity: 0.95;
       transform: translateY(-1px);
     }
+
     /* Section Headings */
     .section-title {
       text-align: center;
@@ -264,6 +271,268 @@
       font-size: 14px;
       margin-top: 4px;
     }
+
+    /* =======================================
+       CAROUSEL / SLIDER التمرير الأفقي لجميع الخدمات
+       مع صور واقعية احترافية
+       ======================================= */
+    .carousel-wrapper {
+      position: relative;
+      margin: 20px 0 40px;
+      padding: 0 10px;
+    }
+    .carousel-track-container {
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      padding: 15px 5px 25px 5px;
+    }
+    .carousel-track-container::-webkit-scrollbar {
+      display: none;
+    }
+    .carousel-track {
+      display: flex;
+      gap: 18px;
+      width: max-content;
+    }
+    .carousel-card {
+      width: 295px;
+      background: #ffffff;
+      border: 1px solid #d5ece5;
+      border-radius: 22px;
+      padding: 22px;
+      box-shadow: 0 6px 18px rgba(0, 165, 181, 0.06);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    .carousel-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--brand-teal);
+      box-shadow: 0 12px 28px rgba(0, 165, 181, 0.16);
+    }
+    .service-badge {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      background: var(--brand-lime-light);
+      color: var(--brand-lime-dark);
+      font-size: 11px;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 12px;
+      border: 1px solid rgba(140, 198, 63, 0.3);
+      z-index: 2;
+    }
+    .service-real-img {
+      width: 100%;
+      height: 150px;
+      border-radius: 16px;
+      object-fit: cover;
+      margin-bottom: 16px;
+      border: 1px solid #e2f1ed;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+    }
+    .carousel-card h3 {
+      font-size: 18px;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+    .carousel-card p {
+      font-size: 13px;
+      color: #64748b;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .btn-service-book {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 12px;
+      background: var(--brand-teal);
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 13px;
+      border-radius: 12px;
+      transition: all 0.2s ease;
+    }
+    .btn-service-book:hover {
+      background: var(--brand-teal-dark);
+    }
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 1.5px solid #cbd5e1;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      cursor: pointer;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+      z-index: 10;
+      transition: all 0.2s ease;
+    }
+    .carousel-btn:hover {
+      background: var(--brand-teal);
+      color: #ffffff;
+      border-color: var(--brand-teal);
+      transform: translateY(-50%) scale(1.08);
+    }
+    .carousel-btn.prev-btn { right: -14px; }
+    .carousel-btn.next-btn { left: -14px; }
+    @media (max-width: 768px) {
+      .carousel-btn { display: none; }
+      .carousel-wrapper { padding: 0; }
+    }
+
+    /* =======================================
+       قسم التقسيط (تابي، تمارا، تسهيل)
+       ======================================= */
+    .installment-section {
+      background: #ffffff;
+      border: 2px solid #d5ece5;
+      border-radius: 28px;
+      padding: 40px 24px;
+      margin: 40px auto;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 165, 181, 0.06);
+    }
+    .installment-header h2 {
+      font-size: 30px;
+      font-weight: 900;
+      color: #0f172a;
+      margin-bottom: 6px;
+    }
+    .installment-header p {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--brand-lime-dark);
+      margin-bottom: 30px;
+    }
+    .installment-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+      max-width: 700px;
+      margin: 0 auto 30px;
+    }
+    .inst-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 20px;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+      min-width: 180px;
+      height: 90px;
+      transition: 0.2s;
+    }
+    .inst-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+    .btn-installment-action {
+      background: #8CC63F;
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: 800;
+      padding: 14px 40px;
+      border-radius: 14px;
+      display: inline-block;
+      transition: 0.2s;
+      box-shadow: 0 4px 14px rgba(140, 198, 63, 0.35);
+    }
+    .btn-installment-action:hover {
+      background: #78ab34;
+      transform: translateY(-2px);
+    }
+
+    /* =======================================
+       قسم آراء مراجعي مجمع الأسرة (Testimonials)
+       ======================================= */
+    .testimonial-wrapper {
+      position: relative;
+      max-width: 750px;
+      margin: 0 auto 50px;
+      padding: 0 20px;
+    }
+    .testimonial-card {
+      background: #ffffff;
+      border: 1.5px solid #d5ece5;
+      border-radius: 24px;
+      padding: 40px 30px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 165, 181, 0.08);
+      position: relative;
+    }
+    .quote-icon {
+      font-size: 36px;
+      color: var(--brand-lime);
+      margin-bottom: 12px;
+      line-height: 1;
+    }
+    .testimonial-text {
+      font-size: 16px;
+      color: #334155;
+      line-height: 1.8;
+      margin-bottom: 24px;
+      min-height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .reviewer-name {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--brand-lime-dark);
+      margin-bottom: 8px;
+    }
+    .stars {
+      color: #f59e0b;
+      font-size: 16px;
+      letter-spacing: 2px;
+    }
+    .test-nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      color: #64748b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      transition: 0.2s;
+    }
+    .test-nav-btn:hover {
+      background: var(--brand-teal);
+      color: #ffffff;
+      border-color: var(--brand-teal);
+    }
+    .test-nav-btn.prev { right: -6px; }
+    .test-nav-btn.next { left: -6px; }
+
     /* Branches Section */
     .branches-grid {
       display: grid;
@@ -317,163 +586,144 @@
     .btn-call { background: #0f172a; }
     .btn-wa { background: #10b981; }
     .btn-map { background: #ffffff; color: #334155; border: 1px solid #cbd5e1; }
-    
+
     /* =======================================
-       CAROUSEL / SLIDER التمرير الأفقي لجميع الخدمات
+       بوت المحادثة التفاعلي الذكي (Chatbot Widget)
        ======================================= */
-    .carousel-wrapper {
-      position: relative;
-      margin: 20px 0 40px;
-      padding: 0 10px;
-    }
-    .carousel-track-container {
-      overflow-x: auto;
-      scroll-behavior: smooth;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none; /* إخفاء شريط التمرير الافتراضي */
-      padding: 15px 5px 25px 5px;
-    }
-    .carousel-track-container::-webkit-scrollbar {
-      display: none;
-    }
-    .carousel-track {
-      display: flex;
-      gap: 18px;
-      width: max-content;
-    }
-    .carousel-card {
-      width: 290px;
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
-      border-radius: 22px;
-      padding: 24px 20px;
-      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      position: relative;
-      transition: all 0.3s ease;
-    }
-    .carousel-card:hover {
-      transform: translateY(-6px);
-      border-color: var(--brand-teal);
-      box-shadow: 0 12px 28px rgba(0, 165, 181, 0.16);
-    }
-    .service-badge {
-      position: absolute;
-      top: 18px;
-      left: 18px;
-      background: var(--brand-lime-light);
-      color: var(--brand-lime-dark);
-      font-size: 11px;
-      font-weight: 800;
-      padding: 3px 10px;
-      border-radius: 12px;
-      border: 1px solid rgba(140, 198, 63, 0.3);
-    }
-    .service-icon-box {
+    .chat-bubble-btn {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
       width: 60px;
       height: 60px;
-      border-radius: 18px;
-      background: linear-gradient(135deg, var(--brand-teal-light), #ffffff);
-      border: 1.5px solid var(--brand-teal);
-      color: var(--brand-teal);
+      border-radius: 50%;
+      background: var(--brand-teal);
+      color: #ffffff;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 26px;
-      margin-bottom: 16px;
-      box-shadow: 0 4px 12px rgba(0, 165, 181, 0.15);
-    }
-    .carousel-card h3 {
-      font-size: 18px;
-      font-weight: 800;
-      color: #0f172a;
-      margin-bottom: 8px;
-      line-height: 1.3;
-    }
-    .carousel-card p {
-      font-size: 13px;
-      color: #64748b;
-      line-height: 1.6;
-      margin-bottom: 20px;
-    }
-    .btn-service-book {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      width: 100%;
-      padding: 12px;
-      background: var(--brand-teal);
-      color: #ffffff;
-      font-weight: 700;
-      font-size: 13px;
-      border-radius: 12px;
-      transition: all 0.2s ease;
-    }
-    .btn-service-book:hover {
-      background: var(--brand-teal-dark);
-      box-shadow: 0 4px 12px rgba(0, 165, 181, 0.3);
-    }
-    /* أزرار الأسهم يميناً ويساراً */
-    .carousel-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: #ffffff;
-      border: 1.5px solid #cbd5e1;
-      color: #0f172a;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 18px;
       cursor: pointer;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-      z-index: 10;
-      transition: all 0.2s ease;
+      box-shadow: 0 6px 22px rgba(0, 165, 181, 0.4);
+      z-index: 999;
+      transition: transform 0.2s;
     }
-    .carousel-btn:hover {
+    .chat-bubble-btn:hover {
+      transform: scale(1.08);
+    }
+    .chat-box-modal {
+      position: fixed;
+      bottom: 95px;
+      right: 24px;
+      width: 360px;
+      max-width: calc(100vw - 40px);
+      height: 520px;
+      background: #ffffff;
+      border-radius: 22px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.18);
+      display: none;
+      flex-direction: column;
+      overflow: hidden;
+      z-index: 1000;
+      border: 1px solid #d5ece5;
+    }
+    .chat-header {
       background: var(--brand-teal);
       color: #ffffff;
-      border-color: var(--brand-teal);
-      transform: translateY(-50%) scale(1.08);
-    }
-    .carousel-btn.prev-btn {
-      right: -14px;
-    }
-    .carousel-btn.next-btn {
-      left: -14px;
-    }
-    @media (max-width: 768px) {
-      .carousel-btn {
-        display: none; /* في شاشات الجوال يتم السحب باللمس بشكل طبيعي ومريح */
-      }
-      .carousel-wrapper {
-        padding: 0;
-      }
-    }
-    /* مؤشرات النقاط السفلية (Dots) */
-    .carousel-dots {
+      padding: 16px;
       display: flex;
-      justify-content: center;
-      gap: 8px;
-      margin-top: 10px;
+      align-items: center;
+      justify-content: space-between;
     }
-    .dot {
-      width: 10px;
-      height: 10px;
+    .chat-header-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .chat-header-info img {
+      width: 36px;
+      height: 36px;
       border-radius: 50%;
-      background: #cbd5e1;
-      transition: all 0.3s;
+      background: #fff;
     }
-    .dot.active {
-      width: 28px;
-      border-radius: 10px;
+    .chat-body {
+      flex: 1;
+      padding: 16px;
+      background: var(--bg-mint);
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .chat-msg {
+      background: #ffffff;
+      padding: 12px 16px;
+      border-radius: 16px;
+      border-bottom-right-radius: 4px;
+      font-size: 13.5px;
+      color: #1e293b;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+      max-width: 85%;
+      align-self: flex-start;
+      border: 1px solid #e2f1ed;
+    }
+    .chat-msg.user {
       background: var(--brand-teal);
+      color: #ffffff;
+      border-bottom-right-radius: 16px;
+      border-bottom-left-radius: 4px;
+      align-self: flex-end;
+    }
+    .chat-time {
+      font-size: 10px;
+      color: #94a3b8;
+      margin-top: 4px;
+      display: block;
+      text-align: left;
+    }
+    .chat-quick-btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 6px;
+    }
+    .chat-pill-btn {
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      color: #334155;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .chat-pill-btn:hover {
+      border-color: var(--brand-teal);
+      color: var(--brand-teal);
+    }
+    .chat-footer {
+      padding: 12px;
+      background: #ffffff;
+      border-top: 1px solid #e2f1ed;
+      display: flex;
+      gap: 8px;
+    }
+    .chat-input {
+      flex: 1;
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
+      padding: 8px 12px;
+      font-size: 13px;
+      outline: none;
+    }
+    .chat-send-btn {
+      background: var(--brand-teal);
+      color: #ffffff;
+      border: none;
+      width: 40px;
+      border-radius: 10px;
+      cursor: pointer;
     }
 
     /* Floating WhatsApp */
@@ -491,7 +741,7 @@
       justify-content: center;
       font-size: 30px;
       box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
-      z-index: 100;
+      z-index: 999;
     }
   </style>
 </head>
@@ -504,7 +754,7 @@
       <i class="fa-solid fa-award"></i> خبرة أكثر من 30 سنة بالأحساء • نستقبل كافة شركات التأمين
     </div>
     <div>
-      <span class="badge-tabby">تقسيط تابي وتمارا متاح</span>
+      <span class="badge-tabby">تقسيط تابي وتمارا وتسهيل متاح</span>
       <a href="tel:0537403090" style="margin-right: 8px;"><i class="fa-solid fa-phone"></i> 0537403090</a>
     </div>
   </div>
@@ -531,13 +781,13 @@
         <div>
           <div class="hero-tag">ابتسامة أجمل.. وعناية متكاملة تدوم</div>
           <h2 class="hero-title">عناية طبية متقدمة بأقرب فرع منك في <span>الأحساء</span></h2>
-          <p class="hero-desc">أكثر من 30 عاماً من الثقة عبر 8 فروع متطورة تغطي كافة مدن وقرى الأحساء، مع خيارات دفع مرنة بالتقسيط.</p>
+          <p class="hero-desc">أكثر من 30 عاماً من الثقة عبر 8 فروع متطورة تغطي كافة مدن وقرى الأحساء، مع خيارات دفع مرنة بالتقسيط المريح.</p>
           
           <div class="features-row">
             <div class="feat-card">
               <i class="fa-solid fa-credit-card" style="color: var(--brand-teal);"></i>
               <h4>تابي وتمارا</h4>
-              <p>تقسيط 4 دفعات</p>
+              <p>تقسيط بسعر الكاش</p>
             </div>
             <div class="feat-card">
               <i class="fa-solid fa-shield-heart" style="color: #10b981;"></i>
@@ -595,7 +845,7 @@
 
   <!-- =======================================
        قسم شريط خدمات المجمع الشاملة (Carousel Slider) 
-       بدون أسعار، مع أزرار التنقل بالجانبين
+       مع صور واقعية احترافية بدون رسومات
        ======================================= -->
   <section class="container" style="padding: 50px 16px 20px;">
     <div class="section-title">
@@ -604,7 +854,6 @@
     </div>
 
     <div class="carousel-wrapper">
-      <!-- أزرار التمرير الجانبية -->
       <button class="carousel-btn prev-btn" onclick="slideCarousel('right')" aria-label="السابق">
         <i class="fa-solid fa-chevron-right"></i>
       </button>
@@ -612,7 +861,6 @@
         <i class="fa-solid fa-chevron-left"></i>
       </button>
 
-      <!-- حاوية البطاقات التمريرية -->
       <div class="carousel-track-container" id="servicesTrackContainer">
         <div class="carousel-track" id="servicesTrack">
           
@@ -620,9 +868,7 @@
           <div class="carousel-card">
             <span class="service-badge">الأكثر طلباً</span>
             <div>
-              <div class="service-icon-box">
-                <i class="fa-solid fa-wand-magic-sparkles"></i>
-              </div>
+              <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=600&q=80" alt="ابتسامة هوليوود" class="service-real-img">
               <h3>ابتسامة هوليوود وتجميل الأسنان</h3>
               <p>تصميم ابتسامة متناسقة وطبيعية باستخدام أرقى عدسات الفينير واللومينير الألمانية بأحدث التقنيات الرقمية.</p>
             </div>
@@ -636,9 +882,7 @@
           <div class="carousel-card">
             <span class="service-badge">تقسيط متاح</span>
             <div>
-              <div class="service-icon-box" style="border-color: var(--brand-lime); color: var(--brand-lime-dark);">
-                <i class="fa-solid fa-teeth-open"></i>
-              </div>
+              <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=600&q=80" alt="تقويم الأسنان" class="service-real-img">
               <h3>تقويم الأسنان والفكين</h3>
               <p>علاج إطباق الأسنان والفكين بأحدث تقنيات التقويم الشفاف غير المرئي والتقويم المعدني لكافة الأعمار.</p>
             </div>
@@ -652,9 +896,7 @@
           <div class="carousel-card">
             <span class="service-badge">ضمان طبي</span>
             <div>
-              <div class="service-icon-box" style="border-color: #2563eb; color: #2563eb;">
-                <i class="fa-solid fa-tooth"></i>
-              </div>
+              <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=600&q=80" alt="زراعة الأسنان" class="service-real-img">
               <h3>زراعة وجراحة الفم والأسنان</h3>
               <p>تعويض الأسنان المفقودة بأفضل الزرعات السويسرية والألمانية واستعادة وظيفة المضغ والابتسامة بدقة وأمان.</p>
             </div>
@@ -668,9 +910,7 @@
           <div class="carousel-card">
             <span class="service-badge">نتائج فورية</span>
             <div>
-              <div class="service-icon-box" style="border-color: #d97706; color: #d97706;">
-                <i class="fa-solid fa-sun"></i>
-              </div>
+              <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=600&q=80" alt="تبييض الأسنان" class="service-real-img">
               <h3>تبييض الأسنان بالليزر</h3>
               <p>جلسات تبييض احترافية متطورة تزيل التصبغات والاصفرار وتمنحك بياضاً ناصعاً ومشرقاً من أول جلسة بأمان تام.</p>
             </div>
@@ -682,11 +922,9 @@
 
           <!-- 5. قسم الجلدية والليزر والتجميل -->
           <div class="carousel-card">
-            <span class="service-badge">كفاءات متخصصة</span>
+            <span class="service-badge">طبيبات متخصصة</span>
             <div>
-              <div class="service-icon-box" style="border-color: #ec4899; color: #ec4899;">
-                <i class="fa-solid fa-spa"></i>
-              </div>
+              <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=600&q=80" alt="الجلدية والليزر" class="service-real-img">
               <h3>قسم الجلدية والليزر والتجميل</h3>
               <p>جلسات إزالة الشعر بالليزر، نضارة البشرة، حقن الفيلر والبوتوكس وخيوط الشد بإشراف نخبة من الطبيبات.</p>
             </div>
@@ -700,11 +938,9 @@
           <div class="carousel-card">
             <span class="service-badge">بدون ألم</span>
             <div>
-              <div class="service-icon-box" style="border-color: #0d9488; color: #0d9488;">
-                <i class="fa-solid fa-bolt"></i>
-              </div>
+              <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=600&q=80" alt="علاج العصب" class="service-real-img">
               <h3>سحب وعلاج عصب الأسنان</h3>
-              <p>إنهاء آلام الأسنان المزمنة وسحب العصب بجلسة واحدة باستخدام أجهزة الروتاري الإلكترونية الدقيقة.</p>
+              <p>إنهاء آلام الأسنان المزمنة وسحب العصب بجلسة واحدة غالباً باستخدام أجهزة الروتاري الإلكترونية الدقيقة.</p>
             </div>
             <a href="#booking" class="btn-service-book">
               <i class="fa-regular fa-calendar-check"></i>
@@ -716,11 +952,9 @@
           <div class="carousel-card">
             <span class="service-badge">عناية دورية</span>
             <div>
-              <div class="service-icon-box" style="border-color: #06b6d4; color: #06b6d4;">
-                <i class="fa-solid fa-hand-sparkles"></i>
-              </div>
+              <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=600&q=80" alt="تنظيف الأسنان" class="service-real-img">
               <h3>تنظيف وتلميع الأسنان واللثة</h3>
-              <p>إزالة التكلسات الجيرية العميقة المتراكمة وتلميع الأسنان بالموجات فوق الصوتية لحماية اللثة من الالتهابات.</p>
+              <p>إزالة التكلسات الجيرية المتراكمة وتلميع الأسنان بالموجات فوق الصوتية لحماية اللثة من الالتهابات والروائح.</p>
             </div>
             <a href="#booking" class="btn-service-book">
               <i class="fa-regular fa-calendar-check"></i>
@@ -730,11 +964,9 @@
 
           <!-- 8. طب أسنان الأطفال -->
           <div class="carousel-card">
-            <span class="service-badge">بيئة صديقة للطفل</span>
+            <span class="service-badge">بيئة مبهجة للطفل</span>
             <div>
-              <div class="service-icon-box" style="border-color: #7c3aed; color: #7c3aed;">
-                <i class="fa-solid fa-child-reaching"></i>
-              </div>
+              <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=600&q=80" alt="طب أسنان الأطفال" class="service-real-img">
               <h3>طب أسنان الأطفال</h3>
               <p>رعاية طبية لطيفة تراعي راحة طفلك لعلاج تسوس الأسنان اللبنية وتطبيق جلسات الفلورايد لحمايتها بدون خوف.</p>
             </div>
@@ -746,26 +978,94 @@
 
         </div>
       </div>
+    </div>
+  </section>
 
-      <!-- مؤشرات النقاط -->
-      <div class="carousel-dots" id="carouselDots">
-        <span class="dot active"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
+  <!-- =======================================
+       قسم التقسيط والتمويل (تابي، تمارا، تسهيل)
+       ======================================= -->
+  <section class="container">
+    <div class="installment-section">
+      <div class="installment-header">
+        <h2>إبتسم الآن، إدفع لاحقاً!</h2>
+        <p>قسط خدماتك بسعر الكاش.</p>
+      </div>
+
+      <div class="installment-cards">
+        <!-- Tabby SVG -->
+        <div class="inst-card">
+          <svg style="width: 130px; height: auto;" viewBox="0 0 212.1 212.1">
+            <path fill="#5AFEAE" d="M166.2,139.5H45.8c-11.6,0-20.9-9.4-20.9-20.9V93.5c0-11.6,9.4-20.9,20.9-20.9h120.4c11.6,0,20.9,9.4,20.9,20.9v25.1C187.1,130.1,177.8,139.5,166.2,139.5z"/>
+            <g fill="#292929">
+              <path d="M157.9,94.1l-8.3,31.7l0,0.1h6.5l8.3-31.7H157.9z M55.3,112.1c-1,0.5-2,0.7-3.1,0.7c-2.3,0-3.6-0.4-3.8-2.3v-0.1c0-0.1,0-0.1,0-0.2v-5.5l0-0.6v-3.9h0v-1.6l0-0.6v-3.7L42.6,95c3.9-0.8,6.1-3.8,6.1-6.9v-1.9h-6.5v8.9l-0.4,0.1v16.4c0.2,4.6,3.3,7.4,8.2,7.4c1.8,0,3.7-0.4,5.2-1.1l0,0L55.3,112.1z"/>
+              <path d="M56.3,92.9l-18.2,2.8v4.6l18.2-2.8V92.9z M56.3,99.7l-18.2,2.8v4.4l18.2-2.8V99.7z M76.7,101.8c-0.3-5.1-3.5-8.2-8.7-8.2c-3,0-5.5,1.2-7.2,3.4c-1.7,2.2-2.6,5.4-2.6,9.3c0,3.9,0.9,7.1,2.6,9.3c1.7,2.2,4.2,3.3,7.2,3.3c5.2,0,8.4-3,8.7-8.2v7.7h6.5V94.2l-6.5,1L76.7,101.8z M77.1,106.3c0,4.5-2.4,7.5-6.1,7.5c-3.8,0-6.1-2.8-6.1-7.5c0-4.7,2.3-7.5,6.1-7.5c1.8,0,3.4,0.7,4.5,2.1C76.5,102.2,77.1,104.1,77.1,106.3z M102.1,93.6c-5.2,0-8.4,3-8.7,8.2V87.1l-6.5,1v30.3h6.5v-7.7c0.3,5.2,3.5,8.2,8.7,8.2c6.1,0,9.8-4.7,9.8-12.6S108.2,93.6,102.1,93.6z M99.2,113.8c-3.7,0-6.1-2.9-6.1-7.5c0-2.2,0.6-4.1,1.6-5.4c1.1-1.4,2.6-2.1,4.5-2.1c3.8,0,6.1,2.8,6.1,7.5C105.3,111,103,113.8,99.2,113.8z M129.5,93.6c-5.2,0-8.4,3-8.7,8.2V87.1l-6.5,1v30.3h6.5v-7.7c0.3,5.2,3.5,8.2,8.7,8.2c6.1,0,9.8-4.7,9.8-12.6S135.6,93.6,129.5,93.6z M126.6,113.8c-3.7,0-6.1-2.9-6.1-7.5c0-2.2,0.6-4.1,1.6-5.4c1.1-1.4,2.6-2.1,4.5-2.1c3.8,0,6.1,2.8,6.1,7.5C132.7,111,130.4,113.8,126.6,113.8z M139.3,94.1h6.9l5.6,24.3h-6.2L139.3,94.1z"/>
+            </g>
+          </svg>
+        </div>
+
+        <!-- Tasheel -->
+        <div class="inst-card">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <i class="fa-solid fa-layer-group" style="font-size: 24px; color: #10b981;"></i>
+            <div style="text-align: right;">
+              <span style="font-size: 19px; font-weight: 900; color: #475569; display: block; line-height: 1;">تسهيل</span>
+              <span style="font-size: 10px; font-weight: 700; color: #10b981;">للتمويل</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tamara SVG -->
+        <div class="inst-card" style="width: 100%; max-width: 380px;">
+          <svg style="width: 140px; height: auto;" viewBox="0 0 1053.61 361.63">
+            <g fill="#0f172a">
+              <path d="M258.32,134.96c-2.49,0-6.15,2.49-7.47,4.98c-3.96,7.47-6.89,15.68-10.7,23.3c-2.05,4.1-1.17,6.45,1.76,9.82 c7.77,8.79,15.97,17.29,22.42,27.11c7.77,11.58,6.74,24.03-3.22,33.7c-7.47,7.33-16.26,13.92-25.79,18.46 c-13.63,6.45-28.43,10.55-42.64,15.97c-1.9,0.73-4.98,3.22-5.27,4.98c-0.88,5.27,2.05,6.74,4.1,7.62 c16.26,7.18,32.82,13.63,50.11,20.66c5.57-8.35,11.14-16.12,15.97-24.32c26.37-44.25,32.24-89.82,7.91-137 C264.48,137.75,260.81,135.11,258.32,134.96z"></path>
+              <path d="M842.67,77.67l-0.59-0.59c-7.91-7.91-20.51-7.91-28.43,0c-7.91,7.91-7.91,20.51,0,28.43l0.59,0.59 c11.43,11.43,24.18,4.4,28.43,0C850.58,98.19,850.58,85.59,842.67,77.67z"></path>
+              <path d="M759.15,78.41c-2.05,2.05-3.66,4.4-4.69,7.03l30.48,26.37c1.47-0.88,2.93-1.9,4.25-3.22l0.59-0.59 c12.02-12.02,4.54-25.5,0-30.18c-8.35-8.35-21.83-8.35-30.18,0L759.15,78.41z"></path>
+              <path d="M305.94,64.78c0,0-7.47,15.68-10.84,23.59c-1.32,3.22-2.34,7.03-2.05,10.55c1.32,27.84,2.34,55.68,4.4,83.37 c2.05,28.28,15.97,48.94,42.2,60.81c18.32,8.35,37.66,12.16,57.58,13.33c25.06,1.47,50.11,2.2,75.31,2.34 c41.76,0.29,83.08-2.64,123.96-10.84c12.6-1.61,52.02-11.87,58.76-15.53c7.62-4.1,7.18-3.22,14.95-1.17 c18.76,4.69,68.28,3.66,82.64-0.59c9.52-2.78,18.32-5.13,20.37-11.58c8.79,13.77,13.63,20.81,28.72,19.49 c15.09-1.32,16.41-2.05,31.21-5.42c12.31-2.78,21.54-10.7,25.2-22.71c2.34-7.47,2.05-10.99,2.64-16.56 c2.34-19.78-0.73-38.39-12.16-54.95c-1.9-2.64-2.93-5.27-9.52-4.84c-2.05,0.15-4.98,3.08-6.3,5.57 c-3.81,7.33-6.59,15.24-10.26,22.56c-2.05,4.1-1.17,7.03,2.05,10.11c6.89,6.3,13.33,12.75,21.98,21.54 c-16.56,1.76-22.27,3.52-36.48,4.69c-14.36,1.17-40.44,0.88-47.77-12.02c-5.42-9.52-8.79-15.97-17.58-22.42 c-14.51-10.7-38.1-10.7-57.73-0.59c-8.94,4.54-18.17,13.48-19.78,24.18c-0.73,4.69-2.34,8.64-7.62,10.11 c-81.32,20.95-176.71,30.62-256.71,21.69c-20.37-2.34-40.59-5.71-59.93-13.19c-17.14-6.74-24.91-18.61-24.62-37.22 c0.59-34.29,0.15-68.57,0-102.86c0,0,0.59-6.59-6.3-7.18C309.31,58.48,305.94,64.93,305.94,64.78z M745.96,207.2 l-66.52-0.73c0,0,4.98-26.23,31.94-27.25C750.35,177.6,745.96,207.2,745.96,207.2z"></path>
+              <path d="M214.95,68c0,0,0.59-6.59-6.3-7.18c-2.64-0.29-6.15,6.15-6.15,6.15s-7.47,15.68-10.84,23.59 c-1.32,3.22-2.34,7.03-2.05,10.55c0.59,13.63,1.17,27.4,1.9,41.03l0,0c0.88,19.49,1.9,38.83,2.78,58.32 c0.59,12.02,1.17,23.88,1.9,36.05h10.99c2.64-13.63,7.47-26.96,7.77-40.44C214.95,177.9,214.95,92.62,214.95,68L214.95,68z"></path>
+            </g>
+          </svg>
+        </div>
+      </div>
+
+      <a href="#booking" class="btn-installment-action">قسط خدماتك الآن</a>
+    </div>
+  </section>
+
+  <!-- =======================================
+       قسم آراء مراجعي مجمع الأسرة (Testimonials)
+       ======================================= -->
+  <section class="container">
+    <div class="section-title">
+      <h2>آراء مراجعي مجمع الأسرة</h2>
+      <p>تجارب حقيقية لمراجعينا الكرام عبر فروعنا في الأحساء</p>
+    </div>
+
+    <div class="testimonial-wrapper">
+      <button class="test-nav-btn prev" onclick="prevTestimonial()" aria-label="السابق">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+      <button class="test-nav-btn next" onclick="nextTestimonial()" aria-label="التالي">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+
+      <div class="testimonial-card">
+        <div class="quote-icon">❝</div>
+        <p class="testimonial-text" id="testimonialQuote">...</p>
+        <div class="reviewer-name" id="testimonialAuthor">...</div>
+        <div class="stars">★★★★★</div>
       </div>
     </div>
   </section>
 
   <!-- Branches Section -->
-  <section class="container" style="padding: 40px 16px;">
+  <section class="container" style="padding: 20px 16px 50px;">
     <div class="section-title">
       <h2>فروع مجمع الأسرة (8 فروع بالأحساء)</h2>
       <p>اضغط على أي فرع لعرض مواعيد العمل، أرقام الاتصال، ورابط الخريطة المباشر</p>
     </div>
 
     <div class="branches-grid" id="branchesBtnList"></div>
-
     <div id="branchInfo" class="active-branch-card"></div>
   </section>
 
@@ -793,8 +1093,48 @@
     <i class="fa-brands fa-whatsapp"></i>
   </a>
 
-  <!-- Script Logic -->
+  <!-- =======================================
+       بوت المحادثة التفاعلي الذكي (Chatbot Widget)
+       ======================================= -->
+  <div class="chat-bubble-btn" id="openChatBtn" onclick="toggleChatBot()" title="محادثة فورية">
+    <i class="fa-solid fa-comments"></i>
+  </div>
+
+  <div class="chat-box-modal" id="chatModal">
+    <div class="chat-header">
+      <div class="chat-header-info">
+        <img src="logo.jpg" alt="Logo" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'><circle cx=\'50\' cy=\'50\' r=\'50\' fill=\'%2300A5B5\'/></svg>'">
+        <div>
+          <div style="font-weight: 800; font-size: 14px;">مساعد مجمع الأسرة</div>
+          <div style="font-size: 11px; opacity: 0.9;">متصل الآن ومستعد لخدمتك</div>
+        </div>
+      </div>
+      <i class="fa-solid fa-xmark" style="cursor: pointer; font-size: 18px;" onclick="toggleChatBot()"></i>
+    </div>
+
+    <div class="chat-body" id="chatMessages">
+      <div class="chat-msg">
+        مرحباً بك في مجمع الأسرة لطب الأسنان والجلدية بالأحساء 👋<br>يرجى اختيار الخدمة المطلوبة:
+        <span class="chat-time">الآن</span>
+      </div>
+
+      <div class="chat-quick-btns" id="quickOptions">
+        <button class="chat-pill-btn" onclick="handleBotAction('booking')">📅 حجز موعد</button>
+        <button class="chat-pill-btn" onclick="handleBotAction('branches')">📍 فروعنا وأوقات العمل</button>
+        <button class="chat-pill-btn" onclick="handleBotAction('tabby')">💳 تقسيط تابي وتمارا</button>
+        <button class="chat-pill-btn" onclick="handleBotAction('support')">💬 للشكاوى والاستفسارات</button>
+      </div>
+    </div>
+
+    <div class="chat-footer">
+      <input type="text" id="chatInputText" class="chat-input" placeholder="اكتب استفسارك واضغط إرسال...">
+      <button class="chat-send-btn" onclick="sendUserMessage()"><i class="fa-solid fa-paper-plane"></i></button>
+    </div>
+  </div>
+
+  <!-- Scripts -->
   <script>
+    // بيانات الفروع الثمانية
     const branchData = [
       { name: "فرع السلمانية", phone: "0553254700", intl: "966553254700", time: "من 9 صباحاً - 9 مساءً", map: "https://maps.google.com/?q=25.3340626,49.5662766" },
       { name: "فرع محاسن", phone: "0537403090", intl: "966537403090", time: "من 8 صباحاً - 10 مساءً", map: "https://maps.google.com/?q=25.4057865,49.5613327" },
@@ -806,6 +1146,57 @@
       { name: "فرع العيون الصناعية", phone: "0536902220", intl: "966536902220", time: "من 9 صباحاً - 9 مساءً", map: "https://maps.google.com/?q=25.6033344,49.5639687" }
     ];
 
+    // بيانات التقييمات الحقيقية بالأسماء الأولى
+    const testimonials = [
+      {
+        quote: "أفضل عيادات اسنان بالأحساء انتشارهم على كل مناطق الأحساء عندهم اخصائيين من جميع التخصصات.. اسعارهم منافسة ومرضية وافضل شي عندهم خدمة تمارا للتقسيط، ومواعيدهم قريبة تقدر تحجز في نفس اليوم.",
+        author: "مراجع بالعيادة"
+      },
+      {
+        quote: "سعدت كثيرًا بتجربتي في مستوصف الأسرة، الحقيقة أنني لم أندم أبدًا.. كل الشكر لدكتور محمد صلاح على مهارته وخفة يده وحرصه على راحة المراجع، وتجربة جميلة تستحق الإشادة.",
+        author: "أنور"
+      },
+      {
+        quote: "خدمات ممتازه والادوات المستخدمه ذات جوده عاليه وواضح اهتمامهم بنظافة المكان وماشاءالله الاهتمام كان من قبل موظفة خدمة العملاء وجدان اسلوب راقي ومحترم شكراً لاهتمامكم ❤️",
+        author: "مراجعة بالعيادة"
+      },
+      {
+        quote: "الف شكر دكتور محمد صلاح رقي في التعامل ومهارة في العمل، كما نشكر موظفة الاستقبال على حسن تعاملها.",
+        author: "أحمد"
+      },
+      {
+        quote: "خدمتهم ممتازه بالمواعيد، انا تعالجت عند دكتورة رشا ماشاء الله تبارك الله شغلها ممتاز ونظيف ولا حسيت معها بألم ايدها خفيفه، والاسعار كويسه عندها.",
+        author: "ريم"
+      },
+      {
+        quote: "أتقدم بجزيل الشكر والتقدير لمستشفى الأسرة على حسن التعامل والخدمة الممتازة، وأخص بالشكر الدكتورة شيما على اهتمامها وأسلوبها الراقي، وكذلك موظفة الاستقبال سلمى على حسن استقبالها.",
+        author: "خالد"
+      },
+      {
+        quote: "مستوصف رائع استقبال راقي من موظفة الاستقبال منيرة وتقديم خدمة طبية ممتازة من الدكتورة رشا.. ألف شكر للجميع.",
+        author: "مها"
+      }
+    ];
+
+    let currentTestimonialIdx = 0;
+
+    function showTestimonial(idx) {
+      const t = testimonials[idx];
+      document.getElementById('testimonialQuote').innerText = t.quote;
+      document.getElementById('testimonialAuthor').innerText = t.author;
+    }
+
+    function nextTestimonial() {
+      currentTestimonialIdx = (currentTestimonialIdx + 1) % testimonials.length;
+      showTestimonial(currentTestimonialIdx);
+    }
+
+    function prevTestimonial() {
+      currentTestimonialIdx = (currentTestimonialIdx - 1 + testimonials.length) % testimonials.length;
+      showTestimonial(currentTestimonialIdx);
+    }
+
+    // منطق الفروع
     function renderBranchButtons() {
       const container = document.getElementById('branchesBtnList');
       if (!container) return;
@@ -819,13 +1210,7 @@
     function selectBranch(idx) {
       const b = branchData[idx];
       const pills = document.querySelectorAll('.branch-pill');
-      pills.forEach((pill, i) => {
-        if (i === idx) {
-          pill.classList.add('active');
-        } else {
-          pill.classList.remove('active');
-        }
-      });
+      pills.forEach((pill, i) => pill.classList.toggle('active', i === idx));
 
       const infoBox = document.getElementById('branchInfo');
       if (!infoBox) return;
@@ -843,64 +1228,96 @@
       `;
     }
 
-    /* دالة تحريك السلايدر يميناً ويساراً */
     function slideCarousel(direction) {
       const container = document.getElementById('servicesTrackContainer');
-      const scrollStep = 310; // عرض الكرت + المسافة الفاصلة
+      const scrollStep = 320;
       if (!container) return;
+      container.scrollBy({ left: direction === 'left' ? -scrollStep : scrollStep, behavior: 'smooth' });
+    }
 
-      if (direction === 'left') {
-        container.scrollBy({ left: -scrollStep, behavior: 'smooth' });
-      } else {
-        container.scrollBy({ left: scrollStep, behavior: 'smooth' });
+    // منطق بوت المحادثة (Chatbot Logic)
+    function toggleChatBot() {
+      const modal = document.getElementById('chatModal');
+      modal.style.display = (modal.style.display === 'flex') ? 'none' : 'flex';
+    }
+
+    function appendBotMessage(text) {
+      const chatBody = document.getElementById('chatMessages');
+      const div = document.createElement('div');
+      div.className = 'chat-msg';
+      div.innerHTML = text + `<span class="chat-time">الآن</span>`;
+      chatBody.appendChild(div);
+      chatBody.scrollTop = chatBody.scrollHeight;
+    }
+
+    function appendUserMessage(text) {
+      const chatBody = document.getElementById('chatMessages');
+      const div = document.createElement('div');
+      div.className = 'chat-msg user';
+      div.innerHTML = text + `<span class="chat-time" style="color: rgba(255,255,255,0.8);">الآن</span>`;
+      chatBody.appendChild(div);
+      chatBody.scrollTop = chatBody.scrollHeight;
+    }
+
+    function handleBotAction(type) {
+      if (type === 'booking') {
+        appendUserMessage("حجز موعد");
+        setTimeout(() => {
+          appendBotMessage("يسعدنا خدمتك! يمكنك اختيار الفرع وتعبئة النموذج بالأعلى مباشرة، أو التواصل مع الرقم الموحد: <a href='tel:0537403090' style='color:var(--brand-teal); font-weight:bold;'>0537403090</a>");
+        }, 500);
+      } else if (type === 'branches') {
+        appendUserMessage("فروعنا وأوقات العمل");
+        setTimeout(() => {
+          appendBotMessage("لدينا 8 فروع متطورة تغطي الأحساء (السلمانية، محاسن، الخالدية، المزروع، الشقيق، الجفر، والعيون). يمكنك استعراض موقع كل فرع ورقم اتصاله المباشر في قسم الفروع بالأسفل.");
+        }, 500);
+      } else if (type === 'tabby') {
+        appendUserMessage("تقسيط تابي وتمارا");
+        setTimeout(() => {
+          appendBotMessage("نوفر لكم تقسيط العلاج بسعر الكاش عبر تابي، تمارا، وكذلك تسهيل للتمويل للعمليات الكبرى وبدون فوائد!");
+        }, 500);
+      } else if (type === 'support') {
+        appendUserMessage("للشكاوى والاستفسارات");
+        setTimeout(() => {
+          appendBotMessage("يهمنا رضاكم دائماً. بإمكانك التحدث المباشر مع إدارة خدمة العملاء عبر واتساب: <a href='https://wa.me/966537403090' target='_blank' style='color:#10b981; font-weight:bold;'>اضغط هنا للمحادثة</a>");
+        }, 500);
       }
+    }
+
+    function sendUserMessage() {
+      const input = document.getElementById('chatInputText');
+      const text = input.value.trim();
+      if (!text) return;
+      appendUserMessage(text);
+      input.value = '';
+
+      setTimeout(() => {
+        const waLink = "https://wa.me/966537403090?text=" + encodeURIComponent(text);
+        appendBotMessage("شكراً لتواصلك! لتحويل استفسارك فوراً لموظف الاستقبال المختص، <a href='" + waLink + "' target='_blank' style='color:#10b981; font-weight:bold;'>اضغط هنا لفتح الواتساب</a>");
+      }, 700);
     }
 
     document.addEventListener('DOMContentLoaded', () => {
       renderBranchButtons();
       selectBranch(0);
+      showTestimonial(0);
 
       const form = document.getElementById('bookingForm');
       if (form) {
         form.addEventListener('submit', (e) => {
           e.preventDefault();
-          const nameInput = document.getElementById('clientName');
-          const phoneInput = document.getElementById('clientPhone');
-          const branchSelect = document.getElementById('clientBranch');
-
-          const name = nameInput ? nameInput.value.trim() : '';
-          const phone = phoneInput ? phoneInput.value.trim() : '';
-          const branchIdx = branchSelect ? branchSelect.value : '0';
-
+          const name = document.getElementById('clientName').value.trim();
+          const phone = document.getElementById('clientPhone').value.trim();
+          const branchIdx = document.getElementById('clientBranch').value || '0';
           const target = branchData[parseInt(branchIdx, 10)] || branchData[0];
-          const lines = [
-            "مرحباً مجمع الأسرة (" + target.name + ")،",
-            "أرغب بحجز موعد استشارة جديدة:",
-            "- الاسم: " + name,
-            "- رقم الجوال: " + phone,
-            "- الفرع المطلوب: " + target.name
-          ];
-          const fullMessage = lines.join("\n");
-          const whatsappUrl = "https://wa.me/" + target.intl + "?text=" + encodeURIComponent(fullMessage);
-          window.open(whatsappUrl, '_blank');
+
+          const msg = `مرحباً مجمع الأسرة (${target.name})،\nأرغب بحجز موعد استشارة جديدة:\n- الاسم: ${name}\n- رقم الجوال: ${phone}\n- الفرع المطلوب: ${target.name}`;
+          window.open("https://wa.me/" + target.intl + "?text=" + encodeURIComponent(msg), '_blank');
         });
       }
 
-      // تحديث نقاط مؤشر التمرير حسب موضع السكرول
-      const trackContainer = document.getElementById('servicesTrackContainer');
-      if (trackContainer) {
-        trackContainer.addEventListener('scroll', () => {
-          const dots = document.querySelectorAll('.carousel-dots .dot');
-          const maxScroll = trackContainer.scrollWidth - trackContainer.clientWidth;
-          const currentScroll = Math.abs(trackContainer.scrollLeft);
-          const ratio = currentScroll / (maxScroll || 1);
-          const activeIndex = Math.min(Math.floor(ratio * dots.length), dots.length - 1);
-          
-          dots.forEach((dot, idx) => {
-            dot.classList.toggle('active', idx === activeIndex);
-          });
-        });
-      }
+      document.getElementById('chatInputText').addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') sendUserMessage();
+      });
     });
   </script>
 
