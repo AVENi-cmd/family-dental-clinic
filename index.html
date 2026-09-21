@@ -13,14 +13,14 @@
   <style>
     :root {
       --brand-teal: #00A5B5;
-      --brand-teal-dark: #007E8C;
-      --brand-teal-light: #E6F8F9;
+      --brand-teal-dark: #007682;
+      --brand-teal-glow: rgba(0, 165, 181, 0.28);
       --brand-lime: #8CC63F;
-      --brand-lime-dark: #6C9F2A;
-      --brand-lime-light: #F2F9E8;
-      --brand-dark: #0F172A;
-      --bg-modern: #E2EEF0;
-      --card-bg: #FFFFFF;
+      --brand-lime-dark: #659624;
+      --brand-lime-glow: rgba(140, 198, 63, 0.32);
+      --dark-navy: #0B192C;
+      --surface-glass: rgba(255, 255, 255, 0.88);
+      --border-glass: rgba(255, 255, 255, 0.6);
     }
     * {
       box-sizing: border-box;
@@ -29,10 +29,13 @@
       font-family: 'Cairo', sans-serif;
     }
     body {
-      background-color: var(--bg-modern);
+      background: radial-gradient(circle at 10% 20%, rgba(0, 165, 181, 0.08) 0%, transparent 40%),
+                  radial-gradient(circle at 90% 80%, rgba(140, 198, 63, 0.09) 0%, transparent 45%),
+                  #F4F9FA;
       color: #334155;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
     }
     a {
       text-decoration: none;
@@ -46,35 +49,39 @@
     
     /* Top Bar */
     .topbar {
-      background: linear-gradient(90deg, var(--brand-teal-dark), var(--brand-teal), var(--brand-lime-dark));
+      background: linear-gradient(90deg, #005f6b, var(--brand-teal), var(--brand-lime-dark));
       color: #ffffff;
-      padding: 8px 16px;
-      font-size: 13px;
+      padding: 10px 16px;
+      font-size: 13.5px;
       font-weight: 700;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
     }
     .badge-tabby {
-      background: rgba(255,255,255,0.25);
-      padding: 2px 10px;
+      background: rgba(255,255,255,0.22);
+      border: 1px solid rgba(255,255,255,0.4);
+      backdrop-filter: blur(4px);
+      padding: 4px 14px;
       border-radius: 20px;
-      font-size: 11px;
+      font-size: 12px;
     }
     
     /* Header */
     header {
-      background: #ffffff;
-      border-bottom: 1px solid #d0e2e5;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(0, 165, 181, 0.15);
       position: sticky;
       top: 0;
       z-index: 50;
-      box-shadow: 0 2px 10px rgba(0, 165, 181, 0.06);
+      box-shadow: 0 4px 20px rgba(0, 165, 181, 0.06);
     }
     .nav-wrap {
-      height: 80px;
+      height: 82px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -82,201 +89,273 @@
     .logo {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
     }
     .logo-svg-wrap {
-      width: 52px;
-      height: 52px;
+      width: 54px;
+      height: 54px;
       display: flex;
       align-items: center;
       justify-content: center;
       background: #ffffff;
-      border-radius: 50%;
-      border: 1.5px solid var(--brand-lime);
-      box-shadow: 0 3px 8px rgba(0, 165, 181, 0.15);
-      padding: 4px;
+      border-radius: 18px;
+      border: 2px solid var(--brand-lime);
+      box-shadow: 0 6px 18px var(--brand-teal-glow);
+      padding: 5px;
+      transition: transform 0.3s;
+    }
+    .logo-svg-wrap:hover {
+      transform: scale(1.05) rotate(-3deg);
     }
     .logo-text h1 {
-      font-size: 20px;
+      font-size: 22px;
       font-weight: 900;
-      color: var(--brand-teal);
+      background: linear-gradient(135deg, var(--brand-teal-dark), var(--brand-teal));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
       line-height: 1.1;
     }
     .logo-text span {
-      font-size: 12px;
-      font-weight: 700;
+      font-size: 12.5px;
+      font-weight: 800;
       color: var(--brand-lime-dark);
+      letter-spacing: 0.5px;
     }
     .nav-btn {
-      background: var(--brand-teal);
+      background: linear-gradient(135deg, var(--brand-teal), var(--brand-teal-dark));
       color: #ffffff;
-      padding: 10px 18px;
-      border-radius: 12px;
-      font-weight: 700;
+      padding: 12px 22px;
+      border-radius: 14px;
+      font-weight: 800;
       font-size: 14px;
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      transition: 0.2s ease;
+      box-shadow: 0 6px 18px var(--brand-teal-glow);
+      transition: all 0.3s ease;
     }
     .nav-btn:hover {
-      background: var(--brand-teal-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 165, 181, 0.45);
     }
 
     /* Hero */
     .hero {
-      background: linear-gradient(180deg, #d8e9ec 0%, var(--bg-modern) 100%);
-      padding: 40px 0 60px 0;
+      position: relative;
+      padding: 55px 0 70px 0;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: -120px;
+      right: -80px;
+      width: 480px;
+      height: 480px;
+      background: radial-gradient(circle, rgba(0, 165, 181, 0.18) 0%, transparent 70%);
+      z-index: 0;
+      pointer-events: none;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      bottom: -100px;
+      left: -100px;
+      width: 450px;
+      height: 450px;
+      background: radial-gradient(circle, rgba(140, 198, 63, 0.16) 0%, transparent 70%);
+      z-index: 0;
+      pointer-events: none;
     }
     .hero-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 32px;
+      gap: 36px;
       align-items: center;
+      position: relative;
+      z-index: 1;
     }
     @media (min-width: 900px) {
       .hero-grid {
-        grid-template-columns: 1.2fr 1fr;
+        grid-template-columns: 1.15fr 1fr;
       }
     }
     .hero-tag {
       display: inline-block;
-      background: var(--brand-lime-light);
-      color: var(--brand-lime-dark);
-      border: 1px solid var(--brand-lime);
-      padding: 4px 12px;
-      border-radius: 20px;
-      font-size: 13px;
+      background: linear-gradient(135deg, rgba(140, 198, 63, 0.16), rgba(0, 165, 181, 0.12));
+      color: var(--brand-teal-dark);
+      border: 1px solid rgba(0, 165, 181, 0.3);
+      padding: 6px 16px;
+      border-radius: 30px;
+      font-size: 13.5px;
       font-weight: 800;
-      margin-bottom: 16px;
+      margin-bottom: 18px;
     }
     .hero-title {
-      font-size: 32px;
+      font-size: 36px;
       font-weight: 900;
-      color: #0f172a;
-      line-height: 1.25;
-      margin-bottom: 16px;
+      color: var(--dark-navy);
+      line-height: 1.28;
+      margin-bottom: 18px;
     }
     .hero-title span {
-      color: var(--brand-teal);
+      background: linear-gradient(135deg, var(--brand-teal), var(--brand-lime-dark));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
     .hero-desc {
-      font-size: 16px;
+      font-size: 16.5px;
       color: #475569;
-      margin-bottom: 24px;
+      margin-bottom: 28px;
+      line-height: 1.7;
     }
     .features-row {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
+      gap: 14px;
     }
     .feat-card {
-      background: #ffffff;
-      border: 1px solid #cfe0e3;
-      border-radius: 16px;
-      padding: 14px;
+      background: var(--surface-glass);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      border-radius: 18px;
+      padding: 18px 12px;
       text-align: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      box-shadow: 0 10px 24px rgba(0, 165, 181, 0.08);
+      transition: all 0.3s ease;
+    }
+    .feat-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--brand-teal);
+      box-shadow: 0 14px 28px rgba(0, 165, 181, 0.15);
     }
     .feat-card i {
-      font-size: 22px;
-      margin-bottom: 6px;
-      display: block;
+      font-size: 26px;
+      margin-bottom: 8px;
+      display: inline-block;
     }
     .feat-card h4 {
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 800;
-      color: #1e293b;
+      color: var(--dark-navy);
     }
     .feat-card p {
-      font-size: 11px;
+      font-size: 11.5px;
       color: #64748b;
+      margin-top: 2px;
     }
 
-    /* Booking Box */
+    /* Booking Box Glassmorphism */
     .booking-box {
-      background: #ffffff;
-      border-radius: 24px;
-      padding: 28px;
-      border: 2px solid var(--brand-teal);
-      box-shadow: 0 15px 35px rgba(0, 165, 181, 0.12);
+      background: linear-gradient(160deg, rgba(255,255,255,0.95) 0%, rgba(240,250,251,0.9) 100%);
+      backdrop-filter: blur(14px);
+      border-radius: 28px;
+      padding: 32px;
+      border: 2px solid rgba(0, 165, 181, 0.25);
+      box-shadow: 0 20px 45px rgba(0, 165, 181, 0.16);
+      position: relative;
+    }
+    .booking-box::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 28px;
+      padding: 2px;
+      background: linear-gradient(135deg, var(--brand-teal), transparent, var(--brand-lime));
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
     }
     .booking-box h3 {
-      font-size: 22px;
+      font-size: 24px;
       font-weight: 900;
-      color: #0f172a;
+      color: var(--dark-navy);
       text-align: center;
       margin-bottom: 4px;
     }
     .booking-box p {
-      font-size: 13px;
+      font-size: 13.5px;
       color: #64748b;
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 22px;
     }
     .form-group {
-      margin-bottom: 14px;
+      margin-bottom: 16px;
     }
     .form-group label {
       display: block;
-      font-size: 12px;
+      font-size: 13px;
       font-weight: 700;
       color: #334155;
       margin-bottom: 6px;
     }
     .form-group input, .form-group select {
       width: 100%;
-      padding: 12px 14px;
-      background: #f8fafc;
-      border: 1px solid #cbd5e1;
-      border-radius: 12px;
-      font-size: 14px;
+      padding: 13px 16px;
+      background: #ffffff;
+      border: 1.5px solid #d0e2e5;
+      border-radius: 14px;
+      font-size: 14.5px;
       outline: none;
-      transition: border-color 0.2s;
+      transition: all 0.25s ease;
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
     }
     .form-group input:focus, .form-group select:focus {
       border-color: var(--brand-teal);
-      background: #ffffff;
+      box-shadow: 0 0 0 4px var(--brand-teal-glow);
     }
     
     .submit-btn {
       width: 100%;
-      background: linear-gradient(135deg, #00C4D8 0%, #008E9B 100%);
+      background: linear-gradient(135deg, #00B9CB 0%, #007D8B 100%);
       color: #ffffff;
       border: none;
-      padding: 15px;
-      border-radius: 14px;
-      font-size: 16px;
+      padding: 16px;
+      border-radius: 16px;
+      font-size: 16.5px;
       font-weight: 800;
       cursor: pointer;
       display: flex;
       justify-content: center;
       align-items: center;
       gap: 10px;
-      margin-top: 12px;
-      box-shadow: 0 6px 20px rgba(0, 196, 216, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.4);
+      margin-top: 14px;
+      box-shadow: 0 8px 24px rgba(0, 165, 181, 0.42);
       transition: all 0.3s ease;
     }
     .submit-btn:hover {
-      background: linear-gradient(135deg, #18D5E9 0%, #007D89 100%);
-      box-shadow: 0 8px 25px rgba(0, 196, 216, 0.55);
+      background: linear-gradient(135deg, #00c7db 0%, #006c78 100%);
+      box-shadow: 0 10px 28px rgba(0, 165, 181, 0.55);
       transform: translateY(-2px);
     }
 
     /* Section Headings */
     .section-title {
       text-align: center;
-      margin: 50px 0 30px;
+      margin: 60px 0 35px;
     }
     .section-title h2 {
-      font-size: 28px;
+      font-size: 30px;
       font-weight: 900;
-      color: #0f172a;
+      color: var(--dark-navy);
+      position: relative;
+      display: inline-block;
+    }
+    .section-title h2::after {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      left: 25%;
+      right: 25%;
+      height: 3.5px;
+      background: linear-gradient(90deg, var(--brand-teal), var(--brand-lime));
+      border-radius: 10px;
     }
     .section-title p {
       color: #64748b;
-      font-size: 14px;
-      margin-top: 4px;
+      font-size: 15px;
+      margin-top: 12px;
     }
 
     /* Carousel */
@@ -297,48 +376,62 @@
     }
     .carousel-track {
       display: flex;
-      gap: 18px;
+      gap: 20px;
       width: max-content;
     }
     .carousel-card {
-      width: 295px;
+      width: 300px;
       background: #ffffff;
-      border: 1px solid #cfe0e3;
-      border-radius: 22px;
+      border: 1px solid rgba(0, 165, 181, 0.18);
+      border-radius: 24px;
       padding: 22px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 10px 28px rgba(0, 165, 181, 0.08);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       position: relative;
-      transition: all 0.3s ease;
+      transition: all 0.35s ease;
+      overflow: hidden;
+    }
+    .carousel-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4.5px;
+      background: linear-gradient(90deg, var(--brand-teal), var(--brand-lime));
     }
     .carousel-card:hover {
-      transform: translateY(-6px);
+      transform: translateY(-8px);
       border-color: var(--brand-teal);
-      box-shadow: 0 14px 30px rgba(0, 165, 181, 0.16);
+      box-shadow: 0 18px 36px rgba(0, 165, 181, 0.2);
     }
     .service-real-img {
       width: 100%;
-      height: 160px;
+      height: 165px;
       border-radius: 16px;
       object-fit: cover;
       margin-bottom: 16px;
       border: 1px solid #e2f1ed;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+      box-shadow: 0 4px 14px rgba(0,0,0,0.05);
       background-color: #f1f5f9;
+      transition: transform 0.4s ease;
+    }
+    .carousel-card:hover .service-real-img {
+      transform: scale(1.03);
     }
     .carousel-card h3 {
-      font-size: 18px;
+      font-size: 18.5px;
       font-weight: 800;
-      color: #0f172a;
+      color: var(--dark-navy);
       margin-bottom: 8px;
       line-height: 1.3;
     }
     .carousel-card p {
-      font-size: 13px;
+      font-size: 13.5px;
       color: #64748b;
-      line-height: 1.6;
+      line-height: 1.65;
       margin-bottom: 20px;
     }
     .btn-service-book {
@@ -347,16 +440,19 @@
       justify-content: center;
       gap: 8px;
       width: 100%;
-      padding: 12px;
-      background: var(--brand-teal);
+      padding: 13px;
+      background: linear-gradient(135deg, var(--brand-teal), var(--brand-teal-dark));
       color: #ffffff;
-      font-weight: 700;
-      font-size: 13px;
-      border-radius: 12px;
-      transition: all 0.2s ease;
+      font-weight: 800;
+      font-size: 13.5px;
+      border-radius: 14px;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 12px var(--brand-teal-glow);
     }
     .btn-service-book:hover {
-      background: var(--brand-teal-dark);
+      background: linear-gradient(135deg, #00b3c4, var(--brand-teal-dark));
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 165, 181, 0.4);
     }
     .carousel-btn {
       position: absolute;
@@ -392,96 +488,107 @@
 
     /* قسم التقسيط الفاخر */
     .installment-section {
-      background: linear-gradient(135deg, #007E8C 0%, #005660 100%);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 28px;
-      padding: 45px 24px;
+      background: linear-gradient(135deg, #005e69 0%, #003e45 100%);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 32px;
+      padding: 50px 24px;
       margin: 40px auto;
       text-align: center;
-      box-shadow: 0 15px 35px rgba(0, 86, 96, 0.25);
+      box-shadow: 0 20px 45px rgba(0, 62, 69, 0.35);
       color: #ffffff;
+      position: relative;
+      overflow: hidden;
+    }
+    .installment-section::after {
+      content: "";
+      position: absolute;
+      bottom: -60px;
+      right: -60px;
+      width: 250px;
+      height: 250px;
+      background: radial-gradient(circle, rgba(140, 198, 63, 0.25) 0%, transparent 70%);
+      pointer-events: none;
     }
     .installment-header h2 {
-      font-size: 32px;
+      font-size: 34px;
       font-weight: 900;
       color: #ffffff;
       margin-bottom: 8px;
     }
     .installment-header p {
-      font-size: 18px;
-      font-weight: 700;
+      font-size: 19px;
+      font-weight: 800;
       color: #A3E635;
-      margin-bottom: 30px;
+      margin-bottom: 32px;
     }
     .installment-cards {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 20px;
+      gap: 22px;
       max-width: 650px;
-      margin: 0 auto 30px;
+      margin: 0 auto 32px;
     }
     .inst-card {
       background: #ffffff;
-      border: none;
-      border-radius: 20px;
+      border-radius: 22px;
       padding: 16px 28px;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
       flex: 1;
       min-width: 220px;
-      height: 95px;
-      transition: transform 0.2s, box-shadow 0.2s;
+      height: 98px;
+      transition: all 0.3s ease;
     }
     .inst-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+      transform: translateY(-5px);
+      box-shadow: 0 15px 32px rgba(0, 0, 0, 0.3);
     }
     .btn-installment-action {
-      background: linear-gradient(135deg, #8CC63F 0%, #76B02E 100%);
+      background: linear-gradient(135deg, #8CC63F 0%, #6fa629 100%);
       color: #ffffff;
-      font-size: 16px;
+      font-size: 16.5px;
       font-weight: 800;
-      padding: 15px 45px;
-      border-radius: 14px;
+      padding: 16px 48px;
+      border-radius: 16px;
       display: inline-block;
-      transition: all 0.2s;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+      transition: all 0.25s;
+      box-shadow: 0 8px 24px rgba(140, 198, 63, 0.35);
       border: 1px solid rgba(255, 255, 255, 0.3);
     }
     .btn-installment-action:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(140, 198, 63, 0.45);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(140, 198, 63, 0.55);
     }
 
     /* قسم آراء المراجعين */
     .testimonial-wrapper {
       position: relative;
-      max-width: 750px;
+      max-width: 780px;
       margin: 0 auto 50px;
       padding: 0 20px;
     }
     .testimonial-card {
       background: #ffffff;
-      border: 1.5px solid #cfe0e3;
-      border-radius: 24px;
-      padding: 40px 30px;
+      border: 1.5px solid rgba(0, 165, 181, 0.2);
+      border-radius: 28px;
+      padding: 42px 32px;
       text-align: center;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+      box-shadow: 0 15px 35px rgba(0, 165, 181, 0.08);
       position: relative;
     }
     .quote-icon {
-      font-size: 36px;
+      font-size: 40px;
       color: var(--brand-lime);
       margin-bottom: 12px;
       line-height: 1;
     }
     .testimonial-text {
-      font-size: 16px;
+      font-size: 16.5px;
       color: #334155;
-      line-height: 1.8;
+      line-height: 1.85;
       margin-bottom: 24px;
       min-height: 80px;
       display: flex;
@@ -489,31 +596,31 @@
       justify-content: center;
     }
     .reviewer-name {
-      font-size: 16px;
+      font-size: 16.5px;
       font-weight: 800;
-      color: var(--brand-lime-dark);
+      color: var(--brand-teal-dark);
       margin-bottom: 8px;
     }
     .stars {
       color: #f59e0b;
-      font-size: 16px;
-      letter-spacing: 2px;
+      font-size: 17px;
+      letter-spacing: 3px;
     }
     .test-nav-btn {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      width: 44px;
-      height: 44px;
+      width: 46px;
+      height: 46px;
       border-radius: 50%;
       background: #ffffff;
-      border: 1px solid #cbd5e1;
+      border: 1.5px solid #cbd5e1;
       color: #64748b;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.08);
       transition: 0.2s;
     }
     .test-nav-btn:hover {
@@ -527,82 +634,88 @@
     /* Branches Section */
     .branches-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-      gap: 10px;
+      grid-template-columns: repeat(auto-fill, minmax(135px, 1fr));
+      gap: 12px;
       margin-bottom: 24px;
     }
     .branch-pill {
       background: #ffffff;
-      border: 1px solid #cbd5e1;
-      border-radius: 14px;
-      padding: 12px 8px;
+      border: 1.5px solid #cbd5e1;
+      border-radius: 16px;
+      padding: 13px 8px;
       text-align: center;
       cursor: pointer;
-      font-weight: 700;
-      font-size: 13px;
-      transition: 0.2s;
+      font-weight: 800;
+      font-size: 13.5px;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.03);
     }
     .branch-pill.active {
-      background: var(--brand-teal);
+      background: linear-gradient(135deg, var(--brand-teal), var(--brand-teal-dark));
       color: #ffffff;
       border-color: var(--brand-teal);
-      box-shadow: 0 4px 12px rgba(0, 165, 181, 0.3);
+      box-shadow: 0 6px 18px var(--brand-teal-glow);
+      transform: translateY(-2px);
     }
     .active-branch-card {
       background: #ffffff;
       border: 2px solid var(--brand-teal);
-      border-radius: 20px;
-      padding: 24px;
-      box-shadow: 0 10px 28px rgba(0,0,0,0.06);
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: 0 14px 34px rgba(0, 165, 181, 0.1);
     }
     .card-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 18px;
+      gap: 12px;
+      margin-top: 20px;
     }
     .action-btn {
       flex: 1;
       min-width: 140px;
-      padding: 10px 14px;
-      border-radius: 12px;
-      font-size: 13px;
-      font-weight: 700;
+      padding: 12px 16px;
+      border-radius: 14px;
+      font-size: 13.5px;
+      font-weight: 800;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 6px;
+      gap: 8px;
       color: #ffffff;
+      transition: all 0.2s ease;
     }
-    .btn-call { background: #0f172a; }
+    .btn-call { background: var(--dark-navy); }
+    .btn-call:hover { background: #000000; }
     .btn-wa { background: #10b981; }
-    .btn-map { background: #ffffff; color: #334155; border: 1px solid #cbd5e1; }
+    .btn-wa:hover { background: #059669; }
+    .btn-map { background: #ffffff; color: #334155; border: 1.5px solid #cbd5e1; }
+    .btn-map:hover { background: #f8fafc; border-color: var(--brand-teal); }
 
     /* بوت المحادثة التفاعلي المطور */
     .chat-bubble-btn {
       position: fixed;
       bottom: 24px;
       right: 24px;
-      width: 60px;
-      height: 60px;
+      width: 62px;
+      height: 62px;
       border-radius: 50%;
-      background: var(--brand-teal);
+      background: linear-gradient(135deg, var(--brand-teal), var(--brand-teal-dark));
       color: #ffffff;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 26px;
       cursor: pointer;
-      box-shadow: 0 6px 22px rgba(0, 165, 181, 0.4);
+      box-shadow: 0 8px 24px var(--brand-teal-glow);
       z-index: 999;
-      transition: transform 0.2s;
+      transition: transform 0.25s;
     }
     .chat-bubble-btn:hover {
-      transform: scale(1.08);
+      transform: scale(1.1);
     }
     .chat-box-modal {
       position: fixed;
-      bottom: 95px;
+      bottom: 98px;
       right: 24px;
       width: 360px;
       min-width: 280px;
@@ -611,8 +724,8 @@
       min-height: 380px;
       max-height: 85vh;
       background: #ffffff;
-      border-radius: 22px;
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.22);
+      border-radius: 24px;
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.22);
       display: none;
       flex-direction: column;
       overflow: hidden;
@@ -621,9 +734,9 @@
       resize: both;
     }
     .chat-header {
-      background: var(--brand-teal);
+      background: linear-gradient(135deg, var(--brand-teal), var(--brand-teal-dark));
       color: #ffffff;
-      padding: 14px 16px;
+      padding: 16px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -642,7 +755,7 @@
     .chat-body {
       flex: 1;
       padding: 16px;
-      background: var(--bg-modern);
+      background: #F4F9FA;
       overflow-y: auto;
       display: flex;
       flex-direction: column;
@@ -650,20 +763,20 @@
     }
     .chat-msg {
       background: #ffffff;
-      padding: 12px 16px;
-      border-radius: 16px;
+      padding: 13px 16px;
+      border-radius: 18px;
       border-bottom-right-radius: 4px;
       font-size: 13.5px;
       color: #1e293b;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
       max-width: 85%;
       align-self: flex-start;
-      border: 1px solid #d5e5e8;
+      border: 1px solid #dce8ea;
     }
     .chat-msg.user {
-      background: var(--brand-teal);
+      background: linear-gradient(135deg, var(--brand-teal), var(--brand-teal-dark));
       color: #ffffff;
-      border-bottom-right-radius: 16px;
+      border-bottom-right-radius: 18px;
       border-bottom-left-radius: 4px;
       align-self: flex-end;
     }
@@ -684,7 +797,7 @@
       background: #ffffff;
       border: 1px solid #cbd5e1;
       color: #334155;
-      padding: 6px 12px;
+      padding: 7px 14px;
       border-radius: 20px;
       font-size: 12px;
       font-weight: 700;
@@ -694,6 +807,7 @@
     .chat-pill-btn:hover {
       border-color: var(--brand-teal);
       color: var(--brand-teal);
+      background: var(--brand-teal-glow);
     }
     .chat-footer {
       padding: 12px;
@@ -704,19 +818,23 @@
     }
     .chat-input {
       flex: 1;
-      border: 1px solid #cbd5e1;
-      border-radius: 10px;
-      padding: 8px 12px;
-      font-size: 13px;
+      border: 1.5px solid #cbd5e1;
+      border-radius: 12px;
+      padding: 10px 14px;
+      font-size: 13.5px;
       outline: none;
     }
     .chat-send-btn {
       background: var(--brand-teal);
       color: #ffffff;
       border: none;
-      width: 40px;
-      border-radius: 10px;
+      width: 44px;
+      border-radius: 12px;
       cursor: pointer;
+      transition: background 0.2s;
+    }
+    .chat-send-btn:hover {
+      background: var(--brand-teal-dark);
     }
 
     /* Floating WhatsApp Button & Modal */
@@ -724,32 +842,32 @@
       position: fixed;
       bottom: 24px;
       left: 24px;
-      width: 58px;
-      height: 58px;
+      width: 60px;
+      height: 60px;
       background: #10b981;
       color: #ffffff;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 30px;
-      box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+      font-size: 32px;
+      box-shadow: 0 8px 25px rgba(16, 185, 129, 0.45);
       z-index: 999;
       cursor: pointer;
-      transition: transform 0.2s;
+      transition: transform 0.25s;
     }
     .float-wa:hover {
-      transform: scale(1.08);
+      transform: scale(1.1);
     }
 
     .wa-branches-modal {
       position: fixed;
-      bottom: 95px;
+      bottom: 98px;
       left: 24px;
       width: 320px;
       background: #ffffff;
-      border-radius: 20px;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.18);
+      border-radius: 22px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.2);
       border: 1px solid #cfe0e3;
       display: none;
       flex-direction: column;
@@ -758,62 +876,62 @@
       animation: popUp 0.25s ease-out;
     }
     @keyframes popUp {
-      from { opacity: 0; transform: translateY(12px); }
+      from { opacity: 0; transform: translateY(14px); }
       to { opacity: 1; transform: translateY(0); }
     }
     .wa-modal-header {
-      background: #10b981;
+      background: linear-gradient(135deg, #10b981, #059669);
       color: #ffffff;
-      padding: 14px 16px;
+      padding: 15px 18px;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
     .wa-modal-header h4 {
-      font-size: 14px;
+      font-size: 14.5px;
       font-weight: 800;
       display: flex;
       align-items: center;
       gap: 8px;
     }
     .wa-modal-body {
-      padding: 12px;
+      padding: 14px;
       max-height: 360px;
       overflow-y: auto;
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 9px;
       background: #f8fafc;
     }
     .wa-branch-item {
       background: #ffffff;
-      padding: 10px 14px;
-      border-radius: 12px;
+      padding: 11px 15px;
+      border-radius: 14px;
       border: 1px solid #e2e8f0;
       display: flex;
       align-items: center;
       justify-content: space-between;
       color: #0f172a;
-      font-weight: 700;
-      font-size: 13px;
+      font-weight: 800;
+      font-size: 13.5px;
       transition: all 0.2s;
     }
     .wa-branch-item:hover {
       background: #ecfdf5;
       border-color: #10b981;
       color: #047857;
-      transform: translateX(-3px);
+      transform: translateX(-4px);
     }
     .wa-branch-item i {
       color: #10b981;
-      font-size: 16px;
+      font-size: 17px;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- Top Bar (تم إزالة رقم الهاتف بناءً على طلبك) -->
+  <!-- Top Bar -->
   <div class="topbar">
     <div>
       <i class="fa-solid fa-award"></i> خبرة أكثر من 30 سنة بالأحساء • نستقبل كافة شركات التأمين
@@ -918,7 +1036,7 @@
   <!-- =======================================
        قسم شريط خدمات المجمع الشاملة (Carousel Slider) 
        ======================================= -->
-  <section class="container" style="padding: 50px 16px 20px;">
+  <section class="container" style="padding: 30px 16px 20px;">
     <div class="section-title">
       <h2>خدمات وعيادات مجمع الأسرة</h2>
       <p>رعاية طبية تخصصية متكاملة للأسنان والجلدية بأحدث المعايير الطبية المعتمدة</p>
@@ -1116,24 +1234,24 @@
   </section>
 
   <!-- Footer -->
-  <footer style="background: #0f172a; color: #94a3b8; padding: 40px 16px 20px; font-size: 13px;">
+  <footer style="background: var(--dark-navy); color: #94a3b8; padding: 45px 16px 25px; font-size: 13.5px;">
     <div class="container" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px;">
       <div>
-        <h4 style="color: #ffffff; font-size: 16px; margin-bottom: 8px;">مجمع الأسرة لطب الأسنان والجلدية</h4>
+        <h4 style="color: #ffffff; font-size: 16.5px; margin-bottom: 8px;">مجمع الأسرة لطب الأسنان والجلدية</h4>
         <p>أكثر من 30 سنة من العناية الموثوقة بصحة أهالي الأحساء.</p>
         <p style="margin-top: 6px;">البريد الرسمي: Family.denclinic2@gmail.com</p>
       </div>
       <div>
-        <h4 style="color: #ffffff; font-size: 14px; margin-bottom: 8px;">قنوات التواصل الرسمية</h4>
+        <h4 style="color: #ffffff; font-size: 14.5px; margin-bottom: 8px;">قنوات التواصل الرسمية</h4>
         <p>إنستغرام: @familydenclinic | تيك توك: @familyadental</p>
       </div>
     </div>
-    <div style="text-align: center; border-top: 1px solid #1e293b; margin-top: 30px; padding-top: 16px;">
+    <div style="text-align: center; border-top: 1px solid #1e293b; margin-top: 30px; padding-top: 18px;">
       &copy; 2026 مجمع الأسرة لطب الأسنان والجلدية. جميع الحقوق محفوظة.
     </div>
   </footer>
 
-  <!-- أيقونة الواتساب العائمة التفاعلية مع نافذة اختيار الفرع -->
+  <!-- أيقونة الواتساب العائمة -->
   <div class="float-wa" onclick="toggleWaModal()" title="تواصل عبر الواتساب">
     <i class="fa-brands fa-whatsapp"></i>
   </div>
@@ -1143,9 +1261,7 @@
       <h4><i class="fa-brands fa-whatsapp" style="font-size: 18px;"></i> اختر الفرع للتواصل واتساب</h4>
       <i class="fa-solid fa-xmark" style="cursor: pointer; font-size: 16px;" onclick="toggleWaModal()"></i>
     </div>
-    <div class="wa-modal-body" id="waBranchesList">
-      <!-- يتم توليد قائمة الفروع ديناميكياً -->
-    </div>
+    <div class="wa-modal-body" id="waBranchesList"></div>
   </div>
 
   <!-- بوت المحادثة التفاعلي الذكي -->
@@ -1293,7 +1409,6 @@
       container.scrollBy({ left: direction === 'left' ? -scrollStep : scrollStep, behavior: 'smooth' });
     }
 
-    /* التحكم بنافذة اختيار فرع الواتساب العائمة */
     function toggleWaModal() {
       const modal = document.getElementById('waBranchesModal');
       const isVisible = modal.style.display === 'flex';
