@@ -19,7 +19,8 @@
       --brand-lime-dark: #6C9F2A;
       --brand-lime-light: #F2F9E8;
       --brand-dark: #0F172A;
-      --bg-mint: #F4FBF9; /* لون النعناع الطبي الهادئ والمريح للعين */
+      /* لون الخلفية المودرن التيل الضبابي المتناسق مع الشعار */
+      --bg-modern: #E2EEF0;
       --card-bg: #FFFFFF;
     }
     * {
@@ -29,7 +30,7 @@
       font-family: 'Cairo', sans-serif;
     }
     body {
-      background-color: var(--bg-mint);
+      background-color: var(--bg-modern);
       color: #334155;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
@@ -67,11 +68,11 @@
     /* Header */
     header {
       background: #ffffff;
-      border-bottom: 1px solid #e2f1ed;
+      border-bottom: 1px solid #d0e2e5;
       position: sticky;
       top: 0;
       z-index: 50;
-      box-shadow: 0 2px 10px rgba(0, 165, 181, 0.05);
+      box-shadow: 0 2px 10px rgba(0, 165, 181, 0.06);
     }
     .nav-wrap {
       height: 80px;
@@ -84,13 +85,17 @@
       align-items: center;
       gap: 12px;
     }
-    .logo-img {
-      width: 54px;
-      height: 54px;
+    .logo-svg-wrap {
+      width: 52px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #ffffff;
       border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid var(--brand-lime);
+      border: 1.5px solid var(--brand-lime);
       box-shadow: 0 3px 8px rgba(0, 165, 181, 0.15);
+      padding: 4px;
     }
     .logo-text h1 {
       font-size: 20px;
@@ -121,7 +126,7 @@
 
     /* Hero */
     .hero {
-      background: linear-gradient(180deg, #E6F8F9 0%, var(--bg-mint) 100%);
+      background: linear-gradient(180deg, #d8e9ec 0%, var(--bg-modern) 100%);
       padding: 40px 0 60px 0;
     }
     .hero-grid {
@@ -158,7 +163,7 @@
     }
     .hero-desc {
       font-size: 16px;
-      color: #556980;
+      color: #475569;
       margin-bottom: 24px;
     }
     .features-row {
@@ -168,11 +173,11 @@
     }
     .feat-card {
       background: #ffffff;
-      border: 1px solid #d5ece5;
+      border: 1px solid #cfe0e3;
       border-radius: 16px;
       padding: 14px;
       text-align: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
     }
     .feat-card i {
       font-size: 22px;
@@ -272,10 +277,7 @@
       margin-top: 4px;
     }
 
-    /* =======================================
-       CAROUSEL / SLIDER التمرير الأفقي لجميع الخدمات
-       مع صور واقعية احترافية
-       ======================================= */
+    /* Carousel */
     .carousel-wrapper {
       position: relative;
       margin: 20px 0 40px;
@@ -299,10 +301,10 @@
     .carousel-card {
       width: 295px;
       background: #ffffff;
-      border: 1px solid #d5ece5;
+      border: 1px solid #cfe0e3;
       border-radius: 22px;
       padding: 22px;
-      box-shadow: 0 6px 18px rgba(0, 165, 181, 0.06);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -312,24 +314,11 @@
     .carousel-card:hover {
       transform: translateY(-6px);
       border-color: var(--brand-teal);
-      box-shadow: 0 12px 28px rgba(0, 165, 181, 0.16);
-    }
-    .service-badge {
-      position: absolute;
-      top: 18px;
-      left: 18px;
-      background: var(--brand-lime-light);
-      color: var(--brand-lime-dark);
-      font-size: 11px;
-      font-weight: 800;
-      padding: 3px 10px;
-      border-radius: 12px;
-      border: 1px solid rgba(140, 198, 63, 0.3);
-      z-index: 2;
+      box-shadow: 0 14px 30px rgba(0, 165, 181, 0.16);
     }
     .service-real-img {
       width: 100%;
-      height: 150px;
+      height: 160px;
       border-radius: 16px;
       object-fit: cover;
       margin-bottom: 16px;
@@ -398,17 +387,15 @@
       .carousel-wrapper { padding: 0; }
     }
 
-    /* =======================================
-       قسم التقسيط (تابي، تمارا، تسهيل)
-       ======================================= */
+    /* قسم التقسيط (تابي وتمارا فقط) */
     .installment-section {
       background: #ffffff;
-      border: 2px solid #d5ece5;
+      border: 2px solid #cfe0e3;
       border-radius: 28px;
       padding: 40px 24px;
       margin: 40px auto;
       text-align: center;
-      box-shadow: 0 10px 30px rgba(0, 165, 181, 0.06);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
     }
     .installment-header h2 {
       font-size: 30px;
@@ -426,21 +413,22 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 16px;
-      max-width: 700px;
+      gap: 20px;
+      max-width: 650px;
       margin: 0 auto 30px;
     }
     .inst-card {
       background: #ffffff;
       border: 1px solid #e2e8f0;
       border-radius: 20px;
-      padding: 16px 24px;
+      padding: 16px 28px;
       display: flex;
       align-items: center;
       justify-content: center;
       box-shadow: 0 4px 14px rgba(0,0,0,0.04);
-      min-width: 180px;
-      height: 90px;
+      flex: 1;
+      min-width: 220px;
+      height: 95px;
       transition: 0.2s;
     }
     .inst-card:hover {
@@ -463,9 +451,7 @@
       transform: translateY(-2px);
     }
 
-    /* =======================================
-       قسم آراء مراجعي مجمع الأسرة (Testimonials)
-       ======================================= */
+    /* قسم آراء المراجعين */
     .testimonial-wrapper {
       position: relative;
       max-width: 750px;
@@ -474,11 +460,11 @@
     }
     .testimonial-card {
       background: #ffffff;
-      border: 1.5px solid #d5ece5;
+      border: 1.5px solid #cfe0e3;
       border-radius: 24px;
       padding: 40px 30px;
       text-align: center;
-      box-shadow: 0 10px 30px rgba(0, 165, 181, 0.08);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
       position: relative;
     }
     .quote-icon {
@@ -562,7 +548,7 @@
       border: 2px solid var(--brand-teal);
       border-radius: 20px;
       padding: 24px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+      box-shadow: 0 10px 28px rgba(0,0,0,0.06);
     }
     .card-actions {
       display: flex;
@@ -587,9 +573,7 @@
     .btn-wa { background: #10b981; }
     .btn-map { background: #ffffff; color: #334155; border: 1px solid #cbd5e1; }
 
-    /* =======================================
-       بوت المحادثة التفاعلي الذكي (Chatbot Widget)
-       ======================================= */
+    /* بوت المحادثة التفاعلي */
     .chat-bubble-btn {
       position: fixed;
       bottom: 24px;
@@ -625,7 +609,7 @@
       flex-direction: column;
       overflow: hidden;
       z-index: 1000;
-      border: 1px solid #d5ece5;
+      border: 1px solid #cfe0e3;
     }
     .chat-header {
       background: var(--brand-teal);
@@ -640,16 +624,10 @@
       align-items: center;
       gap: 10px;
     }
-    .chat-header-info img {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background: #fff;
-    }
     .chat-body {
       flex: 1;
       padding: 16px;
-      background: var(--bg-mint);
+      background: var(--bg-modern);
       overflow-y: auto;
       display: flex;
       flex-direction: column;
@@ -665,7 +643,7 @@
       box-shadow: 0 2px 6px rgba(0,0,0,0.04);
       max-width: 85%;
       align-self: flex-start;
-      border: 1px solid #e2f1ed;
+      border: 1px solid #d5e5e8;
     }
     .chat-msg.user {
       background: var(--brand-teal);
@@ -705,7 +683,7 @@
     .chat-footer {
       padding: 12px;
       background: #ffffff;
-      border-top: 1px solid #e2f1ed;
+      border-top: 1px solid #cfe0e3;
       display: flex;
       gap: 8px;
     }
@@ -754,16 +732,30 @@
       <i class="fa-solid fa-award"></i> خبرة أكثر من 30 سنة بالأحساء • نستقبل كافة شركات التأمين
     </div>
     <div>
-      <span class="badge-tabby">تقسيط تابي وتمارا وتسهيل متاح</span>
+      <span class="badge-tabby">تقسيط تابي وتمارا متاح</span>
       <a href="tel:0537403090" style="margin-right: 8px;"><i class="fa-solid fa-phone"></i> 0537403090</a>
     </div>
   </div>
 
-  <!-- Header مع الشعار الرسمي -->
+  <!-- Header مع الشعار الرسمي الدقيق المطابق بالكامل -->
   <header>
     <div class="container nav-wrap">
       <div class="logo">
-        <img src="logo.jpg" alt="شعار مجمع الأسرة لطب الأسنان" class="logo-img" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'><circle cx=\'50\' cy=\'50\' r=\'48\' fill=\'%23F4F9EC\' stroke=\'%238CC63F\' stroke-width=\'4\'/><path d=\'M30 45 C30 25 70 25 70 45 C70 65 62 80 50 80 C38 80 30 65 30 45 Z\' fill=\'%2300A5B5\'/></svg>'">
+        <div class="logo-svg-wrap">
+          <!-- الشعار المتجه الأصلي لمجمع الأسرة لطب الأسنان والجلدية -->
+          <svg viewBox="0 0 450 500" style="width: 100%; height: 100%;">
+            <!-- رأس الشخص الأيسر (أخضر تفاحي) -->
+            <circle cx="155" cy="65" r="32" fill="#99cc33"/>
+            <!-- رأس الشخص الأيمن (تيل/سماوي) -->
+            <circle cx="360" cy="95" r="35" fill="#40b5b5"/>
+            <!-- جسم الشخص الأيسر وجزء السن العلوي (أخضر تفاحي) -->
+            <path d="M125 180 C95 155, 110 115, 155 115 C205 115, 275 160, 290 170 C240 220, 150 215, 125 180 Z" fill="#99cc33"/>
+            <!-- السن والشخص الأيمن (تيل/سماوي) -->
+            <path d="M110 185 C140 230, 240 235, 290 175 C310 150, 360 145, 390 170 C420 215, 385 365, 355 400 C340 370, 320 330, 260 340 C210 350, 195 410, 170 480 C130 380, 90 280, 110 185 Z" fill="#40b5b5"/>
+            <!-- الجذر الأيمن (أخضر تفاحي) -->
+            <path d="M250 350 C310 345, 350 400, 350 475 C310 495, 290 440, 250 350 Z" fill="#99cc33"/>
+          </svg>
+        </div>
         <div class="logo-text">
           <h1>مجمع الأسرة</h1>
           <span>لطب الأسنان والجلدية</span>
@@ -781,7 +773,7 @@
         <div>
           <div class="hero-tag">ابتسامة أجمل.. وعناية متكاملة تدوم</div>
           <h2 class="hero-title">عناية طبية متقدمة بأقرب فرع منك في <span>الأحساء</span></h2>
-          <p class="hero-desc">أكثر من 30 عاماً من الثقة عبر 8 فروع متطورة تغطي كافة مدن وقرى الأحساء، مع خيارات دفع مرنة بالتقسيط المريح.</p>
+          <p class="hero-desc">أكثر من 30 عاماً من الثقة عبر 8 فروع متطورة تغطي كافة مدن وبلدات الأحساء، مع خيارات دفع مرنة بالتقسيط المريح.</p>
           
           <div class="features-row">
             <div class="feat-card">
@@ -845,7 +837,7 @@
 
   <!-- =======================================
        قسم شريط خدمات المجمع الشاملة (Carousel Slider) 
-       مع صور واقعية احترافية بدون رسومات
+       مع صور واقعية احترافية بدون أي شارات أو عبارات غير ملائمة
        ======================================= -->
   <section class="container" style="padding: 50px 16px 20px;">
     <div class="section-title">
@@ -866,11 +858,10 @@
           
           <!-- 1. ابتسامة هوليوود وتجميل الأسنان -->
           <div class="carousel-card">
-            <span class="service-badge">الأكثر طلباً</span>
             <div>
-              <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=600&q=80" alt="ابتسامة هوليوود" class="service-real-img">
+              <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=700&q=80" alt="ابتسامة هوليوود" class="service-real-img">
               <h3>ابتسامة هوليوود وتجميل الأسنان</h3>
-              <p>تصميم ابتسامة متناسقة وطبيعية باستخدام أرقى عدسات الفينير واللومينير الألمانية بأحدث التقنيات الرقمية.</p>
+              <p>تصميم ابتسامة متناسقة وطبيعية باستخدام أرقى عدسات الفينير واللومينير بأحدث التقنيات الرقمية المعتمدة.</p>
             </div>
             <a href="#booking" class="btn-service-book">
               <i class="fa-regular fa-calendar-check"></i>
@@ -880,11 +871,10 @@
 
           <!-- 2. تقويم الأسنان والفكين -->
           <div class="carousel-card">
-            <span class="service-badge">تقسيط متاح</span>
             <div>
-              <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=600&q=80" alt="تقويم الأسنان" class="service-real-img">
+              <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=700&q=80" alt="تقويم الأسنان" class="service-real-img">
               <h3>تقويم الأسنان والفكين</h3>
-              <p>علاج إطباق الأسنان والفكين بأحدث تقنيات التقويم الشفاف غير المرئي والتقويم المعدني لكافة الأعمار.</p>
+              <p>علاج وتعديل إطباق الأسنان والفكين بأحدث تقنيات التقويم الشفاف غير المرئي والتقويم المعدني لكافة الأعمار.</p>
             </div>
             <a href="#booking" class="btn-service-book">
               <i class="fa-regular fa-calendar-check"></i>
@@ -892,13 +882,12 @@
             </a>
           </div>
 
-          <!-- 3. زراعة وجراحة الأسنان -->
+          <!-- 3. زراعة وجراحة الفم والأسنان -->
           <div class="carousel-card">
-            <span class="service-badge">ضمان طبي</span>
             <div>
-              <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=600&q=80" alt="زراعة الأسنان" class="service-real-img">
+              <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=700&q=80" alt="زراعة الأسنان" class="service-real-img">
               <h3>زراعة وجراحة الفم والأسنان</h3>
-              <p>تعويض الأسنان المفقودة بأفضل الزرعات السويسرية والألمانية واستعادة وظيفة المضغ والابتسامة بدقة وأمان.</p>
+              <p>تعويض الأسنان المفقودة بأفضل أنظمة الزرعات السويسرية المعتمدة واستعادة وظيفة المضغ والابتسامة الطبيعية بأمان تام.</p>
             </div>
             <a href="#booking" class="btn-service-book">
               <i class="fa-regular fa-calendar-check"></i>
@@ -906,55 +895,12 @@
             </a>
           </div>
 
-          <!-- 4. تبييض الأسنان بالليزر -->
+          <!-- 4. تنظيف وتلميع الأسنان واللثة -->
           <div class="carousel-card">
-            <span class="service-badge">نتائج فورية</span>
             <div>
-              <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=600&q=80" alt="تبييض الأسنان" class="service-real-img">
-              <h3>تبييض الأسنان بالليزر</h3>
-              <p>جلسات تبييض احترافية متطورة تزيل التصبغات والاصفرار وتمنحك بياضاً ناصعاً ومشرقاً من أول جلسة بأمان تام.</p>
-            </div>
-            <a href="#booking" class="btn-service-book">
-              <i class="fa-regular fa-calendar-check"></i>
-              <span>احجز جلسة التبييض</span>
-            </a>
-          </div>
-
-          <!-- 5. قسم الجلدية والليزر والتجميل -->
-          <div class="carousel-card">
-            <span class="service-badge">طبيبات متخصصة</span>
-            <div>
-              <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=600&q=80" alt="الجلدية والليزر" class="service-real-img">
-              <h3>قسم الجلدية والليزر والتجميل</h3>
-              <p>جلسات إزالة الشعر بالليزر، نضارة البشرة، حقن الفيلر والبوتوكس وخيوط الشد بإشراف نخبة من الطبيبات.</p>
-            </div>
-            <a href="#booking" class="btn-service-book">
-              <i class="fa-regular fa-calendar-check"></i>
-              <span>احجز موعد الجلدية</span>
-            </a>
-          </div>
-
-          <!-- 6. علاج جذور وأعصاب الأسنان -->
-          <div class="carousel-card">
-            <span class="service-badge">بدون ألم</span>
-            <div>
-              <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=600&q=80" alt="علاج العصب" class="service-real-img">
-              <h3>سحب وعلاج عصب الأسنان</h3>
-              <p>إنهاء آلام الأسنان المزمنة وسحب العصب بجلسة واحدة غالباً باستخدام أجهزة الروتاري الإلكترونية الدقيقة.</p>
-            </div>
-            <a href="#booking" class="btn-service-book">
-              <i class="fa-regular fa-calendar-check"></i>
-              <span>تخلص من ألم الأسنان</span>
-            </a>
-          </div>
-
-          <!-- 7. تنظيف وتلميع الأسنان وعلاج اللثة -->
-          <div class="carousel-card">
-            <span class="service-badge">عناية دورية</span>
-            <div>
-              <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=600&q=80" alt="تنظيف الأسنان" class="service-real-img">
+              <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=700&q=80" alt="تنظيف وتلميع الأسنان" class="service-real-img">
               <h3>تنظيف وتلميع الأسنان واللثة</h3>
-              <p>إزالة التكلسات الجيرية المتراكمة وتلميع الأسنان بالموجات فوق الصوتية لحماية اللثة من الالتهابات والروائح.</p>
+              <p>إزالة التكلسات الجيرية المتراكمة وتلميع الأسنان بالموجات فوق الصوتية لحماية اللثة من الالتهابات والحفاظ على انتعاش الفم.</p>
             </div>
             <a href="#booking" class="btn-service-book">
               <i class="fa-regular fa-calendar-check"></i>
@@ -962,13 +908,51 @@
             </a>
           </div>
 
+          <!-- 5. تبييض الأسنان بالليزر -->
+          <div class="carousel-card">
+            <div>
+              <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=700&q=80" alt="تبييض الأسنان" class="service-real-img">
+              <h3>تبييض الأسنان بالليزر</h3>
+              <p>جلسات تبييض ضوئي متطورة تزيل التصبغات وتمنح الأسنان إشراقة وبياضاً ناصعاً وآمناً على طبقة المينا.</p>
+            </div>
+            <a href="#booking" class="btn-service-book">
+              <i class="fa-regular fa-calendar-check"></i>
+              <span>احجز جلسة التبييض</span>
+            </a>
+          </div>
+
+          <!-- 6. علاج جذور وأعصاب الأسنان -->
+          <div class="carousel-card">
+            <div>
+              <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=700&q=80" alt="علاج جذور الأسنان" class="service-real-img">
+              <h3>علاج جذور وأعصاب الأسنان</h3>
+              <p>علاج وإنهاء آلام الأسنان وسحب العصب بجلسات مريحة باستخدام أجهزة قياس القنوات الإلكترونية الحديثة.</p>
+            </div>
+            <a href="#booking" class="btn-service-book">
+              <i class="fa-regular fa-calendar-check"></i>
+              <span>تخلص من ألم الأسنان</span>
+            </a>
+          </div>
+
+          <!-- 7. قسم الجلدية والليزر والتجميل -->
+          <div class="carousel-card">
+            <div>
+              <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=700&q=80" alt="الجلدية والليزر" class="service-real-img">
+              <h3>قسم الجلدية والليزر والتجميل</h3>
+              <p>جلسات إزالة الشعر بأحدث أجهزة الليزر، العناية بنضارة البشرة، وحقن الفيلر والبوتوكس بإشراف كوادر طبية متخصصة.</p>
+            </div>
+            <a href="#booking" class="btn-service-book">
+              <i class="fa-regular fa-calendar-check"></i>
+              <span>احجز موعد الجلدية</span>
+            </a>
+          </div>
+
           <!-- 8. طب أسنان الأطفال -->
           <div class="carousel-card">
-            <span class="service-badge">بيئة مبهجة للطفل</span>
             <div>
-              <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=600&q=80" alt="طب أسنان الأطفال" class="service-real-img">
+              <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=700&q=80" alt="طب أسنان الأطفال" class="service-real-img">
               <h3>طب أسنان الأطفال</h3>
-              <p>رعاية طبية لطيفة تراعي راحة طفلك لعلاج تسوس الأسنان اللبنية وتطبيق جلسات الفلورايد لحمايتها بدون خوف.</p>
+              <p>رعاية طبية لطيفة ومريحة لعلاج تسوس الأسنان اللبنية وتطبيق جلسات الفلورايد الوقائية في بيئة محببة للطفل.</p>
             </div>
             <a href="#booking" class="btn-service-book">
               <i class="fa-regular fa-calendar-check"></i>
@@ -982,7 +966,7 @@
   </section>
 
   <!-- =======================================
-       قسم التقسيط والتمويل (تابي، تمارا، تسهيل)
+       قسم التقسيط والتمويل (تابي وتمارا فقط مع شعارات SVG الأصلية)
        ======================================= -->
   <section class="container">
     <div class="installment-section">
@@ -992,9 +976,9 @@
       </div>
 
       <div class="installment-cards">
-        <!-- Tabby SVG -->
+        <!-- كرت تابي مع SVG الأصلي المعتمد -->
         <div class="inst-card">
-          <svg style="width: 130px; height: auto;" viewBox="0 0 212.1 212.1">
+          <svg style="width: 140px; height: auto;" viewBox="0 0 212.1 212.1">
             <path fill="#5AFEAE" d="M166.2,139.5H45.8c-11.6,0-20.9-9.4-20.9-20.9V93.5c0-11.6,9.4-20.9,20.9-20.9h120.4c11.6,0,20.9,9.4,20.9,20.9v25.1C187.1,130.1,177.8,139.5,166.2,139.5z"/>
             <g fill="#292929">
               <path d="M157.9,94.1l-8.3,31.7l0,0.1h6.5l8.3-31.7H157.9z M55.3,112.1c-1,0.5-2,0.7-3.1,0.7c-2.3,0-3.6-0.4-3.8-2.3v-0.1c0-0.1,0-0.1,0-0.2v-5.5l0-0.6v-3.9h0v-1.6l0-0.6v-3.7L42.6,95c3.9-0.8,6.1-3.8,6.1-6.9v-1.9h-6.5v8.9l-0.4,0.1v16.4c0.2,4.6,3.3,7.4,8.2,7.4c1.8,0,3.7-0.4,5.2-1.1l0,0L55.3,112.1z"/>
@@ -1003,19 +987,8 @@
           </svg>
         </div>
 
-        <!-- Tasheel -->
+        <!-- كرت تمارا مع SVG الأصلي المعتمد -->
         <div class="inst-card">
-          <div style="display: flex; align-items: center; gap: 8px;">
-            <i class="fa-solid fa-layer-group" style="font-size: 24px; color: #10b981;"></i>
-            <div style="text-align: right;">
-              <span style="font-size: 19px; font-weight: 900; color: #475569; display: block; line-height: 1;">تسهيل</span>
-              <span style="font-size: 10px; font-weight: 700; color: #10b981;">للتمويل</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Tamara SVG -->
-        <div class="inst-card" style="width: 100%; max-width: 380px;">
           <svg style="width: 140px; height: auto;" viewBox="0 0 1053.61 361.63">
             <g fill="#0f172a">
               <path d="M258.32,134.96c-2.49,0-6.15,2.49-7.47,4.98c-3.96,7.47-6.89,15.68-10.7,23.3c-2.05,4.1-1.17,6.45,1.76,9.82 c7.77,8.79,15.97,17.29,22.42,27.11c7.77,11.58,6.74,24.03-3.22,33.7c-7.47,7.33-16.26,13.92-25.79,18.46 c-13.63,6.45-28.43,10.55-42.64,15.97c-1.9,0.73-4.98,3.22-5.27,4.98c-0.88,5.27,2.05,6.74,4.1,7.62 c16.26,7.18,32.82,13.63,50.11,20.66c5.57-8.35,11.14-16.12,15.97-24.32c26.37-44.25,32.24-89.82,7.91-137 C264.48,137.75,260.81,135.11,258.32,134.96z"></path>
@@ -1033,7 +1006,7 @@
   </section>
 
   <!-- =======================================
-       قسم آراء مراجعي مجمع الأسرة (Testimonials)
+       قسم آراء مراجعي مجمع الأسرة (بالأسماء الأولى فقط)
        ======================================= -->
   <section class="container">
     <div class="section-title">
@@ -1103,7 +1076,15 @@
   <div class="chat-box-modal" id="chatModal">
     <div class="chat-header">
       <div class="chat-header-info">
-        <img src="logo.jpg" alt="Logo" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'><circle cx=\'50\' cy=\'50\' r=\'50\' fill=\'%2300A5B5\'/></svg>'">
+        <div style="width: 34px; height: 34px; background: #fff; border-radius: 50%; padding: 3px; display: flex; align-items: center; justify-content: center;">
+          <svg viewBox="0 0 450 500" style="width: 100%; height: 100%;">
+            <circle cx="155" cy="65" r="32" fill="#99cc33"/>
+            <circle cx="360" cy="95" r="35" fill="#40b5b5"/>
+            <path d="M125 180 C95 155, 110 115, 155 115 C205 115, 275 160, 290 170 C240 220, 150 215, 125 180 Z" fill="#99cc33"/>
+            <path d="M110 185 C140 230, 240 235, 290 175 C310 150, 360 145, 390 170 C420 215, 385 365, 355 400 C340 370, 320 330, 260 340 C210 350, 195 410, 170 480 C130 380, 90 280, 110 185 Z" fill="#40b5b5"/>
+            <path d="M250 350 C310 345, 350 400, 350 475 C310 495, 290 440, 250 350 Z" fill="#99cc33"/>
+          </svg>
+        </div>
         <div>
           <div style="font-weight: 800; font-size: 14px;">مساعد مجمع الأسرة</div>
           <div style="font-size: 11px; opacity: 0.9;">متصل الآن ومستعد لخدمتك</div>
@@ -1146,7 +1127,7 @@
       { name: "فرع العيون الصناعية", phone: "0536902220", intl: "966536902220", time: "من 9 صباحاً - 9 مساءً", map: "https://maps.google.com/?q=25.6033344,49.5639687" }
     ];
 
-    // بيانات التقييمات الحقيقية بالأسماء الأولى
+    // بيانات التقييمات الحقيقية بالأسماء الأولى فقط وبدون أسماء عوائل
     const testimonials = [
       {
         quote: "أفضل عيادات اسنان بالأحساء انتشارهم على كل مناطق الأحساء عندهم اخصائيين من جميع التخصصات.. اسعارهم منافسة ومرضية وافضل شي عندهم خدمة تمارا للتقسيط، ومواعيدهم قريبة تقدر تحجز في نفس اليوم.",
@@ -1273,7 +1254,7 @@
       } else if (type === 'tabby') {
         appendUserMessage("تقسيط تابي وتمارا");
         setTimeout(() => {
-          appendBotMessage("نوفر لكم تقسيط العلاج بسعر الكاش عبر تابي، تمارا، وكذلك تسهيل للتمويل للعمليات الكبرى وبدون فوائد!");
+          appendBotMessage("نوفر لكم تقسيط العلاج بسعر الكاش عبر تابي وتمارا بكل سهولة وبدون فوائد!");
         }, 500);
       } else if (type === 'support') {
         appendUserMessage("للشكاوى والاستفسارات");
