@@ -12,12 +12,12 @@
   
   <style>
     :root {
-      --brand-teal: #0097A7;
-      --brand-teal-dark: #007982;
+      --brand-teal: #00A5B5;
+      --brand-teal-dark: #007E8C;
       --brand-teal-light: #E0F7FA;
-      --brand-lime: #8BC34A;
-      --brand-lime-dark: #689F38;
-      --brand-lime-light: #F1F8E9;
+      --brand-lime: #8CC63F;
+      --brand-lime-dark: #6C9F2A;
+      --brand-lime-light: #F4F9EC;
       --brand-dark: #0F172A;
       --brand-surface: #F8FAFC;
     }
@@ -71,7 +71,7 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.04);
     }
     .nav-wrap {
-      height: 75px;
+      height: 80px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -81,17 +81,13 @@
       align-items: center;
       gap: 12px;
     }
-    .logo-icon {
-      width: 46px;
-      height: 46px;
-      background: linear-gradient(135deg, var(--brand-teal), var(--brand-lime));
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #ffffff;
-      font-size: 22px;
-      box-shadow: 0 4px 10px rgba(0, 151, 167, 0.3);
+    .logo-img {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--brand-lime);
+      box-shadow: 0 3px 8px rgba(0, 165, 181, 0.2);
     }
     .logo-text h1 {
       font-size: 20px;
@@ -193,7 +189,7 @@
       border-radius: 24px;
       padding: 28px;
       border: 2px solid var(--brand-teal);
-      box-shadow: 0 15px 35px rgba(0, 151, 167, 0.15);
+      box-shadow: 0 15px 35px rgba(0, 165, 181, 0.15);
     }
     .booking-box h3 {
       font-size: 22px;
@@ -289,7 +285,7 @@
       background: var(--brand-teal);
       color: #ffffff;
       border-color: var(--brand-teal);
-      box-shadow: 0 4px 12px rgba(0, 151, 167, 0.3);
+      box-shadow: 0 4px 12px rgba(0, 165, 181, 0.3);
     }
     .active-branch-card {
       background: #ffffff;
@@ -332,6 +328,7 @@
       padding: 22px;
       border-radius: 18px;
       border: 1px solid #e2e8f0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
     }
     .service-card h3 {
       font-size: 16px;
@@ -342,6 +339,48 @@
     .service-card p {
       font-size: 13px;
       color: #64748b;
+    }
+    /* Prices & Offers */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .price-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 18px;
+      padding: 20px;
+      text-align: center;
+      display: flex;
+      flex-col: column;
+      justify-content: space-between;
+    }
+    .price-card.featured {
+      border: 2px solid var(--brand-teal);
+      box-shadow: 0 10px 25px rgba(0, 165, 181, 0.15);
+    }
+    .price-card .cost {
+      font-size: 32px;
+      font-weight: 900;
+      color: #0f172a;
+      margin: 12px 0 6px;
+    }
+    .price-card .btn-book-sm {
+      display: block;
+      margin-top: 14px;
+      padding: 10px;
+      background: var(--brand-teal-light);
+      color: var(--brand-teal-dark);
+      font-weight: 700;
+      font-size: 13px;
+      border-radius: 10px;
+      transition: 0.2s;
+    }
+    .price-card .btn-book-sm:hover {
+      background: var(--brand-teal);
+      color: #ffffff;
     }
     /* Floating WhatsApp */
     .float-wa {
@@ -376,11 +415,11 @@
     </div>
   </div>
 
-  <!-- Header -->
+  <!-- Header مع الشعار الرسمي -->
   <header>
     <div class="container nav-wrap">
       <div class="logo">
-        <div class="logo-icon"><i class="fa-solid fa-tooth"></i></div>
+        <img src="logo.jpg" alt="شعار مجمع الأسرة لطب الأسنان" class="logo-img" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'><circle cx=\'50\' cy=\'50\' r=\'48\' fill=\'%23F4F9EC\' stroke=\'%238CC63F\' stroke-width=\'4\'/><path d=\'M30 45 C30 25 70 25 70 45 C70 65 62 80 50 80 C38 80 30 65 30 45 Z\' fill=\'%2300A5B5\'/></svg>'">
         <div class="logo-text">
           <h1>مجمع الأسرة</h1>
           <span>لطب الأسنان والجلدية</span>
@@ -467,9 +506,7 @@
       <p>اضغط على أي فرع لعرض مواعيد العمل، أرقام الاتصال، ورابط الخريطة المباشر</p>
     </div>
 
-    <div class="branches-grid" id="branchesBtnList">
-      <!-- يتم توليد الأزرار تلقائياً لمنع أي أخطاء في الـ HTML -->
-    </div>
+    <div class="branches-grid" id="branchesBtnList"></div>
 
     <div id="branchInfo" class="active-branch-card"></div>
   </section>
@@ -485,25 +522,25 @@
       <div class="service-card">
         <i class="fa-solid fa-wand-magic-sparkles" style="color: var(--brand-teal); font-size: 24px;"></i>
         <h3>طب وتجميل الأسنان</h3>
-        <p>ابتسامة هوليود، الفينير، وتبييض الأسنان بالليزر بأحدث درجات الأمان.</p>
+        <p>ابتسامة هوليود، الفينير، وتبييض الأسنان بالليزر بأحدث درجات الأمان والجمال.</p>
       </div>
 
       <div class="service-card">
         <i class="fa-solid fa-teeth-open" style="color: var(--brand-lime-dark); font-size: 24px;"></i>
         <h3>عيادة تقويم الأسنان والفكين</h3>
-        <p>تقويم شفاف ومعدني وتعديل إطباق الأسنان بإشراف أخصائيين معتمدين.</p>
+        <p>تقويم شفاف ومعدني وتعديل إطباق الأسنان بإشراف أخصائيين واستشاريين معتمدين.</p>
       </div>
 
       <div class="service-card">
         <i class="fa-solid fa-spa" style="color: #ec4899; font-size: 24px;"></i>
         <h3>قسم الجلدية والتجميل والليزر</h3>
-        <p>جلسات إزالة الشعر بالليزر، نضارة البشرة، الفيلر، والبوتوكس.</p>
+        <p>جلسات إزالة الشعر بالليزر، نضارة البشرة، حقن الفيلر، والبوتوكس بأيدي خبيرات.</p>
       </div>
 
       <div class="service-card">
         <i class="fa-solid fa-tooth" style="color: #2563eb; font-size: 24px;"></i>
         <h3>زراعة وجراحة الأسنان</h3>
-        <p>تعويض الأسنان المفقودة بزرعات ألمانية وسويسرية معتمدة عالمياً.</p>
+        <p>تعويض الأسنان المفقودة بزرعات ألمانية وسويسرية معتمدة مع ضمان طويل الأمد.</p>
       </div>
 
       <div class="service-card">
@@ -515,7 +552,57 @@
       <div class="service-card">
         <i class="fa-solid fa-child-reaching" style="color: #7c3aed; font-size: 24px;"></i>
         <h3>طب أسنان الأطفال</h3>
-        <p>رعاية وقائية وعلاجية خاصة للأطفال في بيئة مرحة وبدون أي خوف.</p>
+        <p>رعاية وقائية وعلاجية خاصة للأطفال في بيئة مرحة وبدون أي خوف أو قلق.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Prices Section -->
+  <section class="container" style="padding-bottom: 50px;">
+    <div class="section-title">
+      <h2>الأسعار والعروض المعتمدة</h2>
+      <p>شفافية كاملة مع إمكانية التقسيط المريح عبر تابي وتمارا</p>
+    </div>
+
+    <div class="pricing-grid">
+      <div class="price-card">
+        <div>
+          <h4 style="color: var(--brand-teal); font-size: 14px;">الفحص الشامل</h4>
+          <h3 style="font-size: 18px; font-weight: 800; margin-top: 4px;">الكشف وخطة العلاج</h3>
+          <div class="cost">50 <span style="font-size: 14px; color: #64748b;">ريال</span></div>
+          <p style="font-size: 12px; color: #64748b;">فحص الأسنان واللثة مع التشخيص الكامل</p>
+        </div>
+        <a href="#booking" class="btn-book-sm">احجز الآن</a>
+      </div>
+
+      <div class="price-card">
+        <div>
+          <h4 style="color: var(--brand-lime-dark); font-size: 14px;">العناية والوقاية</h4>
+          <h3 style="font-size: 18px; font-weight: 800; margin-top: 4px;">تنظيف وتلميع الأسنان</h3>
+          <div class="cost">120 <span style="font-size: 14px; color: #64748b;">ريال</span></div>
+          <p style="font-size: 12px; color: #64748b;">إزالة التكلسات والجير واستعادة لمعان الأسنان</p>
+        </div>
+        <a href="#booking" class="btn-book-sm">احجز الآن</a>
+      </div>
+
+      <div class="price-card featured">
+        <div>
+          <span style="background: var(--brand-teal); color: white; padding: 2px 8px; border-radius: 12px; font-size: 10px; font-weight: 800;">الأكثر طلباً</span>
+          <h3 style="font-size: 18px; font-weight: 800; margin-top: 4px;">تبييض الأسنان بالليزر</h3>
+          <div class="cost" style="color: var(--brand-teal);">450 <span style="font-size: 14px; color: #64748b;">ريال</span></div>
+          <p style="font-size: 12px; color: #64748b;">جلسة تبييض احترافية آمنة ونتائج فورية</p>
+        </div>
+        <a href="#booking" class="btn-book-sm" style="background: var(--brand-teal); color: white;">احجز الآن</a>
+      </div>
+
+      <div class="price-card">
+        <div>
+          <h4 style="color: #ec4899; font-size: 14px;">قسم التجميل والجلدية</h4>
+          <h3 style="font-size: 18px; font-weight: 800; margin-top: 4px;">جلسات الليزر والنضارة</h3>
+          <div class="cost">عروض <span style="font-size: 14px; color: #64748b;">مستمرة</span></div>
+          <p style="font-size: 12px; color: #64748b;">باقات حصرية ومميزة بإشراف أخصائيات</p>
+        </div>
+        <a href="#booking" class="btn-book-sm">استفسر عن الباقات</a>
       </div>
     </div>
   </section>
@@ -525,17 +612,17 @@
     <div class="container" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px;">
       <div>
         <h4 style="color: #ffffff; font-size: 16px; margin-bottom: 8px;">مجمع الأسرة لطب الأسنان والجلدية</h4>
-        <p>خبرة تتجاوز 30 سنة في خدمة أهالي الأحساء.</p>
-        <p style="margin-top: 6px;">البريد: Family.denclinic2@gmail.com</p>
+        <p>أكثر من 30 سنة من العناية الموثوقة بصحة أهالي الأحساء.</p>
+        <p style="margin-top: 6px;">البريد الرسمي: Family.denclinic2@gmail.com</p>
       </div>
       <div>
-        <h4 style="color: #ffffff; font-size: 14px; margin-bottom: 8px;">حسابات التواصل الرسمية</h4>
+        <h4 style="color: #ffffff; font-size: 14px; margin-bottom: 8px;">قنوات التواصل الرسمية</h4>
         <p>إنستغرام: @familydenclinic | تيك توك: @familyadental</p>
         <p style="margin-top: 6px;">الرقم الموحد: 0537403090</p>
       </div>
     </div>
     <div style="text-align: center; border-top: 1px solid #1e293b; margin-top: 30px; padding-top: 16px;">
-      &copy; 2026 مجمع الأسرة. جميع الحقوق محفوظة.
+      &copy; 2026 مجمع الأسرة لطب الأسنان والجلدية. جميع الحقوق محفوظة.
     </div>
   </footer>
 
@@ -553,7 +640,7 @@
       { name: "فرع المزروع", phone: "0534634447", intl: "966534634447", time: "من 1 مساءً - 9 مساءً", map: "https://maps.app.goo.gl/atdF1Dh3jvJYZdm4A" },
       { name: "فرع الشقيق", phone: "0556854440", intl: "966556854440", time: "من 9 صباحاً - 9 مساءً", map: "https://maps.app.goo.gl/GSjZfgh7WZGarKZ67" },
       { name: "فرع الجفر", phone: "0550892700", intl: "966550892700", time: "من 9 صباحاً - 9 مساءً", map: "https://maps.app.goo.gl/ArGiApru7Uv6yhTo7" },
-      { name: "فرع العيون 1", phone: "0553962300", intl: "96653962300", time: "من 1 مساءً - 9 مساءً", map: "https://maps.google.com/?q=25.6022835,49.5630684" },
+      { name: "فرع العيون 1", phone: "0553962300", intl: "966553962300", time: "من 1 مساءً - 9 مساءً", map: "https://maps.google.com/?q=25.6022835,49.5630684" },
       { name: "فرع العيون الصناعية", phone: "0536902220", intl: "966536902220", time: "من 9 صباحاً - 9 مساءً", map: "https://maps.google.com/?q=25.6033344,49.5639687" }
     ];
 
