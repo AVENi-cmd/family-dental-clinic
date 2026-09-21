@@ -19,7 +19,6 @@
       --brand-lime-dark: #6C9F2A;
       --brand-lime-light: #F2F9E8;
       --brand-dark: #0F172A;
-      /* لون الخلفية المودرن التيل الضبابي المتناسق مع الشعار */
       --bg-modern: #E2EEF0;
       --card-bg: #FFFFFF;
     }
@@ -239,12 +238,14 @@
       border-color: var(--brand-teal);
       background: #ffffff;
     }
+    
+    /* زر الحجز اللامع المتوهج بنفس لون الشعار */
     .submit-btn {
       width: 100%;
-      background: linear-gradient(90deg, #10b981, #059669);
+      background: linear-gradient(135deg, #00C4D8 0%, #008E9B 100%);
       color: #ffffff;
       border: none;
-      padding: 14px;
+      padding: 15px;
       border-radius: 14px;
       font-size: 16px;
       font-weight: 800;
@@ -252,13 +253,15 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 8px;
-      margin-top: 10px;
-      transition: transform 0.2s, opacity 0.2s;
+      gap: 10px;
+      margin-top: 12px;
+      box-shadow: 0 6px 20px rgba(0, 196, 216, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.4);
+      transition: all 0.3s ease;
     }
     .submit-btn:hover {
-      opacity: 0.95;
-      transform: translateY(-1px);
+      background: linear-gradient(135deg, #18D5E9 0%, #007D89 100%);
+      box-shadow: 0 8px 25px rgba(0, 196, 216, 0.55);
+      transform: translateY(-2px);
     }
 
     /* Section Headings */
@@ -387,26 +390,27 @@
       .carousel-wrapper { padding: 0; }
     }
 
-    /* قسم التقسيط (تابي وتمارا فقط) */
+    /* قسم التقسيط بخلفية التيل البحري العميق المتناسقة */
     .installment-section {
-      background: #ffffff;
-      border: 2px solid #cfe0e3;
+      background: linear-gradient(135deg, #007E8C 0%, #005660 100%);
+      border: 1px solid rgba(255, 255, 255, 0.2);
       border-radius: 28px;
-      padding: 40px 24px;
+      padding: 45px 24px;
       margin: 40px auto;
       text-align: center;
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
+      box-shadow: 0 15px 35px rgba(0, 86, 96, 0.25);
+      color: #ffffff;
     }
     .installment-header h2 {
-      font-size: 30px;
+      font-size: 32px;
       font-weight: 900;
-      color: #0f172a;
-      margin-bottom: 6px;
+      color: #ffffff;
+      margin-bottom: 8px;
     }
     .installment-header p {
       font-size: 18px;
-      font-weight: 800;
-      color: var(--brand-lime-dark);
+      font-weight: 700;
+      color: #A3E635;
       margin-bottom: 30px;
     }
     .installment-cards {
@@ -419,36 +423,37 @@
     }
     .inst-card {
       background: #ffffff;
-      border: 1px solid #e2e8f0;
+      border: none;
       border-radius: 20px;
       padding: 16px 28px;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
       flex: 1;
       min-width: 220px;
       height: 95px;
-      transition: 0.2s;
+      transition: transform 0.2s, box-shadow 0.2s;
     }
     .inst-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
     }
     .btn-installment-action {
-      background: #8CC63F;
+      background: linear-gradient(135deg, #8CC63F 0%, #76B02E 100%);
       color: #ffffff;
       font-size: 16px;
       font-weight: 800;
-      padding: 14px 40px;
+      padding: 15px 45px;
       border-radius: 14px;
       display: inline-block;
-      transition: 0.2s;
-      box-shadow: 0 4px 14px rgba(140, 198, 63, 0.35);
+      transition: all 0.2s;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.3);
     }
     .btn-installment-action:hover {
-      background: #78ab34;
       transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(140, 198, 63, 0.45);
     }
 
     /* قسم آراء المراجعين */
@@ -737,23 +742,37 @@
     </div>
   </div>
 
-  <!-- Header مع الشعار الرسمي الدقيق المطابق بالكامل -->
+  <!-- Header مع الشعار الهندسي الدقيق المطابق بالكامل -->
   <header>
     <div class="container nav-wrap">
       <div class="logo">
         <div class="logo-svg-wrap">
           <!-- الشعار المتجه الأصلي لمجمع الأسرة لطب الأسنان والجلدية -->
-          <svg viewBox="0 0 450 500" style="width: 100%; height: 100%;">
+          <svg viewBox="0 0 500 560" style="width: 100%; height: 100%;">
             <!-- رأس الشخص الأيسر (أخضر تفاحي) -->
-            <circle cx="155" cy="65" r="32" fill="#99cc33"/>
+            <circle cx="170" cy="72" r="35" fill="#99cc33"/>
+            
             <!-- رأس الشخص الأيمن (تيل/سماوي) -->
-            <circle cx="360" cy="95" r="35" fill="#40b5b5"/>
-            <!-- جسم الشخص الأيسر وجزء السن العلوي (أخضر تفاحي) -->
-            <path d="M125 180 C95 155, 110 115, 155 115 C205 115, 275 160, 290 170 C240 220, 150 215, 125 180 Z" fill="#99cc33"/>
-            <!-- السن والشخص الأيمن (تيل/سماوي) -->
-            <path d="M110 185 C140 230, 240 235, 290 175 C310 150, 360 145, 390 170 C420 215, 385 365, 355 400 C340 370, 320 330, 260 340 C210 350, 195 410, 170 480 C130 380, 90 280, 110 185 Z" fill="#40b5b5"/>
-            <!-- الجذر الأيمن (أخضر تفاحي) -->
-            <path d="M250 350 C310 345, 350 400, 350 475 C310 495, 290 440, 250 350 Z" fill="#99cc33"/>
+            <circle cx="398" cy="115" r="38" fill="#38adb8"/>
+            
+            <!-- الشخص الأيسر والجزء العلوي للسن (أخضر تفاحي) -->
+            <path d="M125 185 C85 160, 115 125, 165 125 C220 125, 300 175, 320 185 C265 240, 155 235, 125 185 Z" fill="#99cc33"/>
+            
+            <!-- جسم السن الرئيسي مع ضبط انحناء الجذرين والتجويف السفلي بدقة -->
+            <path d="M112 195 
+                     C145 250, 260 255, 318 190 
+                     C340 160, 395 155, 430 185 
+                     C465 235, 440 355, 394 430 
+                     C375 385, 335 365, 275 365 
+                     C225 365, 205 400, 201 465 
+                     C198 505, 185 520, 172 490 
+                     C140 415, 95 315, 112 195 Z" fill="#38adb8"/>
+                     
+            <!-- الطرف الأخضر التفاحي للجذر الأيمن السفلي بانحنائه الطبيعي الممتد -->
+            <path d="M272 374 
+                     C325 378, 368 418, 376 465 
+                     C382 502, 365 525, 345 520 
+                     C325 515, 320 470, 272 374 Z" fill="#99cc33"/>
           </svg>
         </div>
         <div class="logo-text">
@@ -837,7 +856,7 @@
 
   <!-- =======================================
        قسم شريط خدمات المجمع الشاملة (Carousel Slider) 
-       مع صور واقعية احترافية بدون أي شارات أو عبارات غير ملائمة
+       مع صور واقعية احترافية بالترتيب الصحيح
        ======================================= -->
   <section class="container" style="padding: 50px 16px 20px;">
     <div class="section-title">
@@ -869,7 +888,7 @@
             </a>
           </div>
 
-          <!-- 2. تقويم الأسنان والفكين -->
+          <!-- 2. تقويم الأسنان والفكين (مع صورة القالب الشفاف المناسبة تماماً) -->
           <div class="carousel-card">
             <div>
               <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=700&q=80" alt="تقويم الأسنان" class="service-real-img">
@@ -887,7 +906,7 @@
             <div>
               <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=700&q=80" alt="زراعة الأسنان" class="service-real-img">
               <h3>زراعة وجراحة الفم والأسنان</h3>
-              <p>تعويض الأسنان المفقودة بأفضل أنظمة الزرعات السويسرية المعتمدة واستعادة وظيفة المضغ والابتسامة الطبيعية بأمان تام.</p>
+              <p>تعويض الأسنان المفقودة بأفضل أنظمة الزرعات المعتمدة واستعادة وظيفة المضغ والابتسامة الطبيعية بأمان تام.</p>
             </div>
             <a href="#booking" class="btn-service-book">
               <i class="fa-regular fa-calendar-check"></i>
@@ -895,7 +914,7 @@
             </a>
           </div>
 
-          <!-- 4. تنظيف وتلميع الأسنان واللثة -->
+          <!-- 4. تنظيف وتلميع الأسنان واللثة (مع صورة الفحص والتنظيف السريري) -->
           <div class="carousel-card">
             <div>
               <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=700&q=80" alt="تنظيف وتلميع الأسنان" class="service-real-img">
@@ -966,7 +985,7 @@
   </section>
 
   <!-- =======================================
-       قسم التقسيط والتمويل (تابي وتمارا فقط مع شعارات SVG الأصلية)
+       قسم التقسيط والتمويل (تابي وتمارا فقط مع خلفية التيل العميق)
        ======================================= -->
   <section class="container">
     <div class="installment-section">
@@ -1077,12 +1096,12 @@
     <div class="chat-header">
       <div class="chat-header-info">
         <div style="width: 34px; height: 34px; background: #fff; border-radius: 50%; padding: 3px; display: flex; align-items: center; justify-content: center;">
-          <svg viewBox="0 0 450 500" style="width: 100%; height: 100%;">
-            <circle cx="155" cy="65" r="32" fill="#99cc33"/>
-            <circle cx="360" cy="95" r="35" fill="#40b5b5"/>
-            <path d="M125 180 C95 155, 110 115, 155 115 C205 115, 275 160, 290 170 C240 220, 150 215, 125 180 Z" fill="#99cc33"/>
-            <path d="M110 185 C140 230, 240 235, 290 175 C310 150, 360 145, 390 170 C420 215, 385 365, 355 400 C340 370, 320 330, 260 340 C210 350, 195 410, 170 480 C130 380, 90 280, 110 185 Z" fill="#40b5b5"/>
-            <path d="M250 350 C310 345, 350 400, 350 475 C310 495, 290 440, 250 350 Z" fill="#99cc33"/>
+          <svg viewBox="0 0 500 560" style="width: 100%; height: 100%;">
+            <circle cx="170" cy="72" r="35" fill="#99cc33"/>
+            <circle cx="398" cy="115" r="38" fill="#38adb8"/>
+            <path d="M125 185 C85 160, 115 125, 165 125 C220 125, 300 175, 320 185 C265 240, 155 235, 125 185 Z" fill="#99cc33"/>
+            <path d="M112 195 C145 250, 260 255, 318 190 C340 160, 395 155, 430 185 C465 235, 440 355, 394 430 C375 385, 335 365, 275 365 C225 365, 205 400, 201 465 C198 505, 185 520, 172 490 C140 415, 95 315, 112 195 Z" fill="#38adb8"/>
+            <path d="M272 374 C325 378, 368 418, 376 465 C382 502, 365 525, 345 520 C325 515, 320 470, 272 374 Z" fill="#99cc33"/>
           </svg>
         </div>
         <div>
@@ -1127,7 +1146,7 @@
       { name: "فرع العيون الصناعية", phone: "0536902220", intl: "966536902220", time: "من 9 صباحاً - 9 مساءً", map: "https://maps.google.com/?q=25.6033344,49.5639687" }
     ];
 
-    // بيانات التقييمات الحقيقية بالأسماء الأولى فقط وبدون أسماء عوائل
+    // بيانات التقييمات الحقيقية بالأسماء الأولى فقط
     const testimonials = [
       {
         quote: "أفضل عيادات اسنان بالأحساء انتشارهم على كل مناطق الأحساء عندهم اخصائيين من جميع التخصصات.. اسعارهم منافسة ومرضية وافضل شي عندهم خدمة تمارا للتقسيط، ومواعيدهم قريبة تقدر تحجز في نفس اليوم.",
@@ -1216,7 +1235,7 @@
       container.scrollBy({ left: direction === 'left' ? -scrollStep : scrollStep, behavior: 'smooth' });
     }
 
-    // منطق بوت المحادثة (Chatbot Logic)
+    // منطق بوت المحادثة الذكي (تخيير المراجع بين الفروع عند الحجز)
     function toggleChatBot() {
       const modal = document.getElementById('chatModal');
       modal.style.display = (modal.style.display === 'flex') ? 'none' : 'flex';
@@ -1244,8 +1263,32 @@
       if (type === 'booking') {
         appendUserMessage("حجز موعد");
         setTimeout(() => {
-          appendBotMessage("يسعدنا خدمتك! يمكنك اختيار الفرع وتعبئة النموذج بالأعلى مباشرة، أو التواصل مع الرقم الموحد: <a href='tel:0537403090' style='color:var(--brand-teal); font-weight:bold;'>0537403090</a>");
-        }, 500);
+          appendBotMessage("أهلاً بك! يرجى اختيار الفرع الأقرب إليك لإتمام الحجز:");
+          
+          const chatBody = document.getElementById('chatMessages');
+          const branchBtnsWrap = document.createElement('div');
+          branchBtnsWrap.className = 'chat-quick-btns';
+          branchBtnsWrap.style.marginTop = '8px';
+          
+          branchData.forEach((b) => {
+            const btn = document.createElement('button');
+            btn.className = 'chat-pill-btn';
+            btn.style.fontSize = '11px';
+            btn.innerText = b.name;
+            btn.onclick = () => {
+              appendUserMessage(b.name);
+              setTimeout(() => {
+                const waText = encodeURIComponent(`مرحباً ${b.name}، أود حجز موعد كشف واستشارة لديكم.`);
+                const waUrl = `https://wa.me/${b.intl}?text=${waText}`;
+                appendBotMessage(`تم اختيار ${b.name}. لإكمال تأكيد الموعد فوراً مع موظف الاستقبال، <a href="${waUrl}" target="_blank" style="color:#10b981; font-weight:bold; text-decoration:underline;">اضغط هنا للمحادثة عبر الواتساب</a>`);
+              }, 400);
+            };
+            branchBtnsWrap.appendChild(btn);
+          });
+          
+          chatBody.appendChild(branchBtnsWrap);
+          chatBody.scrollTop = chatBody.scrollHeight;
+        }, 400);
       } else if (type === 'branches') {
         appendUserMessage("فروعنا وأوقات العمل");
         setTimeout(() => {
