@@ -31,6 +31,7 @@
       background-color: var(--brand-surface);
       color: #334155;
       line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
     }
     a {
       text-decoration: none;
@@ -41,9 +42,10 @@
       margin: 0 auto;
       padding: 0 16px;
     }
+    /* Top Bar */
     .topbar {
       background: linear-gradient(90deg, var(--brand-teal-dark), var(--brand-teal), var(--brand-lime-dark));
-      color: #fff;
+      color: #ffffff;
       padding: 8px 16px;
       font-size: 13px;
       font-weight: 700;
@@ -59,6 +61,7 @@
       border-radius: 20px;
       font-size: 11px;
     }
+    /* Header */
     header {
       background: #ffffff;
       border-bottom: 1px solid #e2e8f0;
@@ -86,7 +89,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      color: white;
+      color: #ffffff;
       font-size: 22px;
       box-shadow: 0 4px 10px rgba(0, 151, 167, 0.3);
     }
@@ -103,7 +106,7 @@
     }
     .nav-btn {
       background: var(--brand-teal);
-      color: white;
+      color: #ffffff;
       padding: 10px 18px;
       border-radius: 12px;
       font-weight: 700;
@@ -116,6 +119,7 @@
     .nav-btn:hover {
       background: var(--brand-teal-dark);
     }
+    /* Hero */
     .hero {
       background: linear-gradient(180deg, var(--brand-teal-light) 0%, #ffffff 100%);
       padding: 40px 0 60px 0;
@@ -183,6 +187,7 @@
       font-size: 11px;
       color: #64748b;
     }
+    /* Booking Card */
     .booking-box {
       background: #ffffff;
       border-radius: 24px;
@@ -221,6 +226,7 @@
       border-radius: 12px;
       font-size: 14px;
       outline: none;
+      transition: border-color 0.2s;
     }
     .form-group input:focus, .form-group select:focus {
       border-color: var(--brand-teal);
@@ -229,7 +235,7 @@
     .submit-btn {
       width: 100%;
       background: linear-gradient(90deg, #10b981, #059669);
-      color: white;
+      color: #ffffff;
       border: none;
       padding: 14px;
       border-radius: 14px;
@@ -241,12 +247,13 @@
       align-items: center;
       gap: 8px;
       margin-top: 10px;
-      transition: 0.2s;
+      transition: transform 0.2s, opacity 0.2s;
     }
     .submit-btn:hover {
       opacity: 0.95;
       transform: translateY(-1px);
     }
+    /* Branches Section */
     .section-title {
       text-align: center;
       margin: 50px 0 30px;
@@ -280,7 +287,7 @@
     }
     .branch-pill.active {
       background: var(--brand-teal);
-      color: white;
+      color: #ffffff;
       border-color: var(--brand-teal);
       box-shadow: 0 4px 12px rgba(0, 151, 167, 0.3);
     }
@@ -308,11 +315,12 @@
       align-items: center;
       justify-content: center;
       gap: 6px;
-      color: white;
+      color: #ffffff;
     }
     .btn-call { background: #0f172a; }
     .btn-wa { background: #10b981; }
     .btn-map { background: #ffffff; color: #334155; border: 1px solid #cbd5e1; }
+    /* Services */
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -335,6 +343,7 @@
       font-size: 13px;
       color: #64748b;
     }
+    /* Floating WhatsApp */
     .float-wa {
       position: fixed;
       bottom: 24px;
@@ -342,7 +351,7 @@
       width: 58px;
       height: 58px;
       background: #10b981;
-      color: white;
+      color: #ffffff;
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -356,6 +365,7 @@
 
 <body>
 
+  <!-- Top Bar -->
   <div class="topbar">
     <div>
       <i class="fa-solid fa-award"></i> خبرة أكثر من 30 سنة بالأحساء • نستقبل كافة شركات التأمين
@@ -366,6 +376,7 @@
     </div>
   </div>
 
+  <!-- Header -->
   <header>
     <div class="container nav-wrap">
       <div class="logo">
@@ -379,12 +390,13 @@
     </div>
   </header>
 
+  <!-- Hero Section -->
   <section id="booking" class="hero">
     <div class="container">
       <div class="hero-grid">
         
         <div>
-          <div class="hero-tag">✨ ابتسامة أجمل.. وعناية متكاملة تدوم</div>
+          <div class="hero-tag">ابتسامة أجمل.. وعناية متكاملة تدوم</div>
           <h2 class="hero-title">عناية طبية متقدمة بأقرب فرع منك في <span>الأحساء</span></h2>
           <p class="hero-desc">أكثر من 30 عاماً من الثقة عبر 8 فروع متطورة تغطي كافة مدن وقرى الأحساء، مع خيارات دفع مرنة بالتقسيط.</p>
           
@@ -411,29 +423,29 @@
           <h3>طلب موعد فوري</h3>
           <p>اختر فرعك وسيتواصل معك موظف الاستقبال فوراً لتأكيد الحجز</p>
 
-          <form onsubmit="handleHeroBooking(event)">
+          <form id="bookingForm">
             <div class="form-group">
-              <label>الاسم الكريم *</label>
+              <label for="clientName">الاسم الكريم *</label>
               <input type="text" id="clientName" required placeholder="أدخل اسمك الكريم">
             </div>
 
             <div class="form-group">
-              <label>رقم الجوال *</label>
+              <label for="clientPhone">رقم الجوال *</label>
               <input type="tel" id="clientPhone" required placeholder="05xxxxxxxx" dir="ltr" style="text-align: right;">
             </div>
 
             <div class="form-group">
-              <label>اختر الفرع الأقرب إليك *</label>
+              <label for="clientBranch">اختر الفرع الأقرب إليك *</label>
               <select id="clientBranch" required>
                 <option value="" disabled selected>اختر الفرع المناسب</option>
-                <option value="السلمانية">فرع السلمانية</option>
-                <option value="محاسن">فرع محاسن</option>
-                <option value="الخالدية">فرع الخالدية</option>
-                <option value="المزروع">فرع المزروع</option>
-                <option value="العيون 1">فرع العيون</option>
-                <option value="العيون الصناعية">فرع العيون الصناعية</option>
-                <option value="الشقيق">فرع الشقيق</option>
-                <option value="الجفر">فرع الجفر</option>
+                <option value="0">فرع السلمانية</option>
+                <option value="1">فرع محاسن</option>
+                <option value="2">فرع الخالدية</option>
+                <option value="3">فرع المزروع</option>
+                <option value="4">فرع الشقيق</option>
+                <option value="5">فرع الجفر</option>
+                <option value="6">فرع العيون 1</option>
+                <option value="7">فرع العيون الصناعية</option>
               </select>
             </div>
 
@@ -448,26 +460,21 @@
     </div>
   </section>
 
+  <!-- Branches Section -->
   <section class="container" style="padding: 40px 16px;">
     <div class="section-title">
       <h2>فروع مجمع الأسرة (8 فروع بالأحساء)</h2>
       <p>اضغط على أي فرع لعرض مواعيد العمل، أرقام الاتصال، ورابط الخريطة المباشر</p>
     </div>
 
-    <div class="branches-grid">
-      <div class="branch-pill active" onclick="selectBranch(0)">السلمانية</div>
-      <div class="branch-pill" onclick="selectBranch(1)">محاسن</div>
-      <div class="branch-pill" onclick="selectBranch(2)">الخالدية</div>
-      <div class="branch-pill" onclick="selectBranch(3)">المزروع</div>
-      <div class="branch-pill" onclick="selectBranch(4)">الشقيق</div>
-      <div class="branch-pill" onclick="selectBranch(5)">الجفر</div>
-      <div class="branch-pill" onclick="selectBranch(6)">العيون 1</div>
-      <div class="branch-pill" onclick="selectBranch(7)">العيون الصناعية</div>
+    <div class="branches-grid" id="branchesBtnList">
+      <!-- يتم توليد الأزرار تلقائياً لمنع أي أخطاء في الـ HTML -->
     </div>
 
     <div id="branchInfo" class="active-branch-card"></div>
   </section>
 
+  <!-- Services Section -->
   <section class="container" style="padding-bottom: 50px;">
     <div class="section-title">
       <h2>العيادات والأقسام الطبية</h2>
@@ -513,28 +520,31 @@
     </div>
   </section>
 
+  <!-- Footer -->
   <footer style="background: #0f172a; color: #94a3b8; padding: 40px 16px 20px; font-size: 13px;">
     <div class="container" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px;">
       <div>
-        <h4 style="color: white; font-size: 16px; margin-bottom: 8px;">مجمع الأسرة لطب الأسنان والجلدية</h4>
+        <h4 style="color: #ffffff; font-size: 16px; margin-bottom: 8px;">مجمع الأسرة لطب الأسنان والجلدية</h4>
         <p>خبرة تتجاوز 30 سنة في خدمة أهالي الأحساء.</p>
         <p style="margin-top: 6px;">البريد: Family.denclinic2@gmail.com</p>
       </div>
       <div>
-        <h4 style="color: white; font-size: 14px; margin-bottom: 8px;">حسابات التواصل الرسمية</h4>
+        <h4 style="color: #ffffff; font-size: 14px; margin-bottom: 8px;">حسابات التواصل الرسمية</h4>
         <p>إنستغرام: @familydenclinic | تيك توك: @familyadental</p>
         <p style="margin-top: 6px;">الرقم الموحد: 0537403090</p>
       </div>
     </div>
     <div style="text-align: center; border-top: 1px solid #1e293b; margin-top: 30px; padding-top: 16px;">
-      © 2026 مجمع الأسرة. جميع الحقوق محفوظة.
+      &copy; 2026 مجمع الأسرة. جميع الحقوق محفوظة.
     </div>
   </footer>
 
-  <a href="https://wa.me/966537403090" target="_blank" class="float-wa">
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/966537403090" target="_blank" class="float-wa" title="واتساب المجمع">
     <i class="fa-brands fa-whatsapp"></i>
   </a>
 
+  <!-- Script Logic -->
   <script>
     const branchData = [
       { name: "فرع السلمانية", phone: "0553254700", intl: "966553254700", time: "من 9 صباحاً - 9 مساءً", map: "https://maps.google.com/?q=25.3340626,49.5662766" },
@@ -543,40 +553,77 @@
       { name: "فرع المزروع", phone: "0534634447", intl: "966534634447", time: "من 1 مساءً - 9 مساءً", map: "https://maps.app.goo.gl/atdF1Dh3jvJYZdm4A" },
       { name: "فرع الشقيق", phone: "0556854440", intl: "966556854440", time: "من 9 صباحاً - 9 مساءً", map: "https://maps.app.goo.gl/GSjZfgh7WZGarKZ67" },
       { name: "فرع الجفر", phone: "0550892700", intl: "966550892700", time: "من 9 صباحاً - 9 مساءً", map: "https://maps.app.goo.gl/ArGiApru7Uv6yhTo7" },
-      { name: "فرع العيون 1", phone: "0553962300", intl: "966553962300", time: "من 1 مساءً - 9 مساءً", map: "https://maps.google.com/?q=25.6022835,49.5630684" },
+      { name: "فرع العيون 1", phone: "0553962300", intl: "96653962300", time: "من 1 مساءً - 9 مساءً", map: "https://maps.google.com/?q=25.6022835,49.5630684" },
       { name: "فرع العيون الصناعية", phone: "0536902220", intl: "966536902220", time: "من 9 صباحاً - 9 مساءً", map: "https://maps.google.com/?q=25.6033344,49.5639687" }
     ];
 
+    function renderBranchButtons() {
+      const container = document.getElementById('branchesBtnList');
+      if (!container) return;
+      container.innerHTML = branchData.map((b, i) => `
+        <div class="branch-pill ${i === 0 ? 'active' : ''}" onclick="selectBranch(${i})">
+          ${b.name.replace('فرع ', '')}
+        </div>
+      `).join('');
+    }
+
     function selectBranch(idx) {
       const b = branchData[idx];
-      document.querySelectorAll('.branch-pill').forEach((pill, i) => {
-        pill.classList.toggle('active', i === idx);
+      const pills = document.querySelectorAll('.branch-pill');
+      pills.forEach((pill, i) => {
+        if (i === idx) {
+          pill.classList.add('active');
+        } else {
+          pill.classList.remove('active');
+        }
       });
 
-      document.getElementById('branchInfo').innerHTML = `
+      const infoBox = document.getElementById('branchInfo');
+      if (!infoBox) return;
+
+      const whatsappText = encodeURIComponent("مرحباً " + b.name + "، أود حجز موعد واستفسار لديكم.");
+      infoBox.innerHTML = `
         <h3 style="font-size: 20px; font-weight: 800; color: #0f172a;">${b.name}</h3>
         <p style="color: #64748b; font-size: 14px; margin: 6px 0;"><i class="fa-regular fa-clock" style="color: var(--brand-teal);"></i> مواعيد العمل: ${b.time}</p>
         <p style="color: #64748b; font-size: 14px;"><i class="fa-solid fa-phone" style="color: var(--brand-lime-dark);"></i> الرقم: ${b.phone}</p>
         <div class="card-actions">
           <a href="tel:${b.phone}" class="action-btn btn-call"><i class="fa-solid fa-phone"></i> اتصال مباشر</a>
-          <a href="https://wa.me/${b.intl}?text=${encodeURIComponent('مرحباً ' + b.name + '، أرغب بحجز موعد استشارة لديكم')}" target="_blank" class="action-btn btn-wa"><i class="fa-brands fa-whatsapp"></i> واتساب الفرع</a>
+          <a href="https://wa.me/${b.intl}?text=${whatsappText}" target="_blank" class="action-btn btn-wa"><i class="fa-brands fa-whatsapp"></i> واتساب الفرع</a>
           <a href="${b.map}" target="_blank" class="action-btn btn-map"><i class="fa-solid fa-location-dot" style="color: #ef4444;"></i> فتح بالخريطة</a>
         </div>
       `;
     }
 
-    function handleHeroBooking(e) {
-      e.preventDefault();
-      const name = document.getElementById('clientName').value.trim();
-      const phone = document.getElementById('clientPhone').value.trim();
-      const bName = document.getElementById('clientBranch').value;
-      
-      const target = branchData.find(b => b.name.includes(bName)) || branchData[0];
-      const msg = `مرحباً مجمع الأسرة (${target.name})،\nأرغب بحجز موعد استشارة جديدة:\n- الاسم: ${name}\n- رقم الجوال: ${phone}\n- الفرع المطلوب: ${target.name}`;
-      window.open(`https://wa.me/${target.intl}?text=${encodeURIComponent(msg)}`, '_blank');
-    }
+    document.addEventListener('DOMContentLoaded', () => {
+      renderBranchButtons();
+      selectBranch(0);
 
-    window.onload = () => selectBranch(0);
+      const form = document.getElementById('bookingForm');
+      if (form) {
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const nameInput = document.getElementById('clientName');
+          const phoneInput = document.getElementById('clientPhone');
+          const branchSelect = document.getElementById('clientBranch');
+
+          const name = nameInput ? nameInput.value.trim() : '';
+          const phone = phoneInput ? phoneInput.value.trim() : '';
+          const branchIdx = branchSelect ? branchSelect.value : '0';
+
+          const target = branchData[parseInt(branchIdx, 10)] || branchData[0];
+          const lines = [
+            "مرحباً مجمع الأسرة (" + target.name + ")،",
+            "أرغب بحجز موعد استشارة جديدة:",
+            "- الاسم: " + name,
+            "- رقم الجوال: " + phone,
+            "- الفرع المطلوب: " + target.name
+          ];
+          const fullMessage = lines.join("\n");
+          const whatsappUrl = "https://wa.me/" + target.intl + "?text=" + encodeURIComponent(fullMessage);
+          window.open(whatsappUrl, '_blank');
+        });
+      }
+    });
   </script>
 
 </body>
