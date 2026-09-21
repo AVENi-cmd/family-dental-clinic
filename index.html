@@ -249,7 +249,7 @@
       opacity: 0.95;
       transform: translateY(-1px);
     }
-    /* Branches Section */
+    /* Section Headings */
     .section-title {
       text-align: center;
       margin: 50px 0 30px;
@@ -264,6 +264,7 @@
       font-size: 14px;
       margin-top: 4px;
     }
+    /* Branches Section */
     .branches-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
@@ -316,72 +317,165 @@
     .btn-call { background: #0f172a; }
     .btn-wa { background: #10b981; }
     .btn-map { background: #ffffff; color: #334155; border: 1px solid #cbd5e1; }
-    /* Services */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 16px;
-      margin-top: 24px;
+    
+    /* =======================================
+       CAROUSEL / SLIDER التمرير الأفقي لجميع الخدمات
+       ======================================= */
+    .carousel-wrapper {
+      position: relative;
+      margin: 20px 0 40px;
+      padding: 0 10px;
     }
-    .service-card {
+    .carousel-track-container {
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none; /* إخفاء شريط التمرير الافتراضي */
+      padding: 15px 5px 25px 5px;
+    }
+    .carousel-track-container::-webkit-scrollbar {
+      display: none;
+    }
+    .carousel-track {
+      display: flex;
+      gap: 18px;
+      width: max-content;
+    }
+    .carousel-card {
+      width: 290px;
       background: #ffffff;
-      padding: 22px;
-      border-radius: 18px;
       border: 1px solid #e2e8f0;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+      border-radius: 22px;
+      padding: 24px 20px;
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      transition: all 0.3s ease;
     }
-    .service-card h3 {
-      font-size: 16px;
+    .carousel-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--brand-teal);
+      box-shadow: 0 12px 28px rgba(0, 165, 181, 0.16);
+    }
+    .service-badge {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      background: var(--brand-lime-light);
+      color: var(--brand-lime-dark);
+      font-size: 11px;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 12px;
+      border: 1px solid rgba(140, 198, 63, 0.3);
+    }
+    .service-icon-box {
+      width: 60px;
+      height: 60px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, var(--brand-teal-light), #ffffff);
+      border: 1.5px solid var(--brand-teal);
+      color: var(--brand-teal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      margin-bottom: 16px;
+      box-shadow: 0 4px 12px rgba(0, 165, 181, 0.15);
+    }
+    .carousel-card h3 {
+      font-size: 18px;
       font-weight: 800;
       color: #0f172a;
-      margin: 10px 0 6px;
+      margin-bottom: 8px;
+      line-height: 1.3;
     }
-    .service-card p {
+    .carousel-card p {
       font-size: 13px;
       color: #64748b;
+      line-height: 1.6;
+      margin-bottom: 20px;
     }
-    /* Prices & Offers */
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
-      margin-top: 24px;
-    }
-    .price-card {
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
-      border-radius: 18px;
-      padding: 20px;
-      text-align: center;
+    .btn-service-book {
       display: flex;
-      flex-col: column;
-      justify-content: space-between;
-    }
-    .price-card.featured {
-      border: 2px solid var(--brand-teal);
-      box-shadow: 0 10px 25px rgba(0, 165, 181, 0.15);
-    }
-    .price-card .cost {
-      font-size: 32px;
-      font-weight: 900;
-      color: #0f172a;
-      margin: 12px 0 6px;
-    }
-    .price-card .btn-book-sm {
-      display: block;
-      margin-top: 14px;
-      padding: 10px;
-      background: var(--brand-teal-light);
-      color: var(--brand-teal-dark);
-      font-weight: 700;
-      font-size: 13px;
-      border-radius: 10px;
-      transition: 0.2s;
-    }
-    .price-card .btn-book-sm:hover {
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 12px;
       background: var(--brand-teal);
       color: #ffffff;
+      font-weight: 700;
+      font-size: 13px;
+      border-radius: 12px;
+      transition: all 0.2s ease;
     }
+    .btn-service-book:hover {
+      background: var(--brand-teal-dark);
+      box-shadow: 0 4px 12px rgba(0, 165, 181, 0.3);
+    }
+    /* أزرار الأسهم يميناً ويساراً */
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 1.5px solid #cbd5e1;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      cursor: pointer;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+      z-index: 10;
+      transition: all 0.2s ease;
+    }
+    .carousel-btn:hover {
+      background: var(--brand-teal);
+      color: #ffffff;
+      border-color: var(--brand-teal);
+      transform: translateY(-50%) scale(1.08);
+    }
+    .carousel-btn.prev-btn {
+      right: -14px;
+    }
+    .carousel-btn.next-btn {
+      left: -14px;
+    }
+    @media (max-width: 768px) {
+      .carousel-btn {
+        display: none; /* في شاشات الجوال يتم السحب باللمس بشكل طبيعي ومريح */
+      }
+      .carousel-wrapper {
+        padding: 0;
+      }
+    }
+    /* مؤشرات النقاط السفلية (Dots) */
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #cbd5e1;
+      transition: all 0.3s;
+    }
+    .dot.active {
+      width: 28px;
+      border-radius: 10px;
+      background: var(--brand-teal);
+    }
+
     /* Floating WhatsApp */
     .float-wa {
       position: fixed;
@@ -499,6 +593,170 @@
     </div>
   </section>
 
+  <!-- =======================================
+       قسم شريط خدمات المجمع الشاملة (Carousel Slider) 
+       بدون أسعار، مع أزرار التنقل بالجانبين
+       ======================================= -->
+  <section class="container" style="padding: 50px 16px 20px;">
+    <div class="section-title">
+      <h2>خدمات وعيادات مجمع الأسرة</h2>
+      <p>رعاية طبية تخصصية متكاملة للأسنان والجلدية بأحدث المعايير الطبية المعتمدة</p>
+    </div>
+
+    <div class="carousel-wrapper">
+      <!-- أزرار التمرير الجانبية -->
+      <button class="carousel-btn prev-btn" onclick="slideCarousel('right')" aria-label="السابق">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+      <button class="carousel-btn next-btn" onclick="slideCarousel('left')" aria-label="التالي">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+
+      <!-- حاوية البطاقات التمريرية -->
+      <div class="carousel-track-container" id="servicesTrackContainer">
+        <div class="carousel-track" id="servicesTrack">
+          
+          <!-- 1. ابتسامة هوليوود وتجميل الأسنان -->
+          <div class="carousel-card">
+            <span class="service-badge">الأكثر طلباً</span>
+            <div>
+              <div class="service-icon-box">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+              </div>
+              <h3>ابتسامة هوليوود وتجميل الأسنان</h3>
+              <p>تصميم ابتسامة متناسقة وطبيعية باستخدام أرقى عدسات الفينير واللومينير الألمانية بأحدث التقنيات الرقمية.</p>
+            </div>
+            <a href="#booking" class="btn-service-book">
+              <i class="fa-regular fa-calendar-check"></i>
+              <span>احجز استشارتك الآن</span>
+            </a>
+          </div>
+
+          <!-- 2. تقويم الأسنان والفكين -->
+          <div class="carousel-card">
+            <span class="service-badge">تقسيط متاح</span>
+            <div>
+              <div class="service-icon-box" style="border-color: var(--brand-lime); color: var(--brand-lime-dark);">
+                <i class="fa-solid fa-teeth-open"></i>
+              </div>
+              <h3>تقويم الأسنان والفكين</h3>
+              <p>علاج إطباق الأسنان والفكين بأحدث تقنيات التقويم الشفاف غير المرئي والتقويم المعدني لكافة الأعمار.</p>
+            </div>
+            <a href="#booking" class="btn-service-book">
+              <i class="fa-regular fa-calendar-check"></i>
+              <span>استشر أخصائي التقويم</span>
+            </a>
+          </div>
+
+          <!-- 3. زراعة وجراحة الأسنان -->
+          <div class="carousel-card">
+            <span class="service-badge">ضمان طبي</span>
+            <div>
+              <div class="service-icon-box" style="border-color: #2563eb; color: #2563eb;">
+                <i class="fa-solid fa-tooth"></i>
+              </div>
+              <h3>زراعة وجراحة الفم والأسنان</h3>
+              <p>تعويض الأسنان المفقودة بأفضل الزرعات السويسرية والألمانية واستعادة وظيفة المضغ والابتسامة بدقة وأمان.</p>
+            </div>
+            <a href="#booking" class="btn-service-book">
+              <i class="fa-regular fa-calendar-check"></i>
+              <span>احجز كشف الزراعة</span>
+            </a>
+          </div>
+
+          <!-- 4. تبييض الأسنان بالليزر -->
+          <div class="carousel-card">
+            <span class="service-badge">نتائج فورية</span>
+            <div>
+              <div class="service-icon-box" style="border-color: #d97706; color: #d97706;">
+                <i class="fa-solid fa-sun"></i>
+              </div>
+              <h3>تبييض الأسنان بالليزر</h3>
+              <p>جلسات تبييض احترافية متطورة تزيل التصبغات والاصفرار وتمنحك بياضاً ناصعاً ومشرقاً من أول جلسة بأمان تام.</p>
+            </div>
+            <a href="#booking" class="btn-service-book">
+              <i class="fa-regular fa-calendar-check"></i>
+              <span>احجز جلسة التبييض</span>
+            </a>
+          </div>
+
+          <!-- 5. قسم الجلدية والليزر والتجميل -->
+          <div class="carousel-card">
+            <span class="service-badge">كفاءات متخصصة</span>
+            <div>
+              <div class="service-icon-box" style="border-color: #ec4899; color: #ec4899;">
+                <i class="fa-solid fa-spa"></i>
+              </div>
+              <h3>قسم الجلدية والليزر والتجميل</h3>
+              <p>جلسات إزالة الشعر بالليزر، نضارة البشرة، حقن الفيلر والبوتوكس وخيوط الشد بإشراف نخبة من الطبيبات.</p>
+            </div>
+            <a href="#booking" class="btn-service-book">
+              <i class="fa-regular fa-calendar-check"></i>
+              <span>احجز موعد الجلدية</span>
+            </a>
+          </div>
+
+          <!-- 6. علاج جذور وأعصاب الأسنان -->
+          <div class="carousel-card">
+            <span class="service-badge">بدون ألم</span>
+            <div>
+              <div class="service-icon-box" style="border-color: #0d9488; color: #0d9488;">
+                <i class="fa-solid fa-bolt"></i>
+              </div>
+              <h3>سحب وعلاج عصب الأسنان</h3>
+              <p>إنهاء آلام الأسنان المزمنة وسحب العصب بجلسة واحدة باستخدام أجهزة الروتاري الإلكترونية الدقيقة.</p>
+            </div>
+            <a href="#booking" class="btn-service-book">
+              <i class="fa-regular fa-calendar-check"></i>
+              <span>تخلص من ألم الأسنان</span>
+            </a>
+          </div>
+
+          <!-- 7. تنظيف وتلميع الأسنان وعلاج اللثة -->
+          <div class="carousel-card">
+            <span class="service-badge">عناية دورية</span>
+            <div>
+              <div class="service-icon-box" style="border-color: #06b6d4; color: #06b6d4;">
+                <i class="fa-solid fa-hand-sparkles"></i>
+              </div>
+              <h3>تنظيف وتلميع الأسنان واللثة</h3>
+              <p>إزالة التكلسات الجيرية العميقة المتراكمة وتلميع الأسنان بالموجات فوق الصوتية لحماية اللثة من الالتهابات.</p>
+            </div>
+            <a href="#booking" class="btn-service-book">
+              <i class="fa-regular fa-calendar-check"></i>
+              <span>احجز تنظيف أسنانك</span>
+            </a>
+          </div>
+
+          <!-- 8. طب أسنان الأطفال -->
+          <div class="carousel-card">
+            <span class="service-badge">بيئة صديقة للطفل</span>
+            <div>
+              <div class="service-icon-box" style="border-color: #7c3aed; color: #7c3aed;">
+                <i class="fa-solid fa-child-reaching"></i>
+              </div>
+              <h3>طب أسنان الأطفال</h3>
+              <p>رعاية طبية لطيفة تراعي راحة طفلك لعلاج تسوس الأسنان اللبنية وتطبيق جلسات الفلورايد لحمايتها بدون خوف.</p>
+            </div>
+            <a href="#booking" class="btn-service-book">
+              <i class="fa-regular fa-calendar-check"></i>
+              <span>احجز لطفلك الآن</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- مؤشرات النقاط -->
+      <div class="carousel-dots" id="carouselDots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </div>
+  </section>
+
   <!-- Branches Section -->
   <section class="container" style="padding: 40px 16px;">
     <div class="section-title">
@@ -509,102 +767,6 @@
     <div class="branches-grid" id="branchesBtnList"></div>
 
     <div id="branchInfo" class="active-branch-card"></div>
-  </section>
-
-  <!-- Services Section -->
-  <section class="container" style="padding-bottom: 50px;">
-    <div class="section-title">
-      <h2>العيادات والأقسام الطبية</h2>
-      <p>أعلى كفاءة طبية بأحدث التقنيات الرقمية المعتمدة</p>
-    </div>
-
-    <div class="services-grid">
-      <div class="service-card">
-        <i class="fa-solid fa-wand-magic-sparkles" style="color: var(--brand-teal); font-size: 24px;"></i>
-        <h3>طب وتجميل الأسنان</h3>
-        <p>ابتسامة هوليود، الفينير، وتبييض الأسنان بالليزر بأحدث درجات الأمان والجمال.</p>
-      </div>
-
-      <div class="service-card">
-        <i class="fa-solid fa-teeth-open" style="color: var(--brand-lime-dark); font-size: 24px;"></i>
-        <h3>عيادة تقويم الأسنان والفكين</h3>
-        <p>تقويم شفاف ومعدني وتعديل إطباق الأسنان بإشراف أخصائيين واستشاريين معتمدين.</p>
-      </div>
-
-      <div class="service-card">
-        <i class="fa-solid fa-spa" style="color: #ec4899; font-size: 24px;"></i>
-        <h3>قسم الجلدية والتجميل والليزر</h3>
-        <p>جلسات إزالة الشعر بالليزر، نضارة البشرة، حقن الفيلر، والبوتوكس بأيدي خبيرات.</p>
-      </div>
-
-      <div class="service-card">
-        <i class="fa-solid fa-tooth" style="color: #2563eb; font-size: 24px;"></i>
-        <h3>زراعة وجراحة الأسنان</h3>
-        <p>تعويض الأسنان المفقودة بزرعات ألمانية وسويسرية معتمدة مع ضمان طويل الأمد.</p>
-      </div>
-
-      <div class="service-card">
-        <i class="fa-solid fa-bolt" style="color: #d97706; font-size: 24px;"></i>
-        <h3>علاج العصب والجذور</h3>
-        <p>سحب العصب وعلاجه في جلسة واحدة غالباً بأحدث أجهزة الروتاري وبدون ألم.</p>
-      </div>
-
-      <div class="service-card">
-        <i class="fa-solid fa-child-reaching" style="color: #7c3aed; font-size: 24px;"></i>
-        <h3>طب أسنان الأطفال</h3>
-        <p>رعاية وقائية وعلاجية خاصة للأطفال في بيئة مرحة وبدون أي خوف أو قلق.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Prices Section -->
-  <section class="container" style="padding-bottom: 50px;">
-    <div class="section-title">
-      <h2>الأسعار والعروض المعتمدة</h2>
-      <p>شفافية كاملة مع إمكانية التقسيط المريح عبر تابي وتمارا</p>
-    </div>
-
-    <div class="pricing-grid">
-      <div class="price-card">
-        <div>
-          <h4 style="color: var(--brand-teal); font-size: 14px;">الفحص الشامل</h4>
-          <h3 style="font-size: 18px; font-weight: 800; margin-top: 4px;">الكشف وخطة العلاج</h3>
-          <div class="cost">50 <span style="font-size: 14px; color: #64748b;">ريال</span></div>
-          <p style="font-size: 12px; color: #64748b;">فحص الأسنان واللثة مع التشخيص الكامل</p>
-        </div>
-        <a href="#booking" class="btn-book-sm">احجز الآن</a>
-      </div>
-
-      <div class="price-card">
-        <div>
-          <h4 style="color: var(--brand-lime-dark); font-size: 14px;">العناية والوقاية</h4>
-          <h3 style="font-size: 18px; font-weight: 800; margin-top: 4px;">تنظيف وتلميع الأسنان</h3>
-          <div class="cost">120 <span style="font-size: 14px; color: #64748b;">ريال</span></div>
-          <p style="font-size: 12px; color: #64748b;">إزالة التكلسات والجير واستعادة لمعان الأسنان</p>
-        </div>
-        <a href="#booking" class="btn-book-sm">احجز الآن</a>
-      </div>
-
-      <div class="price-card featured">
-        <div>
-          <span style="background: var(--brand-teal); color: white; padding: 2px 8px; border-radius: 12px; font-size: 10px; font-weight: 800;">الأكثر طلباً</span>
-          <h3 style="font-size: 18px; font-weight: 800; margin-top: 4px;">تبييض الأسنان بالليزر</h3>
-          <div class="cost" style="color: var(--brand-teal);">450 <span style="font-size: 14px; color: #64748b;">ريال</span></div>
-          <p style="font-size: 12px; color: #64748b;">جلسة تبييض احترافية آمنة ونتائج فورية</p>
-        </div>
-        <a href="#booking" class="btn-book-sm" style="background: var(--brand-teal); color: white;">احجز الآن</a>
-      </div>
-
-      <div class="price-card">
-        <div>
-          <h4 style="color: #ec4899; font-size: 14px;">قسم التجميل والجلدية</h4>
-          <h3 style="font-size: 18px; font-weight: 800; margin-top: 4px;">جلسات الليزر والنضارة</h3>
-          <div class="cost">عروض <span style="font-size: 14px; color: #64748b;">مستمرة</span></div>
-          <p style="font-size: 12px; color: #64748b;">باقات حصرية ومميزة بإشراف أخصائيات</p>
-        </div>
-        <a href="#booking" class="btn-book-sm">استفسر عن الباقات</a>
-      </div>
-    </div>
   </section>
 
   <!-- Footer -->
@@ -681,6 +843,19 @@
       `;
     }
 
+    /* دالة تحريك السلايدر يميناً ويساراً */
+    function slideCarousel(direction) {
+      const container = document.getElementById('servicesTrackContainer');
+      const scrollStep = 310; // عرض الكرت + المسافة الفاصلة
+      if (!container) return;
+
+      if (direction === 'left') {
+        container.scrollBy({ left: -scrollStep, behavior: 'smooth' });
+      } else {
+        container.scrollBy({ left: scrollStep, behavior: 'smooth' });
+      }
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
       renderBranchButtons();
       selectBranch(0);
@@ -708,6 +883,22 @@
           const fullMessage = lines.join("\n");
           const whatsappUrl = "https://wa.me/" + target.intl + "?text=" + encodeURIComponent(fullMessage);
           window.open(whatsappUrl, '_blank');
+        });
+      }
+
+      // تحديث نقاط مؤشر التمرير حسب موضع السكرول
+      const trackContainer = document.getElementById('servicesTrackContainer');
+      if (trackContainer) {
+        trackContainer.addEventListener('scroll', () => {
+          const dots = document.querySelectorAll('.carousel-dots .dot');
+          const maxScroll = trackContainer.scrollWidth - trackContainer.clientWidth;
+          const currentScroll = Math.abs(trackContainer.scrollLeft);
+          const ratio = currentScroll / (maxScroll || 1);
+          const activeIndex = Math.min(Math.floor(ratio * dots.length), dots.length - 1);
+          
+          dots.forEach((dot, idx) => {
+            dot.classList.toggle('active', idx === activeIndex);
+          });
         });
       }
     });
