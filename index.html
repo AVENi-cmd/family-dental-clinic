@@ -719,7 +719,7 @@
       cursor: pointer;
     }
 
-    /* Floating WhatsApp */
+    /* Floating WhatsApp Button & Modal */
     .float-wa {
       position: fixed;
       bottom: 24px;
@@ -735,20 +735,91 @@
       font-size: 30px;
       box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
       z-index: 999;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .float-wa:hover {
+      transform: scale(1.08);
+    }
+
+    .wa-branches-modal {
+      position: fixed;
+      bottom: 95px;
+      left: 24px;
+      width: 320px;
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.18);
+      border: 1px solid #cfe0e3;
+      display: none;
+      flex-direction: column;
+      z-index: 1000;
+      overflow: hidden;
+      animation: popUp 0.25s ease-out;
+    }
+    @keyframes popUp {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .wa-modal-header {
+      background: #10b981;
+      color: #ffffff;
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .wa-modal-header h4 {
+      font-size: 14px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .wa-modal-body {
+      padding: 12px;
+      max-height: 360px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      background: #f8fafc;
+    }
+    .wa-branch-item {
+      background: #ffffff;
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #0f172a;
+      font-weight: 700;
+      font-size: 13px;
+      transition: all 0.2s;
+    }
+    .wa-branch-item:hover {
+      background: #ecfdf5;
+      border-color: #10b981;
+      color: #047857;
+      transform: translateX(-3px);
+    }
+    .wa-branch-item i {
+      color: #10b981;
+      font-size: 16px;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- Top Bar -->
+  <!-- Top Bar (تم إزالة رقم الهاتف بناءً على طلبك) -->
   <div class="topbar">
     <div>
       <i class="fa-solid fa-award"></i> خبرة أكثر من 30 سنة بالأحساء • نستقبل كافة شركات التأمين
     </div>
     <div>
       <span class="badge-tabby">تقسيط تابي وتمارا متاح</span>
-      <a href="tel:0537403090" style="margin-right: 8px;"><i class="fa-solid fa-phone"></i> 0537403090</a>
     </div>
   </div>
 
@@ -846,7 +917,6 @@
 
   <!-- =======================================
        قسم شريط خدمات المجمع الشاملة (Carousel Slider) 
-       مربوط بالصور المعتمدة بدقة 100%
        ======================================= -->
   <section class="container" style="padding: 50px 16px 20px;">
     <div class="section-title">
@@ -1056,7 +1126,6 @@
       <div>
         <h4 style="color: #ffffff; font-size: 14px; margin-bottom: 8px;">قنوات التواصل الرسمية</h4>
         <p>إنستغرام: @familydenclinic | تيك توك: @familyadental</p>
-        <p style="margin-top: 6px;">الرقم الموحد: 0537403090</p>
       </div>
     </div>
     <div style="text-align: center; border-top: 1px solid #1e293b; margin-top: 30px; padding-top: 16px;">
@@ -1064,10 +1133,20 @@
     </div>
   </footer>
 
-  <!-- Floating WhatsApp -->
-  <a href="https://wa.me/966537403090" target="_blank" class="float-wa" title="واتساب المجمع">
+  <!-- أيقونة الواتساب العائمة التفاعلية مع نافذة اختيار الفرع -->
+  <div class="float-wa" onclick="toggleWaModal()" title="تواصل عبر الواتساب">
     <i class="fa-brands fa-whatsapp"></i>
-  </a>
+  </div>
+
+  <div class="wa-branches-modal" id="waBranchesModal">
+    <div class="wa-modal-header">
+      <h4><i class="fa-brands fa-whatsapp" style="font-size: 18px;"></i> اختر الفرع للتواصل واتساب</h4>
+      <i class="fa-solid fa-xmark" style="cursor: pointer; font-size: 16px;" onclick="toggleWaModal()"></i>
+    </div>
+    <div class="wa-modal-body" id="waBranchesList">
+      <!-- يتم توليد قائمة الفروع ديناميكياً -->
+    </div>
+  </div>
 
   <!-- بوت المحادثة التفاعلي الذكي -->
   <div class="chat-bubble-btn" id="openChatBtn" onclick="toggleChatBot()" title="محادثة فورية">
@@ -1214,6 +1293,25 @@
       container.scrollBy({ left: direction === 'left' ? -scrollStep : scrollStep, behavior: 'smooth' });
     }
 
+    /* التحكم بنافذة اختيار فرع الواتساب العائمة */
+    function toggleWaModal() {
+      const modal = document.getElementById('waBranchesModal');
+      const isVisible = modal.style.display === 'flex';
+      modal.style.display = isVisible ? 'none' : 'flex';
+    }
+
+    function renderWaModalList() {
+      const container = document.getElementById('waBranchesList');
+      if (!container) return;
+      const defaultMsg = encodeURIComponent("مرحباً، أود الاستفسار وحجز موعد لديكم بمجمع الأسرة.");
+      container.innerHTML = branchData.map((b) => `
+        <a href="https://wa.me/${b.intl}?text=${defaultMsg}" target="_blank" class="wa-branch-item">
+          <span><i class="fa-solid fa-location-dot" style="color: var(--brand-teal); margin-left: 6px;"></i> ${b.name}</span>
+          <i class="fa-brands fa-whatsapp"></i>
+        </a>
+      `).join('');
+    }
+
     function toggleChatBot() {
       const modal = document.getElementById('chatModal');
       modal.style.display = (modal.style.display === 'flex') ? 'none' : 'flex';
@@ -1270,7 +1368,7 @@
       } else if (type === 'branches') {
         appendUserMessage("فروعنا وأوقات العمل");
         setTimeout(() => {
-          appendBotMessage("لدينا 8 فروع متطورة تغطي الأحساء (السلمانية، محاسن، الخالدية، المزروع، الشقيق، الجفر، والعيون). يمكنك استعراض موقع كل فرع ورقم اتصاله المباشر في قسم الفروع بالأسفل.");
+          appendBotMessage("لدينا 8 فروع متطورة تغطي الأحساء (السلمانية، محاسن، الخالدية، المزروع، الشقيق، الجفر، والعيون). مواعيد العمل بجميع الفروع من 9 صباحاً وحتى 9 مساءً.");
         }, 500);
       } else if (type === 'tabby') {
         appendUserMessage("تقسيط تابي وتمارا");
@@ -1280,7 +1378,7 @@
       } else if (type === 'support') {
         appendUserMessage("للشكاوى والاستفسارات");
         setTimeout(() => {
-          appendBotMessage("يهمنا رضاكم دائماً. بإمكانك التحدث المباشر مع إدارة خدمة العملاء عبر واتساب: <a href='https://wa.me/966537403090' target='_blank' style='color:#10b981; font-weight:bold;'>اضغط هنا للمحادثة</a>");
+          appendBotMessage("يهمنا رضاكم دائماً. بإمكانك التحدث المباشر مع إدارة خدمة العملاء عبر فرع محاسن الإداري: <a href='https://wa.me/966537403090' target='_blank' style='color:#10b981; font-weight:bold;'>اضغط هنا للمحادثة</a>");
         }, 500);
       }
     }
@@ -1342,6 +1440,7 @@
 
     document.addEventListener('DOMContentLoaded', () => {
       renderBranchButtons();
+      renderWaModalList();
       selectBranch(0);
       showTestimonial(0);
 
