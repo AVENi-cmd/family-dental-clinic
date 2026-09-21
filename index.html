@@ -436,54 +436,72 @@
       .carousel-wrapper { padding: 0; }
     }
 
-    /* قسم شركات التأمين */
-    .insurance-section {
+    /* =========================================
+       القسم البديل: رحلة المراجع في 3 خطوات بسيطة
+       ========================================= */
+    .journey-wrapper {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin: 30px 0 45px;
+      position: relative;
+    }
+    .journey-step {
       background: #ffffff;
       border: 1.5px solid rgba(0, 165, 181, 0.2);
-      border-radius: 28px;
-      padding: 40px 24px;
-      margin: 40px auto;
-      box-shadow: 0 14px 35px rgba(0, 165, 181, 0.07);
-    }
-    .insurance-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
-      gap: 14px;
-      margin-top: 25px;
-    }
-    .ins-card {
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      border-radius: 16px;
-      padding: 16px 14px;
+      border-radius: 24px;
+      padding: 32px 24px;
       text-align: center;
-      font-weight: 800;
-      font-size: 14px;
-      color: var(--dark-navy);
+      position: relative;
+      box-shadow: 0 12px 30px rgba(0, 165, 181, 0.08);
+      transition: all 0.3s ease;
+    }
+    .journey-step:hover {
+      transform: translateY(-6px);
+      border-color: var(--brand-teal);
+      box-shadow: 0 16px 36px rgba(0, 165, 181, 0.18);
+    }
+    .journey-num {
+      position: absolute;
+      top: -16px;
+      right: 24px;
+      background: linear-gradient(135deg, var(--brand-teal), var(--brand-teal-dark));
+      color: #ffffff;
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 6px;
-      transition: all 0.25s ease;
+      font-weight: 900;
+      font-size: 16px;
+      box-shadow: 0 4px 12px var(--brand-teal-glow);
     }
-    .ins-card i {
-      font-size: 22px;
-      color: var(--brand-teal);
+    .journey-icon {
+      width: 65px;
+      height: 65px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, rgba(0, 165, 181, 0.12), rgba(140, 198, 63, 0.15));
+      color: var(--brand-teal-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      margin: 10px auto 20px;
     }
-    .ins-card:hover {
-      background: #ecfdff;
-      border-color: var(--brand-teal);
-      transform: translateY(-3px);
-      box-shadow: 0 8px 18px var(--brand-teal-glow);
+    .journey-step h3 {
+      font-size: 18.5px;
+      font-weight: 800;
+      color: var(--dark-navy);
+      margin-bottom: 10px;
     }
-    .ins-badge {
-      font-size: 11px;
-      color: var(--brand-lime-dark);
-      font-weight: 700;
+    .journey-step p {
+      font-size: 14px;
+      color: #64748b;
+      line-height: 1.65;
     }
 
-    /* قسم لماذا تختار مجمع الأسرة */
+    /* لماذا تختار مجمع الأسرة */
     .why-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -984,7 +1002,7 @@
   <!-- Top Bar -->
   <div class="topbar">
     <div>
-      <i class="fa-solid fa-award"></i> أكثر من 35 عاماً من الخبرة بالأحساء • نستقبل كافة شركات التأمين المعتمدة[span_4](start_span)[span_4](end_span)
+      <i class="fa-solid fa-award"></i> أكثر من 35 عاماً من الخبرة والريادة الطبية بالأحساء[span_10](start_span)[span_10](end_span)
     </div>
     <div>
       <span class="badge-tabby">تقسيط تابي وتمارا متاح</span>
@@ -1021,7 +1039,7 @@
         <div>
           <div class="hero-tag">ابتسامة أجمل.. وعناية متكاملة تدوم</div>
           <h2 class="hero-title">عناية طبية متقدمة بأقرب فرع منك في <span>الأحساء</span></h2>
-          <p class="hero-desc">أكثر من 35 عاماً من الثقة عبر 8 فروع متطورة تغطي كافة مدن وبلدات الأحساء، مع اعتماد كامل لشركات التأمين وخيارات دفع مرنة بالتقسيط المريح.[span_5](start_span)[span_5](end_span)</p>
+          <p class="hero-desc">أكثر من 35 عاماً من الثقة عبر 8 فروع متطورة تغطي كافة مدن وبلدات الأحساء، مع خيارات دفع مرنة بالتقسيط المريح وبسعر الكاش.[span_11](start_span)[span_11](end_span)</p>
           
           <div class="features-row">
             <div class="feat-card">
@@ -1030,14 +1048,14 @@
               <p>تقسيط بسعر الكاش</p>
             </div>
             <div class="feat-card">
-              <i class="fa-solid fa-shield-heart" style="color: #10b981;"></i>
-              <h4>التأمين الطبي</h4>
-              <p>معتمدون رسمياً[span_6](start_span)[span_6](end_span)</p>
+              <i class="fa-solid fa-award" style="color: #10b981;"></i>
+              <h4>35 عاماً خبرة</h4>
+              <p>ريادة وموثوقية[span_12](start_span)[span_12](end_span)</p>
             </div>
             <div class="feat-card">
               <i class="fa-solid fa-location-dot" style="color: var(--brand-lime-dark);"></i>
               <h4>8 فروع</h4>
-              <p>تغطية كامل الأحساء[span_7](start_span)[span_7](end_span)</p>
+              <p>تغطية كامل الأحساء[span_13](start_span)[span_13](end_span)</p>
             </div>
           </div>
         </div>
@@ -1178,34 +1196,35 @@
     </div>
   </section>
 
-  <!-- قسم شركات التأمين المعتمدة -->
+  <!-- =========================================
+       القسم البديل: رحلة مراجع مجمع الأسرة (في 3 خطوات)
+       ========================================= -->
   <section class="container">
-    <div class="insurance-section">
-      <div style="text-align: center;">
-        <h2 style="font-size: 28px; font-weight: 900; color: var(--dark-navy);">شركات التأمين المعتمدة لدينا</h2>
-        <p style="color: #64748b; font-size: 14.5px; margin-top: 6px;">نستقبل بطاقات التأمين الطبي المباشر لتغطية علاجاتك في كافة فروعنا بالأحساء[span_8](start_span)[span_8](end_span)</p>
+    <div class="section-title">
+      <h2>رحلة علاجك في مجمع الأسرة</h2>
+      <p>خطوات ميسرة ومريحة من لحظة الحجز وحتى الحصول على ابتسامتك المثالية</p>
+    </div>
+
+    <div class="journey-wrapper">
+      <div class="journey-step">
+        <div class="journey-num">1</div>
+        <div class="journey-icon"><i class="fa-brands fa-whatsapp"></i></div>
+        <h3>حجز موعدك بسهولة</h3>
+        <p>اختر الفرع الأقرب إليك من بين 8 فروع بالأحساء، وحدد موعدك المناسب في ثوانٍ معدودة عبر الواتساب دون أي تعقيد.[span_14](start_span)[span_14](end_span)</p>
       </div>
 
-      <div class="insurance-grid">
-        <div class="ins-card"><i class="fa-solid fa-shield-halved"></i><span>التعاونية</span><span class="ins-badge">Tawuniya</span></div>
-        <div class="ins-card"><i class="fa-solid fa-shield-halved"></i><span>بوبا للتأمين</span><span class="ins-badge">Bupa Arabia</span></div>
-        <div class="ins-card"><i class="fa-solid fa-shield-halved"></i><span>ميدغلف</span><span class="ins-badge">MEDGULF</span></div>
-        <div class="ins-card"><i class="fa-solid fa-shield-halved"></i><span>تكافل الراجحي</span><span class="ins-badge">Al Rajhi Takaful</span></div>
-        <div class="ins-card"><i class="fa-solid fa-shield-halved"></i><span>أليانز السعودي الفرنسي</span><span class="ins-badge">Allianz</span></div>
-        <div class="ins-card"><i class="fa-solid fa-shield-halved"></i><span>شركة ولاء للتأمين</span><span class="ins-badge">Walaa Insurance</span></div>
-        <div class="ins-card"><i class="fa-solid fa-shield-halved"></i><span>ملاذ للتأمين</span><span class="ins-badge">Malath</span></div>
-        <div class="ins-card"><i class="fa-solid fa-shield-halved"></i><span>سايكو</span><span class="ins-badge">SAICO</span></div>
-        <div class="ins-card"><i class="fa-solid fa-shield-halved"></i><span>الصقر للتأمين</span><span class="ins-badge">AlSagr Insurance</span></div>
-        <div class="ins-card"><i class="fa-solid fa-shield-halved"></i><span>نكست كير</span><span class="ins-badge">NEXtCARE</span></div>
-        <div class="ins-card"><i class="fa-solid fa-shield-halved"></i><span>غلوب مد السعودية</span><span class="ins-badge">GlobeMed</span></div>
-        <div class="ins-card"><i class="fa-solid fa-shield-halved"></i><span>الدرع العربي للتأمين</span><span class="ins-badge">Arabian Shield</span></div>
-        <div class="ins-card"><i class="fa-solid fa-shield-halved"></i><span>الإنماء طوكيو مارين</span><span class="ins-badge">Alinma Tokio</span></div>
-        <div class="ins-card"><i class="fa-solid fa-shield-halved"></i><span>متلايف - العربي</span><span class="ins-badge">MetLife AIG</span></div>
-        <div class="ins-card"><i class="fa-solid fa-shield-halved"></i><span>الخليجية العامة</span><span class="ins-badge">Gulf General</span></div>
-        <div class="ins-card"><i class="fa-solid fa-shield-halved"></i><span>المتحدة للتأمين</span><span class="ins-badge">UCA</span></div>
-        <div class="ins-card"><i class="fa-solid fa-shield-halved"></i><span>المجموعة المتحدة (TUCI)</span><span class="ins-badge">TUCI</span></div>
-        <div class="ins-card"><i class="fa-solid fa-shield-halved"></i><span>شركة ACIG للتأمين</span><span class="ins-badge">ACIG</span></div>
-        <div class="ins-card"><i class="fa-solid fa-shield-halved"></i><span>توتال كير السعودية (TCS)</span><span class="ins-badge">Total Care Saudi</span></div>
+      <div class="journey-step">
+        <div class="journey-num">2</div>
+        <div class="journey-icon"><i class="fa-solid fa-stethoscope"></i></div>
+        <h3>استقبال وتشخيص دقيق</h3>
+        <p>استقبال راقٍ وفحص سريري شامل مدعوم بأحدث أجهزة الأشعة الرقمية والماسحات ثلاثية الأبعاد لوضع خطة علاج واضحة ومخصصة.</p>
+      </div>
+
+      <div class="journey-step">
+        <div class="journey-num">3</div>
+        <div class="journey-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+        <h3>علاج مريح وتقسيط ميسر</h3>
+        <p>تنفيذ علاجك بأيدي أطباء استشاريين متميزين مع تجربة مريحة وخيارات سداد ميسرة مقسمة على 4 دفعات عبر تابي وتمارا.</p>
       </div>
     </div>
   </section>
@@ -1233,7 +1252,7 @@
       <div class="why-box">
         <div class="why-icon"><i class="fa-solid fa-network-wired"></i></div>
         <h3>ملف طبي إلكتروني موحد</h3>
-        <p>ملفك الطبي يرافقك؛ يمكنك فتح ملفك واستكمال خطتك العلاجية في أي فرع من فروعنا الثمانية بالأحساء بكل سلاسة.[span_9](start_span)[span_9](end_span)</p>
+        <p>ملفك الطبي يرافقك؛ يمكنك فتح ملفك واستكمال خطتك العلاجية في أي فرع من فروعنا الثمانية بالأحساء بكل سلاسة.[span_15](start_span)[span_15](end_span)</p>
       </div>
 
       <div class="why-box">
@@ -1290,16 +1309,6 @@
     <div class="faq-wrapper">
       <div class="faq-item" onclick="toggleFaq(this)">
         <div class="faq-question">
-          <span>كيف يمكنني معرفة ما إذا كانت شركتي للتأمين مقبولة لديكم؟</span>
-          <i class="fa-solid fa-chevron-down"></i>
-        </div>
-        <div class="faq-answer">
-          نحن معتمدون رسمياً لدى معظم شركات التأمين الكبرى بالمملكة (بوبا، التعاونية، ميدغلف، تكافل الراجحي، وغيرها). يمكنك إدخال بيانات تأمينك في نموذج الحجز وسيقوم موظف التأمين بالفرع بتأكيد تغطيتك فوراً.[span_10](start_span)[span_10](end_span)
-        </div>
-      </div>
-
-      <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-question">
           <span>هل تتوفر خدمة التقسيط بدون فوائد؟</span>
           <i class="fa-solid fa-chevron-down"></i>
         </div>
@@ -1314,7 +1323,7 @@
           <i class="fa-solid fa-chevron-down"></i>
         </div>
         <div class="faq-answer">
-          بالتأكيد، نمتلك شبكة مكونة من 8 فروع تغطي مدن وبلدات الأحساء بملف طبي إلكتروني موحد يتيح لك مراجعة أي فرع مناسب لك دون الحاجة لإعادة الكشف.[span_11](start_span)[span_11](end_span)
+          بالتأكيد، نمتلك شبكة مكونة من 8 فروع تغطي مدن وبلدات الأحساء بملف طبي إلكتروني موحد يتيح لك مراجعة أي فرع مناسب لك دون الحاجة لإعادة الكشف.[span_16](start_span)[span_16](end_span)
         </div>
       </div>
 
@@ -1325,6 +1334,16 @@
         </div>
         <div class="faq-answer">
           تستقبل فروعنا الثمانية المراجعين يومياً من الساعة 9:00 صباحاً وحتى الساعة 9:00 مساءً، ويسعدنا دائماً استقبالكم أو حجز موعدكم مسبقاً لتفادي الانتظار.
+        </div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">
+          <span>كيف أحجز موعداً في الفرع الأقرب إلي؟</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          بإمكانك حجز موعدك مباشرة عبر اختيار الفرع من النموذج العلوي أو عبر الضغط على أيقونة الواتساب واختيار الفرع للتواصل المباشر مع موظف الاستقبال.
         </div>
       </div>
     </div>
@@ -1370,7 +1389,7 @@
     <div class="container" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px;">
       <div>
         <h4 style="color: #ffffff; font-size: 16.5px; margin-bottom: 8px;">مجمع الأسرة لطب الأسنان والجلدية</h4>
-        <p>أكثر من 35 سنة من العناية الموثوقة بصحة أهالي الأحساء.[span_12](start_span)[span_12](end_span)</p>
+        <p>أكثر من 35 سنة من العناية الموثوقة بصحة أهالي الأحساء.[span_17](start_span)[span_17](end_span)</p>
         <p style="margin-top: 6px;">البريد الرسمي: Family.denclinic2@gmail.com</p>
       </div>
       <div>
@@ -1430,7 +1449,6 @@
       <div class="chat-quick-btns" id="quickOptions">
         <button class="chat-pill-btn" onclick="handleBotAction('booking')">📅 حجز موعد</button>
         <button class="chat-pill-btn" onclick="handleBotAction('branches')">📍 فروعنا وأوقات العمل</button>
-        <button class="chat-pill-btn" onclick="handleBotAction('insurance')">🛡️ شركات التأمين المعتمدة</button>
         <button class="chat-pill-btn" onclick="handleBotAction('tabby')">💳 تقسيط تابي وتمارا</button>
       </div>
     </div>
@@ -1617,12 +1635,7 @@
       } else if (type === 'branches') {
         appendUserMessage("فروعنا وأوقات العمل");
         setTimeout(() => {
-          appendBotMessage("لدينا 8 فروع متطورة تغطي الأحساء (السلمانية، محاسن، الخالدية، المزروع، الشقيق، الجفر، والعيون). مواعيد العمل بجميع الفروع من 9 صباحاً وحتى 9 مساءً.");
-        }, 500);
-      } else if (type === 'insurance') {
-        appendUserMessage("شركات التأمين المعتمدة");
-        setTimeout(() => {
-          appendBotMessage("نستقبل كافة بطاقات وشركات التأمين المعتمدة مثل (بوبا، التعاونية، ميدغلف، تكافل الراجحي، أليانز، ملاذ، وغيرها). يمكنك مراجعة قسم التأمين بالموقع للاطلاع على القائمة الكاملة.");
+          appendBotMessage("لدينا 8 فروع متطورة تغطي الأحساء (السلمانية، محاسن، الخالدية، المزروع، الشقيق، الجفر، والعيون). مواعيد العمل بجميع الفروع من 9 صباحاً وحتى 9 مساءً.[span_18](start_span)[span_18](end_span)");
         }, 500);
       } else if (type === 'tabby') {
         appendUserMessage("تقسيط تابي وتمارا");
