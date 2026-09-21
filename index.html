@@ -578,7 +578,7 @@
     .btn-wa { background: #10b981; }
     .btn-map { background: #ffffff; color: #334155; border: 1px solid #cbd5e1; }
 
-    /* بوت المحادثة التفاعلي */
+    /* بوت المحادثة التفاعلي المطور (قابل للتحريك والتكبير) */
     .chat-bubble-btn {
       position: fixed;
       bottom: 24px;
@@ -605,29 +605,39 @@
       bottom: 95px;
       right: 24px;
       width: 360px;
-      max-width: calc(100vw - 40px);
+      min-width: 280px;
+      max-width: 90vw;
       height: 520px;
+      min-height: 380px;
+      max-height: 85vh;
       background: #ffffff;
       border-radius: 22px;
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.18);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.22);
       display: none;
       flex-direction: column;
       overflow: hidden;
       z-index: 1000;
       border: 1px solid #cfe0e3;
+      resize: both; /* تمكين التكبير والتصغير من الزاوية */
     }
     .chat-header {
       background: var(--brand-teal);
       color: #ffffff;
-      padding: 16px;
+      padding: 14px 16px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      cursor: grab; /* مؤشر سحب النافذة */
+      user-select: none;
+    }
+    .chat-header:active {
+      cursor: grabbing;
     }
     .chat-header-info {
       display: flex;
       align-items: center;
       gap: 10px;
+      pointer-events: none;
     }
     .chat-body {
       flex: 1;
@@ -856,7 +866,7 @@
 
   <!-- =======================================
        قسم شريط خدمات المجمع الشاملة (Carousel Slider) 
-       مع صور واقعية احترافية بالترتيب الصحيح
+       مع تصحيح وتبديل الصور الطبية تماماً
        ======================================= -->
   <section class="container" style="padding: 50px 16px 20px;">
     <div class="section-title">
@@ -888,7 +898,7 @@
             </a>
           </div>
 
-          <!-- 2. تقويم الأسنان والفكين (مع صورة القالب الشفاف المناسبة تماماً) -->
+          <!-- 2. تقويم الأسنان والفكين (صورة القوالب الشفافة بدقة) -->
           <div class="carousel-card">
             <div>
               <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=700&q=80" alt="تقويم الأسنان" class="service-real-img">
@@ -914,10 +924,10 @@
             </a>
           </div>
 
-          <!-- 4. تنظيف وتلميع الأسنان واللثة (مع صورة الفحص والتنظيف السريري) -->
+          <!-- 4. تنظيف وتلميع الأسنان واللثة (صورة الفحص والتنظيف السريري الجديدة) -->
           <div class="carousel-card">
             <div>
-              <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=700&q=80" alt="تنظيف وتلميع الأسنان" class="service-real-img">
+              <img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=700&q=80" alt="تنظيف وتلميع الأسنان" class="service-real-img">
               <h3>تنظيف وتلميع الأسنان واللثة</h3>
               <p>إزالة التكلسات الجيرية المتراكمة وتلميع الأسنان بالموجات فوق الصوتية لحماية اللثة من الالتهابات والحفاظ على انتعاش الفم.</p>
             </div>
@@ -1087,6 +1097,7 @@
 
   <!-- =======================================
        بوت المحادثة التفاعلي الذكي (Chatbot Widget)
+       (يدعم السحب، التحريك، وتغيير الحجم)
        ======================================= -->
   <div class="chat-bubble-btn" id="openChatBtn" onclick="toggleChatBot()" title="محادثة فورية">
     <i class="fa-solid fa-comments"></i>
@@ -1235,7 +1246,7 @@
       container.scrollBy({ left: direction === 'left' ? -scrollStep : scrollStep, behavior: 'smooth' });
     }
 
-    // منطق بوت المحادثة الذكي (تخيير المراجع بين الفروع عند الحجز)
+    // منطق بوت المحادثة الذكي وتخيير الفروع
     function toggleChatBot() {
       const modal = document.getElementById('chatModal');
       modal.style.display = (modal.style.display === 'flex') ? 'none' : 'flex';
@@ -1319,6 +1330,49 @@
         appendBotMessage("شكراً لتواصلك! لتحويل استفسارك فوراً لموظف الاستقبال المختص، <a href='" + waLink + "' target='_blank' style='color:#10b981; font-weight:bold;'>اضغط هنا لفتح الواتساب</a>");
       }, 700);
     }
+
+    // تفعيل خاصية سحب وتحريك نافذة الدردشة
+    (function initChatDraggable() {
+      const modal = document.getElementById('chatModal');
+      const header = document.querySelector('.chat-header');
+      if (!modal || !header) return;
+
+      let isDragging = false;
+      let startX, startY, initialLeft, initialTop;
+
+      header.addEventListener('mousedown', (e) => {
+        if (e.target.closest('i') || e.target.closest('button')) return;
+        
+        isDragging = true;
+        const rect = modal.getBoundingClientRect();
+        startX = e.clientX;
+        startY = e.clientY;
+        initialLeft = rect.left;
+        initialTop = rect.top;
+
+        modal.style.bottom = 'auto';
+        modal.style.right = 'auto';
+        modal.style.left = initialLeft + 'px';
+        modal.style.top = initialTop + 'px';
+
+        document.addEventListener('mousemove', onMouseMove);
+        document.addEventListener('mouseup', onMouseUp);
+      });
+
+      function onMouseMove(e) {
+        if (!isDragging) return;
+        const dx = e.clientX - startX;
+        const dy = e.clientY - startY;
+        modal.style.left = (initialLeft + dx) + 'px';
+        modal.style.top = (initialTop + dy) + 'px';
+      }
+
+      function onMouseUp() {
+        isDragging = false;
+        document.removeEventListener('mousemove', onMouseMove);
+        document.removeEventListener('mouseup', onMouseUp);
+      }
+    })();
 
     document.addEventListener('DOMContentLoaded', () => {
       renderBranchButtons();
