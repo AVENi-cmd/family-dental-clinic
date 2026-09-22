@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>مجمع الأسرة لطب الأسنان والجلدية | الأحساء (8 فروع)</title>
-  <meta name="description" content="أكثر من 35 عاماً من الريادة الطبية في الأحساء. خدمات طب وتجميل الأسنان، زراعة وتقويم الأسنان، والجلدية والليزر عبر 8 فروع متطورة مع تقسيط تابي وتمارا.">
-  <meta name="theme-color" content="#008D9B">
+  <title>مجمع الأسرة الطبي | طب وجراحة الأسنان والجلدية — الأحساء (8 فروع)</title>
+  <meta name="description" content="أكثر من 35 عاماً من الريادة الطبية في الأحساء. خدمات طب وتجميل الأسنان، التقويم، الزراعة، والجلدية والليزر عبر 8 فروع متطورة مع تقسيط تابي وتمارا 0% فوائد.">
+  <meta name="theme-color" content="#0A1628">
 
-  <!-- الخطوط الطبية الهندسية الفاخرة -->
+  <!-- خط Alexandria الهندسي العصري الفاخر -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@600;700&display=swap" rel="stylesheet">
@@ -15,106 +15,106 @@
   
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            med: {
-              teal: '#00A5B5',
-              darkteal: '#007C89',
-              navy: '#0A192F',
-              slate: '#1E293B',
-              lime: '#7CB342',
-              softbg: '#F8FAFC'
-            }
-          },
-          fontFamily: {
-            sans: ['Alexandria', 'sans-serif'],
-            mono: ['JetBrains Mono', 'monospace']
-          }
-        }
-      }
-    }
-  </script>
-
   <style>
-    body {
+    * {
       font-family: 'Alexandria', sans-serif;
-      background-color: #F8FAFC;
-      color: #334155;
+      -webkit-font-smoothing: antialiased;
     }
     .font-num {
-      font-family: 'JetBrains Mono', sans-serif;
+      font-family: 'JetBrains Mono', monospace;
     }
-    /* تأثيرات ناعمة للبطاقات */
-    .glass-card {
-      background: rgba(255, 255, 255, 0.96);
-      backdrop-filter: blur(12px);
-      border: 1px solid #E2E8F0;
-      box-shadow: 0 10px 30px -10px rgba(0, 165, 181, 0.08);
+    body {
+      background-color: #F8FAFC;
+      color: #1E293B;
+    }
+    /* تأثيرات البطاقات الطبية */
+    .med-card {
+      background: #FFFFFF;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 24px;
+      box-shadow: 0 10px 25px -8px rgba(15, 23, 42, 0.06);
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .glass-card:hover {
-      border-color: #00A5B5;
+    .med-card:hover {
+      border-color: #1D4ED8;
       transform: translateY(-4px);
-      box-shadow: 0 20px 40px -15px rgba(0, 165, 181, 0.16);
+      box-shadow: 0 20px 35px -10px rgba(29, 78, 216, 0.14);
     }
-    /* إخفاء شريط التمرير للكاروسيل */
-    .no-scrollbar::-webkit-scrollbar { display: none; }
-    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    /* حاويات الأيقونات المتباينة لتمييزها عن الخلفية */
+    .icon-badge-amber {
+      background: #FEF3C7;
+      border: 1.5px solid #FCD34D;
+      color: #B45309;
+    }
+    .icon-badge-blue {
+      background: #EFF6FF;
+      border: 1.5px solid #BFDBFE;
+      color: #1D4ED8;
+    }
+    .icon-badge-emerald {
+      background: #ECFDF5;
+      border: 1.5px solid #A7F3D0;
+      color: #047857;
+    }
+    .icon-badge-purple {
+      background: #FAF5FF;
+      border: 1.5px solid #E9D5FF;
+      color: #7E22CE;
+    }
+    .icon-badge-rose {
+      background: #FFF1F2;
+      border: 1.5px solid #FECDD3;
+      color: #BE123C;
+    }
   </style>
 </head>
 
-<body class="selection:bg-med-teal selection:text-white">
+<body class="min-h-screen selection:bg-blue-600 selection:text-white">
 
   <!-- الشريط العلوي للأخبار والاعتمادات -->
-  <div class="bg-gradient-to-r from-med-darkteal via-med-teal to-[#008D9B] text-white py-2.5 px-4 text-center text-xs font-semibold shadow-sm">
+  <aside class="bg-[#0A1628] text-white py-2.5 px-4 text-xs font-medium border-b border-slate-800" aria-label="شريط المعلومات السريعة">
     <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
       <div class="flex items-center gap-2">
-        <i class="fa-solid fa-award text-amber-300"></i>
-        <span>أكثر من 35 عاماً من الريادة الطبية المعتمدة في الأحساء</span>
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span class="text-slate-300">أكثر من 35 عاماً من الريادة والخبرة الطبية في الأحساء</span>
       </div>
-      <div class="flex items-center gap-4 text-[11px]">
-        <span class="bg-white/20 px-3 py-0.5 rounded-full border border-white/30">تقسيط تابي وتمارا متاح بسعر الكاش</span>
-        <span class="hidden sm:inline">8 فروع مجهزة بأحدث التقنيات</span>
+      <div class="flex items-center gap-4 text-[11px] text-slate-400">
+        <span class="text-amber-300 font-semibold flex items-center gap-1.5">
+          <i class="fa-solid fa-credit-card"></i> تقسيط تابي وتمارا متاح بسعر الكاش
+        </span>
+        <span class="hidden sm:inline text-slate-600">|</span>
+        <span class="hidden sm:inline">8 فروع مجهزة بأحدث التقنيات الرقمية</span>
       </div>
     </div>
-  </div>
+  </aside>
 
-  <!-- الهيدر والترويسة -->
-  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-xl border-b border-slate-200/80">
+  <!-- الترويسة الرئيسية والهيدر -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-xl border-b border-slate-200 shadow-sm">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
       
-      <!-- اللوجو -->
-      <a href="#" class="flex items-center gap-3">
-        <div class="w-12 h-12 rounded-2xl bg-white border border-slate-200 shadow-md p-1.5 flex items-center justify-center">
-          <svg viewBox="0 0 500 560" class="w-full h-full">
-            <circle cx="170" cy="72" r="35" fill="#7CB342"/>
-            <circle cx="398" cy="115" r="38" fill="#00A5B5"/>
-            <path d="M125 185 C85 160, 115 125, 165 125 C220 125, 300 175, 320 185 C265 240, 155 235, 125 185 Z" fill="#7CB342"/>
-            <path d="M112 195 C145 250, 260 255, 318 190 C340 160, 395 155, 430 185 C465 235, 440 355, 394 430 C375 385, 335 365, 275 365 C225 365, 205 400, 201 465 C198 505, 185 520, 172 490 C140 415, 95 315, 112 195 Z" fill="#00A5B5"/>
-            <path d="M272 374 C325 378, 368 418, 376 465 C382 502, 365 525, 345 520 C325 515, 320 470, 272 374 Z" fill="#7CB342"/>
-          </svg>
+      <!-- الشعار والهوية -->
+      <a href="#" class="flex items-center gap-3.5">
+        <div class="w-12 h-12 rounded-2xl bg-[#0F213A] text-white flex items-center justify-center text-xl font-bold shadow-md shadow-slate-900/20">
+          <i class="fa-solid fa-hospital-user text-cyan-400"></i>
         </div>
         <div>
-          <h1 class="text-xl font-extrabold text-med-navy tracking-tight">مجمع الأسرة</h1>
-          <span class="text-xs font-bold text-med-teal block -mt-1">لطب الأسنان والجلدية</span>
+          <h1 class="text-xl font-extrabold text-[#0A1628] tracking-tight">مجمع الأسرة الطبي</h1>
+          <span class="text-[11px] font-bold text-blue-600 block -mt-1">طب وجراحة الأسنان · الجلدية والليزر</span>
         </div>
       </a>
 
-      <!-- القائمة -->
+      <!-- روابط التنقل -->
       <nav class="hidden lg:flex items-center gap-8 text-xs font-bold text-slate-600">
-        <a href="#booking" class="hover:text-med-teal transition-colors">حجز المواعيد</a>
-        <a href="#services" class="hover:text-med-teal transition-colors">خدمات العيادات</a>
-        <a href="#calculator" class="hover:text-med-teal transition-colors">حاسبة التقسيط</a>
-        <a href="#branches" class="hover:text-med-teal transition-colors">فروع الأحساء (8)</a>
-        <a href="#faq" class="hover:text-med-teal transition-colors">الأسئلة الشائعة</a>
+        <a href="#booking" class="hover:text-blue-600 transition-colors">حجز موعد</a>
+        <a href="#services" class="hover:text-blue-600 transition-colors">العيادات التخصصية</a>
+        <a href="#calculator" class="hover:text-blue-600 transition-colors">حاسبة التقسيط</a>
+        <a href="#branches" class="hover:text-blue-600 transition-colors">فروع الأحساء (8)</a>
+        <a href="#faq" class="hover:text-blue-600 transition-colors">الأسئلة الشائعة</a>
       </nav>
 
-      <!-- زر الحجز المباشر -->
+      <!-- زر الحجز العلوي المباشر -->
       <div class="flex items-center gap-3">
-        <a href="#booking" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-med-teal to-med-darkteal text-white text-xs font-bold hover:shadow-lg hover:shadow-med-teal/30 hover:scale-[1.02] transition-all flex items-center gap-2">
+        <a href="#booking" class="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold shadow-lg shadow-blue-600/25 transition-all flex items-center gap-2">
           <i class="fa-regular fa-calendar-check"></i>
           <span>حجز موعد فوري</span>
         </a>
@@ -122,68 +122,86 @@
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
+    
     <!-- الواجهة الرئيسية (Hero Section) -->
-    <section class="relative pt-12 pb-20 px-6 overflow-hidden">
+    <section class="pt-12 pb-20 px-6">
       <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 items-center">
         
-        <!-- المحتوى النصي -->
+        <!-- المحتوى التعريفي -->
         <div class="lg:col-span-7 space-y-6">
-          <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-50 border border-cyan-200 text-med-darkteal text-xs font-bold">
-            <span class="w-2 h-2 rounded-full bg-med-teal animate-ping"></span>
-            ابتسامة أجمل.. وعناية متكاملة تدوم لعائلتك
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-800 text-xs font-bold">
+            <i class="fa-solid fa-certificate text-blue-600"></i>
+            رعاية طبية موثوقة لأكثر من 35 عاماً في الأحساء
           </div>
 
-          <h2 class="text-3xl sm:text-5xl font-black text-med-navy leading-[1.25] tracking-tight">
-            عناية طبية تخصصية بأحدث المعايير في <span class="text-transparent bg-clip-text bg-gradient-to-r from-med-teal to-med-darkteal">الأحساء</span>
+          <h2 class="text-3xl sm:text-5xl font-black text-[#0A1628] leading-[1.25] tracking-tight">
+            عناية طبية تخصصية ترعاك <br>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 via-blue-600 to-cyan-600">
+              بأيدي نخبة من استشاريي المملكة
+            </span>
           </h2>
 
           <p class="text-slate-600 text-sm sm:text-base leading-relaxed max-w-xl font-normal">
-            أكثر من 35 عاماً من الثقة عبر شبكة متكاملة تضم 8 فروع مجهزة بأحدث أجهزة الأشعة الرقمية والماسحات ثلاثية الأبعاد، مع خطط علاجية مرنة مقسطة بسعر الكاش.
+            8 فروع متطورة تغطي كافة مدن وقرى الأحساء بملف طبي إلكتروني موحد، وأحدث تقنيات الأشعة والماسحات الرقمية ثلاثية الأبعاد، مع تقسيط خطتك العلاجية بسعر الكاش عبر تابي وتمارا.
           </p>
 
-          <div class="grid grid-cols-3 gap-3 pt-2 max-w-lg">
-            <div class="p-3.5 rounded-2xl bg-white border border-slate-200 text-center shadow-sm">
-              <i class="fa-solid fa-credit-card text-med-teal text-xl mb-1 block"></i>
-              <div class="text-xs font-bold text-med-navy">تابي وتمارا</div>
-              <div class="text-[10px] text-slate-500">تقسيط بسعر الكاش</div>
+          <!-- كروت الميزات الثلاثة مع حاويات الأيقونات المتباينة -->
+          <div class="grid grid-cols-3 gap-3.5 pt-2 max-w-lg">
+            
+            <!-- 1. تابي وتمارا -->
+            <div class="p-4 rounded-2xl bg-white border border-slate-200/90 shadow-sm text-center">
+              <div class="w-11 h-11 mx-auto rounded-xl icon-badge-blue flex items-center justify-center text-lg mb-2 shadow-sm">
+                <i class="fa-solid fa-credit-card"></i>
+              </div>
+              <div class="text-xs font-bold text-[#0A1628]">تابي وتمارا</div>
+              <div class="text-[10px] text-slate-500 mt-0.5">تقسيط بسعر الكاش</div>
             </div>
-            <div class="p-3.5 rounded-2xl bg-white border border-slate-200 text-center shadow-sm">
-              <i class="fa-solid fa-hospital-user text-emerald-600 text-xl mb-1 block"></i>
-              <div class="text-xs font-bold text-med-navy">+35 عاماً</div>
-              <div class="text-[10px] text-slate-500">خبرة وموثوقية</div>
+
+            <!-- 2. الخبرة -->
+            <div class="p-4 rounded-2xl bg-white border border-slate-200/90 shadow-sm text-center">
+              <div class="w-11 h-11 mx-auto rounded-xl icon-badge-amber flex items-center justify-center text-lg mb-2 shadow-sm">
+                <i class="fa-solid fa-award"></i>
+              </div>
+              <div class="text-xs font-bold text-[#0A1628]">+35 عاماً</div>
+              <div class="text-[10px] text-slate-500 mt-0.5">ريادة وموثوقية</div>
             </div>
-            <div class="p-3.5 rounded-2xl bg-white border border-slate-200 text-center shadow-sm">
-              <i class="fa-solid fa-location-dot text-rose-500 text-xl mb-1 block"></i>
-              <div class="text-xs font-bold text-med-navy">8 فروع</div>
-              <div class="text-[10px] text-slate-500">تغطي الأحساء بالكامل</div>
+
+            <!-- 3. الفروع -->
+            <div class="p-4 rounded-2xl bg-white border border-slate-200/90 shadow-sm text-center">
+              <div class="w-11 h-11 mx-auto rounded-xl icon-badge-emerald flex items-center justify-center text-lg mb-2 shadow-sm">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div class="text-xs font-bold text-[#0A1628]">8 فروع</div>
+              <div class="text-[10px] text-slate-500 mt-0.5">تغطي الأحساء بالكامل</div>
             </div>
+
           </div>
         </div>
 
-        <!-- صندوق الحجز الذكي الذاتي -->
+        <!-- نموذج الحجز السريع المباشر -->
         <div id="booking" class="lg:col-span-5">
-          <div class="glass-card rounded-3xl p-8 border-2 border-med-teal/20 relative">
+          <div class="med-card p-8 border-2 border-blue-600/20 shadow-xl relative">
             <div class="text-center mb-6">
-              <span class="text-[11px] font-bold text-med-darkteal uppercase tracking-wider font-mono">FAST APPOINTMENT</span>
-              <h3 class="text-2xl font-black text-med-navy mt-1">طلب موعد كشف واستشارة</h3>
-              <p class="text-xs text-slate-500 mt-1">اختر الفرع وسيتم ربطك فوراً بواتساب الاستقبال لتأكيد الموعد</p>
+              <span class="text-[11px] font-bold text-blue-600 uppercase tracking-wider font-num">[ FAST APPOINTMENT ]</span>
+              <h3 class="text-2xl font-black text-[#0A1628] mt-1">طلب موعد كشف واستشارة</h3>
+              <p class="text-xs text-slate-500 mt-1">اختر الفرع الأقرب وسيقوم موظف الاستقبال بتأكيد الموعد فوراً</p>
             </div>
 
             <form id="bookingForm" class="space-y-4">
               <div>
-                <label for="clientName" class="block text-xs font-bold text-slate-700 mb-1.5">الاسم الكريم *</label>
-                <input type="text" id="clientName" required placeholder="أدخل اسمك الكريم" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs text-slate-800 focus:outline-none focus:border-med-teal focus:bg-white transition font-medium">
+                <label for="patientName" class="block text-xs font-bold text-slate-700 mb-1.5">الاسم الكريم *</label>
+                <input type="text" id="patientName" required placeholder="أدخل اسمك الكريم" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs text-slate-800 focus:outline-none focus:border-blue-600 focus:bg-white transition font-medium">
               </div>
 
               <div>
-                <label for="clientPhone" class="block text-xs font-bold text-slate-700 mb-1.5">رقم الجوال *</label>
-                <input type="tel" id="clientPhone" required placeholder="05xxxxxxxx" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs text-slate-800 focus:outline-none focus:border-med-teal focus:bg-white transition font-num text-right" dir="ltr">
+                <label for="patientPhone" class="block text-xs font-bold text-slate-700 mb-1.5">رقم الجوال السعودي *</label>
+                <input type="tel" id="patientPhone" required placeholder="05xxxxxxxx" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs text-slate-800 focus:outline-none focus:border-blue-600 focus:bg-white transition font-num text-right" dir="ltr">
               </div>
 
               <div>
-                <label for="clientBranch" class="block text-xs font-bold text-slate-700 mb-1.5">اختر الفرع الأقرب إليك بالأحساء *</label>
-                <select id="clientBranch" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs text-slate-800 focus:outline-none focus:border-med-teal focus:bg-white transition font-semibold">
+                <label for="branchSelect" class="block text-xs font-bold text-slate-700 mb-1.5">اختر الفرع الأقرب إليك بالأحساء *</label>
+                <select id="branchSelect" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs text-slate-800 focus:outline-none focus:border-blue-600 focus:bg-white transition font-semibold">
                   <option value="" disabled selected>اختر الفرع الأقرب إليك</option>
                   <option value="0">فرع السلمانية</option>
                   <option value="1">فرع محاسن</option>
@@ -196,9 +214,9 @@
                 </select>
               </div>
 
-              <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-med-teal to-med-darkteal text-white font-extrabold text-xs hover:shadow-xl hover:shadow-med-teal/30 transition-all flex items-center justify-center gap-2 mt-2">
+              <button type="submit" class="w-full py-4 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-extrabold text-xs shadow-lg shadow-blue-600/30 transition-all flex items-center justify-center gap-2 mt-2">
                 <i class="fa-brands fa-whatsapp text-base"></i>
-                <span>تأكيد الحجز فوراً عبر WhatsApp</span>
+                <span>تأكيد الموعد عبر WhatsApp</span>
               </button>
             </form>
           </div>
@@ -208,44 +226,46 @@
     </section>
 
     <!-- حاسبة أقساط تابي وتمارا التفاعلية (Installment Calculator) -->
-    <section id="calculator" class="py-16 px-6 bg-gradient-to-b from-white to-slate-50 border-y border-slate-200/80">
+    <section id="calculator" class="py-16 px-6 bg-white border-y border-slate-200">
       <div class="max-w-4xl mx-auto text-center">
-        <span class="text-xs font-mono uppercase text-med-darkteal tracking-widest font-bold">[ SMART FINANCING ]</span>
-        <h2 class="text-2xl sm:text-3xl font-black text-med-navy mt-1">احسب قسط علاجك بسعر الكاش</h2>
-        <p class="text-xs sm:text-sm text-slate-500 mt-2 max-w-md mx-auto">قسّم تكلفة علاجك أو تجميل أسنانك على 4 دفعات مريحة وبدون أي فوائد أو رسوم إضافية</p>
+        <span class="text-xs font-bold text-blue-600 uppercase tracking-widest font-num">[ SMART FINANCING ]</span>
+        <h2 class="text-2xl sm:text-3xl font-black text-[#0A1628] mt-1">احسب قسط علاجك بسعر الكاش</h2>
+        <p class="text-xs sm:text-sm text-slate-500 mt-2 max-w-md mx-auto">قسّم تكلفة علاجك أو تجميل أسنانك على 4 دفعات مريحة بدون أي فوائد أو رسوم إضافية</p>
 
-        <div class="glass-card rounded-3xl p-8 max-w-2xl mx-auto mt-8 border-2 border-med-teal/20 text-right">
+        <div class="med-card rounded-3xl p-8 max-w-2xl mx-auto mt-8 border-2 border-blue-600/20 text-right">
           
           <div class="flex items-center justify-between mb-4">
             <span class="text-xs font-bold text-slate-700">تكلفة الخطة العلاجية المتوقعة:</span>
-            <div class="text-2xl font-black text-med-darkteal font-num">
-              <span id="treatmentCostVal">2,400</span> <span class="text-xs font-normal text-slate-500 font-sans">ريال</span>
+            <div class="text-2xl font-black text-blue-600 font-num">
+              <span id="costNumber">2,400</span> <span class="text-xs font-normal text-slate-500 font-sans">ريال</span>
             </div>
           </div>
 
-          <input type="range" id="treatmentRange" min="400" max="12000" step="200" value="2400" class="w-full h-2.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-med-teal">
+          <input type="range" id="costSlider" min="400" max="12000" step="200" value="2400" class="w-full h-2.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600">
 
-          <div class="grid grid-cols-2 gap-4 mt-8 pt-6 border-t border-slate-200 text-center">
-            <div class="p-4 rounded-2xl bg-cyan-50/60 border border-cyan-100">
+          <div class="grid grid-cols-2 gap-4 mt-8 pt-6 border-t border-slate-100 text-center">
+            
+            <div class="p-4 rounded-2xl bg-blue-50/70 border border-blue-200">
               <div class="text-[11px] font-bold text-slate-500">القسط الشهري (4 دفعات)</div>
-              <div class="text-2xl font-black text-med-darkteal font-num mt-1">
-                <span id="monthlyInstallmentVal">600</span> <span class="text-xs font-sans text-slate-500">ريال/شهر</span>
+              <div class="text-2xl font-black text-blue-600 font-num mt-1">
+                <span id="installmentNumber">600</span> <span class="text-xs font-sans text-slate-500">ريال/شهر</span>
               </div>
-              <div class="text-[10px] text-emerald-600 font-bold mt-1">0% فوائد · بسعر الكاش</div>
+              <div class="text-[10px] text-emerald-700 font-bold mt-1">0% فوائد · بسعر الكاش المعتمد</div>
             </div>
 
             <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col items-center justify-center">
-              <div class="text-[11px] font-bold text-slate-500 mb-1">الجهات المعتمدة</div>
-              <div class="flex items-center justify-center gap-2 font-bold text-xs text-slate-700">
-                <span class="px-2.5 py-1 bg-white rounded-md shadow-sm border border-slate-200">تابي Tabby</span>
-                <span class="px-2.5 py-1 bg-white rounded-md shadow-sm border border-slate-200">تمارا Tamara</span>
+              <div class="text-[11px] font-bold text-slate-500 mb-1.5">الجهات المعتمدة</div>
+              <div class="flex items-center justify-center gap-2 font-bold text-xs text-slate-800">
+                <span class="px-3 py-1 bg-white rounded-lg shadow-sm border border-slate-200">تابي Tabby</span>
+                <span class="px-3 py-1 bg-white rounded-lg shadow-sm border border-slate-200">تمارا Tamara</span>
               </div>
             </div>
+
           </div>
 
           <div class="mt-6 text-center">
-            <a href="#booking" class="inline-flex items-center gap-2 text-xs font-bold text-med-darkteal hover:text-med-teal transition">
-              <span>احجز خطتك العلاجية الآن واستفد من التقسيط</span>
+            <a href="#booking" class="inline-flex items-center gap-2 text-xs font-bold text-blue-600 hover:text-blue-700 transition">
+              <span>احجز كشفك الآن واستفد من التقسيط الميسر</span>
               <i class="fa-solid fa-arrow-left"></i>
             </a>
           </div>
@@ -254,67 +274,71 @@
       </div>
     </section>
 
-    <!-- خدمات وعيادات المجمع المتخصصة -->
+    <!-- أقسام العيادات التخصصية -->
     <section id="services" class="py-20 max-w-7xl mx-auto px-6">
       <div class="text-center mb-14">
-        <span class="text-xs font-mono uppercase text-med-darkteal tracking-widest font-bold">[ MEDICAL CLINICS ]</span>
-        <h2 class="text-3xl font-black text-med-navy mt-1">أقسام العيادات التخصصية</h2>
+        <span class="text-xs font-bold text-blue-600 uppercase tracking-widest font-num">[ CLINICAL SERVICES ]</span>
+        <h2 class="text-3xl font-black text-[#0A1628] mt-1">العيادات التخصصية الشاملة</h2>
         <p class="text-xs sm:text-sm text-slate-500 mt-2">رعاية طبية تخصصية متكاملة للأسنان والجلدية تحت إشراف نخبة من الأطباء</p>
       </div>
 
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
         
-        <div class="glass-card rounded-2xl p-6 flex flex-col justify-between">
+        <!-- عيادة 1 -->
+        <div class="med-card p-6 flex flex-col justify-between">
           <div>
-            <div class="w-12 h-12 rounded-xl bg-cyan-50 text-med-teal flex items-center justify-center text-xl mb-4 border border-cyan-100">
+            <div class="w-12 h-12 rounded-2xl icon-badge-amber flex items-center justify-center text-xl mb-4 shadow-sm">
               <i class="fa-solid fa-wand-magic-sparkles"></i>
             </div>
-            <h3 class="text-base font-bold text-med-navy mb-2">ابتسامة هوليوود وتجميل الأسنان</h3>
-            <p class="text-xs text-slate-500 leading-relaxed">عدسات الفينير واللومينير بأحدث تقنيات التصميم الرقمي للحصول على مظهر طبيعي ومتناسق.</p>
+            <h3 class="text-base font-bold text-[#0A1628] mb-2">ابتسامة هوليوود وتجميل الأسنان</h3>
+            <p class="text-xs text-slate-500 leading-relaxed">عدسات الفينير واللومينير بأحدث تقنيات التصميم الرقمي ثلاثي الأبعاد للحصول على مظهر متناسق وطبيعي.</p>
           </div>
-          <a href="#booking" class="mt-6 pt-4 border-t border-slate-100 text-xs font-bold text-med-darkteal hover:text-med-teal flex items-center justify-between">
+          <a href="#booking" class="mt-6 pt-4 border-t border-slate-100 text-xs font-bold text-blue-600 hover:text-blue-700 flex items-center justify-between">
             <span>طلب استشارة تجميل</span>
             <i class="fa-solid fa-chevron-left text-[10px]"></i>
           </a>
         </div>
 
-        <div class="glass-card rounded-2xl p-6 flex flex-col justify-between">
+        <!-- عيادة 2 -->
+        <div class="med-card p-6 flex flex-col justify-between">
           <div>
-            <div class="w-12 h-12 rounded-xl bg-cyan-50 text-med-teal flex items-center justify-center text-xl mb-4 border border-cyan-100">
+            <div class="w-12 h-12 rounded-2xl icon-badge-blue flex items-center justify-center text-xl mb-4 shadow-sm">
               <i class="fa-solid fa-tooth"></i>
             </div>
-            <h3 class="text-base font-bold text-med-navy mb-2">تقويم الأسنان والفكين</h3>
+            <h3 class="text-base font-bold text-[#0A1628] mb-2">تقويم الأسنان والفكين</h3>
             <p class="text-xs text-slate-500 leading-relaxed">تقنيات التقويم الشفاف غير المرئي والتقويم الكلاسيكي لتصحيح الإطباق والاصطفاف لكافة الأعمار.</p>
           </div>
-          <a href="#booking" class="mt-6 pt-4 border-t border-slate-100 text-xs font-bold text-med-darkteal hover:text-med-teal flex items-center justify-between">
+          <a href="#booking" class="mt-6 pt-4 border-t border-slate-100 text-xs font-bold text-blue-600 hover:text-blue-700 flex items-center justify-between">
             <span>كشف التقويم</span>
             <i class="fa-solid fa-chevron-left text-[10px]"></i>
           </a>
         </div>
 
-        <div class="glass-card rounded-2xl p-6 flex flex-col justify-between">
+        <!-- عيادة 3 -->
+        <div class="med-card p-6 flex flex-col justify-between">
           <div>
-            <div class="w-12 h-12 rounded-xl bg-cyan-50 text-med-teal flex items-center justify-center text-xl mb-4 border border-cyan-100">
+            <div class="w-12 h-12 rounded-2xl icon-badge-emerald flex items-center justify-center text-xl mb-4 shadow-sm">
               <i class="fa-solid fa-screwdriver"></i>
             </div>
-            <h3 class="text-base font-bold text-med-navy mb-2">زراعة وجراحة الأسنان</h3>
-            <p class="text-xs text-slate-500 leading-relaxed">تعويض الأسنان المفقودة بأجود أنواع الزرعات العالمية لضمان استقرار وظيفة المضغ والابتسامة بأمان.</p>
+            <h3 class="text-base font-bold text-[#0A1628] mb-2">زراعة وجراحة الأسنان</h3>
+            <p class="text-xs text-slate-500 leading-relaxed">تعويض الأسنان المفقودة بأنظمة زرعات عالمية معتمدة لاستعادة كفاءة المضغ والمظهر الطبيعي بأمان تام.</p>
           </div>
-          <a href="#booking" class="mt-6 pt-4 border-t border-slate-100 text-xs font-bold text-med-darkteal hover:text-med-teal flex items-center justify-between">
+          <a href="#booking" class="mt-6 pt-4 border-t border-slate-100 text-xs font-bold text-blue-600 hover:text-blue-700 flex items-center justify-between">
             <span>كشف الزراعة</span>
             <i class="fa-solid fa-chevron-left text-[10px]"></i>
           </a>
         </div>
 
-        <div class="glass-card rounded-2xl p-6 flex flex-col justify-between">
+        <!-- عيادة 4 -->
+        <div class="med-card p-6 flex flex-col justify-between">
           <div>
-            <div class="w-12 h-12 rounded-xl bg-cyan-50 text-med-teal flex items-center justify-center text-xl mb-4 border border-cyan-100">
+            <div class="w-12 h-12 rounded-2xl icon-badge-purple flex items-center justify-center text-xl mb-4 shadow-sm">
               <i class="fa-solid fa-spa"></i>
             </div>
-            <h3 class="text-base font-bold text-med-navy mb-2">عيادات الجلدية والليزر</h3>
-            <p class="text-xs text-slate-500 leading-relaxed">أحدث أجهزة إزالة الشعر بالتبريد الفائق، جلسات نضارة البشرة، وحقن الفيلر والبوتوكس بإشراف طبي متخصص.</p>
+            <h3 class="text-base font-bold text-[#0A1628] mb-2">عيادات الجلدية والليزر</h3>
+            <p class="text-xs text-slate-500 leading-relaxed">جلسات إزالة الشعر بالتبريد الفائق، نضارة البشرة، وحقن الفيلر والبوتوكس بإشراف استشاريين مرخصين.</p>
           </div>
-          <a href="#booking" class="mt-6 pt-4 border-t border-slate-100 text-xs font-bold text-med-darkteal hover:text-med-teal flex items-center justify-between">
+          <a href="#booking" class="mt-6 pt-4 border-t border-slate-100 text-xs font-bold text-blue-600 hover:text-blue-700 flex items-center justify-between">
             <span>حجز موعد جلدية</span>
             <i class="fa-solid fa-chevron-left text-[10px]"></i>
           </a>
@@ -324,63 +348,35 @@
     </section>
 
     <!-- فروع مجمع الأسرة الـ 8 بالأحساء -->
-    <section id="branches" class="py-20 bg-slate-100/60 border-t border-slate-200/80">
+    <section id="branches" class="py-20 bg-slate-100/70 border-t border-slate-200">
       <div class="max-w-7xl mx-auto px-6">
         
         <div class="text-center mb-14">
-          <span class="text-xs font-mono uppercase text-med-darkteal tracking-widest font-bold">[ 8 CLINIC LOCATIONS ]</span>
-          <h2 class="text-3xl font-black text-med-navy mt-1">شبكة فروع مجمع الأسرة بالأحساء</h2>
-          <p class="text-xs sm:text-sm text-slate-500 mt-2">اختر فرعك لعرض الموقع المباشر على خرائط Google والتواصل الفوري مع الاستقبال</p>
+          <span class="text-xs font-bold text-blue-600 uppercase tracking-widest font-num">[ 8 CLINIC LOCATIONS ]</span>
+          <h2 class="text-3xl font-black text-[#0A1628] mt-1">شبكة فروع مجمع الأسرة بالأحساء</h2>
+          <p class="text-xs sm:text-sm text-slate-500 mt-2">اختر الفرع لعرض أوقات العمل، الاتصال المباشر، والوصول الفوري عبر خرائط Google</p>
         </div>
 
         <!-- أزرار التبديل السريع بين الفروع -->
-        <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-2.5 mb-8" id="branchPillsWrap"></div>
+        <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-2.5 mb-8" id="branchesBtnList"></div>
 
-        <!-- كرت الفرع النشط بتفاصيله -->
-        <div id="branchInfoCard" class="glass-card rounded-3xl p-8 border-2 border-med-teal/30"></div>
+        <!-- كرت الفرع المختار -->
+        <div id="branchDetailsCard" class="med-card p-8 border-2 border-blue-600/30"></div>
 
-      </div>
-    </section>
-
-    <!-- آراء وتجارب المراجعين -->
-    <section class="py-20 max-w-4xl mx-auto px-6">
-      <div class="text-center mb-12">
-        <span class="text-xs font-mono uppercase text-med-darkteal tracking-widest font-bold">[ PATIENT REVIEWS ]</span>
-        <h2 class="text-3xl font-black text-med-navy mt-1">تجارب حقيقية لمراجعينا</h2>
-      </div>
-
-      <div class="glass-card rounded-3xl p-8 text-center relative border border-slate-200">
-        <div class="text-amber-400 text-sm gap-1 flex justify-center mb-4">
-          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-        </div>
-        <p id="reviewQuote" class="text-sm sm:text-base text-slate-700 leading-relaxed font-normal min-h-[70px] flex items-center justify-center">
-          ...
-        </p>
-        <div id="reviewAuthor" class="text-xs font-bold text-med-darkteal mt-4">...</div>
-        <div class="text-[10px] text-slate-400">مراجع مجمع الأسرة</div>
-
-        <div class="flex justify-center gap-4 mt-6">
-          <button onclick="prevReview()" class="w-10 h-10 rounded-full border border-slate-200 bg-white hover:border-med-teal flex items-center justify-center text-xs text-slate-600 transition" aria-label="السابق">
-            <i class="fa-solid fa-arrow-right"></i>
-          </button>
-          <button onclick="nextReview()" class="w-10 h-10 rounded-full border border-slate-200 bg-white hover:border-med-teal flex items-center justify-center text-xs text-slate-600 transition" aria-label="التالي">
-            <i class="fa-solid fa-arrow-left"></i>
-          </button>
-        </div>
       </div>
     </section>
 
     <!-- الأسئلة الشائعة -->
-    <section id="faq" class="py-20 border-t border-slate-200/80 bg-white">
+    <section id="faq" class="py-20 border-t border-slate-200 bg-white">
       <div class="max-w-3xl mx-auto px-6">
         <div class="text-center mb-12">
-          <span class="text-xs font-mono uppercase text-med-darkteal tracking-widest font-bold">[ FAQ ]</span>
-          <h2 class="text-2xl sm:text-3xl font-black text-med-navy mt-1">الأسئلة الأكثر شيوعاً</h2>
+          <span class="text-xs font-bold text-blue-600 uppercase tracking-widest font-num">[ FAQ ]</span>
+          <h2 class="text-2xl sm:text-3xl font-black text-[#0A1628] mt-1">الأسئلة الأكثر شيوعاً</h2>
         </div>
 
         <div class="space-y-4">
           <details class="group p-5 rounded-2xl bg-slate-50 border border-slate-200 cursor-pointer">
-            <summary class="font-bold text-med-navy flex justify-between items-center list-none text-sm">
+            <summary class="font-bold text-[#0A1628] flex justify-between items-center list-none text-sm">
               <span>هل تتوفر خدمة التقسيط بدون فوائد؟</span>
               <i class="fa-solid fa-chevron-down text-xs text-slate-400 group-open:rotate-180 transition-transform"></i>
             </summary>
@@ -390,7 +386,7 @@
           </details>
 
           <details class="group p-5 rounded-2xl bg-slate-50 border border-slate-200 cursor-pointer">
-            <summary class="font-bold text-med-navy flex justify-between items-center list-none text-sm">
+            <summary class="font-bold text-[#0A1628] flex justify-between items-center list-none text-sm">
               <span>هل يمكنني استكمال علاجي في فرع آخر إذا غيرت مكان سكني؟</span>
               <i class="fa-solid fa-chevron-down text-xs text-slate-400 group-open:rotate-180 transition-transform"></i>
             </summary>
@@ -400,7 +396,7 @@
           </details>
 
           <details class="group p-5 rounded-2xl bg-slate-50 border border-slate-200 cursor-pointer">
-            <summary class="font-bold text-med-navy flex justify-between items-center list-none text-sm">
+            <summary class="font-bold text-[#0A1628] flex justify-between items-center list-none text-sm">
               <span>ما هي مواعيد العمل الرسمية في الفروع؟</span>
               <i class="fa-solid fa-chevron-down text-xs text-slate-400 group-open:rotate-180 transition-transform"></i>
             </summary>
@@ -411,10 +407,11 @@
         </div>
       </div>
     </section>
+
   </main>
 
-  <!-- الفوتر والتذييل الرسمي -->
-  <footer class="bg-med-navy text-slate-400 py-14 border-t border-slate-800 text-xs">
+  <!-- الفوتر الرسمي -->
+  <footer class="bg-[#0A1628] text-slate-400 py-14 border-t border-slate-800 text-xs">
     <div class="max-w-7xl mx-auto px-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
       <div>
         <h4 class="text-white font-bold text-sm mb-3">مجمع الأسرة لطب الأسنان والجلدية</h4>
@@ -440,25 +437,25 @@
   </footer>
 
   <!-- زر واتساب العائم -->
-  <div id="waFloatBtn" class="fixed bottom-6 left-6 z-50 w-14 h-14 rounded-full bg-emerald-500 text-white flex items-center justify-center text-2xl shadow-xl shadow-emerald-500/30 cursor-pointer hover:scale-110 transition-transform" title="تواصل واتساب مع الفروع">
+  <div id="waFloatingBtn" class="fixed bottom-6 left-6 z-50 w-14 h-14 rounded-full bg-emerald-500 text-white flex items-center justify-center text-2xl shadow-xl shadow-emerald-500/30 cursor-pointer hover:scale-110 transition-transform" title="تواصل واتساب مع الفروع">
     <i class="fa-brands fa-whatsapp"></i>
   </div>
 
   <!-- نافذة اختيار فرع الواتساب -->
-  <div id="waModal" class="fixed bottom-24 left-6 z-50 w-80 bg-white rounded-3xl shadow-2xl border border-slate-200 hidden flex-col overflow-hidden">
+  <div id="waModalBox" class="fixed bottom-24 left-6 z-50 w-80 bg-white rounded-3xl shadow-2xl border border-slate-200 hidden flex-col overflow-hidden">
     <div class="bg-gradient-to-r from-emerald-600 to-teal-600 text-white p-4 flex items-center justify-between">
       <span class="text-xs font-bold flex items-center gap-2">
         <i class="fa-brands fa-whatsapp text-base"></i>
         <span>اختر الفرع للتواصل واتساب:</span>
       </span>
-      <button id="closeWaModal" class="text-white/80 hover:text-white text-sm"><i class="fa-solid fa-xmark"></i></button>
+      <button id="closeModalBtn" class="text-white/80 hover:text-white text-sm"><i class="fa-solid fa-xmark"></i></button>
     </div>
-    <div class="p-3 max-h-72 overflow-y-auto space-y-1.5" id="waBranchesModalList"></div>
+    <div class="p-3 max-h-72 overflow-y-auto space-y-1.5" id="waBranchesList"></div>
   </div>
 
   <!-- JavaScript التفاعلي -->
   <script>
-    const branches = [
+    const branchesData = [
       { name: "فرع السلمانية", phone: "0553254700", intl: "966553254700", time: "9:00 ص - 9:00 م", map: "https://maps.app.goo.gl/jcAHxZAMdv5upAsR6" },
       { name: "فرع محاسن", phone: "0537403090", intl: "966537403090", time: "9:00 ص - 9:00 م", map: "https://maps.app.goo.gl/EMHCdmu115mss99A6" },
       { name: "فرع الخالدية", phone: "0550932600", intl: "966550932600", time: "9:00 ص - 9:00 م", map: "https://maps.app.goo.gl/1pdwicu1CQ6i6Z6aA" },
@@ -469,55 +466,41 @@
       { name: "فرع العيون الصناعية", phone: "0536902220", intl: "966536902220", time: "9:00 ص - 9:00 م", map: "https://maps.app.goo.gl/iV1rH7vwFPffVEPA8" }
     ];
 
-    const reviews = [
-      { quote: "أفضل عيادات أسنان بالأحساء، انتشارهم ممتاز على كل مناطق الأحساء وعندهم استشاريين متمكنين وخيار تمارا للتقسيط سهل علينا الكثير.", author: "مراجع بالعيادة" },
-      { quote: "تجربة ممتازة في مستوصف الأسرة، دقة بالمواعيد ومهارة في شغل الأسنان بدون ألم وشكر خاص لموظفي الاستقبال على رحابة الصدر.", author: "أنور العبدالله" },
-      { quote: "خدمة راقية ونظافة وتعقيم عالي جداً، والتعامل أكثر من محترم شكراً لاهتمامكم وحرصكم الدائم.", author: "أم فيصل" }
-    ];
-
-    let currentRevIdx = 0;
-    function updateReview() {
-      document.getElementById('reviewQuote').innerText = reviews[currentRevIdx].quote;
-      document.getElementById('reviewAuthor').innerText = reviews[currentRevIdx].author;
-    }
-    function nextReview() { currentRevIdx = (currentRevIdx + 1) % reviews.length; updateReview(); }
-    function prevReview() { currentRevIdx = (currentRevIdx - 1 + reviews.length) % reviews.length; updateReview(); }
-
-    function renderBranches() {
-      const wrap = document.getElementById('branchPillsWrap');
-      wrap.innerHTML = branches.map((b, idx) => `
-        <button onclick="setBranch(${idx})" class="branch-btn py-3 px-2 rounded-2xl border text-xs font-bold transition text-center ${idx === 0 ? 'bg-med-darkteal text-white border-med-darkteal shadow-md' : 'bg-white border-slate-200 text-slate-700 hover:border-med-teal'}">
+    function renderBranchPills() {
+      const list = document.getElementById('branchesBtnList');
+      list.innerHTML = branchesData.map((b, i) => `
+        <button onclick="displayBranch(${i})" class="pill-btn py-3 px-2 rounded-2xl border text-xs font-bold transition text-center ${i === 0 ? 'bg-blue-600 text-white border-blue-600 shadow-md' : 'bg-white border-slate-200 text-slate-700 hover:border-blue-500'}">
           ${b.name.replace('فرع ', '')}
         </button>
       `).join('');
-      setBranch(0);
+      displayBranch(0);
     }
 
-    function setBranch(idx) {
-      const b = branches[idx];
-      document.querySelectorAll('.branch-btn').forEach((btn, i) => {
-        btn.className = `branch-btn py-3 px-2 rounded-2xl border text-xs font-bold transition text-center ${i === idx ? 'bg-med-darkteal text-white border-med-darkteal shadow-md' : 'bg-white border-slate-200 text-slate-700 hover:border-med-teal'}`;
+    function displayBranch(idx) {
+      const b = branchesData[idx];
+      document.querySelectorAll('.pill-btn').forEach((btn, i) => {
+        btn.className = `pill-btn py-3 px-2 rounded-2xl border text-xs font-bold transition text-center ${i === idx ? 'bg-blue-600 text-white border-blue-600 shadow-md' : 'bg-white border-slate-200 text-slate-700 hover:border-blue-500'}`;
       });
 
-      const waMsg = encodeURIComponent(`مرحباً ${b.name}، أود حجز موعد واستفسار لديكم.`);
-      document.getElementById('branchInfoCard').innerHTML = `
+      const msg = encodeURIComponent(`مرحباً ${b.name}، أود حجز موعد واستفسار.`);
+      document.getElementById('branchDetailsCard').innerHTML = `
         <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div>
-            <span class="text-xs font-mono text-med-darkteal font-bold uppercase">[ ACTIVE BRANCH ]</span>
-            <h3 class="text-2xl font-black text-med-navy mt-1">${b.name}</h3>
+            <span class="text-xs font-bold text-blue-600 uppercase font-num">[ SELECTED LOCATION ]</span>
+            <h3 class="text-2xl font-black text-[#0A1628] mt-1">${b.name}</h3>
             <div class="flex flex-wrap gap-4 text-xs text-slate-500 mt-2">
-              <span><i class="fa-regular fa-clock text-med-teal ml-1"></i> أوقات العمل: ${b.time}</span>
-              <span class="font-num"><i class="fa-solid fa-phone text-med-teal ml-1"></i> ${b.phone}</span>
+              <span><i class="fa-regular fa-clock text-blue-600 ml-1"></i> أوقات العمل: ${b.time}</span>
+              <span class="font-num"><i class="fa-solid fa-phone text-blue-600 ml-1"></i> ${b.phone}</span>
             </div>
           </div>
           <div class="flex flex-wrap gap-3">
-            <a href="tel:${b.phone}" class="px-5 py-3 rounded-xl bg-med-navy text-white text-xs font-bold flex items-center gap-2 hover:bg-slate-800 transition">
+            <a href="tel:${b.phone}" class="px-5 py-3 rounded-xl bg-[#0A1628] text-white text-xs font-bold flex items-center gap-2 hover:bg-slate-800 transition">
               <i class="fa-solid fa-phone"></i> اتصال
             </a>
-            <a href="https://wa.me/${b.intl}?text=${waMsg}" target="_blank" class="px-5 py-3 rounded-xl bg-emerald-500 text-white text-xs font-bold flex items-center gap-2 hover:bg-emerald-600 transition shadow-md">
+            <a href="https://wa.me/${b.intl}?text=${msg}" target="_blank" class="px-5 py-3 rounded-xl bg-emerald-500 text-white text-xs font-bold flex items-center gap-2 hover:bg-emerald-600 transition shadow-md">
               <i class="fa-brands fa-whatsapp text-sm"></i> واتساب الفرع
             </a>
-            <a href="${b.map}" target="_blank" class="px-5 py-3 rounded-xl bg-white border border-slate-300 text-slate-700 text-xs font-bold flex items-center gap-2 hover:border-med-teal transition">
+            <a href="${b.map}" target="_blank" class="px-5 py-3 rounded-xl bg-white border border-slate-300 text-slate-700 text-xs font-bold flex items-center gap-2 hover:border-blue-600 transition">
               <i class="fa-solid fa-location-dot text-rose-500"></i> الخريطة
             </a>
           </div>
@@ -526,45 +509,44 @@
     }
 
     document.addEventListener('DOMContentLoaded', () => {
-      renderBranches();
-      updateReview();
+      renderBranchPills();
 
       // حاسبة التقسيط
-      const range = document.getElementById('treatmentRange');
-      const costVal = document.getElementById('treatmentCostVal');
-      const instVal = document.getElementById('monthlyInstallmentVal');
+      const slider = document.getElementById('costSlider');
+      const costNumber = document.getElementById('costNumber');
+      const instNumber = document.getElementById('installmentNumber');
 
-      if (range) {
-        range.addEventListener('input', (e) => {
+      if (slider) {
+        slider.addEventListener('input', (e) => {
           const val = parseInt(e.target.value, 10);
-          costVal.innerText = val.toLocaleString();
-          instVal.innerText = Math.round(val / 4).toLocaleString();
+          costNumber.innerText = val.toLocaleString();
+          instNumber.innerText = Math.round(val / 4).toLocaleString();
         });
       }
 
-      // نافذة الواتساب العائمة
-      const waFloat = document.getElementById('waFloatBtn');
-      const waModal = document.getElementById('waModal');
-      const closeWa = document.getElementById('closeWaModal');
-      const waList = document.getElementById('waBranchesModalList');
+      // نافذة واتساب الفروع
+      const waBtn = document.getElementById('waFloatingBtn');
+      const waBox = document.getElementById('waModalBox');
+      const closeBtn = document.getElementById('closeModalBtn');
+      const waList = document.getElementById('waBranchesList');
 
-      waList.innerHTML = branches.map(b => `
+      waList.innerHTML = branchesData.map(b => `
         <a href="https://wa.me/${b.intl}?text=${encodeURIComponent('مرحباً مجمع الأسرة، أود حجز موعد واستفسار.')}" target="_blank" class="flex items-center justify-between p-3 rounded-xl bg-slate-50 hover:bg-emerald-50 text-slate-700 hover:text-emerald-700 text-xs font-bold border border-slate-200 transition">
-          <span><i class="fa-solid fa-location-dot text-med-teal ml-1.5"></i> ${b.name}</span>
+          <span><i class="fa-solid fa-location-dot text-blue-600 ml-1.5"></i> ${b.name}</span>
           <i class="fa-brands fa-whatsapp text-emerald-500 text-sm"></i>
         </a>
       `).join('');
 
-      waFloat.addEventListener('click', () => waModal.classList.toggle('hidden'));
-      closeWa.addEventListener('click', () => waModal.classList.add('hidden'));
+      waBtn.addEventListener('click', () => waBox.classList.toggle('hidden'));
+      closeBtn.addEventListener('click', () => waBox.classList.add('hidden'));
 
-      // نموذج الحجز العلوي
+      // نموذج الحجز المباشر
       document.getElementById('bookingForm').addEventListener('submit', (e) => {
         e.preventDefault();
-        const name = document.getElementById('clientName').value.trim();
-        const phone = document.getElementById('clientPhone').value.trim();
-        const bIdx = document.getElementById('clientBranch').value || '0';
-        const target = branches[parseInt(bIdx, 10)];
+        const name = document.getElementById('patientName').value.trim();
+        const phone = document.getElementById('patientPhone').value.trim();
+        const bIdx = document.getElementById('branchSelect').value || '0';
+        const target = branchesData[parseInt(bIdx, 10)];
 
         const msg = `مرحباً مجمع الأسرة (${target.name})،\nأود تأكيد حجز موعد استشارة جديدة:\n- الاسم: ${name}\n- الجوال: ${phone}\n- الفرع: ${target.name}`;
         window.open(`https://wa.me/${target.intl}?text=${encodeURIComponent(msg)}`, '_blank');
