@@ -1,42 +1,50 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>مجمع الأسرة لطب الأسنان والجلدية - الأحساء</title>
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>مجمع الأسرة لطب الأسنان والجلدية | الأحساء (8 فروع)</title>
+  <meta name="description" content="أكثر من 35 عاماً من الريادة والخبرة الطبية في الأحساء. خدمات طب وتجميل الأسنان، التقويم، الزراعة، والجلدية والليزر عبر 8 فروع متطورة مع تقسيط تابي وتمارا 0% فوائد.">
+  <meta name="theme-color" content="#007B87">
+
+  <!-- الخطوط الطبية الرسمية: IBM Plex Sans Arabic + JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700;800&family=IBM+Plex+Sans:wght@500;700&family=JetBrains+Mono:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   
   <style>
     :root {
-      /* نظام الألوان الطبي المشتق من الشعار المعتمد */
+      /* نظام الألوان الطبي المشتق من الشعار */
       --color-bg-primary: #F2F8F9;
       --color-bg-secondary: #E7F3F5;
       --color-surface: #FFFFFF;
-      --color-surface-hover: #EDF7F9;
+      --color-border: #D2E5E8;
 
       --brand-teal: #007B87;
       --brand-teal-dark: #005F68;
-      --brand-teal-glow: rgba(0, 123, 135, 0.22);
+      --brand-teal-glow: rgba(0, 123, 135, 0.2);
       
       --brand-lime: #8CC63F;
       --brand-lime-dark: #588C1B;
-      --brand-lime-glow: rgba(88, 140, 27, 0.25);
+      --brand-lime-glow: rgba(88, 140, 27, 0.22);
       
       --dark-navy: #0B192C;
-      --text-main: #0B192C;
-      --text-muted: #425466;
-      --border-subtle: #D2E5E8;
+      --text-main: #0B192C;        /* نسبة تباين 15.6:1 */
+      --text-muted: #334155;       /* نسبة تباين 8.2:1 */
+      --text-light: #526477;       /* نسبة تباين 5.2:1 */
+      --text-white: #FFFFFF;
+
+      --font-main: 'IBM Plex Sans Arabic', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-num: 'JetBrains Mono', 'IBM Plex Sans', monospace;
     }
 
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: 'Cairo', sans-serif;
+      font-family: var(--font-main);
+      -webkit-font-smoothing: antialiased;
     }
 
     body {
@@ -45,8 +53,7 @@
         radial-gradient(circle at 12% 15%, rgba(0, 123, 135, 0.06) 0%, transparent 45%),
         radial-gradient(circle at 88% 80%, rgba(88, 140, 27, 0.06) 0%, transparent 45%);
       color: var(--text-muted);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
+      line-height: 1.65;
       overflow-x: hidden;
     }
 
@@ -60,7 +67,19 @@
       margin: 0 auto;
       padding: 0 16px;
     }
-    
+
+    .font-num {
+      font-family: var(--font-num);
+      direction: ltr;
+      display: inline-block;
+    }
+
+    /* إمكانية الوصول والتنقل بلوحة المفاتيح */
+    a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible {
+      outline: 3px solid var(--brand-teal);
+      outline-offset: 2px;
+    }
+
     /* Top Bar */
     .topbar {
       background: linear-gradient(90deg, #004d55, var(--brand-teal), var(--brand-lime-dark));
@@ -82,12 +101,12 @@
       border-radius: 20px;
       font-size: 12px;
     }
-    
+
     /* Header */
     header {
       background: rgba(255, 255, 255, 0.96);
       backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--color-border);
       position: sticky;
       top: 0;
       z-index: 50;
@@ -118,13 +137,14 @@
     }
     .logo-text h1 {
       font-size: 22px;
-      font-weight: 900;
+      font-weight: 800;
       color: var(--brand-teal);
       line-height: 1.1;
+      letter-spacing: -0.01em;
     }
     .logo-text span {
       font-size: 12.5px;
-      font-weight: 800;
+      font-weight: 700;
       color: var(--brand-lime-dark);
     }
     .header-actions {
@@ -137,7 +157,7 @@
       color: #ffffff;
       padding: 12px 22px;
       border-radius: 14px;
-      font-weight: 800;
+      font-weight: 700;
       font-size: 14px;
       display: inline-flex;
       align-items: center;
@@ -149,14 +169,12 @@
       transform: translateY(-2px);
       box-shadow: 0 8px 24px rgba(0, 123, 135, 0.35);
     }
-
-    /* أيقونة القائمة الجانبية في الهيدر */
     .menu-toggle-btn {
       width: 44px;
       height: 44px;
       border-radius: 14px;
       background: var(--color-surface);
-      border: 1.5px solid var(--border-subtle);
+      border: 1.5px solid var(--color-border);
       color: var(--brand-teal);
       display: flex;
       align-items: center;
@@ -208,7 +226,7 @@
     }
     .side-nav-links a {
       color: #ffffff;
-      font-size: 16px;
+      font-size: 15.5px;
       font-weight: 700;
       padding: 12px 14px;
       border-radius: 12px;
@@ -242,18 +260,19 @@
       display: inline-block;
       background: #E0F2F1;
       color: var(--brand-teal-dark);
-      border: 1px solid var(--border-subtle);
+      border: 1px solid var(--color-border);
       padding: 6px 16px;
       border-radius: 30px;
       font-size: 13.5px;
-      font-weight: 800;
+      font-weight: 700;
       margin-bottom: 18px;
     }
     .hero-title {
-      font-size: 36px;
-      font-weight: 900;
+      font-size: clamp(1.9rem, 3.5vw + 1rem, 2.7rem);
+      font-weight: 800;
       color: var(--text-main);
-      line-height: 1.28;
+      line-height: 1.25;
+      letter-spacing: -0.015em;
       margin-bottom: 18px;
     }
     .hero-title span {
@@ -262,7 +281,7 @@
       -webkit-text-fill-color: transparent;
     }
     .hero-desc {
-      font-size: 16px;
+      font-size: 15.5px;
       color: var(--text-muted);
       margin-bottom: 26px;
       line-height: 1.7;
@@ -274,7 +293,7 @@
     }
     .feat-card {
       background: var(--color-surface);
-      border: 1.5px solid var(--border-subtle);
+      border: 1.5px solid var(--color-border);
       border-radius: 18px;
       padding: 16px 10px;
       text-align: center;
@@ -286,7 +305,7 @@
       border-color: var(--brand-teal);
     }
 
-    /* حاويات أيقونات متباينة بارزة عن الخلفية */
+    /* حاويات أيقونات متباينة وظاهرة بوضوح */
     .icon-box-feature {
       width: 48px;
       height: 48px;
@@ -315,7 +334,7 @@
 
     .feat-card h4 {
       font-size: 13.5px;
-      font-weight: 800;
+      font-weight: 700;
       color: var(--text-main);
     }
     .feat-card p {
@@ -329,12 +348,12 @@
       background: var(--color-surface);
       border-radius: 28px;
       padding: 32px;
-      border: 2px solid var(--border-subtle);
+      border: 2px solid var(--color-border);
       box-shadow: 0 16px 36px rgba(0, 123, 135, 0.08);
     }
     .booking-box h3 {
       font-size: 24px;
-      font-weight: 900;
+      font-weight: 800;
       color: var(--text-main);
       text-align: center;
       margin-bottom: 4px;
@@ -359,9 +378,9 @@
       width: 100%;
       padding: 13px 16px;
       background: var(--color-bg-primary);
-      border: 1.5px solid var(--border-subtle);
+      border: 1.5px solid var(--color-border);
       border-radius: 14px;
-      font-size: 14px;
+      font-size: 14.5px;
       outline: none;
       transition: all 0.25s ease;
     }
@@ -377,8 +396,8 @@
       border: none;
       padding: 16px;
       border-radius: 16px;
-      font-size: 16.5px;
-      font-weight: 800;
+      font-size: 16px;
+      font-weight: 700;
       cursor: pointer;
       display: flex;
       justify-content: center;
@@ -399,8 +418,8 @@
       margin: 60px 0 35px;
     }
     .section-title h2 {
-      font-size: 30px;
-      font-weight: 900;
+      font-size: clamp(1.5rem, 2vw + 1rem, 2rem);
+      font-weight: 800;
       color: var(--text-main);
       position: relative;
       display: inline-block;
@@ -445,7 +464,7 @@
     .carousel-card {
       width: 300px;
       background: var(--color-surface);
-      border: 1.5px solid var(--border-subtle);
+      border: 1.5px solid var(--color-border);
       border-radius: 24px;
       padding: 22px;
       box-shadow: 0 8px 24px rgba(0, 123, 135, 0.06);
@@ -476,7 +495,7 @@
       border-radius: 16px;
       object-fit: cover;
       margin-bottom: 16px;
-      border: 1px solid var(--border-subtle);
+      border: 1px solid var(--color-border);
       background-color: var(--color-bg-secondary);
       transition: transform 0.4s ease;
     }
@@ -485,13 +504,13 @@
     }
     .carousel-card h3 {
       font-size: 18px;
-      font-weight: 800;
+      font-weight: 700;
       color: var(--text-main);
       margin-bottom: 8px;
-      line-height: 1.3;
+      line-height: 1.35;
     }
     .carousel-card p {
-      font-size: 13px;
+      font-size: 13.5px;
       color: #64748b;
       line-height: 1.65;
       margin-bottom: 20px;
@@ -505,8 +524,8 @@
       padding: 13px;
       background: linear-gradient(135deg, var(--brand-teal), var(--brand-teal-dark));
       color: #ffffff;
-      font-weight: 800;
-      font-size: 13px;
+      font-weight: 700;
+      font-size: 13.5px;
       border-radius: 14px;
       transition: all 0.25s ease;
       box-shadow: 0 4px 12px var(--brand-teal-glow);
@@ -523,7 +542,7 @@
       height: 48px;
       border-radius: 50%;
       background: var(--color-surface);
-      border: 1.5px solid var(--border-subtle);
+      border: 1.5px solid var(--color-border);
       color: var(--text-main);
       display: flex;
       align-items: center;
@@ -557,7 +576,7 @@
     }
     .journey-step {
       background: var(--color-surface);
-      border: 1.5px solid var(--border-subtle);
+      border: 1.5px solid var(--color-border);
       border-radius: 24px;
       padding: 32px 24px;
       text-align: center;
@@ -582,7 +601,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-weight: 900;
+      font-weight: 800;
       font-size: 16px;
       box-shadow: 0 4px 12px var(--brand-teal-glow);
     }
@@ -602,7 +621,7 @@
     }
     .journey-step h3 {
       font-size: 18.5px;
-      font-weight: 800;
+      font-weight: 700;
       color: var(--text-main);
       margin-bottom: 10px;
     }
@@ -621,7 +640,7 @@
     }
     .why-box {
       background: var(--color-surface);
-      border: 1.5px solid var(--border-subtle);
+      border: 1.5px solid var(--color-border);
       border-radius: 22px;
       padding: 26px 20px;
       box-shadow: 0 8px 22px rgba(0,0,0,0.03);
@@ -648,7 +667,7 @@
     }
     .why-box h3 {
       font-size: 17px;
-      font-weight: 800;
+      font-weight: 700;
       color: var(--text-main);
       margin-bottom: 8px;
     }
@@ -670,19 +689,18 @@
       color: #ffffff;
     }
     .installment-header h2 {
-      font-size: 32px;
-      font-weight: 900;
+      font-size: 30px;
+      font-weight: 800;
       color: #ffffff;
       margin-bottom: 8px;
     }
     .installment-header p {
-      font-size: 18px;
-      font-weight: 800;
+      font-size: 17px;
+      font-weight: 700;
       color: #A3E635;
       margin-bottom: 25px;
     }
     
-    /* صندوق الحاسبة التفاعلية المدمجة */
     .inst-calculator-card {
       background: #ffffff;
       color: #0F172A;
@@ -731,8 +749,8 @@
     .btn-installment-action {
       background: linear-gradient(135deg, #8CC63F 0%, #588C1B 100%);
       color: #ffffff;
-      font-size: 16px;
-      font-weight: 800;
+      font-size: 15.5px;
+      font-weight: 700;
       padding: 15px 45px;
       border-radius: 16px;
       display: inline-block;
@@ -751,14 +769,14 @@
     }
     .faq-item {
       background: var(--color-surface);
-      border: 1.5px solid var(--border-subtle);
+      border: 1.5px solid var(--color-border);
       border-radius: 18px;
       overflow: hidden;
       transition: all 0.25s;
     }
     .faq-question {
       padding: 18px 20px;
-      font-weight: 800;
+      font-weight: 700;
       font-size: 15px;
       color: var(--text-main);
       display: flex;
@@ -797,7 +815,7 @@
     }
     .testimonial-card {
       background: var(--color-surface);
-      border: 1.5px solid var(--border-subtle);
+      border: 1.5px solid var(--color-border);
       border-radius: 28px;
       padding: 40px 30px;
       text-align: center;
@@ -811,7 +829,7 @@
       line-height: 1;
     }
     .testimonial-text {
-      font-size: 16px;
+      font-size: 15.5px;
       color: #334155;
       line-height: 1.8;
       margin-bottom: 22px;
@@ -822,7 +840,7 @@
     }
     .reviewer-name {
       font-size: 16px;
-      font-weight: 800;
+      font-weight: 700;
       color: var(--brand-teal);
       margin-bottom: 6px;
     }
@@ -839,7 +857,7 @@
       height: 44px;
       border-radius: 50%;
       background: var(--color-surface);
-      border: 1.5px solid var(--border-subtle);
+      border: 1.5px solid var(--color-border);
       color: #64748b;
       display: flex;
       align-items: center;
@@ -865,12 +883,12 @@
     }
     .branch-pill {
       background: var(--color-surface);
-      border: 1.5px solid var(--border-subtle);
+      border: 1.5px solid var(--color-border);
       border-radius: 16px;
       padding: 13px 8px;
       text-align: center;
       cursor: pointer;
-      font-weight: 800;
+      font-weight: 700;
       font-size: 13.5px;
       transition: all 0.25s ease;
     }
@@ -900,7 +918,7 @@
       padding: 12px 16px;
       border-radius: 14px;
       font-size: 13.5px;
-      font-weight: 800;
+      font-weight: 700;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -909,9 +927,60 @@
     }
     .btn-call { background: var(--dark-navy); }
     .btn-wa { background: #10b981; }
-    .btn-map { background: #ffffff; color: #334155; border: 1.5px solid var(--border-subtle); }
+    .btn-map { background: #ffffff; color: #334155; border: 1.5px solid var(--color-border); }
 
-    /* بوت المحادثة */
+    /* شريط الجوال السفلي السريع */
+    .mobile-sticky-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(12px);
+      border-top: 1.5px solid var(--color-border);
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 8px 12px;
+      z-index: 990;
+      box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
+    }
+    .sticky-action-btn {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 6px 2px;
+      border-radius: 12px;
+      color: var(--text-muted);
+      border: none;
+      background: transparent;
+      cursor: pointer;
+    }
+    .sticky-action-btn i { font-size: 17px; }
+    .sticky-action-btn.phone i { color: var(--text-main); }
+    .sticky-action-btn.whatsapp i { color: #10B981; }
+    .sticky-action-btn.primary {
+      background: linear-gradient(135deg, var(--brand-teal), var(--brand-teal-dark));
+      color: #ffffff;
+      padding: 8px 12px;
+      box-shadow: 0 4px 12px var(--brand-teal-glow);
+    }
+    .sticky-action-btn.primary i { color: #ffffff; }
+
+    @media (min-width: 769px) {
+      .mobile-sticky-bar { display: none; }
+    }
+    @media (max-width: 768px) {
+      body { padding-bottom: 74px; }
+      .float-wa, .chat-bubble-btn { bottom: 84px !important; }
+    }
+
+    /* بوت المحادثة والواتساب العائم */
     .chat-bubble-btn {
       position: fixed;
       bottom: 24px;
@@ -950,7 +1019,7 @@
       flex-direction: column;
       overflow: hidden;
       z-index: 1000;
-      border: 1px solid var(--border-subtle);
+      border: 1px solid var(--color-border);
       resize: both;
     }
     .chat-header {
@@ -982,7 +1051,7 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.04);
       max-width: 85%;
       align-self: flex-start;
-      border: 1px solid var(--border-subtle);
+      border: 1px solid var(--color-border);
     }
     .chat-msg.user {
       background: linear-gradient(135deg, var(--brand-teal), var(--brand-teal-dark));
@@ -1021,7 +1090,7 @@
     .chat-footer {
       padding: 12px;
       background: #ffffff;
-      border-top: 1px solid var(--border-subtle);
+      border-top: 1px solid var(--color-border);
       display: flex;
       gap: 8px;
     }
@@ -1042,7 +1111,6 @@
       cursor: pointer;
     }
 
-    /* Floating WhatsApp */
     .float-wa {
       position: fixed;
       bottom: 24px;
@@ -1072,7 +1140,7 @@
       background: #ffffff;
       border-radius: 22px;
       box-shadow: 0 18px 40px rgba(0,0,0,0.2);
-      border: 1px solid var(--border-subtle);
+      border: 1px solid var(--color-border);
       display: none;
       flex-direction: column;
       z-index: 1000;
@@ -1093,7 +1161,7 @@
     }
     .wa-modal-header h4 {
       font-size: 14.5px;
-      font-weight: 800;
+      font-weight: 700;
       display: flex;
       align-items: center;
       gap: 8px;
@@ -1116,7 +1184,7 @@
       align-items: center;
       justify-content: space-between;
       color: #0f172a;
-      font-weight: 800;
+      font-weight: 700;
       font-size: 13.5px;
       transition: all 0.2s;
     }
@@ -1139,7 +1207,7 @@
         --color-surface: #122238;
         --text-main: #F1F5F9;
         --text-muted: #CBD5E1;
-        --border-subtle: rgba(255, 255, 255, 0.12);
+        --color-border: rgba(255, 255, 255, 0.12);
         --brand-teal: #00A5B5;
         --brand-teal-dark: #007682;
       }
@@ -1148,9 +1216,7 @@
       .form-group input, .form-group select { background: #0B192C; color: #fff; }
       .inst-calculator-card { background: var(--color-surface); color: #fff; }
       .calc-slider-input { background: #1E293B; }
-      .inst-calculator-card div[style*="background:#F8FAFC"] { background: #0B192C !important; border-color: rgba(255,255,255,0.1) !important; }
-      .inst-calculator-card span[style*="color:#334155"] { color: #CBD5E1 !important; }
-      .inst-calculator-card span[style*="color:#475569"] { color: #94A3B8 !important; }
+      .mobile-sticky-bar { background: rgba(11, 25, 44, 0.96); }
     }
   </style>
 </head>
@@ -1167,7 +1233,7 @@
     </div>
   </div>
 
-  <!-- Header مع الأيقونة المخصصة والقائمة السريعة -->
+  <!-- Header -->
   <header>
     <div class="container nav-wrap">
       <div class="logo">
@@ -1188,8 +1254,6 @@
 
       <div class="header-actions">
         <a href="#booking" class="nav-btn"><i class="fa-regular fa-calendar-check"></i> احجز موعدك</a>
-        
-        <!-- أيقونة القائمة الجانبية في الهيدر -->
         <button type="button" class="menu-toggle-btn" onclick="toggleSideNav()" aria-label="فتح القائمة">
           <i class="fa-solid fa-bars-staggered"></i>
         </button>
@@ -1197,7 +1261,7 @@
     </div>
   </header>
 
-  <!-- خلفية وقائمة جانبية منبثقة أنيقة ومخصصة لمجمع الأسرة -->
+  <!-- القائمة الجانبية المنبثقة -->
   <div id="sideNavBackdrop" class="side-nav-backdrop" onclick="toggleSideNav()"></div>
   <aside id="sideNav" class="mobile-side-nav">
     <div>
@@ -1229,7 +1293,6 @@
           <p class="hero-desc">أكثر من 35 عاماً من الثقة عبر 8 فروع متطورة تغطي كافة مدن وبلدات الأحساء، مع خيارات دفع مرنة بالتقسيط المريح وبسعر الكاش.</p>
           
           <div class="features-row">
-            <!-- تمييز خلفيات الأيقونات بحاويات متباينة وظاهرة عن السطح -->
             <div class="feat-card">
               <div class="icon-box-feature blue">
                 <i class="fa-solid fa-credit-card"></i>
@@ -1268,7 +1331,7 @@
 
             <div class="form-group">
               <label for="clientPhone">رقم الجوال *</label>
-              <input type="tel" id="clientPhone" required placeholder="05xxxxxxxx" dir="ltr" style="text-align: right;">
+              <input type="tel" id="clientPhone" required placeholder="05xxxxxxxx" dir="ltr" class="font-num" style="text-align: right;">
             </div>
 
             <div class="form-group">
@@ -1297,7 +1360,7 @@
     </div>
   </section>
 
-  <!-- شريط خدمات المجمع -->
+  <!-- شريط خدمات وعيادات المجمع -->
   <section class="container" style="padding: 20px 16px;">
     <div class="section-title">
       <h2>خدمات وعيادات مجمع الأسرة</h2>
@@ -1401,21 +1464,21 @@
 
     <div class="journey-wrapper">
       <div class="journey-step">
-        <div class="journey-num">1</div>
+        <div class="journey-num font-num">1</div>
         <div class="journey-icon"><i class="fa-brands fa-whatsapp"></i></div>
         <h3>حجز موعدك بسهولة</h3>
         <p>اختر الفرع الأقرب إليك من بين 8 فروع بالأحساء، وحدد موعدك المناسب في ثوانٍ معدودة عبر الواتساب دون أي تعقيد.</p>
       </div>
 
       <div class="journey-step">
-        <div class="journey-num">2</div>
+        <div class="journey-num font-num">2</div>
         <div class="journey-icon"><i class="fa-solid fa-stethoscope"></i></div>
         <h3>استقبال وتشخيص دقيق</h3>
         <p>استقبال راقٍ وفحص سريري شامل مدعوم بأحدث أجهزة الأشعة الرقمية والماسحات ثلاثية الأبعاد لوضع خطة علاج واضحة ومخصصة.</p>
       </div>
 
       <div class="journey-step">
-        <div class="journey-num">3</div>
+        <div class="journey-num font-num">3</div>
         <div class="journey-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
         <h3>علاج مريح وتقسيط ميسر</h3>
         <p>تنفيذ علاجك بأيدي أطباء استشاريين متميزين مع تجربة مريحة وخيارات سداد ميسرة مقسمة على 4 دفعات عبر تابي وتمارا.</p>
@@ -1457,26 +1520,26 @@
     </div>
   </section>
 
-  <!-- قسم التقسيط والتمويل مع إضافة حاسبة التقسيط التفاعلية داخله -->
+  <!-- قسم التقسيط والتمويل مع حاسبة التقسيط التفاعلية -->
   <section class="container" id="calcSection">
     <div class="installment-section">
       <div class="installment-header">
         <h2>إبتسم الآن، إدفع لاحقاً!</h2>
-        <p>قسط خدماتك بسعر الكاش عبر تابي وتمارا.</p>
+        <p>قسّط خدماتك بسعر الكاش عبر تابي وتمارا.</p>
       </div>
 
       <!-- حاسبة التقسيط التفاعلية المدمجة -->
       <div class="inst-calculator-card">
         <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-          <span style="font-weight:700; font-size:13.5px; color:#475569;">تكلفة الخطة العلاجية المتوقعة:</span>
-          <span style="font-size:22px; font-weight:900; color:var(--brand-teal);"><span id="liveCostNum">2,400</span> ريال</span>
+          <span style="font-weight:700; font-size:14px; color:#475569;">تكلفة الخطة العلاجية المتوقعة:</span>
+          <span style="font-size:22px; font-weight:800; color:var(--brand-teal);"><span id="liveCostNum" class="font-num">2,400</span> ريال</span>
         </div>
         
-        <input type="range" id="liveCostSlider" min="400" max="12000" step="200" value="2400" class="calc-slider-input">
+        <input type="range" id="liveCostSlider" min="400" max="12000" step="200" value="2400" class="calc-slider-input" aria-label="شريط تحديد تكلفة العلاج">
         
         <div style="display:flex; justify-content:space-between; align-items:center; background:#F8FAFC; border:1px solid #E2E8F0; padding:12px 16px; border-radius:14px; margin-top:8px;">
-          <span style="font-size:13px; font-weight:700; color:#334155;">القسط الشهري (على 4 دفعات):</span>
-          <span style="font-size:18px; font-weight:900; color:#10B981;"><span id="liveInstallmentNum">600</span> ريال / شهر</span>
+          <span style="font-size:13.5px; font-weight:700; color:#334155;">القسط الشهري (على 4 دفعات):</span>
+          <span style="font-size:18px; font-weight:800; color:#10B981;"><span id="liveInstallmentNum" class="font-num">600</span> ريال / شهر</span>
         </div>
         <div style="font-size:11px; color:#64748b; text-align:center; margin-top:8px;">0% فوائد · بدون أي رسوم إضافية</div>
       </div>
@@ -1583,7 +1646,7 @@
     </div>
   </section>
 
-  <!-- Branches Section -->
+  <!-- فروع مجمع الأسرة الـ 8 بالأحساء -->
   <section class="container" style="padding: 20px 16px 50px;">
     <div class="section-title">
       <h2>فروع مجمع الأسرة (8 فروع بالأحساء)</h2>
@@ -1600,17 +1663,33 @@
       <div>
         <h4 style="color: #ffffff; font-size: 16.5px; margin-bottom: 8px;">مجمع الأسرة لطب الأسنان والجلدية</h4>
         <p>أكثر من 35 سنة من العناية الموثوقة بصحة أهالي الأحساء.</p>
-        <p style="margin-top: 6px;">البريد الرسمي: Family.denclinic2@gmail.com</p>
+        <p style="margin-top: 6px;" class="font-num">Family.denclinic2@gmail.com</p>
       </div>
       <div>
         <h4 style="color: #ffffff; font-size: 14.5px; margin-bottom: 8px;">قنوات التواصل الرسمية</h4>
-        <p>إنستغرام: @familydenclinic | تيك توك: @familyadental</p>
+        <p>إنستغرام: <span class="font-num">@familydenclinic</span> | تيك توك: <span class="font-num">@familyadental</span></p>
       </div>
     </div>
     <div style="text-align: center; border-top: 1px solid #1e293b; margin-top: 30px; padding-top: 18px;">
       &copy; 2026 مجمع الأسرة لطب الأسنان والجلدية. جميع الحقوق محفوظة.
     </div>
   </footer>
+
+  <!-- شريط الجوال السفلي السريع -->
+  <nav class="mobile-sticky-bar" aria-label="أزرار التحويل المباشر للجوال">
+    <a href="tel:0553254700" class="sticky-action-btn phone">
+      <i class="fa-solid fa-phone"></i>
+      <span>اتصال</span>
+    </a>
+    <a href="#booking" class="sticky-action-btn primary">
+      <i class="fa-regular fa-calendar-check"></i>
+      <span>حجز موعد</span>
+    </a>
+    <button type="button" onclick="toggleWaModal()" class="sticky-action-btn whatsapp">
+      <i class="fa-brands fa-whatsapp"></i>
+      <span>واتساب</span>
+    </button>
+  </nav>
 
   <!-- أيقونة الواتساب العائمة -->
   <div class="float-wa" onclick="toggleWaModal()" title="تواصل عبر الواتساب">
@@ -1632,7 +1711,7 @@
 
   <div class="chat-box-modal" id="chatModal">
     <div class="chat-header">
-      <div class="chat-header-info">
+      <div class="chat-header-info" style="display:flex; align-items:center; gap:8px;">
         <div style="width: 34px; height: 34px; background: #fff; border-radius: 50%; padding: 3px; display: flex; align-items: center; justify-content: center;">
           <svg viewBox="0 0 500 560" style="width: 100%; height: 100%;">
             <circle cx="170" cy="72" r="35" fill="#99cc33"/>
@@ -1643,7 +1722,7 @@
           </svg>
         </div>
         <div>
-          <div style="font-weight: 800; font-size: 14px;">مساعد مجمع الأسرة</div>
+          <div style="font-weight: 700; font-size: 14px;">مساعد مجمع الأسرة</div>
           <div style="font-size: 11px; opacity: 0.9;">متصل الآن ومستعد لخدمتك</div>
         </div>
       </div>
@@ -1735,7 +1814,6 @@
       el.classList.toggle('active');
     }
 
-    /* تحكم القائمة الجانبية في الهيدر */
     function toggleSideNav() {
       const nav = document.getElementById('sideNav');
       const backdrop = document.getElementById('sideNavBackdrop');
@@ -1771,7 +1849,7 @@
       infoBox.innerHTML = `
         <h3 style="font-size: 20px; font-weight: 800; color: #0f172a;">${b.name}</h3>
         <p style="color: #64748b; font-size: 14px; margin: 6px 0;"><i class="fa-regular fa-clock" style="color: var(--brand-teal);"></i> مواعيد العمل: ${b.time}</p>
-        <p style="color: #64748b; font-size: 14px;"><i class="fa-solid fa-phone" style="color: var(--brand-lime-dark);"></i> الرقم: ${b.phone}</p>
+        <p style="color: #64748b; font-size: 14px;"><i class="fa-solid fa-phone" style="color: var(--brand-lime-dark);"></i> الرقم: <span class="font-num">${b.phone}</span></p>
         <div class="card-actions">
           <a href="tel:${b.phone}" class="action-btn btn-call"><i class="fa-solid fa-phone"></i> اتصال مباشر</a>
           <a href="https://wa.me/${b.intl}?text=${whatsappText}" target="_blank" class="action-btn btn-wa"><i class="fa-brands fa-whatsapp"></i> واتساب الفرع</a>
@@ -1888,7 +1966,7 @@
       selectBranch(0);
       showTestimonial(0);
 
-      // ربط حاسبة التقسيط التفاعلية المدمجة
+      // ربط حاسبة التقسيط التفاعلية
       const slider = document.getElementById('liveCostSlider');
       const costDisplay = document.getElementById('liveCostNum');
       const installmentDisplay = document.getElementById('liveInstallmentNum');
