@@ -689,6 +689,13 @@
       line-height: 1.6;
     }
 
+    
+    #branchCardPhone, .phone-ltr, bdi[dir="ltr"] {
+      direction: ltr !important;
+      unicode-bidi: isolate !important;
+      display: inline-block;
+      text-align: right;
+    }
     /* قسم الفروع الـ 8 بالأحساء */
     .branches-section {
       padding: 50px 0;
@@ -1648,6 +1655,8 @@
                     <option value="تبييض الأسنان بالليزر">تبييض الأسنان بالليزر</option>
                     <option value="حشوات الأسنان التجميلية (كمبوزيت)">حشوات الأسنان التجميلية (كمبوزيت)</option>
                     <option value="علاج وسحب العصب وحشو الجذور">علاج وسحب العصب وحشو الجذور</option>
+                    <option value="التقويم الشفاف (غير المرئي / إنفزلاين)">التقويم الشفاف (غير المرئي / إنفزلاين)</option>
+                    <option value="التقويم المعدني الثابت التقليدي">التقويم المعدني الثابت التقليدي</option>
                     <option value="ابتسامة هوليوود (فينير)">ابتسامة هوليوود (فينير)</option>
                     <option value="تركيبات وتيجان الزيركون / إمبرس">تركيبات وتيجان الزيركون / إمبرس</option>
                     <option value="خلع الأسنان وجراحة ضرس العقل المطمور">خلع الأسنان وجراحة ضرس العقل المطمور</option>
@@ -1682,8 +1691,8 @@
             <p>طبيباً واستشارياً معتمداً</p>
           </div>
           <div class="trust-item">
-            <h4>+20</h4>
-            <p>سنة من الخبرة والتميز</p>
+            <h4>+30</h4>
+            <p>عاماً من الخبرة والخدمة المتميزة</p>
           </div>
           <div class="trust-item">
             <h4>تابي & تمارا</h4>
@@ -1903,6 +1912,21 @@
               </ul>
             </div>
 
+                        <!-- فئة تقويم الأسنان والفكين -->
+            <div class="price-cat-box" style="background: var(--bg-soft); border-radius: var(--radius-md); padding: 20px; border: 1px solid var(--border-color);">
+              <h4 style="font-size: 1.05rem; font-weight: 800; color: var(--brand-teal-dark); margin-bottom: 14px; display: flex; align-items: center; gap: 8px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--brand-teal);"><path d="M3 5c0 6 3 14 9 14s9-8 9-14"/><rect x="4" y="9" width="3.5" height="5" rx="1" fill="currentColor" fill-opacity="0.2"/><rect x="10.25" y="10" width="3.5" height="5" rx="1" fill="currentColor" fill-opacity="0.2"/><rect x="16.5" y="9" width="3.5" height="5" rx="1" fill="currentColor" fill-opacity="0.2"/><line x1="2" y1="12" x2="22" y2="12"/></svg> تقويم الأسنان والفكين (الشفاف والمعدني)
+              </h4>
+              <ul style="list-style: none; display: flex; flex-direction: column; gap: 9px; font-size: 0.9rem; color: var(--text-main);">
+                <li style="display: flex; align-items: center; gap: 8px;"><span style="color:var(--brand-teal);">✓</span> التقويم الشفاف غير المرئي (إنفزلاين / القوالب الشفافة)</li>
+                <li style="display: flex; align-items: center; gap: 8px;"><span style="color:var(--brand-teal);">✓</span> التقويم المعدني الثابت التقليدي عالي الدقة</li>
+                <li style="display: flex; align-items: center; gap: 8px;"><span style="color:var(--brand-teal);">✓</span> التقويم الخزفي التجميلي (السيراميك) بلون الأسنان الطبيعي</li>
+                <li style="display: flex; align-items: center; gap: 8px;"><span style="color:var(--brand-teal);">✓</span> علاج وتعديل إطباق الفكين وتزاحم وبروز الأسنان</li>
+                <li style="display: flex; align-items: center; gap: 8px;"><span style="color:var(--brand-teal);">✓</span> تقويم أسنان الأطفال الوقائي وتوسيع الفكين بدون جراحة</li>
+                <li style="display: flex; align-items: center; gap: 8px;"><span style="color:var(--brand-teal);">✓</span> أجهزة التثبيت الشفافة والسلكية بعد انتهاء العلاج</li>
+              </ul>
+            </div>
+
             <!-- فئة الاستعاضات والأطقم المتحركة -->
             <div class="price-cat-box" style="background: var(--bg-soft); border-radius: var(--radius-md); padding: 20px; border: 1px solid var(--border-color);">
               <h4 style="font-size: 1.05rem; font-weight: 800; color: var(--brand-teal-dark); margin-bottom: 14px; display: flex; align-items: center; gap: 8px;">
@@ -2052,7 +2076,7 @@
               <span class="branch-meta-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
               <div>
                 <strong>الاتصال المباشر:</strong>
-                <p id="branchCardPhone">055 325 4700</p>
+                <p id="branchCardPhone" dir="ltr" style="direction: ltr !important; unicode-bidi: isolate; display: inline-block; font-weight: 700; text-align: right;"><bdi dir="ltr">055 325 4700</bdi></p>
               </div>
             </div>
 
@@ -2558,14 +2582,14 @@
         <div class="footer-col">
           <h4>أرقام وتواصل الفروع</h4>
           <p style="font-size: 0.85rem; line-height: 1.8;">
-            • السلمانية: <strong>055 325 4700</strong><br>
-            • محاسن: <strong>053 740 3090</strong><br>
-            • الخالدية: <strong>055 093 2600</strong><br>
-            • المزروع: <strong>053 463 4447</strong><br>
-            • الشقيق: <strong>055 685 4440</strong><br>
-            • الجفر: <strong>055 089 2700</strong><br>
-            • العيون 1: <strong>055 396 2300</strong><br>
-            • العيون الصناعية: <strong>053 690 2220</strong>
+            • السلمانية: <strong><bdi dir="ltr">055 325 4700</bdi></strong><br>
+            • محاسن: <strong><bdi dir="ltr">053 740 3090</bdi></strong><br>
+            • الخالدية: <strong><bdi dir="ltr">055 093 2600</bdi></strong><br>
+            • المزروع: <strong><bdi dir="ltr">053 463 4447</bdi></strong><br>
+            • الشقيق: <strong><bdi dir="ltr">055 685 4440</bdi></strong><br>
+            • الجفر: <strong><bdi dir="ltr">055 089 2700</bdi></strong><br>
+            • العيون 1: <strong><bdi dir="ltr">055 396 2300</bdi></strong><br>
+            • العيون الصناعية: <strong><bdi dir="ltr">053 690 2220</bdi></strong>
           </p>
           <p style="margin-top: 8px; font-size: 0.82rem; color: var(--brand-lime);">السبت - الخميس: 9:00 ص - 9:00 م</p>
         </div>
@@ -2684,7 +2708,8 @@
 
         titleEl.textContent = branch.title;
         addressEl.textContent = branch.address;
-        phoneEl.textContent = branch.phoneDisplay || branch.phone;
+        phoneEl.innerHTML = `<bdi dir="ltr">${branch.phoneDisplay || branch.phone}</bdi>`;
+        phoneEl.setAttribute('dir', 'ltr');
         waTextEl.textContent = `خدمة عملاء ${branch.title} متاحة`;
 
         const waMsg = encodeURIComponent(`السلام عليكم، أود حجز موعد في ${branch.title}`);
