@@ -37,6 +37,7 @@
       "name": "محافظة الأحساء، المملكة العربية السعودية"
     },
     "priceRange": "$$",
+    "telephone": "+966135800000",
     "paymentAccepted": "Cash, Credit Card, Tamara, Tabby",
     "currenciesAccepted": "SAR",
     "department": [
@@ -54,7 +55,6 @@
   }
   </script>
 
-  <!-- أيقونة الموقع Favicon -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 125'%3E%3Ccircle cx='30' cy='14' r='9' fill='%238CC63F'/%3E%3Ccircle cx='84' cy='23' r='9.5' fill='%2300A8C6'/%3E%3Cpath d='M 29 25 C 21 28 16 35 16 41 C 16 52 28 54 39 53 C 49 52 60 46 67 40 C 60 44 48 45 37 43 C 27 41 23 37 25 32 C 26 29 27 27 29 25 Z' fill='%238CC63F'/%3E%3Cpath d='M 14 39 C 12 47 11 58 13 69 C 16 85 23 103 30 115 C 33 121 38 119 39 113 C 40 102 39 88 43 78 C 47 68 57 65 67 66 C 73 66 77 72 79 81 C 77 70 70 64 61 64 C 52 64 43 69 39 82 C 34 97 35 110 32 112 C 28 101 21 82 19 66 C 18 53 23 46 33 46 C 47 46 62 39 74 35 C 81 33 88 38 91 46 C 96 59 93 80 80 101 C 87 84 91 66 87 50 C 85 41 80 37 73 37 C 60 41 45 48 31 47 C 20 46 15 42 14 39 Z' fill='%2300A8C6'/%3E%3Cpath d='M 52 65 C 60 65 69 70 73 78 C 77 86 78 99 77 109 C 75 117 71 121 66 120 C 64 116 63 107 64 96 C 65 85 62 76 56 70 C 54 68 53 66 52 65 Z' fill='%238CC63F'/%3E%3C/svg%3E">
 
   <!-- Google Fonts: Cairo -->
@@ -88,7 +88,7 @@
       --radius-lg: 20px;
       --radius-full: 9999px;
       --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.04);
-      --shadow-md: 0 8px 20px rgba(0, 168, 198, 0.08);
+      --shadow-md: 0 8px 20px rgba(0, 165, 181, 0.08);
       --shadow-lg: 0 16px 36px rgba(0, 0, 0, 0.09);
       --transition: all 0.25s ease-in-out;
       --sidebar-width: 320px;
@@ -113,6 +113,7 @@
       direction: rtl;
     }
 
+    /* تخطي للتنقل للوصول السهل */
     .skip-link {
       position: absolute;
       top: -100px;
@@ -130,6 +131,7 @@
       top: 16px;
     }
 
+    /* الحاوية الرئيسية */
     .container {
       width: 100%;
       max-width: 1180px;
@@ -257,7 +259,7 @@
       transform: translateY(-1px);
     }
 
-    /* تخطيط الشاشات الكبيرة */
+    /* التنسيق التجاوبي للشاشات الكبيرة: محتوى رئيسي + شريط جانبي للأطباء */
     @media (min-width: 992px) {
       .main-nav {
         display: flex;
@@ -281,7 +283,7 @@
       }
     }
 
-    /* تخطيط الهواتف */
+    /* شاشات الجوال والتابلت */
     @media (max-width: 991px) {
       #main-content {
         margin-right: 0;
@@ -309,7 +311,7 @@
       }
     }
 
-    /* قسم الهيرو */
+    /* قسم الهيرو / البانر الترحيبي */
     .hero-section {
       background: linear-gradient(180deg, #F0F9FA 0%, #FFFFFF 100%);
       padding: 40px 0 30px;
@@ -391,8 +393,11 @@
       justify-content: center;
       flex-shrink: 0;
     }
+    .feat-item svg {
+      color: var(--brand-lime-dark);
+    }
 
-    /* بطاقة الحجز */
+    /* بطاقة الحجز السريع داخل الهيرو */
     .quick-booking-card {
       background: #ffffff;
       border-radius: var(--radius-lg);
@@ -405,6 +410,9 @@
       font-weight: 800;
       color: var(--brand-teal-dark);
       margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
     .quick-booking-card p {
       font-size: 0.85rem;
@@ -462,7 +470,7 @@
       box-shadow: 0 6px 18px rgba(37, 211, 102, 0.45);
     }
 
-    /* شريط الأرقام والإحصائيات */
+    /* شريط الأرقام والإنجازات */
     .trust-strip {
       background: #ffffff;
       padding: 24px 0;
@@ -487,7 +495,7 @@
       margin-top: 4px;
     }
 
-    /* رؤوس الأقسام */
+    /* العناوين العامة للأقسام */
     .section-head {
       text-align: center;
       margin-bottom: 34px;
@@ -516,7 +524,7 @@
       margin-top: 14px;
     }
 
-    /* الخدمات */
+    /* قسم الخدمات */
     .services-section {
       padding: 50px 0;
     }
@@ -534,6 +542,8 @@
       transition: var(--transition);
       display: flex;
       flex-direction: column;
+      position: relative;
+      overflow: hidden;
     }
     .service-card:hover {
       transform: translateY(-4px);
@@ -541,8 +551,8 @@
       border-color: var(--brand-teal);
     }
     .service-icon-box {
-      width: 54px;
-      height: 54px;
+      width: 52px;
+      height: 52px;
       border-radius: var(--radius-md);
       background: var(--brand-teal-light);
       color: var(--brand-teal);
@@ -550,13 +560,7 @@
       align-items: center;
       justify-content: center;
       margin-bottom: 18px;
-      transition: var(--transition);
-      border: 1px solid rgba(0, 168, 198, 0.12);
-    }
-    .service-card:hover .service-icon-box {
-      background: var(--brand-teal);
-      color: #FFFFFF;
-      transform: scale(1.05);
+      font-size: 1.6rem;
     }
     .service-title {
       font-size: 1.18rem;
@@ -601,7 +605,7 @@
       color: #fff;
     }
 
-    /* لماذا تختارنا */
+    /* قسم لماذا تختارنا */
     .why-section {
       padding: 50px 0;
       background: #FFFFFF;
@@ -643,6 +647,36 @@
       color: #FFFFFF;
       transform: translateY(-2px);
     }
+    .service-icon-box {
+      width: 54px;
+      height: 54px;
+      border-radius: var(--radius-md);
+      background: var(--brand-teal-light);
+      color: var(--brand-teal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+      transition: var(--transition);
+      border: 1px solid rgba(0, 168, 198, 0.12);
+    }
+    .service-card:hover .service-icon-box {
+      background: var(--brand-teal);
+      color: #FFFFFF;
+      transform: scale(1.05);
+    }
+    .branch-meta-icon {
+      color: var(--brand-teal);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: var(--radius-sm);
+      background: var(--brand-teal-light);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
     .why-card h4 {
       font-size: 1.1rem;
       font-weight: 800;
@@ -655,7 +689,7 @@
       line-height: 1.6;
     }
 
-    /* الفروع */
+    /* قسم الفروع الـ 8 بالأحساء */
     .branches-section {
       padding: 50px 0;
     }
@@ -728,14 +762,8 @@
     }
     .branch-meta-icon {
       color: var(--brand-teal);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 32px;
-      height: 32px;
-      border-radius: var(--radius-sm);
-      background: var(--brand-teal-light);
-      flex-shrink: 0;
+      font-size: 1.1rem;
+      line-height: 1;
       margin-top: 2px;
     }
     .branch-actions-row {
@@ -779,7 +807,7 @@
       background: #D5F1F4;
     }
 
-    /* حاسبة التقسيط */
+    /* قسم حاسبة التقسيط تابي وتمارا */
     .calculator-section {
       padding: 50px 0;
       background: linear-gradient(135deg, #0A3641 0%, #004D56 100%);
@@ -888,7 +916,7 @@
       color: var(--text-muted);
     }
 
-    /* الأسئلة الشائعة */
+    /* قسم الأسئلة الشائعة */
     .faq-section {
       padding: 50px 0;
     }
@@ -950,7 +978,7 @@
       line-height: 1.7;
     }
 
-    /* آراء المراجعين */
+    /* قسم آراء المراجعين */
     .testimonials-section {
       padding: 50px 0;
       background: #FFFFFF;
@@ -1006,6 +1034,9 @@
       font-size: 1.15rem;
       font-weight: 900;
       color: var(--brand-teal-dark);
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
     .sidebar-head p {
       font-size: 0.78rem;
@@ -1030,7 +1061,7 @@
     .doctor-card:hover {
       border-color: var(--brand-teal);
       transform: translateX(-3px);
-      box-shadow: 0 4px 12px rgba(0, 168, 198, 0.1);
+      box-shadow: 0 4px 12px rgba(0, 165, 181, 0.1);
     }
     .doctor-avatar {
       width: 64px;
@@ -1082,7 +1113,7 @@
       text-decoration: underline;
     }
 
-    /* التذييل */
+    /* تذييل الصفحة */
     .site-footer {
       background: #112025;
       color: #CFE0E3;
@@ -1131,7 +1162,7 @@
       color: #7D9AA0;
     }
 
-    /* شريط الجوال */
+    /* شريط الجوال السفلي */
     .mobile-bottom-bar {
       position: fixed;
       bottom: 0;
@@ -1142,8 +1173,6 @@
       display: flex;
       justify-content: space-around;
       align-items: center;
-      padding: 8px 12px;
-      box-shadow: 0 -: center;
       padding: 8px 12px;
       box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.06);
       z-index: 999;
@@ -1176,7 +1205,9 @@
       padding: 6px 14px;
     }
 
-    /* البوت الذكي */
+    /* ===================================================
+       تصميم وتنسيق البوت الذكي لمجمع الأسرة
+       =================================================== */
     .chatbot-fab {
       position: fixed;
       bottom: 80px;
@@ -1257,6 +1288,8 @@
       visibility: visible;
       transform: translateY(0) scale(1);
     }
+
+    /* رأس نافذة البوت */
     .chat-header {
       background: linear-gradient(135deg, var(--brand-teal-dark), var(--brand-teal));
       color: #fff;
@@ -1315,6 +1348,8 @@
     .chat-close-btn:hover {
       opacity: 1;
     }
+
+    /* مساحة الرسائل */
     .chat-body {
       flex: 1;
       padding: 16px;
@@ -1351,6 +1386,8 @@
       align-self: flex-end;
       border-bottom-left-radius: 3px;
     }
+
+    /* خيارات الرد السريع */
     .chat-quick-actions {
       display: flex;
       flex-direction: column;
@@ -1378,6 +1415,8 @@
       border-color: var(--brand-teal);
       transform: translateX(-3px);
     }
+
+    /* أزرار الفروع في الواتساب داخل الشات */
     .chat-branch-list {
       display: grid;
       grid-template-columns: 1fr;
@@ -1404,6 +1443,8 @@
       border-color: var(--color-wa);
       transform: translateX(-3px);
     }
+
+    /* حقل الكتابة السفلي */
     .chat-footer {
       padding: 10px 14px;
       background: #ffffff;
@@ -1441,13 +1482,15 @@
     .chat-send-btn:hover {
       background: var(--brand-teal-dark);
     }
+
   </style>
 </head>
 <body>
 
+  <!-- رابط التخطي -->
   <a href="#main-content" class="skip-link">تخطي إلى المحتوى الرئيسي</a>
 
-  <!-- الشريط العلوي -->
+  <!-- الشريط العلوي للإعلانات والتقسيط -->
   <aside class="topbar" aria-label="الشريط الترويجي">
     <div class="topbar-badges">
       <span>مجمع الأسرة الطبي بالأحساء • 8 فروع</span>
@@ -1461,9 +1504,1493 @@
     </div>
   </aside>
 
-  <!-- ترويسة الموقع -->
+  <!-- ترويسة الموقع الرئيسية -->
   <header class="site-header">
     <div class="container nav-wrap">
       <a href="#" class="logo-area" aria-label="الصفحة الرئيسية لمجمع الأسرة الطبي">
         <div class="logo-icon-wrap">
-          <img src="logo.png" alt
+          <img src="logo.png" alt="شعار مجمع الأسرة" class="site-logo-img" onerror="this.style.display='none'; if(this.nextElementSibling) this.nextElementSibling.style.display='block';">
+          <svg class="site-logo-svg" viewBox="0 0 100 125" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:none;" aria-hidden="true">
+            <!-- رأس الفرد الأخضر -->
+            <circle cx="30" cy="14" r="9" fill="#8CC63F" />
+            <!-- رأس الفرد الأزرق السماوي -->
+            <circle cx="84" cy="23" r="9.5" fill="#00A8C6" />
+            <!-- الشكل العلوي الأخضر -->
+            <path d="M 29 25 C 21 28 16 35 16 41 C 16 52 28 54 39 53 C 49 52 60 46 67 40 C 60 44 48 45 37 43 C 27 41 23 37 25 32 C 26 29 27 27 29 25 Z" fill="#8CC63F" />
+            <!-- جسم الضرس والشكل الأزرق السماوي -->
+            <path d="M 14 39 C 12 47 11 58 13 69 C 16 85 23 103 30 115 C 33 121 38 119 39 113 C 40 102 39 88 43 78 C 47 68 57 65 67 66 C 73 66 77 72 79 81 C 77 70 70 64 61 64 C 52 64 43 69 39 82 C 34 97 35 110 32 112 C 28 101 21 82 19 66 C 18 53 23 46 33 46 C 47 46 62 39 74 35 C 81 33 88 38 91 46 C 96 59 93 80 80 101 C 87 84 91 66 87 50 C 85 41 80 37 73 37 C 60 41 45 48 31 47 C 20 46 15 42 14 39 Z" fill="#00A8C6" />
+            <!-- الجذر السفلي الأخضر -->
+            <path d="M 52 65 C 60 65 69 70 73 78 C 77 86 78 99 77 109 C 75 117 71 121 66 120 C 64 116 63 107 64 96 C 65 85 62 76 56 70 C 54 68 53 66 52 65 Z" fill="#8CC63F" />
+          </svg>
+        </div>
+        <div class="logo-text">
+          <h1>مجمع الأسرة الطبي</h1>
+          <p>طب الأسنان والجلدية والليزر بالأحساء</p>
+        </div>
+      </a>
+
+      <nav class="main-nav" aria-label="القائمة الرئيسية">
+        <a href="#services">الخدمات العلاجية</a>
+        <a href="#branches">فروعنا (8)</a>
+        <a href="#calculator">حاسبة التقسيط</a>
+        <a href="#why-us">لماذا مجمع الأسرة</a>
+        <a href="#faq">الأسئلة الشائعة</a>
+        <a href="#booking-hero" class="nav-cta">احجز موعدك الآن</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- المحتوى الرئيسي القابل للتمرير -->
+  <main id="main-content">
+    
+    <!-- قسم الهيرو / الترحيب والحجز السريع -->
+    <section class="hero-section" id="hero">
+      <div class="container">
+        <div class="hero-grid">
+          
+          <div class="hero-text-col">
+            <div class="hero-badge-tag">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none" style="color:var(--brand-lime-dark);flex-shrink:0;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <span>شبكة فروع متكاملة لخدمتك في جميع مدن وقرى الأحساء</span>
+            </div>
+            <h2 class="hero-title">
+              رعاية متقدمة في <span>طب الأسنان</span> وعيادات <span>الجلدية والليزر</span>
+            </h2>
+            <p class="hero-desc">
+              نقدم لكم أعلى معايير الجودة الطبية مع نخبة من الاستشاريين والأخصائيين المعتمدين في 8 فروع مجهزة بأحدث التقنيات الرقمية، مع توفر خيارات التقسيط الميسرة عبر تابي وتمارا.
+            </p>
+            
+            <div class="hero-features">
+              <div class="feat-item">
+                <span class="feat-icon">
+                  <!-- Lioicons Map Pin -->
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 21s-7-6.5-7-11.5a7 7 0 0 1 14 0c0 5-7 11.5-7 11.5z"/>
+                    <circle cx="12" cy="9.5" r="2.5"/>
+                  </svg>
+                </span>
+                <span>8 فروع في الأحساء</span>
+              </div>
+
+              <div class="feat-item">
+                <span class="feat-icon">
+                  <!-- Lioicons Medical Monitor / Heartbeat -->
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="4" width="20" height="14" rx="2.5"/>
+                    <path d="M6 11h2.5l1.5-3 2.5 6 1.5-3H18"/>
+                    <line x1="8" y1="21" x2="16" y2="21"/>
+                    <line x1="12" y1="18" x2="12" y2="21"/>
+                  </svg>
+                </span>
+                <span>أحدث الأجهزة الطبية</span>
+              </div>
+
+              <div class="feat-item">
+                <span class="feat-icon">
+                  <!-- Lioicons Credit Card -->
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="5" width="20" height="14" rx="2.5"/>
+                    <line x1="2" y1="10" x2="22" y2="10"/>
+                    <circle cx="7" cy="15" r="1.2" fill="currentColor"/>
+                    <circle cx="11" cy="15" r="1.2" fill="currentColor"/>
+                  </svg>
+                </span>
+                <span>تقسيط تمارا وتابي</span>
+              </div>
+
+              <div class="feat-item">
+                <span class="feat-icon">
+                  <!-- Lioicons Stethoscope -->
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4.5 3v5a5.5 5.5 0 0 0 11 0V3"/>
+                    <line x1="3" y1="3" x2="6" y2="3"/>
+                    <line x1="14" y1="3" x2="17" y2="3"/>
+                    <path d="M10 13.5v2.5a4 4 0 0 0 8 0v-1"/>
+                    <circle cx="18" cy="15" r="2" fill="currentColor"/>
+                  </svg>
+                </span>
+                <span>كشف واستشارة تخصصية</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- نموذج الحجز السريع المباشر -->
+          <div class="hero-form-col" id="booking-hero">
+            <div class="quick-booking-card">
+              <h3>احجز موعدك مباشرة عبر الواتساب</h3>
+              <p>اختر الفرع والخدمة المطلوبة وسيتم تجهيز رسالتك فوراً:</p>
+
+              <form id="quickBookingForm">
+                <div class="form-group">
+                  <label class="form-label" for="patientName">الاسم الكريم</label>
+                  <input type="text" id="patientName" class="form-control" placeholder="اكتب اسمك هنا" required>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="selectedBranch">اختر أقرب فرع إليك</label>
+                  <select id="selectedBranch" class="form-control" required>
+                    <option value="فرع السلمانية (الهفوف)" data-wa="966553254700">فرع السلمانية - الهفوف (0553254700)</option>
+                    <option value="فرع محاسن (المبرز)" data-wa="966537403090">فرع محاسن - المبرز (0537403090)</option>
+                    <option value="فرع الخالدية (الهفوف)" data-wa="966550932600">فرع الخالدية - الهفوف (0550932600)</option>
+                    <option value="فرع المزروع (الهفوف)" data-wa="966534634447">فرع المزروع - الهفوف (0534634447)</option>
+                    <option value="فرع الشقيق (شمال الأحساء)" data-wa="966556854440">فرع الشقيق - شمال الأحساء (0556854440)</option>
+                    <option value="فرع الجفر (شرق الأحساء)" data-wa="966550892700">فرع الجفر - شرق الأحساء (0550892700)</option>
+                    <option value="فرع العيون 1" data-wa="966553962300">فرع العيون 1 (0553962300)</option>
+                    <option value="فرع العيون الصناعية" data-wa="966536902220">فرع العيون الصناعية (0536902220)</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="selectedService">الخدمة المراد حجزها</label>
+                                    <select id="selectedService" class="form-control" required>
+                    <option value="كشف واستشارة (عام / أخصائي / استشاري)">كشف واستشارة (عام / أخصائي / استشاري)</option>
+                    <option value="تنظيف وتلميع الأسنان وإزالة الرواسب">تنظيف وتلميع الأسنان وإزالة الرواسب</option>
+                    <option value="تبييض الأسنان بالليزر">تبييض الأسنان بالليزر</option>
+                    <option value="حشوات الأسنان التجميلية (كمبوزيت)">حشوات الأسنان التجميلية (كمبوزيت)</option>
+                    <option value="علاج وسحب العصب وحشو الجذور">علاج وسحب العصب وحشو الجذور</option>
+                    <option value="ابتسامة هوليوود (فينير)">ابتسامة هوليوود (فينير)</option>
+                    <option value="تركيبات وتيجان الزيركون / إمبرس">تركيبات وتيجان الزيركون / إمبرس</option>
+                    <option value="خلع الأسنان وجراحة ضرس العقل المطمور">خلع الأسنان وجراحة ضرس العقل المطمور</option>
+                    <option value="علاجات وتجميل اللثة والجيوب اللثوية">علاجات وتجميل اللثة والجيوب اللثوية</option>
+                    <option value="الأطقم والاستعاضات الصناعية">الأطقم والاستعاضات الصناعية (ثابتة ومتحركة)</option>
+                    <option value="جلسات إزالة الشعر بالليزر">جلسات إزالة الشعر بالليزر</option>
+                    <option value="عيادة الجلدية والتجميل ونضارة البشرة">عيادة الجلدية والتجميل ونضارة البشرة</option>
+                  </select>
+                </div>
+
+                <button type="submit" class="btn-submit-wa">
+                  <span>تأكيد الحجز عبر الواتساب</span>
+                </button>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- شريط الثقة والإحصائيات -->
+    <div class="trust-strip">
+      <div class="container">
+        <div class="trust-grid">
+          <div class="trust-item">
+            <h4>8</h4>
+            <p>فروع تغطي أنحاء الأحساء</p>
+          </div>
+          <div class="trust-item">
+            <h4>+50</h4>
+            <p>طبيباً واستشارياً معتمداً</p>
+          </div>
+          <div class="trust-item">
+            <h4>+20</h4>
+            <p>سنة من الخبرة والتميز</p>
+          </div>
+          <div class="trust-item">
+            <h4>تابي & تمارا</h4>
+            <p>خيارات تقسيط متاحة</p>
+          </div>
+          <div class="trust-item">
+            <h4>+100 ألف</h4>
+            <p>مراجع وابتسامة راضية</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- قسم الخدمات العلاجية والتجميلية -->
+    <section class="services-section" id="services">
+      <div class="container">
+        <div class="section-head">
+          <h2>خدماتنا الطبية المتكاملة</h2>
+          <p>أحدث التجهيزات والتقنيات لتوفير رعاية دقيقة ومريحة دون ألم</p>
+        </div>
+
+        <div class="services-grid">
+          
+          <div class="service-card">
+            <div class="service-icon-box">
+      <!-- Lioicons Tooth / Dental Implant -->
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M7 3c-2.5 0-4 2-4 5.5 0 3 1.5 6.5 3 10.5l1.5 2.5a1.5 1.5 0 0 0 2.5 0l1.5-3 1.5 3a1.5 1.5 0 0 0 2.5 0l1.5-2.5c1.5-4 3-7.5 3-10.5C21 5 19.5 3 17 3c-2 0-3.5 1.5-5 1.5S9 3 7 3z"/>
+        <line x1="9" y1="10" x2="15" y2="10"/>
+        <line x1="10" y1="14" x2="14" y2="14"/>
+      </svg>
+    </div>
+            <span class="service-badge">تقنيات التوجيه الرقمي 3D</span>
+            <h3 class="service-title">زراعة وتثبيت الأسنان</h3>
+            <p class="service-desc">استعادة الأسنان المفقودة بأفضل أنواع الغرسات الألمانية والسويسرية بنسب نجاح فائقة وبدون جراحة تقليدية.</p>
+            <a href="#booking-hero" class="service-btn">احجز استشارة الزراعة ←</a>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon-box">
+      <!-- Lioicons Aesthetic Smile / Sparkle Crown -->
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 14c2.5 4.5 13.5 4.5 16 0"/>
+        <path d="M7 14c1 1.5 3 2.5 5 2.5s4-1 5-2.5"/>
+        <path d="M12 2v4M10 4h4M19 4l-1.5 3M5 4l1.5 3"/>
+      </svg>
+    </div>
+            <span class="service-badge">عدسات إيماكس وزركون</span>
+            <h3 class="service-title">ابتسامة هوليوود وتجميل الأسنان</h3>
+            <p class="service-desc">تصميم رقمي متقن للابتسامة لتناسب ملامح الوجه وتمنحك أسناناً ناصعة البياض وطبيعية المظهر بأعلى درجات المتانة.</p>
+            <a href="#booking-hero" class="service-btn">احجز موعد الابتسامة ←</a>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon-box">
+      <!-- Lioicons Orthodontic Braces Alignment -->
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 5c0 6 3 14 9 14s9-8 9-14"/>
+        <rect x="4" y="9" width="3.5" height="5" rx="1" fill="currentColor" fill-opacity="0.15"/>
+        <rect x="10.25" y="10" width="3.5" height="5" rx="1" fill="currentColor" fill-opacity="0.15"/>
+        <rect x="16.5" y="9" width="3.5" height="5" rx="1" fill="currentColor" fill-opacity="0.15"/>
+        <line x1="2" y1="12" x2="22" y2="12"/>
+      </svg>
+    </div>
+            <span class="service-badge">تقويم شفاف ومعدني</span>
+            <h3 class="service-title">تقويم الأسنان والفكين</h3>
+            <p class="service-desc">علاج تزاحم وتشوهات إطباق الأسنان لكافة الأعمار باستخدام القوالب الشفافة الإنفزلاين أو التقويم التقليدي المتطور.</p>
+            <a href="#booking-hero" class="service-btn">احجز موعد التقويم ←</a>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon-box">
+      <!-- Lioicons Precision Laser Pulse -->
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="3"/>
+        <line x1="12" y1="2" x2="12" y2="6"/>
+        <line x1="12" y1="18" x2="12" y2="22"/>
+        <line x1="2" y1="12" x2="6" y2="12"/>
+        <line x1="18" y1="12" x2="22" y2="12"/>
+        <line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/>
+        <line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/>
+        <line x1="4.93" y1="19.07" x2="7.76" y2="16.24"/>
+        <line x1="16.24" y1="7.76" x2="19.07" y2="4.93"/>
+      </svg>
+    </div>
+            <span class="service-badge">أحدث أجهزة كانديلا وديكا</span>
+            <h3 class="service-title">إزالة الشعر بالليزر</h3>
+            <p class="service-desc">جلسات ليزر متطورة بكفاءة عالية وتبريد ديناميكي لراحة كاملة ومناسب لجميع درجات البشرة بإشراف طبي متخصص.</p>
+            <a href="#booking-hero" class="service-btn">احجز جلسة الليزر ←</a>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon-box">
+      <!-- Lioicons Derma & Aesthetics Droplet -->
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 3a9 9 0 0 1 8 8c0 5-3.5 9-8 9s-8-4-8-9a9 9 0 0 1 8-8z"/>
+        <circle cx="12" cy="12" r="2.5"/>
+        <path d="M17 7.5a4 4 0 0 1 2 3.5"/>
+      </svg>
+    </div>
+            <span class="service-badge">فيلر، بوتوكس، وميزوثيرابي</span>
+            <h3 class="service-title">عيادات الجلدية والنضارة</h3>
+            <p class="service-desc">برامج متكاملة لتجديد شباب البشرة وعلاج التصبغات والندبات وحقن الفيلر والبوتوكس والخيوط التجميلية.</p>
+            <a href="#booking-hero" class="service-btn">احجز استشارة الجلدية ←</a>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon-box">
+      <!-- Lioicons Root Canal & Nerve Therapy -->
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M7 3c-2.5 0-4 2-4 5.5 0 3 1.5 6.5 3 10.5l1.5 2.5a1.5 1.5 0 0 0 2.5 0l1.5-3 1.5 3a1.5 1.5 0 0 0 2.5 0l1.5-2.5c1.5-4 3-7.5 3-10.5C21 5 19.5 3 17 3c-2 0-3.5 1.5-5 1.5S9 3 7 3z"/>
+        <path d="M12 7v8M10 13l2 2 2-2"/>
+      </svg>
+    </div>
+            <span class="service-badge">علاج في جلسة واحدة</span>
+            <h3 class="service-title">علاج الجذور وسحب العصب</h3>
+            <p class="service-desc">علاج آلام الأسنان المزمنة وتنظيف الجذور المجهري بدقة تامة لإنقاذ السن الطبيعي ومنع تكرار الالتهاب.</p>
+            <a href="#booking-hero" class="service-btn">احجز كشف العصب ←</a>
+          </div>
+
+        </div>
+        
+        <!-- دليل خدمات طب الأسنان المتكاملة -->
+        <div class="pricing-table-container" style="margin-top: 50px; background: #fff; border-radius: var(--radius-lg); padding: 30px; border: 1.5px solid var(--border-color); box-shadow: var(--shadow-sm);">
+          <div style="text-align: center; margin-bottom: 26px;">
+            <span class="service-badge" style="margin-bottom: 8px;">دليل عيادات الأسنان المعتمدة</span>
+            <h3 style="font-size: 1.45rem; font-weight: 900; color: var(--brand-teal-dark);">دليل خدمات طب الأسنان الشاملة بمجمع الأسرة</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 6px;">نقدم تشكيلة متكاملة من العلاجات التشخيصية، الوقائية، التجميلية والجراحية بأيدي كفاءات طبية متخصصة</p>
+          </div>
+
+          <!-- فئات الخدمات الطبية -->
+          <div class="dental-cats-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px;">
+            
+            <!-- فئة الكشف والأشعة -->
+            <div class="price-cat-box" style="background: var(--bg-soft); border-radius: var(--radius-md); padding: 20px; border: 1px solid var(--border-color);">
+              <h4 style="font-size: 1.05rem; font-weight: 800; color: var(--brand-teal-dark); margin-bottom: 14px; display: flex; align-items: center; gap: 8px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--brand-teal);"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/></svg> الكشف والأشعة والتشخيص
+              </h4>
+              <ul style="list-style: none; display: flex; flex-direction: column; gap: 9px; font-size: 0.9rem; color: var(--text-main);">
+                <li style="display: flex; align-items: center; gap: 8px;"><span style="color:var(--brand-teal);">✓</span> كشف واستشارة طبيب عام</li>
+                <li style="display: flex; align-items: center; gap: 8px;"><span style="color:var(--brand-teal);">✓</span> كشف واستشارة طبيب أخصائي</li>
+                <li style="display: flex; align-items: center; gap: 8px;"><span style="color:var(--brand-teal);">✓</span> كشف واستشارة طبيب استشاري</li>
+                <li style="display: flex; align-items: center; gap: 8px;"><span style="color:var(--brand-teal);">✓</span> أشعة الأسنان البانورامية الرقمية (كامل الفكين)</li>
+                <li style="display: flex; align-items: center; gap: 8px;"><span style="color:var(--brand-teal);">✓</span> أفلام الأشعة لتوضيح الجذور والأفلام الجناحية</li>
+                <li style="display: flex; align-items: center; gap: 8px;"><span style="color:var(--brand-teal);">✓</span> أخذ طبعات دراسة وتخطيط كامل الفكين</li>
+              </ul>
+            </div>
+
+            <!-- فئة الوقاية والتبييض -->
+            <div class="price-cat-box" style="background: var(--bg-soft); border-radius: var(--radius-md); padding: 20px; border: 1px solid var(--border-color);">
+              <h4 style="font-size: 1.05rem; font-weight: 800; color: var(--brand-teal-dark); margin-bottom: 14px; display: flex; align-items: center; gap: 8px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--brand-teal);"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> العلاجات الوقائية والتبييض
+              </h4>
+              <ul style="list-style: none; display: flex; flex-direction: column; gap: 9px; font-size: 0.9rem; color: var(--text-main);">
+                <li style="display: flex; align-items: center; gap: 8px;"><span style="color:var(--brand-teal);">✓</span> إزالة الرواسب الجيرية وتنظيف وتلميع الأسنان</li>
+                <li style="display: flex; align-items: center; gap: 8px;"><span style="color:var(--brand-teal);">✓</span> تطبيق جلسات الفلورايد لحماية مينا الأسنان</li>
+                <li style="display: flex; align-items: center; gap: 8px;"><span style="color:var(--brand-teal);">✓</span> تبييض الأسنان المتطور بجهاز الليزر الطبي</li>
+                <li style="display: flex; align-items: center; gap: 8px;"><span style="color:var(--brand-teal);">✓</span> إعادة تثبيت وتعديل التيجان والجسور القديمة</li>
+                <li style="display: flex; align-items: center; gap: 8px;"><span style="color:var(--brand-teal);">✓</span> خطط وقائية مخصصة للمحافظة على صحة الفم</li>
+              </ul>
+            </div>
+
+            <!-- فئة الحشوات التجميلية -->
+            <div class="price-cat-box" style="background: var(--bg-soft); border-radius: var(--radius-md); padding: 20px; border: 1px solid var(--border-color);">
+              <h4 style="font-size: 1.05rem; font-weight: 800; color: var(--brand-teal-dark); margin-bottom: 14px; display: flex; align-items: center; gap: 8px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--brand-teal);"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg> حشوات وترميم الأسنان والأضراس
+              </h4>
+              <ul style="list-style: none; display: flex; flex-direction: column; gap: 9px; font-size: 0.9rem; color: var(--text-main);">
+                <li style="display: flex; align-items: center; gap: 8px;"><span style="color:var(--brand-teal);">✓</span> حشوات الكمبوزيت التجميلية بلون السن الطبيعي</li>
+                <li style="display: flex; align-items: center; gap: 8px;"><span style="color:var(--brand-teal);">✓</span> حشوات الأملجم عالية المتانة للضروس الخلفية</li>
+                <li style="display: flex; align-items: center; gap: 8px;"><span style="color:var(--brand-teal);">✓</span> ترميم وتعويض القواطع الأمامية المتآكلة أو المكسورة</li>
+                <li style="display: flex; align-items: center; gap: 8px;"><span style="color:var(--brand-teal);">✓</span> بناء وتدعيم الأسنان الضعيفة بمسامير تثبيت طبية</li>
+                <li style="display: flex; align-items: center; gap: 8px;"><span style="color:var(--brand-teal);">✓</span> الحشوات العلاجية المؤقتة وتسكين ألم التجاويف</li>
+              </ul>
+            </div>
+
+            <!-- فئة علاج الجذور والعصب -->
+            <div class="price-cat-box" style="background: var(--bg-soft); border-radius: var(--radius-md); padding: 20px; border: 1px solid var(--border-color);">
+              <h4 style="font-size: 1.05rem; font-weight: 800; color: var(--brand-teal-dark); margin-bottom: 14px; display: flex; align-items: center; gap: 8px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--brand-teal);"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> علاج وإزالة العصب والجذور
+              </h4>
+              <ul style="list-style: none; display: flex; flex-direction: column; gap: 9px; font-size: 0.9rem; color: var(--text-main);">
+                <li style="display: flex; align-items: center; gap: 8px;"><span style="color:var(--brand-teal);">✓</span> علاج وإزالة العصب للأسنان الأمامية ذات الجذر الواحد</li>
+                <li style="display: flex; align-items: center; gap: 8px;"><span style="color:var(--brand-teal);">✓</span> علاج وإزالة العصب للأضراس الضاحكة (ذات جذرين)</li>
+                <li style="display: flex; align-items: center; gap: 8px;"><span style="color:var(--brand-teal);">✓</span> علاج عصب الأضراس الطاحنة الخلفية متعددة الجذور</li>
+                <li style="display: flex; align-items: center; gap: 8px;"><span style="color:var(--brand-teal);">✓</span> تغطية وحماية لب السن الحي ومنع وصول الالتهاب</li>
+                <li style="display: flex; align-items: center; gap: 8px;"><span style="color:var(--brand-teal);">✓</span> إزالة الجزء التاجي من اللب وحشو القنوات بدقة مجهرية</li>
+              </ul>
+            </div>
+
+            <!-- فئة التيجان وابتسامة هوليوود -->
+            <div class="price-cat-box" style="background: var(--bg-soft); border-radius: var(--radius-md); padding: 20px; border: 1px solid var(--border-color);">
+              <h4 style="font-size: 1.05rem; font-weight: 800; color: var(--brand-teal-dark); margin-bottom: 14px; display: flex; align-items: center; gap: 8px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--brand-teal);"><path d="M3 18h18M3 8l4.5 4 4.5-6 4.5 6L21 8l-2 10H5L3 8z"/></svg> تيجان وتركيبات وابتسامة هوليوود
+              </h4>
+              <ul style="list-style: none; display: flex; flex-direction: column; gap: 9px; font-size: 0.9rem; color: var(--text-main);">
+                <li style="display: flex; align-items: center; gap: 8px;"><span style="color:var(--brand-teal);">✓</span> ابتسامة هوليوود وعدسات الفينير التجميلية</li>
+                <li style="display: flex; align-items: center; gap: 8px;"><span style="color:var(--brand-teal);">✓</span> تيجان وجسور الزيركون الألمانية فائقة الجمال والمتانة</li>
+                <li style="display: flex; align-items: center; gap: 8px;"><span style="color:var(--brand-teal);">✓</span> تيجان وعدسات الإمبرس (e.max) عالية الشفافية الطبيعية</li>
+                <li style="display: flex; align-items: center; gap: 8px;"><span style="color:var(--brand-teal);">✓</span> تركيب الأسنان بدون الحاجة لبرد الأسنان (ميرلاند)</li>
+                <li style="display: flex; align-items: center; gap: 8px;"><span style="color:var(--brand-teal);">✓</span> تيجان وجسور البورسلان والسيراميك المدعمة</li>
+              </ul>
+            </div>
+
+            <!-- فئة الجراحة والخلع وعلاج اللثة -->
+            <div class="price-cat-box" style="background: var(--bg-soft); border-radius: var(--radius-md); padding: 20px; border: 1px solid var(--border-color);">
+              <h4 style="font-size: 1.05rem; font-weight: 800; color: var(--brand-teal-dark); margin-bottom: 14px; display: flex; align-items: center; gap: 8px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--brand-teal);"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg> جراحة وخلع الأسنان وعلاج اللثة
+              </h4>
+              <ul style="list-style: none; display: flex; flex-direction: column; gap: 9px; font-size: 0.9rem; color: var(--text-main);">
+                <li style="display: flex; align-items: center; gap: 8px;"><span style="color:var(--brand-teal);">✓</span> خلع الأسنان البسيط بدون ألم مع تخدير موضعي مريح</li>
+                <li style="display: flex; align-items: center; gap: 8px;"><span style="color:var(--brand-teal);">✓</span> خلع أضراس العقل العلوية والسفلية المعقدة</li>
+                <li style="display: flex; align-items: center; gap: 8px;"><span style="color:var(--brand-teal);">✓</span> الخلع الجراحي الدقيق لأضراس العقل المطمورة بعظم الفك</li>
+                <li style="display: flex; align-items: center; gap: 8px;"><span style="color:var(--brand-teal);">✓</span> جراحة قص واستئصال ذروة الجذر للأسنان الملتهبة</li>
+                <li style="display: flex; align-items: center; gap: 8px;"><span style="color:var(--brand-teal);">✓</span> قص وتجميل اللثة المتضخمة وتنسيق الابتسامة اللثوية</li>
+                <li style="display: flex; align-items: center; gap: 8px;"><span style="color:var(--brand-teal);">✓</span> علاج انحسار وتراجع اللثة وتنظيف الجيوب العميقة</li>
+              </ul>
+            </div>
+
+            <!-- فئة الاستعاضات والأطقم المتحركة -->
+            <div class="price-cat-box" style="background: var(--bg-soft); border-radius: var(--radius-md); padding: 20px; border: 1px solid var(--border-color);">
+              <h4 style="font-size: 1.05rem; font-weight: 800; color: var(--brand-teal-dark); margin-bottom: 14px; display: flex; align-items: center; gap: 8px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--brand-teal);"><path d="M4 6h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z"/><line x1="8" y1="6" x2="8" y2="20"/><line x1="16" y1="6" x2="16" y2="20"/></svg> الأطقم والاستعاضات السنية
+              </h4>
+              <ul style="list-style: none; display: flex; flex-direction: column; gap: 9px; font-size: 0.9rem; color: var(--text-main);">
+                <li style="display: flex; align-items: center; gap: 8px;"><span style="color:var(--brand-teal);">✓</span> الأطقم الكاملة العلوية والسفلية بقاعدة إكريل متينة</li>
+                <li style="display: flex; align-items: center; gap: 8px;"><span style="color:var(--brand-teal);">✓</span> الأطقم المرنة الحديثة (فلكسيل) عالية الراحة</li>
+                <li style="display: flex; align-items: center; gap: 8px;"><span style="color:var(--brand-teal);">✓</span> أطقم الكروم كوبالت المعدنية الجزئية والكاملة</li>
+                <li style="display: flex; align-items: center; gap: 8px;"><span style="color:var(--brand-teal);">✓</span> الأطقم الفورية والتعويضات المؤقتة بعد الخلع مباشرة</li>
+                <li style="display: flex; align-items: center; gap: 8px;"><span style="color:var(--brand-teal);">✓</span> تبطين وإصلاح الأطقم المكسورة وإضافة الأسنان البديلة</li>
+              </ul>
+            </div>
+
+          </div>
+
+          <div style="text-align: center; margin-top: 26px;">
+            <a href="#booking-hero" class="btn-submit-wa" style="display: inline-flex; width: auto; padding: 12px 34px;">
+              <span>احجز استشارة للخدمة المطلوبة عبر الواتساب</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- قسم لماذا تختار مجمع الأسرة -->
+    <section class="why-section" id="why-us">
+      <div class="container">
+        <div class="section-head">
+          <h2>لماذا يفضل مراجعونا مجمع الأسرة؟</h2>
+          <p>التزامنا تجاه صحتك وراحتك هو جوهر عملنا اليومي</p>
+        </div>
+
+        <div class="why-grid">
+          <!-- 1. أفرع المجمع: Lioicons Clinic / Hospital -->
+          <div class="why-card">
+            <div class="why-icon-box">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 21h18"/>
+                <path d="M4 21V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v15"/>
+                <path d="M9 21v-4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4"/>
+                <path d="M10 9h4"/>
+                <path d="M12 7v4"/>
+                <circle cx="8" cy="14" r="1" fill="currentColor"/>
+                <circle cx="16" cy="14" r="1" fill="currentColor"/>
+              </svg>
+            </div>
+            <h4>8 فروع تغطي الأحساء</h4>
+            <p>أينما كنت في الهفوف أو المبرز أو القرى الشرقية والشمالية والعيون، تجد فرعاً قريباً ومجهزاً لخدمتك.</p>
+          </div>
+
+          <!-- 2. الكادر الطبي: Lioicons Doctor -->
+          <div class="why-card">
+            <div class="why-icon-box">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="7" r="4"/>
+                <path d="M5.5 21v-2a6.5 6.5 0 0 1 13 0v2"/>
+                <path d="M12 11v4"/>
+                <path d="M10 13h4"/>
+                <path d="M17 10a4 4 0 0 1 3 3.8"/>
+              </svg>
+            </div>
+            <h4>نخبة من الأطباء الاستشاريين</h4>
+            <p>فريق طبي من حملة الشهادات العليا والزمالات المتخصصة في جراحة الأسنان والتقويم والجلدية.</p>
+          </div>
+
+          <!-- 3. التقسيط الميسر: Lioicons Credit Card -->
+          <div class="why-card">
+            <div class="why-icon-box">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="5" width="20" height="14" rx="3"/>
+                <line x1="2" y1="10" x2="22" y2="10"/>
+                <rect x="5" y="14" width="4" height="2.5" rx="0.5" fill="currentColor"/>
+                <circle cx="15" cy="15" r="1.5"/>
+                <circle cx="18" cy="15" r="1.5"/>
+              </svg>
+            </div>
+            <h4>خيارات تقسيط متعددة</h4>
+            <p>إمكانية تقسيم تكلفة العلاج مع شركاء الدفع المعتمدين تابي وتمارا لتسهيل خطتك العلاجية.</p>
+          </div>
+
+          <!-- 4. التعقيم والسلامة: Lioicons Shield & Medical Cross -->
+          <div class="why-card">
+            <div class="why-icon-box">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <path d="M12 8v6"/>
+                <path d="M9 11h6"/>
+              </svg>
+            </div>
+            <h4>أعلى معايير التعقيم العالمية</h4>
+            <p>بروتوكولات تعقيم صارمة وأدوات مغلفة مسبقاً لكل مراجع لضمان بيئة علاجية آمنة 100%.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- قسم فروعنا الـ 8 بالأحساء -->
+    <section class="branches-section" id="branches">
+      <div class="container">
+        <div class="section-head">
+          <h2>فروع مجمع الأسرة في الأحساء</h2>
+          <p>اختر الفرع الأقرب إليك للتواصل المباشر والوصول السريع عبر الخريطة</p>
+        </div>
+
+        <!-- أزرار التبديل السريع بين الفروع -->
+        <div class="branches-tab-bar" id="branchesTabs">
+          <button class="branch-tab-btn active" data-index="0">فرع السلمانية</button>
+          <button class="branch-tab-btn" data-index="1">فرع محاسن</button>
+          <button class="branch-tab-btn" data-index="2">فرع الخالدية</button>
+          <button class="branch-tab-btn" data-index="3">فرع المزروع</button>
+          <button class="branch-tab-btn" data-index="4">فرع الشقيق</button>
+          <button class="branch-tab-btn" data-index="5">فرع الجفر</button>
+          <button class="branch-tab-btn" data-index="6">فرع العيون 1</button>
+          <button class="branch-tab-btn" data-index="7">فرع العيون الصناعية</button>
+        </div>
+
+        <!-- تفاصيل الفرع النشط -->
+        <div class="branch-card" id="activeBranchCard">
+          <div class="branch-card-header">
+            <div>
+              <h3 id="branchCardTitle">فرع السلمانية - الهفوف</h3>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 4px;">يقدم خدمات الأسنان المتكاملة والجلدية والليزر</p>
+            </div>
+            <span class="partner-pill" style="background: var(--brand-teal-light); color: var(--brand-teal-dark);">مفتوح لاستقبالكم</span>
+          </div>
+
+          <div class="branch-meta-list">
+            <div class="branch-meta-item">
+              <span class="branch-meta-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg></span>
+              <div>
+                <strong>الموقع:</strong>
+                <p id="branchCardAddress">الهفوف، حي السلمانية، شارع الأمير نايف بن عبد العزيز</p>
+              </div>
+            </div>
+
+            <div class="branch-meta-item">
+              <span class="branch-meta-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
+              <div>
+                <strong>أوقات العمل:</strong>
+                <p>السبت - الخميس: من 9:00 ص إلى 9:00 م (بجميع الفروع)</p>
+              </div>
+            </div>
+
+            <div class="branch-meta-item">
+              <span class="branch-meta-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+              <div>
+                <strong>الاتصال المباشر:</strong>
+                <p id="branchCardPhone">055 325 4700</p>
+              </div>
+            </div>
+
+            <div class="branch-meta-item">
+              <span class="branch-meta-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></span>
+              <div>
+                <strong>واتساب الحجز:</strong>
+                <p id="branchCardWaText">خدمة عملاء فرع السلمانية متاحة</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="branch-actions-row">
+            <a href="#" id="branchActionWa" target="_blank" class="branch-btn branch-btn-wa">حجز واتساب للفرع</a>
+            <a href="#" id="branchActionCall" class="branch-btn branch-btn-call">اتصال هاتفي</a>
+            <a href="#" id="branchActionMap" target="_blank" class="branch-btn branch-btn-map">موقع الفرع في الخريطة</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- قسم حاسبة التقسيط (تمارا وتابي) -->
+    <div class="container">
+      <section class="calculator-section" id="calculator">
+        <div class="calc-container">
+          <div class="calc-header">
+            <h2>احسب خطة تقسيط علاجك بسهولة</h2>
+            <p>حاسبة تقديرية لخطة الدفع عبر تابي وتمارا (تخضع لشروط وأحكام مزود الخدمة)</p>
+          </div>
+
+          <div class="calc-box">
+            <div class="calc-slider-wrap">
+              <div class="slider-labels">
+                <span>قيمة العلاج التقديرية:</span>
+                <span class="current-amount"><span id="sliderValueText">3000</span> ر.س</span>
+              </div>
+              <input type="range" id="priceRangeSlider" class="range-input" min="500" max="25000" step="250" value="3000">
+            </div>
+
+            <div class="calc-cards-grid">
+              <!-- بطاقة تمارا -->
+              <div class="calc-result-card tamara-card">
+                <h4>تقسيط تمارا (Tamara)</h4>
+                <p class="calc-note">قسّم فاتورتك على 4 دفعات شهرية متساوية</p>
+                <div class="calc-installment-val"><span id="tamaraMonthly">750</span> ر.س / شهرياً</div>
+                <p class="calc-note">✓ خدمة تقسيط معتمدة • تخضع لشروط وأهلية تمارا</p>
+              </div>
+
+              <!-- بطاقة تابي -->
+              <div class="calc-result-card tabby-card">
+                <h4>تقسيط تابي (Tabby)</h4>
+                <p class="calc-note">قسّم على 4 دفعات شهرية ميسرة</p>
+                <div class="calc-installment-val"><span id="tabbyMonthly">750</span> ر.س / شهرياً</div>
+                <p class="calc-note">✓ خدمة تقسيط معتمدة • تخضع لشروط وأهلية تابي</p>
+              </div>
+            </div>
+
+            <div style="text-align: center;">
+              <a href="#booking-hero" class="btn-submit-wa" style="display: inline-flex; width: auto; padding: 12px 30px;">
+                <span>طلب حجز علاج بنظام التقسيط</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- قسم الأسئلة الشائعة -->
+    <section class="faq-section" id="faq">
+      <div class="container">
+        <div class="section-head">
+          <h2>الأسئلة الشائعة</h2>
+          <p>إجابات سريعة وواضحة عن أكثر الاستفسارات تكراراً</p>
+        </div>
+
+        <div class="faq-accordion">
+          
+          <div class="faq-item active">
+            <button class="faq-question">
+              <span>كيف يمكنني الاستفادة من تقسيط تابي وتمارا لعلاج الأسنان؟</span>
+              <span class="faq-arrow">▼</span>
+            </button>
+            <div class="faq-answer" style="max-height: 200px;">
+              <p>يمكنك إبلاغ موظف الاستقبال عند زيارتك لأي من فروعنا برغبتك في الدفع عبر تابي أو تمارا، وسيتم تزويدك بالتعليمات وخطوات الدفع عبر تطبيق المزود المعتمد بحسب الشروط والأحكام الخاصة به.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>هل كشف واستشارة الطبيب مجانية؟</span>
+              <span class="faq-arrow">▼</span>
+            </button>
+            <div class="faq-answer">
+              <p>نعم، نقدم في مجمع الأسرة كشفاً واستشارة مبدئية مع خطة علاجية مخصصة في العديد من الحملات والعروض الموسمية، كما نوفر فحصاً شاملاً بالأشعة الرقمية لتشخيص أدق.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>هل تتوفر عيادات الجلدية والليزر في جميع الفروع؟</span>
+              <span class="faq-arrow">▼</span>
+            </button>
+            <div class="faq-answer">
+              <p>عيادات الأسنان متوفرة في كافة فروعنا الـ 8 بالأحساء، بينما تتوفر خدمات الجلدية والليزر في الفروع الرئيسية الكبرى. يمكنك الاستفسار عبر الواتساب لتحديد أقرب فرع يقدم الخدمة المطلوبة.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>ما هي الأجهزة المستخدمة في إزالة الشعر بالليزر؟</span>
+              <span class="faq-arrow">▼</span>
+            </button>
+            <div class="faq-answer">
+              <p>نعتمد أحدث الأجهزة العالمية المعتمدة من هيئة الغذاء والدواء مثل كانديلا جنتل ليز برو (Candela GentleLase Pro) وديكا (DEKA) المزودة بأنظمة تبريد ذكية لمنع التحسس وضمان أقصى درجات الراحة.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>ما هي أوقات العمل في فروع مجمع الأسرة؟</span>
+              <span class="faq-arrow">▼</span>
+            </button>
+            <div class="faq-answer">
+              <p>تستقبلكم جميع فروع مجمع الأسرة في الأحساء من السبت إلى الخميس، من الساعة 9:00 صباحاً وحتى 9:00 مساءً لخدمتكم.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- قسم آراء المراجعين -->
+    <section class="testimonials-section">
+      <div class="container">
+        <div class="section-head">
+          <h2>تجارب مراجعي مجمع الأسرة</h2>
+          <p>نعتز بثقة أهالي الأحساء ورضاهم عن جودة الرعاية الطبية المقدمة</p>
+        </div>
+
+        <div class="reviews-grid">
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">"تجربتي في زراعة الأسنان بفرع السلمانية كانت ممتازة جداً. دقة في المواعيد وراحة تامة أثناء الإجراء بدون أي ألم، والنتيجة فوق التوقعات."</p>
+            <div class="reviewer-meta">
+              <span class="reviewer-name">أبو فهد القحطاني</span>
+              <span>مراجعة فرع السلمانية</span>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">"عيادة الجلدية والليزر في قمة الرقي والاحترافية. جهاز كانديلا مع التبريد ممتاز جداً وما حسيت بأي وخز، والتعامل أكثر من رائع."</p>
+            <div class="reviewer-meta">
+              <span class="reviewer-name">نورة الملحم</span>
+              <span>مراجعة عيادة الليزر</span>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">"أفضل ميزة هي انتشار الفروع في الأحساء، فرع محاسن قريب من منزلي وميزة تقسيط تمارا ريحتنا كثير في خطة التقويم."</p>
+            <div class="reviewer-meta">
+              <span class="reviewer-name">سلمان العيسى</span>
+              <span>مراجعة فرع محاسن</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- الشريط الجانبي الثابت: الفريق الطبي المعتمد -->
+  <aside id="doctors-sidebar" aria-label="فريقنا الطبي">
+    <div class="sidebar-head">
+      <h3><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-left:6px;"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6"/><path d="M22 11h-6"/></svg>فريقنا الطبي المعتمد</h3>
+      <p>نخبة أطباء واستشاريي الأسنان بالأحساء (+50 طبيباً واستشارياً)</p>
+    </div>
+
+    <div class="doctors-grid">
+      <article class="doctor-card">
+        <img src="doctors/dr-1-sara.jpg" alt="د. سارة عبد المنعم" class="doctor-avatar" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="doctor-avatar-fallback" style="display:none;">د.س</div>
+        <div class="doctor-info">
+          <strong>د. سارة عبد المنعم</strong>
+          <span>طبيب أسنان عام</span>
+          <a href="#booking-hero" class="doctor-consult-btn">طلب استشارة ←</a>
+        </div>
+      </article>
+      <article class="doctor-card">
+        <img src="doctors/dr-2-shaimaa.jpg" alt="د. شيماء محمد" class="doctor-avatar" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="doctor-avatar-fallback" style="display:none;">د.ش</div>
+        <div class="doctor-info">
+          <strong>د. شيماء محمد</strong>
+          <span>طبيب أسنان عام</span>
+          <a href="#booking-hero" class="doctor-consult-btn">طلب استشارة ←</a>
+        </div>
+      </article>
+      <article class="doctor-card">
+        <img src="doctors/dr-3-mahmoud.jpg" alt="د. محمود الحلاج" class="doctor-avatar" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="doctor-avatar-fallback" style="display:none;">د.م</div>
+        <div class="doctor-info">
+          <strong>د. محمود الحلاج</strong>
+          <span>طبيب أسنان عام</span>
+          <a href="#booking-hero" class="doctor-consult-btn">طلب استشارة ←</a>
+        </div>
+      </article>
+      <article class="doctor-card">
+        <img src="doctors/dr-4-iman-m.jpg" alt="د. إيمان المديولي" class="doctor-avatar" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="doctor-avatar-fallback" style="display:none;">د.إ</div>
+        <div class="doctor-info">
+          <strong>د. إيمان المديولي</strong>
+          <span>طبيبة أسنان عامة</span>
+          <a href="#booking-hero" class="doctor-consult-btn">طلب استشارة ←</a>
+        </div>
+      </article>
+      <article class="doctor-card">
+        <img src="doctors/dr-5-mohamed-r.jpg" alt="د. محمد رزق" class="doctor-avatar" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="doctor-avatar-fallback" style="display:none;">د.م</div>
+        <div class="doctor-info">
+          <strong>د. محمد رزق</strong>
+          <span>طبيب أسنان عام</span>
+          <a href="#booking-hero" class="doctor-consult-btn">طلب استشارة ←</a>
+        </div>
+      </article>
+      <article class="doctor-card">
+        <img src="doctors/dr-6-dina.jpg" alt="د. دينا علي" class="doctor-avatar" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="doctor-avatar-fallback" style="display:none;">د.د</div>
+        <div class="doctor-info">
+          <strong>د. دينا علي</strong>
+          <span>طبيبة أسنان عام</span>
+          <a href="#booking-hero" class="doctor-consult-btn">طلب استشارة ←</a>
+        </div>
+      </article>
+      <article class="doctor-card">
+        <img src="doctors/dr-7-mohamed-s.jpg" alt="د. محمد صلاح" class="doctor-avatar" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="doctor-avatar-fallback" style="display:none;">د.م</div>
+        <div class="doctor-info">
+          <strong>د. محمد صلاح</strong>
+          <span>طبيب أسنان عام</span>
+          <a href="#booking-hero" class="doctor-consult-btn">طلب استشارة ←</a>
+        </div>
+      </article>
+      <article class="doctor-card">
+        <img src="doctors/dr-8-randa.jpg" alt="د. رندة رجب" class="doctor-avatar" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="doctor-avatar-fallback" style="display:none;">د.ر</div>
+        <div class="doctor-info">
+          <strong>د. رندة رجب</strong>
+          <span>طبيبة أسنان عامة</span>
+          <a href="#booking-hero" class="doctor-consult-btn">طلب استشارة ←</a>
+        </div>
+      </article>
+      <article class="doctor-card">
+        <img src="doctors/dr-9-ahmed-m.jpg" alt="د. أحمد مختار" class="doctor-avatar" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="doctor-avatar-fallback" style="display:none;">د.أ</div>
+        <div class="doctor-info">
+          <strong>د. أحمد مختار</strong>
+          <span>طبيب أسنان عام</span>
+          <a href="#booking-hero" class="doctor-consult-btn">طلب استشارة ←</a>
+        </div>
+      </article>
+      <article class="doctor-card">
+        <img src="doctors/dr-10-marwa.jpg" alt="د. مروة عبد الرزاق" class="doctor-avatar" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="doctor-avatar-fallback" style="display:none;">د.م</div>
+        <div class="doctor-info">
+          <strong>د. مروة عبد الرزاق</strong>
+          <span>طبيب أسنان عام</span>
+          <a href="#booking-hero" class="doctor-consult-btn">طلب استشارة ←</a>
+        </div>
+      </article>
+      <article class="doctor-card">
+        <img src="doctors/dr-11-mohamed-y.jpg" alt="د. محمد ياسين" class="doctor-avatar" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="doctor-avatar-fallback" style="display:none;">د.م</div>
+        <div class="doctor-info">
+          <strong>د. محمد ياسين</strong>
+          <span>جراحة وتجميل الفم والأسنان</span>
+          <a href="#booking-hero" class="doctor-consult-btn">طلب استشارة ←</a>
+        </div>
+      </article>
+      <article class="doctor-card">
+        <img src="doctors/dr-12-an.jpg" alt="د. آن خليل" class="doctor-avatar" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="doctor-avatar-fallback" style="display:none;">د.آ</div>
+        <div class="doctor-info">
+          <strong>د. آن خليل</strong>
+          <span>طبيبة أسنان عامة</span>
+          <a href="#booking-hero" class="doctor-consult-btn">طلب استشارة ←</a>
+        </div>
+      </article>
+      <article class="doctor-card">
+        <img src="doctors/dr-13-hani.jpg" alt="د. هاني سعفان" class="doctor-avatar" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="doctor-avatar-fallback" style="display:none;">د.هـ</div>
+        <div class="doctor-info">
+          <strong>د. هاني سعفان</strong>
+          <span>طبيب أسنان عام</span>
+          <a href="#booking-hero" class="doctor-consult-btn">طلب استشارة ←</a>
+        </div>
+      </article>
+      <article class="doctor-card">
+        <img src="doctors/dr-14-shaimaa-s.jpg" alt="د. شيماء محمد" class="doctor-avatar" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="doctor-avatar-fallback" style="display:none;">د.ش</div>
+        <div class="doctor-info">
+          <strong>د. شيماء محمد</strong>
+          <span>طب وجراحة الأسنان</span>
+          <a href="#booking-hero" class="doctor-consult-btn">طلب استشارة ←</a>
+        </div>
+      </article>
+      <article class="doctor-card">
+        <img src="doctors/dr-15-amira.jpg" alt="د. أميرة أحمد" class="doctor-avatar" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="doctor-avatar-fallback" style="display:none;">د.أ</div>
+        <div class="doctor-info">
+          <strong>د. أميرة أحمد</strong>
+          <span>طبيبة أسنان عامة</span>
+          <a href="#booking-hero" class="doctor-consult-btn">طلب استشارة ←</a>
+        </div>
+      </article>
+      <article class="doctor-card">
+        <img src="doctors/dr-16-khaled.jpg" alt="د. خالد محمود" class="doctor-avatar" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="doctor-avatar-fallback" style="display:none;">د.خ</div>
+        <div class="doctor-info">
+          <strong>د. خالد محمود</strong>
+          <span>طبيب أسنان عام</span>
+          <a href="#booking-hero" class="doctor-consult-btn">طلب استشارة ←</a>
+        </div>
+      </article>
+      <article class="doctor-card">
+        <img src="doctors/dr-17-ehab.jpg" alt="د. إيهاب محمد" class="doctor-avatar" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="doctor-avatar-fallback" style="display:none;">د.إ</div>
+        <div class="doctor-info">
+          <strong>د. إيهاب محمد</strong>
+          <span>أخصائي تركيبات أسنان</span>
+          <a href="#booking-hero" class="doctor-consult-btn">طلب استشارة ←</a>
+        </div>
+      </article>
+      <article class="doctor-card">
+        <img src="doctors/dr-18-sonia.jpg" alt="د. سونيا القادري" class="doctor-avatar" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="doctor-avatar-fallback" style="display:none;">د.س</div>
+        <div class="doctor-info">
+          <strong>د. سونيا القادري</strong>
+          <span>طبيبة أسنان عام</span>
+          <a href="#booking-hero" class="doctor-consult-btn">طلب استشارة ←</a>
+        </div>
+      </article>
+      <article class="doctor-card">
+        <img src="doctors/dr-19-alyaa.jpg" alt="د. علياء قنديل" class="doctor-avatar" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="doctor-avatar-fallback" style="display:none;">د.ع</div>
+        <div class="doctor-info">
+          <strong>د. علياء قنديل</strong>
+          <span>طبيب أسنان عام</span>
+          <a href="#booking-hero" class="doctor-consult-btn">طلب استشارة ←</a>
+        </div>
+      </article>
+      <article class="doctor-card">
+        <img src="doctors/dr-20-christopher.jpg" alt="د. كريستوفر جونز" class="doctor-avatar" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="doctor-avatar-fallback" style="display:none;">د.ك</div>
+        <div class="doctor-info">
+          <strong>د. كريستوفر جونز</strong>
+          <span>أخصائي جراحة الأسنان والفكين</span>
+          <a href="#booking-hero" class="doctor-consult-btn">طلب استشارة ←</a>
+        </div>
+      </article>
+      <article class="doctor-card">
+        <img src="doctors/dr-21-ibrahim.jpg" alt="د. إبراهيم السلطان" class="doctor-avatar" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="doctor-avatar-fallback" style="display:none;">د.إ</div>
+        <div class="doctor-info">
+          <strong>د. إبراهيم السلطان</strong>
+          <span>طبيب أسنان عام</span>
+          <a href="#booking-hero" class="doctor-consult-btn">طلب استشارة ←</a>
+        </div>
+      </article>
+      <article class="doctor-card">
+        <img src="doctors/dr-22-iman-h.jpg" alt="د. إيمان حمودة" class="doctor-avatar" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="doctor-avatar-fallback" style="display:none;">د.إ</div>
+        <div class="doctor-info">
+          <strong>د. إيمان حمودة</strong>
+          <span>طبيبة أسنان عامة</span>
+          <a href="#booking-hero" class="doctor-consult-btn">طلب استشارة ←</a>
+        </div>
+      </article>
+      <article class="doctor-card">
+        <img src="doctors/dr-23-ghassan.jpg" alt="د. غسان رضا" class="doctor-avatar" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="doctor-avatar-fallback" style="display:none;">د.غ</div>
+        <div class="doctor-info">
+          <strong>د. غسان رضا</strong>
+          <span>أخصائي تقويم</span>
+          <a href="#booking-hero" class="doctor-consult-btn">طلب استشارة ←</a>
+        </div>
+      </article>
+      <article class="doctor-card">
+        <img src="doctors/dr-24-anjana.jpg" alt="د. أنجانا" class="doctor-avatar" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="doctor-avatar-fallback" style="display:none;">د.أ</div>
+        <div class="doctor-info">
+          <strong>د. أنجانا</strong>
+          <span>أخصائي علاج اللثة وزراعة الأسنان</span>
+          <a href="#booking-hero" class="doctor-consult-btn">طلب استشارة ←</a>
+        </div>
+      </article>
+      <article class="doctor-card">
+        <img src="doctors/dr-25-hamada.jpg" alt="د. حمادة شعيان" class="doctor-avatar" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="doctor-avatar-fallback" style="display:none;">د.ح</div>
+        <div class="doctor-info">
+          <strong>د. حمادة شعيان</strong>
+          <span>أخصائي طب أسنان الأسرة</span>
+          <a href="#booking-hero" class="doctor-consult-btn">طلب استشارة ←</a>
+        </div>
+      </article>
+      <article class="doctor-card">
+        <img src="doctors/dr-26-walaa.jpg" alt="د. ولاء نجاح" class="doctor-avatar" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="doctor-avatar-fallback" style="display:none;">د.و</div>
+        <div class="doctor-info">
+          <strong>د. ولاء نجاح</strong>
+          <span>طبيب أسنان عام</span>
+          <a href="#booking-hero" class="doctor-consult-btn">طلب استشارة ←</a>
+        </div>
+      </article>
+      <article class="doctor-card">
+        <img src="doctors/dr-27-ahmed-el.jpg" alt="د. أحمد المرسي" class="doctor-avatar" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="doctor-avatar-fallback" style="display:none;">د.أ</div>
+        <div class="doctor-info">
+          <strong>د. أحمد المرسي</strong>
+          <span>طبيب أسنان عام</span>
+          <a href="#booking-hero" class="doctor-consult-btn">طلب استشارة ←</a>
+        </div>
+      </article>
+      <article class="doctor-card">
+        <img src="doctors/dr-28-sameh.jpg" alt="د. سامح عيد" class="doctor-avatar" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="doctor-avatar-fallback" style="display:none;">د.س</div>
+        <div class="doctor-info">
+          <strong>د. سامح عيد</strong>
+          <span>طب وجراحة الفم والأسنان</span>
+          <a href="#booking-hero" class="doctor-consult-btn">طلب استشارة ←</a>
+        </div>
+      </article>
+      <article class="doctor-card">
+        <img src="doctors/dr-29-rasha.jpg" alt="د. رشا رجب" class="doctor-avatar" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="doctor-avatar-fallback" style="display:none;">د.ر</div>
+        <div class="doctor-info">
+          <strong>د. رشا رجب</strong>
+          <span>طبيب أسنان عام</span>
+          <a href="#booking-hero" class="doctor-consult-btn">طلب استشارة ←</a>
+        </div>
+      </article>
+      <article class="doctor-card">
+        <img src="doctors/dr-30-ahmed-amin.jpg" alt="د. أحمد أمين قنديل" class="doctor-avatar" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="doctor-avatar-fallback" style="display:none;">د.أ</div>
+        <div class="doctor-info">
+          <strong>د. أحمد أمين قنديل</strong>
+          <span>طبيب أسنان عام</span>
+          <a href="#booking-hero" class="doctor-consult-btn">طلب استشارة ←</a>
+        </div>
+      </article>
+      <article class="doctor-card">
+        <img src="doctors/dr-31-basma.jpg" alt="د. بسمة مصطفى" class="doctor-avatar" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="doctor-avatar-fallback" style="display:none;">د.ب</div>
+        <div class="doctor-info">
+          <strong>د. بسمة مصطفى</strong>
+          <span>طبيب أسنان عام</span>
+          <a href="#booking-hero" class="doctor-consult-btn">طلب استشارة ←</a>
+        </div>
+      </article>
+      <article class="doctor-card">
+        <img src="doctors/dr-32-zakaria.jpg" alt="د. زكريا يحيى" class="doctor-avatar" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="doctor-avatar-fallback" style="display:none;">د.ز</div>
+        <div class="doctor-info">
+          <strong>د. زكريا يحيى</strong>
+          <span>طبيب أسنان عام</span>
+          <a href="#booking-hero" class="doctor-consult-btn">طلب استشارة ←</a>
+        </div>
+      </article>
+    </div>
+  </aside>
+
+  <!-- تذييل الصفحة -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>مجمع الأسرة الطبي</h4>
+          <p>أكبر شبكة فروع متخصصة في طب الأسنان والجلدية والتجميل والليزر في محافظة الأحساء. نقدم رعاية متكاملة وفق أعلى معايير الجودة الطبية والتقنية.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>روابط سريعة</h4>
+          <ul class="footer-links">
+            <li><a href="#services">الخدمات الطبية</a></li>
+            <li><a href="#branches">فروع الأحساء (8)</a></li>
+            <li><a href="#calculator">حاسبة التقسيط تابي وتمارا</a></li>
+            <li><a href="#why-us">مميزات مجمع الأسرة</a></li>
+            <li><a href="#faq">الأسئلة المتكررة</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>فروعنا في الأحساء</h4>
+          <p style="font-size: 0.85rem; line-height: 1.8;">
+            • الهفوف: السلمانية، الخالدية، المزروع<br>
+            • المبرز: محاسن<br>
+            • القرى: الشقيق، الجفر<br>
+            • العيون: فرع العيون 1، فرع العيون الصناعية
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>أرقام وتواصل الفروع</h4>
+          <p style="font-size: 0.85rem; line-height: 1.8;">
+            • السلمانية: <strong>055 325 4700</strong><br>
+            • محاسن: <strong>053 740 3090</strong><br>
+            • الخالدية: <strong>055 093 2600</strong><br>
+            • المزروع: <strong>053 463 4447</strong><br>
+            • الشقيق: <strong>055 685 4440</strong><br>
+            • الجفر: <strong>055 089 2700</strong><br>
+            • العيون 1: <strong>055 396 2300</strong><br>
+            • العيون الصناعية: <strong>053 690 2220</strong>
+          </p>
+          <p style="margin-top: 8px; font-size: 0.82rem; color: var(--brand-lime);">السبت - الخميس: 9:00 ص - 9:00 م</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 جميع الحقوق محفوظة لمجمع الأسرة لطب الأسنان والجلدية | الأحساء</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- شريط التنقل السريع للجوال -->
+  <nav class="mobile-bottom-bar" aria-label="تنقل الجوال السريع">
+    <a href="#branches" class="mob-nav-btn">
+      <svg fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+      <span>اتصال بالفرع</span>
+    </a>
+    <a href="#branches" class="mob-nav-btn">
+      <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+      <span>الفروع (8)</span>
+    </a>
+    <a href="#calculator" class="mob-nav-btn">
+      <svg fill="currentColor" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2zm4 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2zm-8 8H6v-2h2v2zm0-4H6v-2h2v2zm0-4H6V7h2v2z"/></svg>
+      <span>التقسيط</span>
+    </a>
+    <a href="#booking-hero" class="mob-nav-btn btn-wa-highlight">
+      <span>حجز واتساب</span>
+    </a>
+  </nav>
+
+  <!-- الجافاسكريبت التفاعلي لربط الوظائف -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      
+      // 1. بيانات الفروع الثمانية
+            const branchesData = [
+        {
+          title: "فرع السلمانية - الهفوف",
+          address: "الهفوف، حي السلمانية، طريق الأمير نايف",
+          phone: "0553254700",
+          phoneDisplay: "055 325 4700",
+          wa: "966553254700",
+          mapUrl: "https://maps.app.goo.gl/pDrx6xdNDkZKUvye8?g_st=ic"
+        },
+        {
+          title: "فرع محاسن - المبرز",
+          address: "المبرز، حي محاسن أرامكو، شارع مكة المكرمة",
+          phone: "0537403090",
+          phoneDisplay: "053 740 3090",
+          wa: "966537403090",
+          mapUrl: "https://maps.app.goo.gl/5ftQ3L1Li6sJT9xs8?g_st=ic"
+        },
+        {
+          title: "فرع الخالدية - الهفوف",
+          address: "الهفوف، حي الخالدية، طريق الملك فهد",
+          phone: "0550932600",
+          phoneDisplay: "055 093 2600",
+          wa: "966550932600",
+          mapUrl: "https://maps.app.goo.gl/rb8e6X2Sznj8t6xa9?g_st=ic"
+        },
+        {
+          title: "فرع المزروع - الهفوف",
+          address: "الهفوف، حي المزروع، شارع الخليج",
+          phone: "0534634447",
+          phoneDisplay: "053 463 4447",
+          wa: "966534634447",
+          mapUrl: "https://maps.app.goo.gl/WDGZoLHihfn2fyvR8?g_st=ic"
+        },
+        {
+          title: "فرع الشقيق - شمال الأحساء",
+          address: "قرية الشقيق، الشارع العام الرئيسي",
+          phone: "0556854440",
+          phoneDisplay: "055 685 4440",
+          wa: "966556854440",
+          mapUrl: "https://maps.app.goo.gl/GnuWuJnZ8bQtuSzr8?g_st=ic"
+        },
+        {
+          title: "فرع الجفر - شرق الأحساء",
+          address: "مدينة الجفر، طريق الجفر العام بجوار السوق المركزي",
+          phone: "0550892700",
+          phoneDisplay: "055 089 2700",
+          wa: "966550892700",
+          mapUrl: "https://maps.app.goo.gl/ZwiPGwo2tj8PwGuVA?g_st=ic"
+        },
+        {
+          title: "فرع العيون 1",
+          address: "مدينة العيون، الشارع العام، مقابل المركز التجاري",
+          phone: "0553962300",
+          phoneDisplay: "055 396 2300",
+          wa: "966553962300",
+          mapUrl: "https://maps.app.goo.gl/vdoAfhZRW74MCF9T7?g_st=ic"
+        },
+        {
+          title: "فرع العيون الصناعية",
+          address: "مدينة العيون، المنطقة الصناعية، طريق العقير",
+          phone: "0536902220",
+          phoneDisplay: "053 690 2220",
+          wa: "966536902220",
+          mapUrl: "https://maps.app.goo.gl/8CHubvVPwcHXMyTe7?g_st=ic"
+        }
+      ];
+
+      // تبديل بطاقة الفرع النشط
+      const tabBtns = document.querySelectorAll('.branch-tab-btn');
+      const titleEl = document.getElementById('branchCardTitle');
+      const addressEl = document.getElementById('branchCardAddress');
+      const phoneEl = document.getElementById('branchCardPhone');
+      const waTextEl = document.getElementById('branchCardWaText');
+      const waBtn = document.getElementById('branchActionWa');
+      const callBtn = document.getElementById('branchActionCall');
+      const mapBtn = document.getElementById('branchActionMap');
+
+      function updateActiveBranch(index) {
+        const branch = branchesData[index];
+        if (!branch) return;
+
+        titleEl.textContent = branch.title;
+        addressEl.textContent = branch.address;
+        phoneEl.textContent = branch.phoneDisplay || branch.phone;
+        waTextEl.textContent = `خدمة عملاء ${branch.title} متاحة`;
+
+        const waMsg = encodeURIComponent(`السلام عليكم، أود حجز موعد في ${branch.title}`);
+        waBtn.href = `https://wa.me/${branch.wa}?text=${waMsg}`;
+        callBtn.href = `tel:${branch.phone}`;
+        mapBtn.href = branch.mapUrl;
+      }
+
+      tabBtns.forEach(btn => {
+        btn.addEventListener('click', function () {
+          tabBtns.forEach(b => b.classList.remove('active'));
+          this.classList.add('active');
+          const index = parseInt(this.getAttribute('data-index'), 10);
+          updateActiveBranch(index);
+        });
+      });
+
+      // تشغيل الفرع الأول مبدئياً
+      updateActiveBranch(0);
+
+      // 2. نموذج الحجز السريع المباشر وتجهيز رسالة الواتساب
+      const bookingForm = document.getElementById('quickBookingForm');
+      if (bookingForm) {
+        bookingForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+          const name = document.getElementById('patientName').value.trim();
+          const branchSelect = document.getElementById('selectedBranch');
+          const branchName = branchSelect.value;
+          const branchWa = branchSelect.selectedOptions[0].getAttribute('data-wa') || '966500000001';
+          const service = document.getElementById('selectedService').value;
+
+          const text = `مرحباً مجمع الأسرة الطبي،\nأرغب بحجز موعد طبي وفق البيانات التالية:\n- الاسم: ${name}\n- الفرع المطلوب: ${branchName}\n- الخدمة: ${service}\nيرجى تزويدي بأقرب موعد متاح. شكراً لكم.`;
+          
+          const waUrl = `https://wa.me/${branchWa}?text=${encodeURIComponent(text)}`;
+          window.open(waUrl, '_blank');
+        });
+      }
+
+      // 3. حاسبة التقسيط لتابي وتمارا
+      const slider = document.getElementById('priceRangeSlider');
+      const sliderValText = document.getElementById('sliderValueText');
+      const tamaraMonthly = document.getElementById('tamaraMonthly');
+      const tabbyMonthly = document.getElementById('tabbyMonthly');
+
+      if (slider) {
+        slider.addEventListener('input', function () {
+          const val = parseFloat(this.value);
+          sliderValText.textContent = val.toLocaleString('ar-SA');
+          const installment = Math.round(val / 4);
+          tamaraMonthly.textContent = installment.toLocaleString('ar-SA');
+          tabbyMonthly.textContent = installment.toLocaleString('ar-SA');
+        });
+      }
+
+      // 4. تشغيل الأسئلة الشائعة (Accordion)
+      const faqQuestions = document.querySelectorAll('.faq-question');
+      faqQuestions.forEach(btn => {
+        btn.addEventListener('click', function () {
+          const item = this.parentElement;
+          const answer = item.querySelector('.faq-answer');
+          const isActive = item.classList.contains('active');
+
+          // إغلاق باقي العناصر
+          document.querySelectorAll('.faq-item').forEach(otherItem => {
+            otherItem.classList.remove('active');
+            const otherAnswer = otherItem.querySelector('.faq-answer');
+            if (otherAnswer) otherAnswer.style.maxHeight = null;
+          });
+
+          // فتح أو إغلاق العنصر الحالي
+          if (!isActive) {
+            item.classList.add('active');
+            answer.style.maxHeight = answer.scrollHeight + "px";
+          }
+        });
+      });
+
+
+      // ===================================================
+      // 5. برمجة وتشغيل البوت الذكي
+      // ===================================================
+      const chatbotFab = document.getElementById('chatbotToggleBtn');
+      const chatbotWindow = document.getElementById('chatbotWindow');
+      const chatCloseBtn = document.getElementById('chatCloseBtn');
+      const chatMessages = document.getElementById('chatMessages');
+      const chatInputForm = document.getElementById('chatInputForm');
+      const chatUserInput = document.getElementById('chatUserInput');
+
+      if (chatbotFab && chatbotWindow) {
+        chatbotFab.addEventListener('click', () => {
+          chatbotWindow.classList.toggle('open');
+          if (chatbotWindow.classList.contains('open')) {
+            chatUserInput.focus();
+          }
+        });
+
+        if (chatCloseBtn) {
+          chatCloseBtn.addEventListener('click', () => {
+            chatbotWindow.classList.remove('open');
+          });
+        }
+      }
+
+      function appendMessage(sender, text, htmlContent = null) {
+        const bubble = document.createElement('div');
+        bubble.className = `chat-bubble ${sender}`;
+        if (htmlContent) {
+          bubble.innerHTML = htmlContent;
+        } else {
+          bubble.textContent = text;
+        }
+        chatMessages.appendChild(bubble);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }
+
+      const botBranches = [
+        { name: "فرع السلمانية (الهفوف)", wa: "966553254700", phone: "055 325 4700" },
+        { name: "فرع محاسن (المبرز)", wa: "966537403090", phone: "053 740 3090" },
+        { name: "فرع الخالدية (الهفوف)", wa: "966550932600", phone: "055 093 2600" },
+        { name: "فرع المزروع (الهفوف)", wa: "966534634447", phone: "053 463 4447" },
+        { name: "فرع الشقيق (شمال الأحساء)", wa: "966556854440", phone: "055 685 4440" },
+        { name: "فرع الجفر (شرق الأحساء)", wa: "966550892700", phone: "055 089 2700" },
+        { name: "فرع العيون 1", wa: "966553962300", phone: "055 396 2300" },
+        { name: "فرع العيون الصناعية", wa: "966536902220", phone: "053 690 2220" }
+      ];
+
+      function handleAction(action) {
+        if (action === 'book') {
+          let branchListHtml = 'يسعدنا خدمتك! <strong>اضغط على الفرع الأقرب إليك</strong> لنقلك فوراً للواتساب وحجز موعدك:<div class="chat-branch-list">';
+          botBranches.forEach(b => {
+            const msg = encodeURIComponent(`السلام عليكم مجمع الأسرة، أود حجز موعد في ${b.name}`);
+            branchListHtml += `<a href="https://wa.me/${b.wa}?text=${msg}" target="_blank" class="chat-branch-link"><span>💬 ${b.name}</span><span>حجز ⇚</span></a>`;
+          });
+          branchListHtml += '</div>';
+          appendMessage('bot', '', branchListHtml);
+        } else if (action === 'hours') {
+          const hoursHtml = `<strong>🕒 أوقات وساعات العمل المعتمدة:</strong><br>
+          • <strong>السبت إلى الخميس:</strong> من الساعة 9:00 صباحاً وحتى 9:00 مساءً متواصلة بجميع الفروع الـ 8.<br>
+          • <strong>يوم الجمعة:</strong> عطلة أسبوعية.<br><br>
+          يسعدنا استقبالكم في أي وقت ضمن ساعات العمل!`;
+          appendMessage('bot', '', hoursHtml);
+        } else if (action === 'branches') {
+          let listHtml = '<strong>📍 فروع مجمع الأسرة الـ 8 بالأحساء:</strong><br><div style="margin-top:6px; font-size:0.82rem; line-height:1.7;">';
+          botBranches.forEach(b => {
+            listHtml += `• <strong>${b.name}:</strong> ${b.phone}<br>`;
+          });
+          listHtml += '</div><br>يمكنك النقر على زر "حجز موعد" لمراسلة أي فرع مباشرة عبر الواتساب.';
+          appendMessage('bot', '', listHtml);
+        } else if (action === 'installments') {
+          const instHtml = `<strong>💳 خيارات التقسيط المتاحة:</strong><br>
+          نوفر إمكانية تقسيط خطتك العلاجية عبر <strong>تابي (Tabby)</strong> و<strong>تمارا (Tamara)</strong> على 4 دفعات شهرية ميسرة وفق الشروط والأحكام الخاصة بالمزود.<br><br>
+          يمكنك تجربة حاسبة التقسيط الموجودة في الصفحة لمعرفة القسط التقديري!`;
+          appendMessage('bot', '', instHtml);
+        } else if (action === 'services') {
+          const servHtml = `<strong>🦷 خدماتنا الطبية المعتمدة:</strong><br>
+          • كشف وتشخيص واستشارات متخصصة.<br>
+          • تنظيف وتلميع الأسنان وعلاج اللثة.<br>
+          • تبييض الأسنان بالليزر الطبي.<br>
+          • حشوات الأسنان التجميلية بلون السن.<br>
+          • علاج وسحب العصب وحشو الجذور.<br>
+          • ابتسامة هوليوود وتيجان الزيركون والإمبرس.<br>
+          • جراحة وخلع الأسنان وأضراس العقل المطمورة.<br>
+          • الأطقم والتعويضات السنية الثابتة والمتحركة.<br>
+          • عيادات الجلدية والليزر.<br><br>
+          لدينا فريق طبي متكامل يضم أكثر من <strong>50 طبيباً واستشارياً</strong> لخدمتك عبر فروع الأحساء!`;
+          appendMessage('bot', '', servHtml);
+        }
+      }
+
+      // معالجة النقر على أزرار الخيارات السريعة
+      const quickActionContainer = document.getElementById('chatQuickActions');
+      if (quickActionContainer) {
+        quickActionContainer.addEventListener('click', (e) => {
+          const btn = e.target.closest('.chat-action-btn');
+          if (btn) {
+            const action = btn.getAttribute('data-action');
+            const label = btn.querySelector('span').textContent;
+            appendMessage('user', label);
+            setTimeout(() => {
+              handleAction(action);
+            }, 300);
+          }
+        });
+      }
+
+      // معالجة كتابة المستخدم في صندوق الإدخال
+      if (chatInputForm) {
+        chatInputForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const query = chatUserInput.value.trim();
+          if (!query) return;
+
+          appendMessage('user', query);
+          chatUserInput.value = '';
+
+          setTimeout(() => {
+            const q = query.toLowerCase();
+            if (q.includes('حجز') || q.includes('موعد') || q.includes('واتس') || q.includes('احجز')) {
+              handleAction('book');
+            } else if (q.includes('وقت') || q.includes('ساعات') || q.includes('دوام') || q.includes('متى') || q.includes('الجمعة') || q.includes('تفتح')) {
+              handleAction('hours');
+            } else if (q.includes('فرع') || q.includes('فروع') || q.includes('مكان') || q.includes('موقع') || q.includes('رقم') || q.includes('تلفون') || q.includes('اتصال')) {
+              handleAction('branches');
+            } else if (q.includes('تقسيط') || q.includes('تمارا') || q.includes('تابي') || q.includes('دفع') || q.includes('اقساط')) {
+              handleAction('installments');
+            } else if (q.includes('خدم') || q.includes('طبيب') || q.includes('دكتور') || q.includes('اسنان') || q.includes('تنظيف') || q.includes('عصب') || q.includes('تبييض') || q.includes('ليزر')) {
+              handleAction('services');
+            } else {
+              const defaultHtml = `شكراً لتواصلك معنا! للحصول على أسرع إجابة، يمكنك اختيار أحد المواضيع التالية:<br>
+              • كتابة <strong>حجز</strong> لاختيار فرع ومراسلته واتساب.<br>
+              • كتابة <strong>أوقات العمل</strong> لمعرفة مواعيد الدوام.<br>
+              • كتابة <strong>الفروع</strong> لمعرفة أرقام ومواقع الفروع.<br>
+              • أو تواصل مع فرعك المفضل مباشرة عبر الواتساب!`;
+              appendMessage('bot', '', defaultHtml);
+            }
+          }, 350);
+        });
+      }
+
+    });
+  </script>
+
+  <!-- ===================================================
+       واجهة البوت الذكي لمجمع الأسرة لطب الأسنان
+       =================================================== -->
+  <!-- زر فتح البوت العائم -->
+  <button class="chatbot-fab" id="chatbotToggleBtn" aria-label="مساعد مجمع الأسرة الذكي">
+    <span class="chatbot-fab-badge">مساعدك</span>
+    <!-- أيقونة بوت / محادثة ذكية -->
+    <!-- Lioicons Customer Service / Smart Assistant -->
+    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 11a9 9 0 0 1 18 0v5a3 3 0 0 1-3 3h-2"/>
+      <path d="M2 13a2 2 0 0 1 2-2h1a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H3a1 1 0 0 1-1-1v-4z"/>
+      <path d="M17 13a2 2 0 0 1 2-2h1a2 2 0 0 1 2 2v4a1 1 0 0 1-1 1h-2a2 2 0 0 1-2-2v-3z"/>
+      <circle cx="16" cy="19" r="1" fill="currentColor"/>
+    </svg>
+  </button>
+
+  <!-- نافذة محادثة البوت -->
+  <div class="chatbot-window" id="chatbotWindow" role="dialog" aria-label="نافذة المساعد الآلي">
+    
+    <!-- رأس نافذة البوت -->
+    <div class="chat-header">
+      <div class="chat-header-info">
+        <div class="chat-avatar">
+          <!-- شعار مجمع الأسرة مصغر -->
+          <svg viewBox="0 0 100 125" fill="none" width="24" height="24">
+            <circle cx="30" cy="14" r="9" fill="#8CC63F" />
+            <circle cx="84" cy="23" r="9.5" fill="#00A8C6" />
+            <path d="M 29 25 C 21 28 16 35 16 41 C 16 52 28 54 39 53 C 49 52 60 46 67 40 C 60 44 48 45 37 43 C 27 41 23 37 25 32 C 26 29 27 27 29 25 Z" fill="#8CC63F" />
+            <path d="M 14 39 C 12 47 11 58 13 69 C 16 85 23 103 30 115 C 33 121 38 119 39 113 C 40 102 39 88 43 78 C 47 68 57 65 67 66 C 73 66 77 72 79 81 C 77 70 70 64 61 64 C 52 64 43 69 39 82 C 34 97 35 110 32 112 C 28 101 21 82 19 66 C 18 53 23 46 33 46 C 47 46 62 39 74 35 C 81 33 88 38 91 46 C 96 59 93 80 80 101 C 87 84 91 66 87 50 C 85 41 80 37 73 37 C 60 41 45 48 31 47 C 20 46 15 42 14 39 Z" fill="#00A8C6" />
+            <path d="M 52 65 C 60 65 69 70 73 78 C 77 86 78 99 77 109 C 75 117 71 121 66 120 C 64 116 63 107 64 96 C 65 85 62 76 56 70 C 54 68 53 66 52 65 Z" fill="#8CC63F" />
+          </svg>
+        </div>
+        <div class="chat-header-text">
+          <h4>مساعد مجمع الأسرة</h4>
+          <span>متصل لخدمتك الآن</span>
+        </div>
+      </div>
+      <button class="chat-close-btn" id="chatCloseBtn" aria-label="إغلاق المحادثة">×</button>
+    </div>
+
+    <!-- سجل الرسائل -->
+    <div class="chat-body" id="chatMessages">
+      <div class="chat-bubble bot">
+        مرحباً بك في <strong>مجمع الأسرة لطب الأسنان</strong> بالأحساء! 🦷✨<br>
+        أنا مساعدك الآلي، كيف يمكنني خدمتك اليوم؟
+      </div>
+
+      <!-- الخيارات السريعة التلقائية -->
+      <div class="chat-quick-actions" id="chatQuickActions">
+        <button class="chat-action-btn" data-action="book">
+          <span>📅 حجز موعد عبر الواتساب</span>
+          <span>←</span>
+        </button>
+        <button class="chat-action-btn" data-action="hours">
+          <span>🕒 أوقات وساعات العمل</span>
+          <span>←</span>
+        </button>
+        <button class="chat-action-btn" data-action="branches">
+          <span>📍 فروع الأحساء الـ 8 وأرقامها</span>
+          <span>←</span>
+        </button>
+        <button class="chat-action-btn" data-action="installments">
+          <span>💳 تقسيط تابي وتمارا</span>
+          <span>←</span>
+        </button>
+        <button class="chat-action-btn" data-action="services">
+          <span>🦷 خدمات الأسنان والأطباء</span>
+          <span>←</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- حقل الإدخال -->
+    <form class="chat-footer" id="chatInputForm">
+      <input type="text" id="chatUserInput" class="chat-input" placeholder="اكتب سؤالك هنا (مثل: أوقات العمل، حجز...)" autocomplete="off">
+      <button type="submit" class="chat-send-btn" aria-label="إرسال">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="22" y1="2" x2="11" y2="13"/>
+          <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+        </svg>
+      </button>
+    </form>
+  </div>
+
+</body>
+</html>
+
